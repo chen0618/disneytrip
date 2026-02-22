@@ -51,7 +51,7 @@ export default function PhotoPass() {
           Don't wait until you're at the park! Everyone should create their My Disney Experience account and accept the family invitation at least a week before we fly out. That way, from the moment we enter the parks, every photo is automatically shared.
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg)" variant={2} />
+      <WaveDivider fill="var(--text)" variant={2} />
     </section>
   );
 }
