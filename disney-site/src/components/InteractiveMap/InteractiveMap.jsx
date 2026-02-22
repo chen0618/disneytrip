@@ -13,6 +13,7 @@ import mapParks from '../../data/mapParks';
 import { boatCoords, busRoutes, skylinerRoutes } from '../../data/busRoutes';
 import { parkBoundaries } from '../../data/parkBoundaries';
 import { mapShows } from '../../data/mapShows';
+import { mapShops } from '../../data/mapShops';
 
 const DISNEY_CENTER = [28.385, -81.564];
 
@@ -160,6 +161,64 @@ function FoodClusterLayer({ visible, foodParkFilter, onSelectItem }) {
   return null;
 }
 
+// Imperative MarkerCluster layer for shopping items
+function ShoppingClusterLayer({ visible, shopParkFilter, onSelectItem }) {
+  const map = useMap();
+  const clusterRef = useRef(null);
+
+  useEffect(() => {
+    const cluster = L.markerClusterGroup({
+      maxClusterRadius: 50,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      iconCreateFunction(c) {
+        return L.divIcon({
+          className: '',
+          html: `<div class="emoji-marker" style="background:#E67E22;color:white;font-weight:800;font-size:15px;border-color:#E67E22;">${c.getChildCount()}</div>`,
+          iconSize: [40, 40],
+          iconAnchor: [20, 20],
+        });
+      },
+    });
+    clusterRef.current = cluster;
+    if (visible) map.addLayer(cluster);
+    return () => { map.removeLayer(cluster); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!clusterRef.current) return;
+    const cluster = clusterRef.current;
+    cluster.clearLayers();
+
+    const filtered = shopParkFilter === 'all'
+      ? mapShops
+      : mapShops.filter(s => s.park === shopParkFilter);
+
+    filtered.forEach(s => {
+      const icon = L.divIcon({
+        className: '',
+        html: `<div class="emoji-marker" style="border-color:#E67E22;box-shadow:0 2px 8px rgba(230,126,34,0.5);">${s.emoji}</div>`,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+      });
+      const marker = L.marker([s.lat, s.lng], { icon });
+      marker.on('click', () => onSelectItem({ ...s, type: 'shop' }));
+      cluster.addLayer(marker);
+    });
+  }, [shopParkFilter, onSelectItem]);
+
+  useEffect(() => {
+    if (!clusterRef.current) return;
+    if (visible && !map.hasLayer(clusterRef.current)) {
+      map.addLayer(clusterRef.current);
+    } else if (!visible && map.hasLayer(clusterRef.current)) {
+      map.removeLayer(clusterRef.current);
+    }
+  }, [visible, map]);
+
+  return null;
+}
+
 // Animated marker that bounces along coordinates
 function AnimatedMarker({ coords, icon, interval, popup }) {
   const [index, setIndex] = useState(0);
@@ -289,6 +348,13 @@ const ridesLegend = [
   { color: '#FFD700', label: 'EPCOT' },
 ];
 
+const shoppingLegend = [
+  { color: '#FF6B6B', label: 'Magic Kingdom' },
+  { color: '#4ECDC4', label: 'Hollywood Studios' },
+  { color: '#FFD700', label: 'EPCOT' },
+  { color: '#A29BFE', label: 'Disney Springs' },
+];
+
 export default function InteractiveMap({ onSelectItem }) {
   const [layer, setLayer] = useState('rides');
   const [transportMode, setTransportMode] = useState('bus');
@@ -296,12 +362,14 @@ export default function InteractiveMap({ onSelectItem }) {
   const [rideParkFilter, setRideParkFilter] = useState('all');
   const [heightFilter, setHeightFilter] = useState(null);
   const [foodParkFilter, setFoodParkFilter] = useState('all');
+  const [shopParkFilter, setShopParkFilter] = useState('all');
   const [flyTarget, setFlyTarget] = useState(null);
 
   const showFood = layer === 'food';
   const showTransport = layer === 'transport';
   const showShows = layer === 'shows';
   const showRides = layer === 'rides';
+  const showShopping = layer === 'shopping';
 
   const showBus = showTransport && (transportMode === 'bus' || transportMode === 'all');
   const showSkyliner = showTransport && (transportMode === 'skyliner' || transportMode === 'all');
@@ -340,6 +408,8 @@ export default function InteractiveMap({ onSelectItem }) {
     activeLegend = showMode === 'all'
       ? showsLegend
       : showsLegend.filter(l => l.label.toLowerCase().includes(showMode));
+  } else if (layer === 'shopping') {
+    activeLegend = shoppingLegend;
   } else if (layer === 'transport') {
     activeLegend = transportMode === 'all'
       ? [...busLegend, ...skylinerLegend, ...boatLegend]
@@ -360,6 +430,7 @@ export default function InteractiveMap({ onSelectItem }) {
         <button className={`map-toggle-btn ${layer === 'rides' ? 'active' : ''}`} onClick={() => setLayer('rides')}>🎢 Rides</button>
         <button className={`map-toggle-btn ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}>🍽️ Food & Dining</button>
         <button className={`map-toggle-btn ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows & Events</button>
+        <button className={`map-toggle-btn ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}>🛍️ Shopping</button>
         <button className={`map-toggle-btn ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transportation</button>
       </div>
 
@@ -384,6 +455,17 @@ export default function InteractiveMap({ onSelectItem }) {
           <button className={`map-toggle-btn sub ${foodParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setFoodParkFilter('EPCOT')}>EPCOT</button>
           <button className={`map-toggle-btn sub ${foodParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Hollywood Studios')}>HS</button>
           <button className={`map-toggle-btn sub ${foodParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Disney Springs')}>Disney Springs</button>
+        </div>
+      )}
+
+      {/* Shopping sub-filters */}
+      {layer === 'shopping' && (
+        <div className="map-toggle-bar sub-toggle">
+          <button className={`map-toggle-btn sub ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => setShopParkFilter('all')}>All</button>
+          <button className={`map-toggle-btn sub ${shopParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setShopParkFilter('Magic Kingdom')}>MK</button>
+          <button className={`map-toggle-btn sub ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setShopParkFilter('Hollywood Studios')}>HS</button>
+          <button className={`map-toggle-btn sub ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setShopParkFilter('EPCOT')}>EPCOT</button>
+          <button className={`map-toggle-btn sub ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setShopParkFilter('Disney Springs')}>Disney Springs</button>
         </div>
       )}
 
@@ -482,6 +564,11 @@ export default function InteractiveMap({ onSelectItem }) {
         <FoodClusterLayer
           visible={showFood}
           foodParkFilter={foodParkFilter}
+          onSelectItem={stableOnSelectItem.current}
+        />
+        <ShoppingClusterLayer
+          visible={showShopping}
+          shopParkFilter={shopParkFilter}
           onSelectItem={stableOnSelectItem.current}
         />
 

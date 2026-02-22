@@ -11,10 +11,10 @@ const travelGroup = [
   { name: 'Kayla', role: 'Family', emoji: '👩🏻' },
   { name: 'Tuc', role: 'Family', emoji: '👨🏻' },
   { name: 'Oanh', role: 'Family', emoji: '👩🏻' },
-  { name: 'Natali', role: 'Family', emoji: '👩🏽' },
-  { name: 'Alex', role: 'Family', emoji: '👨🏽' },
-  { name: 'Esme', role: 'Kid', emoji: '👧🏽', isKid: true },
-  { name: 'Eli', role: 'Kid', emoji: '👦🏽', isKid: true },
+  { name: 'Natali', role: 'Family', emoji: '👩🏻' },
+  { name: 'Alex', role: 'Family', emoji: '👨🏻' },
+  { name: 'Esme', role: 'Kid', emoji: '👧🏻', isKid: true },
+  { name: 'Eli', role: 'Kid', emoji: '👦🏻', isKid: true },
 ];
 
 export default travelGroup;
