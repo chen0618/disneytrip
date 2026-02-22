@@ -131,6 +131,23 @@
   background: #2ECC71; color: var(--white); border-color: #2ECC71;
 }
 
+/* Ride marker */
+.emoji-marker.ride-marker {
+  animation: ridePulse 2s ease infinite;
+}
+@keyframes ridePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Ride sub-toggle colors */
+.map-toggle-btn.ride-sub {
+  border-color: #FF6B6B; color: #FF6B6B;
+}
+.map-toggle-btn.ride-sub.active {
+  background: #FF6B6B; color: var(--white); border-color: #FF6B6B;
+}
+
 /* Show marker pulse */
 .emoji-marker.show-marker {
   animation: showPulse 2s ease infinite;
@@ -166,4 +183,5 @@
   .boat-marker { width: 28px; height: 28px; font-size: 16px; }
   .skyliner-marker { width: 26px; height: 26px; font-size: 14px; }
   .emoji-marker.show-marker { width: 34px; height: 34px; font-size: 18px; }
+  .emoji-marker.ride-marker { width: 34px; height: 34px; font-size: 18px; }
 }

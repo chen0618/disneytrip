@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SnackMap from '../sections/DisneySnacks/SnackMap';
+import InteractiveMap from '../components/InteractiveMap/InteractiveMap';
 import '../styles/leaflet-overrides.css';
 import styles from './MapPage.module.css';
 
@@ -12,7 +12,7 @@ export default function MapPage() {
         <p>Snacks, transportation routes, boundaries, and more</p>
       </header>
       <div className={styles.mapWrap}>
-        <SnackMap fullPage />
+        <InteractiveMap onSelectItem={(item) => console.log(item)} />
       </div>
     </div>
   );
