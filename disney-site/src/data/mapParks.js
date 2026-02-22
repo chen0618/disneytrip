@@ -7,6 +7,7 @@ const mapParks = [
   { lat: 28.35119, lng: -81.54429, label: '🏠', cls: 'pc', name: 'Pop Century Resort', desc: 'Our home base! Skyliner + bus access to all parks.' },
   { lat: 28.47571, lng: -81.46859, label: 'US', cls: 'usf', name: 'Universal Studios Florida', desc: 'Rides, shows & Wizarding World' },
   { lat: 28.47179, lng: -81.46982, label: 'IOA', cls: 'ioa', name: 'Islands of Adventure', desc: 'Thrill rides & Hogsmeade' },
+  { lat: 28.44305, lng: -81.44699, label: 'EU', cls: 'epic', name: 'Epic Universe', desc: 'Super Nintendo World, Dark Universe & more' },
 ];
 
 export default mapParks;
