@@ -147,6 +147,13 @@
 .map-toggle-btn.ride-sub.active {
   background: #FF6B6B; color: var(--white); border-color: #FF6B6B;
 }
+.sub-separator {
+  color: var(--text-muted, #999);
+  font-size: 1.1rem;
+  line-height: 1;
+  user-select: none;
+  padding: 0 0.1rem;
+}
 
 /* Show marker pulse */
 .emoji-marker.show-marker {

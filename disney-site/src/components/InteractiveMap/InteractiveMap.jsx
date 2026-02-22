@@ -283,7 +283,6 @@ export default function InteractiveMap({ onSelectItem }) {
   const [rideParkFilter, setRideParkFilter] = useState('all');
   const [heightFilter, setHeightFilter] = useState(null);
   const [foodParkFilter, setFoodParkFilter] = useState('all');
-  const [visibleBoundaries, setVisibleBoundaries] = useState(new Set());
   const [flyTarget, setFlyTarget] = useState(null);
 
   const showFood = layer === 'food';
@@ -313,17 +312,8 @@ export default function InteractiveMap({ onSelectItem }) {
       })
     : [];
 
-  function toggleBoundary(id) {
-    setVisibleBoundaries(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-        setFlyTarget(parkBoundaries.find(b => b.id === id));
-      }
-      return next;
-    });
+  function flyToBoundary(id) {
+    setFlyTarget(parkBoundaries.find(b => b.id === id));
   }
 
   const clearFlyTarget = useRef(() => setFlyTarget(null));
@@ -362,18 +352,15 @@ export default function InteractiveMap({ onSelectItem }) {
 
       {/* Rides sub-filters */}
       {layer === 'rides' && (
-        <>
-          <div className="map-toggle-bar sub-toggle">
-            <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => setRideParkFilter('all')}>All Parks</button>
-            <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
-            <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
-            <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
-          </div>
-          <div className="map-toggle-bar sub-toggle">
-            <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'luna' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'luna' ? null : 'luna')}>Luna can ride</button>
-            <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'clara' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'clara' ? null : 'clara')}>Clara can ride</button>
-          </div>
-        </>
+        <div className="map-toggle-bar sub-toggle">
+          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => setRideParkFilter('all')}>All Parks</button>
+          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
+          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
+          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
+          <span className="sub-separator">|</span>
+          <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'luna' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'luna' ? null : 'luna')}>Luna can ride</button>
+          <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'clara' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'clara' ? null : 'clara')}>Clara can ride</button>
+        </div>
       )}
 
       {/* Food sub-filters */}
@@ -408,7 +395,7 @@ export default function InteractiveMap({ onSelectItem }) {
       )}
 
       <div className="map-toggle-bar boundary-sub">
-        <span className="boundary-label">📐 Boundaries</span>
+        <span className="boundary-label">📍 Go To</span>
         <button
           className="map-toggle-btn sub boundary-overview"
           onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
@@ -416,11 +403,9 @@ export default function InteractiveMap({ onSelectItem }) {
         {parkBoundaries.map(b => (
           <button
             key={b.id}
-            className={`map-toggle-btn sub ${visibleBoundaries.has(b.id) ? 'active' : ''}`}
-            style={visibleBoundaries.has(b.id)
-              ? { background: b.color, borderColor: b.color, color: b.color === '#FFD700' ? '#2D3436' : 'white' }
-              : { borderColor: b.color, color: b.color }}
-            onClick={() => toggleBoundary(b.id)}
+            className="map-toggle-btn sub"
+            style={{ borderColor: b.color, color: b.color }}
+            onClick={() => flyToBoundary(b.id)}
           >{b.name}</button>
         ))}
       </div>
@@ -456,18 +441,16 @@ export default function InteractiveMap({ onSelectItem }) {
           </Marker>
         ))}
 
-        {/* Boundary overlays */}
-        {parkBoundaries.map(b =>
-          visibleBoundaries.has(b.id) && (
-            <Polygon
-              key={b.id}
-              positions={b.coords}
-              pathOptions={{ color: b.color, weight: 2, opacity: 0.8, fillColor: b.color, fillOpacity: 0.15 }}
-            >
-              <Popup><b>{b.name}</b><br />Boundary outline</Popup>
-            </Polygon>
-          )
-        )}
+        {/* Boundary overlays (always visible) */}
+        {parkBoundaries.map(b => (
+          <Polygon
+            key={b.id}
+            positions={b.coords}
+            pathOptions={{ color: b.color, weight: 2, opacity: 0.8, fillColor: b.color, fillOpacity: 0.15 }}
+          >
+            <Popup><b>{b.name}</b><br />Boundary outline</Popup>
+          </Polygon>
+        ))}
 
         {/* Ride markers */}
         {showRides && filteredRides.map(r => (
