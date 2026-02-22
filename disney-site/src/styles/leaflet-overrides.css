@@ -124,11 +124,15 @@
 .map-toggle-bar.boundary-sub .map-toggle-btn.sub {
   padding: 0.35rem 1rem; font-size: 0.78rem;
 }
-.map-toggle-btn.boundary-overview {
-  border-color: #2ECC71; color: #2ECC71;
+.map-toggle-bar.boundary-sub .map-toggle-btn {
+  cursor: pointer;
 }
-.map-toggle-btn.boundary-overview:hover {
-  background: #2ECC71; color: var(--white); border-color: #2ECC71;
+.map-toggle-bar.boundary-sub .map-toggle-btn:hover {
+  transform: none;
+  opacity: 0.7;
+}
+.map-toggle-bar.boundary-sub .map-toggle-btn:active {
+  opacity: 0.5;
 }
 
 /* Ride marker */

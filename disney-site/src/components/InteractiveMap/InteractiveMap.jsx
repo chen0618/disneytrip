@@ -397,7 +397,8 @@ export default function InteractiveMap({ onSelectItem }) {
       <div className="map-toggle-bar boundary-sub">
         <span className="boundary-label">📍 Go To</span>
         <button
-          className="map-toggle-btn sub boundary-overview"
+          className="map-toggle-btn sub"
+          style={{ borderColor: '#2ECC71', color: '#2ECC71' }}
           onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
         >🗺️ Overview</button>
         {parkBoundaries.map(b => (
