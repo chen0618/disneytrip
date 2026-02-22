@@ -6,8 +6,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Disney_Springs_Ariel_View.jpg/960px-Disney_Springs_Ariel_View.jpg',
     emoji: '🏙️',
     type: 'venue',
-    lat: 28.3700,
-    lng: -81.5195,
+    lat: 28.3705,
+    lng: -81.5198,
   },
   {
     id: 'world-of-disney',
@@ -16,8 +16,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/World_of_Disney_%285310011053%29.jpg/960px-World_of_Disney_%285310011053%29.jpg',
     emoji: '🛍️',
     type: 'venue',
-    lat: 28.3705,
-    lng: -81.5172,
+    lat: 28.3714,
+    lng: -81.5165,
   },
   {
     id: 'gideons-bakehouse',
@@ -36,8 +36,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/AtlantaMaryMacsPlate.jpg/960px-AtlantaMaryMacsPlate.jpg',
     emoji: '🍴',
     type: 'venue',
-    lat: 28.3712,
-    lng: -81.5195,
+    lat: 28.3703,
+    lng: -81.5197,
   },
   {
     id: 'lego-store',
@@ -46,8 +46,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Downtown_Disney_Lego_Store_Interior_2014.JPG/960px-Downtown_Disney_Lego_Store_Interior_2014.JPG',
     emoji: '🧱',
     type: 'venue',
-    lat: 28.3698,
-    lng: -81.5175,
+    lat: 28.3710,
+    lng: -81.5167,
   },
   {
     id: 'live-entertainment',
@@ -56,8 +56,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Disney_Springs_%2823169700192%29.jpg/960px-Disney_Springs_%2823169700192%29.jpg',
     emoji: '🎶',
     type: 'venue',
-    lat: 28.3722,
-    lng: -81.5218,
+    lat: 28.3698,
+    lng: -81.5228,
   },
   {
     id: 'the-boathouse',
@@ -66,7 +66,7 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/The_Boathouse_%2834034277603%29.jpg/960px-The_Boathouse_%2834034277603%29.jpg',
     emoji: '🚤',
     type: 'venue',
-    lat: 28.3708,
+    lat: 28.3718,
     lng: -81.5182,
   },
   {
@@ -76,7 +76,7 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Morimoto_Asia_%2828849293454%29.jpg/960px-Morimoto_Asia_%2828849293454%29.jpg',
     emoji: '🍱',
     type: 'venue',
-    lat: 28.3715,
+    lat: 28.3702,
     lng: -81.5200,
   },
   {
@@ -86,8 +86,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/960px-Eq_it-na_pizza-margherita_sep2005_sml.jpg',
     emoji: '🍕',
     type: 'venue',
-    lat: 28.3694,
-    lng: -81.5168,
+    lat: 28.3705,
+    lng: -81.5205,
   },
   {
     id: 'chicken-guy',
@@ -96,8 +96,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Chicken_Fingers.jpg/960px-Chicken_Fingers.jpg',
     emoji: '🐔',
     type: 'venue',
-    lat: 28.3720,
-    lng: -81.5205,
+    lat: 28.3700,
+    lng: -81.5208,
   },
   {
     id: 'amorettes-patisserie',
@@ -106,8 +106,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Pastries_and_cakes_in_a_shop_window_in_Lyon.jpg/960px-Pastries_and_cakes_in_a_shop_window_in_Lyon.jpg',
     emoji: '🎂',
     type: 'venue',
-    lat: 28.3702,
-    lng: -81.5160,
+    lat: 28.3708,
+    lng: -81.5196,
   },
   {
     id: 'jock-lindseys-hangar-bar',
@@ -126,8 +126,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Sandwich_%28Prim%C3%A9al%29.jpg/960px-Sandwich_%28Prim%C3%A9al%29.jpg',
     emoji: '🥪',
     type: 'venue',
-    lat: 28.3696,
-    lng: -81.5185,
+    lat: 28.3713,
+    lng: -81.5173,
   },
   {
     id: 'disney-candy-cauldron',
@@ -136,8 +136,8 @@ const springsVenues = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Chocolate_Covered_Apples.jpg/960px-Chocolate_Covered_Apples.jpg',
     emoji: '🍎',
     type: 'venue',
-    lat: 28.3692,
-    lng: -81.5170,
+    lat: 28.3712,
+    lng: -81.5162,
   },
 ];
 

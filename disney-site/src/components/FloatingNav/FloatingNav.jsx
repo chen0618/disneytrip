@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ActiveSectionContext } from '../../context/ActiveSectionContext';
 import navSections from '../../data/navSections';
 import styles from './FloatingNav.module.css';
@@ -22,6 +23,10 @@ export default function FloatingNav() {
           <span className={styles.tooltip}>{label}</span>
         </button>
       ))}
+      <Link to="/map" className={styles.mapLink} aria-label="Interactive Map">
+        <span className={styles.mapIcon}>🗺️</span>
+        <span className={styles.tooltip}>Interactive Map</span>
+      </Link>
     </nav>
   );
 }
