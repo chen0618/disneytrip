@@ -1,0 +1,31 @@
+.timeline {
+  display: flex;
+  gap: 0;
+  margin-bottom: 3rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.period {
+  flex: 1;
+  padding: 1.5rem;
+  color: var(--white);
+  min-width: 0;
+}
+.period h4 {
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+.period p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: var(--white);
+}
+.morning { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+.afternoon { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
+.evening { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+@media (max-width: 600px) {
+  .timeline { flex-direction: column; }
+}

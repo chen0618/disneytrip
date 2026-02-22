@@ -1,0 +1,24 @@
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+.body {
+  padding: 1rem 1.2rem 1.2rem;
+}
+.body h4 { margin-bottom: 0.2rem; }
+.body p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
