@@ -1,0 +1,252 @@
+/* ========== BACKDROP (mobile only) ========== */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1099;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========== PANEL ========== */
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100%;
+  background: var(--white);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 1100;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.panel.open {
+  transform: translateX(0);
+}
+
+/* ========== CLOSE BUTTON ========== */
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  line-height: 1;
+}
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* ========== DRAG HANDLE (mobile) ========== */
+.dragHandle {
+  display: none;
+}
+
+/* ========== IMAGE ========== */
+.image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ========== LARGE EMOJI (shows/fireworks/parades) ========== */
+.emojiHero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  font-size: 4rem;
+  background: var(--bg-alt);
+  flex-shrink: 0;
+}
+
+/* ========== CONTENT ========== */
+.content {
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+}
+.name {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.nameEmoji {
+  margin-right: 0.35rem;
+}
+
+/* ========== TAGS ROW ========== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ========== PARK TAG ========== */
+.parkTag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  color: #fff;
+}
+.parkTag.mk { background: var(--coral); }
+.parkTag.hs { background: var(--mint); }
+.parkTag.epcot { background: var(--yellow); color: var(--text); }
+.parkTag.springs { background: var(--blue); }
+
+/* ========== LAND TAG ========== */
+.landTag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--text-light);
+}
+
+/* ========== DESCRIPTION ========== */
+.description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ========== BADGES ROW ========== */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.heightBadge {
+  composes: badge;
+  background: var(--text);
+  color: #fff;
+}
+.lunaYes {
+  composes: badge;
+  background: #d4edda;
+  color: #155724;
+}
+.lunaNo {
+  composes: badge;
+  background: #f8d7da;
+  color: #721c24;
+}
+.claraYes {
+  composes: badge;
+  background: #d4edda;
+  color: #155724;
+}
+.claraNo {
+  composes: badge;
+  background: #f8d7da;
+  color: #721c24;
+}
+.llBadge {
+  composes: badge;
+  background: var(--blue);
+  color: #fff;
+}
+.priceBadge {
+  composes: badge;
+  background: var(--mint);
+  color: #fff;
+  font-size: 0.85rem;
+}
+.timeBadge {
+  composes: badge;
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ========== TIP ========== */
+.tip {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+  .backdrop.visible {
+    display: block;
+  }
+
+  .panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60vh;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+  }
+  .panel.open {
+    transform: translateY(0);
+  }
+
+  .dragHandle {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 4px;
+    flex-shrink: 0;
+  }
+  .dragHandleBar {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--text-muted);
+  }
+
+  .closeBtn {
+    top: 8px;
+    right: 12px;
+  }
+}
