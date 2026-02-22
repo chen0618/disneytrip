@@ -4,17 +4,24 @@
 - **Vite + React** app in `disney-site/` directory — JSX components, CSS Modules, JS data files
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
 - All images sourced from Wikimedia Commons (freely licensed) — no local image files
-- react-leaflet + leaflet.markercluster for interactive map (snacks, transport, shows, boundaries)
-- react-router-dom for client-side routing (/ main site, /map full-page map)
+- react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
+- react-router-dom for client-side routing (/ main site, /map full-page interactive map)
 - Legacy single-file version preserved in `legacy/index.html`
 
 ## Development
 - Install: `cd disney-site && npm install`
 - Dev server: `npm run dev` (runs on localhost:5173)
 - Build: `npm run build` (outputs to `disney-site/dist/`)
-- Serve built site: `npx serve disney-site/dist -l 5173 --single` (--single needed for SPA routing)
 - Verify with Playwright MCP browser tools (navigate to localhost:5173, take screenshots)
-- Deployment: Cloudflare Tunnel (token-based, managed in Zero Trust dashboard) → localhost:5173
+
+## Deployment
+- **Service**: `systemctl --user` unit `disney-site.service` — serves `dist/` on port 5173 with `--single` for SPA routing
+- **Service file**: `~/.config/systemd/user/disney-site.service`
+- **Cloudflare Tunnel** (token-based, managed in Zero Trust dashboard) → localhost:5173
+- **Domain**: disneytrip.frostbitex.work
+- Manage: `systemctl --user start|stop|restart|status disney-site`
+- After building: `systemctl --user restart disney-site` to pick up new dist files
+- Linger enabled — service survives logout
 
 ## Project Structure
 ```
@@ -24,49 +31,45 @@ disney-site/
 ├── package.json
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage)
-│   ├── App.jsx                   # ActiveSectionProvider + all sections + nav + footer
+│   ├── App.jsx                   # ActiveSectionProvider + 7 trip-planning sections + nav + footer
 │   ├── styles/
 │   │   ├── global.css            # :root tokens, reset, typography, reveal classes, keyframes
-│   │   └── leaflet-overrides.css # Popup, marker, cluster, route animation styles
+│   │   └── leaflet-overrides.css # Popup, marker, cluster, route animation, ride/show styles
 │   ├── hooks/
 │   │   ├── useScrollReveal.js    # IntersectionObserver → adds .active to .reveal elements
 │   │   └── useActiveSection.js   # Tracks which section is in viewport for nav dots
 │   ├── context/
 │   │   └── ActiveSectionContext.jsx
 │   ├── components/               # Shared/reusable
-│   │   ├── FloatingNav/          # Nav dots (reads ActiveSectionContext)
+│   │   ├── FloatingNav/          # Nav dots + map link (reads ActiveSectionContext)
+│   │   ├── InteractiveMap/       # Full interactive map — rides, food, shows, transport, boundaries
+│   │   ├── DetailPanel/          # Slide-in detail panel (desktop: side, mobile: bottom sheet)
 │   │   ├── WaveDivider.jsx       # SVG wave separator (props: position, fill, variant)
 │   │   ├── SectionHeader/        # h2 + subtitle with reveal class
-│   │   ├── AttractionCard/       # Image+body card (used by MK, HS, EPCOT)
+│   │   ├── AttractionCard/       # Image+body card (used by data files)
 │   │   ├── DayTimeline/          # Morning/Afternoon/Evening strip
 │   │   ├── Callout/              # Accent box (kids, highlight, world variants)
-│   │   └── Footer/
+│   │   └── Footer/               # Map CTA button + credits
 │   ├── pages/
-│   │   └── MapPage.jsx           # Full-page interactive map (/map route)
-│   ├── sections/                 # One folder per page section
+│   │   └── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
+│   ├── sections/                 # One folder per main-page section (7 total)
 │   │   ├── Hero/
-│   │   ├── Timeline/             # useState for mode + expandedCard
+│   │   ├── Timeline/             # 8-day itinerary, travel group (16 people)
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
 │   │   ├── RopeDrop/
 │   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap
-│   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup
-│   │   ├── DisneySprings/
-│   │   ├── MagicKingdom/
-│   │   ├── HollywoodStudios/
-│   │   ├── Epcot/
-│   │   ├── HeightGuide/          # Height requirements by ride, kid profiles
-│   │   ├── ShowsAndFireworks/    # Fireworks, parades, stage shows, strategy
-│   │   └── DisneySnacks/         # Contains SnackMap.jsx (react-leaflet)
+│   │   └── PhotoPass/            # Memory Maker, family sharing, account setup
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js
 │       ├── timelineDays.js
 │       ├── travelGroup.js        # 16-person travel party
-│       ├── springsVenues.js
+│       ├── springsVenues.js      # Disney Springs venues with lat/lng
 │       ├── hotelHighlights.js
 │       ├── transportInfo.js
 │       ├── skylinerPhotos.js
 │       ├── attractions.js        # {magicKingdom, hollywoodStudios, epcot}
+│       ├── mapRides.js           # 33 rides with coordinates, height data, images
 │       ├── parkDaySchedules.js
 │       ├── ropeDropSteps.js
 │       ├── lightningLaneInfo.js
@@ -75,7 +78,7 @@ disney-site/
 │       ├── showsInfo.js
 │       ├── snacks.js
 │       ├── mapParks.js
-│       ├── mapShows.js           # Show/event markers for interactive map
+│       ├── mapShows.js           # 13 show/event markers for interactive map
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
 │       └── busRoutes.js
 ```
@@ -98,21 +101,26 @@ disney-site/
 - Some subjects have no Wikimedia photos (e.g., Art Smith's Homecoming, Ronto Wrap food)
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
-## Sections (in order, 14 total)
+## Main Page Sections (in order, 7 total)
 1. hero — Cinderella Castle background, sparkle animations
-2. timeline — Trip cards, travel group (16 people), Jan 16–23 2027 dates
+2. timeline — 8-day trip cards, travel group (16 people), Jan 16–23 2027 dates
 3. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
 4. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
 5. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
 6. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
 7. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
-8. disney-springs — NOT a theme park callout, 6 venue cards with 3D hover
-9. magic-kingdom — Day timeline strip + 6 attraction cards
-10. hollywood-studios — Same format as MK
-11. epcot — Same format, World Showcase emphasis
-12. height-guide — Rides by height requirement, Luna/Clara profiles with can-ride indicators
-13. shows-fireworks — Fireworks, parades, 8 stage shows, timing strategy
-14. disney-snacks — 8 snack cards, Port Orleans boat callout, CTA link to /map
+
+## Interactive Map (/map page)
+- **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
+- **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
+- Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Transportation
+- Independent boundary overlay toggle (Zillow-style park polygons)
+- **Rides layer**: 33 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT), height sub-filter (Luna can ride / Clara can ride)
+- **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
+- **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
+- **Transport layer**: bus routes, Skyliner, boats with animated markers
+- Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
+- Park label markers and transport routes still use Leaflet popups (simple info)
 
 ## Adding a New Section (checklist)
 1. Create data file in src/data/
@@ -125,18 +133,9 @@ disney-site/
 
 ## Floating Nav
 - FloatingNav component reads ActiveSectionContext
+- Includes map link (🗺️) at bottom that links to /map
 - useActiveSection hook tracks which section is in viewport via IntersectionObserver
 - When adding a section: add entry to data/navSections.js, create section component, add to App.jsx
-
-## Leaflet Map (SnackMap.jsx)
-- Lives on dedicated /map page (MapPage.jsx), linked from DisneySnacks section
-- SnackMap accepts `fullPage` prop for inline vs dedicated page rendering
-- Uses imperative L.markerClusterGroup() via useMap() hook for snack markers
-- Animated bus/boat markers use useState + useEffect with setInterval
-- Layer toggle (all/food/transport/shows) via useState, with sub-toggles per category
-- Shows layer: stage shows (pink), fireworks (gold), parades (purple) with emoji markers
-- Park boundary polygons (Zillow-style) — independent toggle, multi-select, fly-to on click
-- Park markers always visible, snack + transport layers togglable
 
 ## Trip Details
 - Dates: January 16–23, 2027
