@@ -1,3 +1,15 @@
+/* Full-page map mode */
+.snack-map-fullpage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.snack-map-fullpage .leaflet-container {
+  flex: 1;
+  min-height: 400px;
+}
+
 /* Custom Leaflet popup styling */
 .snack-popup { font-family: 'Inter', sans-serif; min-width: 220px; }
 .snack-popup .popup-img {
@@ -103,18 +115,37 @@
 .legend-item { display: flex; align-items: center; gap: 0.35rem; color: var(--text-light); }
 .legend-line { display: inline-block; width: 20px; height: 4px; border-radius: 2px; }
 
-/* Boundary toggle button */
-.map-toggle-btn.boundary-toggle {
+/* Boundary bar */
+.map-toggle-bar.boundary-sub { flex-wrap: wrap; margin-top: 0; }
+.boundary-label {
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.85rem;
+  color: #2ECC71; display: flex; align-items: center;
+}
+.map-toggle-bar.boundary-sub .map-toggle-btn.sub {
+  padding: 0.35rem 1rem; font-size: 0.78rem;
+}
+.map-toggle-btn.boundary-overview {
   border-color: #2ECC71; color: #2ECC71;
 }
-.map-toggle-btn.boundary-toggle.active {
+.map-toggle-btn.boundary-overview:hover {
   background: #2ECC71; color: var(--white); border-color: #2ECC71;
 }
 
-/* Boundary sub-toggle bar */
-.map-toggle-bar.boundary-sub { flex-wrap: wrap; margin-top: -0.25rem; }
-.map-toggle-bar.boundary-sub .map-toggle-btn.sub {
-  padding: 0.35rem 1rem; font-size: 0.78rem;
+/* Show marker pulse */
+.emoji-marker.show-marker {
+  animation: showPulse 2s ease infinite;
+}
+@keyframes showPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Show sub-toggle colors */
+.map-toggle-btn.show-sub {
+  border-color: #E84393; color: #E84393;
+}
+.map-toggle-btn.show-sub.active {
+  background: #E84393; color: var(--white); border-color: #E84393;
 }
 
 /* Cluster overrides */
@@ -134,4 +165,5 @@
   .bus-marker { width: 26px; height: 26px; font-size: 14px; }
   .boat-marker { width: 28px; height: 28px; font-size: 16px; }
   .skyliner-marker { width: 26px; height: 26px; font-size: 14px; }
+  .emoji-marker.show-marker { width: 34px; height: 34px; font-size: 18px; }
 }

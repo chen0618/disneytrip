@@ -22,6 +22,18 @@ export const skylinerInfo = {
   ],
 };
 
+export const airportTransport = {
+  title: '✈️ Airport Transportation',
+  description: "Disney no longer offers free Magical Express bus service from Orlando International Airport (MCO). We're booking private transportation through A Way We Go — a company we used on our last trip and loved.",
+  items: [
+    { icon: '🚐', text: 'Private vehicle from MCO to Pop Century Resort on arrival' },
+    { icon: '🏠', text: 'Return trip from Pop Century to MCO on departure day' },
+    { icon: '👶', text: 'They also offer stroller rentals — super convenient for our little ones!' },
+    { icon: '💰', text: 'More affordable than rideshare for a large group with luggage + car seats' },
+    { icon: '📞', text: 'Book in advance at awaywegotransportation.com' },
+  ],
+};
+
 export const infoPills = [
   { icon: '🕐', text: '~15\u201320 min to parks' },
   { icon: '👥', text: 'Holds up to 10 guests' },

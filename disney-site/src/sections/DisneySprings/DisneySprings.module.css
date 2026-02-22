@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg-alt);
+  background: var(--bg);
 }
 .notAPark {
   background: linear-gradient(135deg, var(--mint), var(--blue));

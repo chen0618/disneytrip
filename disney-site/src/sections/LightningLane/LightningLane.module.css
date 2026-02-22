@@ -1,0 +1,91 @@
+.section { background: var(--bg); }
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+.intro p { margin: 0 auto; color: var(--text-light); }
+
+.typeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .typeGrid { grid-template-columns: 1fr; }
+}
+.typeCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  border-top: 4px solid var(--yellow);
+}
+.typeCard h4 { margin-bottom: 0.5rem; }
+.typeCard p { color: var(--text-light); font-size: 0.95rem; }
+.typeIcon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+
+.strategyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+.strategyItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.2rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.strategyItem:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+.strategyIcon { font-size: 1.6rem; flex-shrink: 0; }
+.strategyItem h4 { margin-bottom: 0.2rem; }
+.strategyItem p { color: var(--text-light); font-size: 0.9rem; }
+
+.riderSwap {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+  border-top: 4px solid var(--purple);
+}
+.riderSwap h3 { text-align: center; margin-bottom: 0.5rem; }
+.riderSwapDesc {
+  text-align: center;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.stepList {
+  display: flex;
+  gap: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+.step {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: var(--white);
+  min-width: 0;
+}
+.step p { font-size: 0.82rem; color: var(--white); margin: 0; }
+.stepIcon { font-size: 1.4rem; display: block; margin-bottom: 0.3rem; }
+
+@media (max-width: 600px) {
+  .stepList { flex-direction: column; }
+}

@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
-import SnackMap from './SnackMap';
 import snacks from '../../data/snacks';
 import styles from './DisneySnacks.module.css';
 
@@ -15,7 +15,11 @@ export default function DisneySnacks() {
           <p>Disney World snacks are legendary. From the famous Dole Whip to enormous turkey legs, there are treats you can ONLY get here. Here's our must-try list and exactly where to find each one!</p>
         </div>
 
-        <SnackMap />
+        <div className={`${styles.mapCta} reveal`}>
+          <h3>🗺️ Interactive Disney Map</h3>
+          <p>Explore snack locations, transportation routes, park boundaries, and more on our full interactive map.</p>
+          <Link to="/map" className={styles.mapBtn}>Open Interactive Map →</Link>
+        </div>
 
         <div className={styles.grid}>
           {snacks.map((s, i) => (

@@ -28,3 +28,8 @@ export const proStrategy = {
     { icon: '🎮', text: 'Ride 2\u20133 big rides with almost no wait before regular opening!' },
   ],
 };
+
+export const coffeeStrategy = {
+  title: '☕ The Coffee Split Strategy',
+  description: "Our morning hack: as soon as we enter the park, we split up. One person beelines straight to the closest Starbucks (every park has one near the entrance) while the rest of the group heads directly to the first big ride. The coffee runner grabs drinks for the group, then catches up and holds a spot in the standby line. This way nobody misses out on short early-morning waits AND everyone gets their caffeine fix.",
+};

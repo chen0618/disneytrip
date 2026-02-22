@@ -1,7 +1,7 @@
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
 import SkylineRouteMap from './SkylineRouteMap';
-import { busInfo, skylinerInfo, infoPills } from '../../data/transportInfo';
+import { busInfo, skylinerInfo, airportTransport, infoPills } from '../../data/transportInfo';
 import skylinerPhotos from '../../data/skylinerPhotos';
 import styles from './Transportation.module.css';
 
@@ -36,6 +36,18 @@ export default function Transportation() {
           <TransportCard info={skylinerInfo} revealClass="reveal-right" />
         </div>
 
+        <div className={`${styles.airportCard} reveal`}>
+          <h3>{airportTransport.title}</h3>
+          <p>{airportTransport.description}</p>
+          <ul className={styles.cardList}>
+            {airportTransport.items.map((item, i) => (
+              <li key={i} className={styles.cardListItem}>
+                <span className={styles.liIcon}>{item.icon}</span> {item.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className={`${styles.skylinerMap} reveal-scale`}>
           <h3>Skyliner Route from Pop Century</h3>
           <SkylineRouteMap />
@@ -56,7 +68,7 @@ export default function Transportation() {
           ))}
         </div>
       </div>
-      <WaveDivider fill="var(--bg)" variant={5} />
+      <WaveDivider fill="var(--bg-alt)" variant={5} />
     </section>
   );
 }

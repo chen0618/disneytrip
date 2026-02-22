@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
 import timelineDays from '../../data/timelineDays';
+import travelGroup from '../../data/travelGroup';
 import styles from './Timeline.module.css';
 
 // Map roles to 3-day mode classes
@@ -53,6 +54,21 @@ export default function Timeline() {
                 <p>{day.details}</p>
               </div>
               <div className={styles.cardBorder} style={{ background: day.color }} />
+            </div>
+          ))}
+        </div>
+
+        <h3 className="reveal" style={{ textAlign: 'center', marginTop: '2.5rem', marginBottom: '0.5rem' }}>
+          Our Crew — {travelGroup.length} Strong! 🎉
+        </h3>
+        <p className="reveal" style={{ textAlign: 'center', color: 'var(--text-light)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+          January 16–23, 2027
+        </p>
+        <div className={`${styles.groupGrid} reveal`}>
+          {travelGroup.map(person => (
+            <div key={person.name} className={`${styles.groupChip} ${person.isKid ? styles.groupChipKid : ''}`}>
+              <span className={styles.groupEmoji}>{person.emoji}</span>
+              <span className={styles.groupName}>{person.name}</span>
             </div>
           ))}
         </div>

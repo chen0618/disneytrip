@@ -29,7 +29,7 @@ export default function HollywoodStudios() {
           You literally step onto another planet (Batuu). Cast Members stay in character, Coca-Cola comes in Star Wars containers, and the level of immersive detail is unlike anything at any other theme park in the world.
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg)" variant={3} />
+      <WaveDivider fill="var(--bg-alt)" variant={3} />
     </section>
   );
 }

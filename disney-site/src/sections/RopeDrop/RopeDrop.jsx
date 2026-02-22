@@ -1,7 +1,7 @@
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import Callout from '../../components/Callout/Callout';
 import WaveDivider from '../../components/WaveDivider';
-import { morningTimeline, standardStrategy, proStrategy } from '../../data/ropeDropSteps';
+import { morningTimeline, standardStrategy, proStrategy, coffeeStrategy } from '../../data/ropeDropSteps';
 import styles from './RopeDrop.module.css';
 
 function StrategyCard({ strategy, variant, revealClass }) {
@@ -49,11 +49,16 @@ export default function RopeDrop() {
           <StrategyCard strategy={proStrategy} variant="pro" revealClass="reveal-right" />
         </div>
 
+        <div className={`${styles.coffeeStrategy} reveal`}>
+          <h3>{coffeeStrategy.title}</h3>
+          <p>{coffeeStrategy.description}</p>
+        </div>
+
         <Callout variant="highlight" title="💡 Lessons from Our January 2026 Trip">
           We learned this the hard way! On our first morning at MK, we took the resort bus and arrived to find huge crowds already inside the park. People who drove themselves or used rideshare had beaten us there. After that, we started calling a Minnie Van every morning at 6:45 &mdash; and it made a HUGE difference. We were walking onto rides that later had 60+ minute waits.
         </Callout>
       </div>
-      <WaveDivider fill="var(--text)" variant={4} />
+      <WaveDivider fill="var(--bg)" variant={4} />
     </section>
   );
 }

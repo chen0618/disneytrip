@@ -11,7 +11,11 @@ import MagicKingdom from './sections/MagicKingdom/MagicKingdom';
 import HollywoodStudios from './sections/HollywoodStudios/HollywoodStudios';
 import Epcot from './sections/Epcot/Epcot';
 import RopeDrop from './sections/RopeDrop/RopeDrop';
+import LightningLane from './sections/LightningLane/LightningLane';
+import PhotoPass from './sections/PhotoPass/PhotoPass';
 import DisneySnacks from './sections/DisneySnacks/DisneySnacks';
+import HeightGuide from './sections/HeightGuide/HeightGuide';
+import ShowsAndFireworks from './sections/ShowsAndFireworks/ShowsAndFireworks';
 import Footer from './components/Footer/Footer';
 
 function AppContent() {
@@ -23,13 +27,17 @@ function AppContent() {
       <FloatingNav />
       <Hero />
       <Timeline />
-      <DisneySprings />
       <Hotel />
       <Transportation />
+      <RopeDrop />
+      <LightningLane />
+      <PhotoPass />
+      <DisneySprings />
       <MagicKingdom />
       <HollywoodStudios />
       <Epcot />
-      <RopeDrop />
+      <HeightGuide />
+      <ShowsAndFireworks />
       <DisneySnacks />
       <Footer />
     </>

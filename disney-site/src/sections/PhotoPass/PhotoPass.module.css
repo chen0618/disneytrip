@@ -1,0 +1,62 @@
+.section { background: var(--bg-alt); }
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+.intro p { margin: 0 auto; color: var(--text-light); }
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.featureCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.featureIcon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+.featureCard h4 { margin-bottom: 0.3rem; }
+.featureCard p { color: var(--text-light); font-size: 0.9rem; }
+
+.sharingPlan {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.sharingPlan h3 { color: var(--white); }
+.sharingDesc {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+  font-size: 1.05rem;
+}
+
+.stepGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.stepCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--blue);
+}
+.stepNumber { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.stepCard h4 { margin-bottom: 0.3rem; }
+.stepCard p { color: var(--text-light); font-size: 0.9rem; }

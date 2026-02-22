@@ -29,7 +29,7 @@ export default function MagicKingdom() {
           Magic Kingdom has the most rides suitable for young kids! And for bigger rides, <strong>Rider Switch</strong> lets one parent ride while the other waits with kids, then swap without waiting in line again. That's one reason we're doing TWO Magic Kingdom days!
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg-alt)" variant={2} />
+      <WaveDivider fill="var(--bg)" variant={2} />
     </section>
   );
 }

@@ -10,6 +10,7 @@ import snacks from '../../data/snacks';
 import mapParks from '../../data/mapParks';
 import { boatCoords, busRoutes, skylinerRoutes } from '../../data/busRoutes';
 import { parkBoundaries } from '../../data/parkBoundaries';
+import { mapShows } from '../../data/mapShows';
 
 const DISNEY_CENTER = [28.385, -81.564];
 
@@ -30,6 +31,23 @@ function parkIcon(label, cls) {
     iconSize: [50, 50],
     iconAnchor: [25, 25],
     popupAnchor: [0, -28],
+  });
+}
+
+const showTypeColors = {
+  show: '#E84393',
+  fireworks: '#FDCB6E',
+  parade: '#6C5CE7',
+};
+
+function showIcon(emoji, type) {
+  const color = showTypeColors[type] || '#E84393';
+  return L.divIcon({
+    className: '',
+    html: `<div class="emoji-marker show-marker" style="border-color:${color};box-shadow:0 2px 8px ${color}80;">${emoji}</div>`,
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+    popupAnchor: [0, -22],
   });
 }
 
@@ -192,18 +210,31 @@ const boatLegend = [
   { color: '#1E90FF', label: 'Sassagoula River Cruise' },
 ];
 
-export default function SnackMap() {
+const showsLegend = [
+  { color: '#E84393', label: 'Stage Shows' },
+  { color: '#FDCB6E', label: 'Fireworks' },
+  { color: '#6C5CE7', label: 'Parades' },
+];
+
+export default function SnackMap({ fullPage = false }) {
   const [layer, setLayer] = useState('all');
   const [transportMode, setTransportMode] = useState('bus');
-  const [showBoundaryPanel, setShowBoundaryPanel] = useState(false);
+  const [showMode, setShowMode] = useState('all');
   const [visibleBoundaries, setVisibleBoundaries] = useState(new Set());
   const [flyTarget, setFlyTarget] = useState(null);
   const showFood = layer === 'all' || layer === 'food';
   const showTransport = layer === 'all' || layer === 'transport';
+  const showShows = layer === 'all' || layer === 'shows';
   // In "Show All" mode, display all transport; in "Transport" mode, respect sub-toggle
   const showBus = showTransport && (layer === 'all' || transportMode === 'bus' || transportMode === 'all');
   const showSkyliner = showTransport && (layer === 'all' || transportMode === 'skyliner' || transportMode === 'all');
   const showBoat = showTransport && (layer === 'all' || transportMode === 'boat' || transportMode === 'all');
+  // Show type filtering
+  const visibleShowTypes = showShows
+    ? (layer === 'all' || showMode === 'all'
+      ? ['show', 'fireworks', 'parade']
+      : [showMode])
+    : [];
 
   function toggleBoundary(id) {
     setVisibleBoundaries(prev => {
@@ -221,28 +252,37 @@ export default function SnackMap() {
   const clearFlyTarget = useRef(() => setFlyTarget(null));
   clearFlyTarget.current = () => setFlyTarget(null);
 
-  // Build legend based on active transport modes
-  const activeLegend = layer === 'all' || transportMode === 'all'
-    ? [...busLegend, ...skylinerLegend, ...boatLegend]
-    : transportMode === 'bus' ? busLegend
-    : transportMode === 'skyliner' ? skylinerLegend
-    : transportMode === 'boat' ? boatLegend
-    : [...busLegend, ...skylinerLegend, ...boatLegend];
+  // Build legend based on active layers
+  const transportLegendItems = showTransport
+    ? (layer === 'all' || transportMode === 'all'
+      ? [...busLegend, ...skylinerLegend, ...boatLegend]
+      : transportMode === 'bus' ? busLegend
+      : transportMode === 'skyliner' ? skylinerLegend
+      : transportMode === 'boat' ? boatLegend
+      : [...busLegend, ...skylinerLegend, ...boatLegend])
+    : [];
+  const showLegendItems = showShows
+    ? (layer === 'all' || showMode === 'all'
+      ? showsLegend
+      : showsLegend.filter(l => l.label.toLowerCase().includes(showMode)))
+    : [];
+  const activeLegend = [...transportLegendItems, ...showLegendItems];
 
   return (
-    <div className="snack-map-container reveal-scale">
-      <h3>Where to Find the Best Snacks</h3>
-      <p className="map-hint" style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-light)', marginBottom: '1rem' }}>
-        Pinch to zoom &bull; Tap pins for details &bull; Watch the animations!
-      </p>
+    <div className={`snack-map-container ${fullPage ? 'snack-map-fullpage' : 'reveal-scale'}`}>
+      {!fullPage && (
+        <>
+          <h3>Where to Find the Best Snacks</h3>
+          <p className="map-hint" style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-light)', marginBottom: '1rem' }}>
+            Pinch to zoom &bull; Tap pins for details &bull; Watch the animations!
+          </p>
+        </>
+      )}
       <div className="map-toggle-bar">
         <button className={`map-toggle-btn ${layer === 'all' ? 'active' : ''}`} onClick={() => setLayer('all')}>Show All</button>
         <button className={`map-toggle-btn ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}>🍽️ Snacks</button>
         <button className={`map-toggle-btn ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transportation</button>
-        <button
-          className={`map-toggle-btn boundary-toggle ${showBoundaryPanel ? 'active' : ''}`}
-          onClick={() => setShowBoundaryPanel(p => !p)}
-        >📐 Boundaries</button>
+        <button className={`map-toggle-btn ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows & Events</button>
       </div>
 
       {/* Transport sub-toggles (only when Transport is the active filter) */}
@@ -255,20 +295,33 @@ export default function SnackMap() {
         </div>
       )}
 
-      {showBoundaryPanel && (
-        <div className="map-toggle-bar boundary-sub">
-          {parkBoundaries.map(b => (
-            <button
-              key={b.id}
-              className={`map-toggle-btn sub ${visibleBoundaries.has(b.id) ? 'active' : ''}`}
-              style={visibleBoundaries.has(b.id)
-                ? { background: b.color, borderColor: b.color, color: b.color === '#FFD700' ? '#2D3436' : 'white' }
-                : { borderColor: b.color, color: b.color }}
-              onClick={() => toggleBoundary(b.id)}
-            >{b.name}</button>
-          ))}
+      {/* Shows sub-toggles (only when Shows is the active filter) */}
+      {layer === 'shows' && (
+        <div className="map-toggle-bar sub-toggle">
+          <button className={`map-toggle-btn sub show-sub ${showMode === 'all' ? 'active' : ''}`} onClick={() => setShowMode('all')}>All Events</button>
+          <button className={`map-toggle-btn sub show-sub ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage Shows</button>
+          <button className={`map-toggle-btn sub show-sub ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
+          <button className={`map-toggle-btn sub show-sub ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
         </div>
       )}
+
+      <div className="map-toggle-bar boundary-sub">
+        <span className="boundary-label">📐 Boundaries</span>
+        <button
+          className="map-toggle-btn sub boundary-overview"
+          onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
+        >🗺️ Overview</button>
+        {parkBoundaries.map(b => (
+          <button
+            key={b.id}
+            className={`map-toggle-btn sub ${visibleBoundaries.has(b.id) ? 'active' : ''}`}
+            style={visibleBoundaries.has(b.id)
+              ? { background: b.color, borderColor: b.color, color: b.color === '#FFD700' ? '#2D3436' : 'white' }
+              : { borderColor: b.color, color: b.color }}
+            onClick={() => toggleBoundary(b.id)}
+          >{b.name}</button>
+        ))}
+      </div>
 
       <div className="map-legend">
         {activeLegend.map(l => (
@@ -283,8 +336,8 @@ export default function SnackMap() {
         zoom={13}
         minZoom={12}
         maxZoom={18}
-        scrollWheelZoom={false}
-        style={{ width: '100%', height: 500, borderRadius: 'var(--radius-sm)', zIndex: 1 }}
+        scrollWheelZoom={fullPage}
+        style={{ width: '100%', height: fullPage ? '100%' : 500, borderRadius: fullPage ? 0 : 'var(--radius-sm)', zIndex: 1, flex: fullPage ? 1 : undefined }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -376,6 +429,23 @@ export default function SnackMap() {
             ))}
           </>
         )}
+        {/* Shows & Events markers */}
+        {visibleShowTypes.length > 0 && mapShows
+          .filter(s => visibleShowTypes.includes(s.type))
+          .map(s => (
+            <Marker key={s.id} position={[s.lat, s.lng]} icon={showIcon(s.emoji, s.type)} zIndexOffset={1500}>
+              <Popup>
+                <div className="snack-popup">
+                  <h4>{s.emoji} {s.name}</h4>
+                  <p>{s.description}</p>
+                  <div className="popup-location">📍 {s.park}</div>
+                  {s.time && <span className="popup-price">{s.time}</span>}
+                  {s.tip && <p style={{ fontSize: '0.78rem', color: '#636e72', marginTop: '6px', fontStyle: 'italic' }}>{s.tip}</p>}
+                </div>
+              </Popup>
+            </Marker>
+          ))
+        }
       </MapContainer>
     </div>
   );

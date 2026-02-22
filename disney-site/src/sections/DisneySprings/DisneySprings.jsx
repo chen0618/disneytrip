@@ -28,7 +28,7 @@ export default function DisneySprings() {
           ))}
         </div>
       </div>
-      <WaveDivider fill="var(--bg)" variant={3} />
+      <WaveDivider fill="var(--bg-alt)" variant={3} />
     </section>
   );
 }
