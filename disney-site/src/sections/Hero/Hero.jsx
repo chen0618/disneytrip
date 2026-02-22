@@ -33,7 +33,7 @@ export default function Hero() {
       <div className={styles.content}>
         <p className={styles.pre}>A Magical Family Trip</p>
         <h1 className={styles.title}>Our Disney Adventure</h1>
-        <p className={styles.date}>January 2027</p>
+        <p className={styles.date}>January 16–23, 2027</p>
         <p className={styles.tagline}>
           Everything you need to know about our week at Walt Disney World &mdash; parks, hotels, transportation, and more!
         </p>

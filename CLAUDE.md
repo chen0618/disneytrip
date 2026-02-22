@@ -144,7 +144,7 @@ disney-site/
 - Travel: ACY → MCO
 - Kids: Luna (born June 16, 2022, ~41-42" tall by trip), Clara (born April 2, 2024, ~34-35" tall)
 - Travel group: 16 people (Andrew, Rosy, Luna, Clara, Teresa, James, Sandy, Gavin, Paul, Kayla, Tuc, Oanh, Natali, Alex, Esme, Eli) — Esme and Eli are also kids
-- Day 1: Travel + Disney Springs, Day 2: MK, Day 3: HS, Day 4: EPCOT, Day 5: MK again
+- Day 1 (Jan 16): Travel, Day 2 (17): Pool + Disney Springs, Day 3 (18): MK, Day 4 (19): HS, Day 5 (20): Rest, Day 6 (21): EPCOT, Day 7 (22): MK again, Day 8 (23): Travel home
 - Skipping Animal Kingdom entirely — do not mention it
 - Airport transport: A Way We Go (private vehicle + stroller rentals)
 - Budget strategy: Disney gift cards at 5–15% off from Costco, Sam's Club, Target

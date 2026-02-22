@@ -7,9 +7,11 @@ import styles from './Timeline.module.css';
 
 // Map roles to 3-day mode classes
 function getThreeDayClass(index) {
-  // Day 1 = travel, Day 2 = only park day, Day 3 = travel back, Day 4-5 = hidden
-  const map = ['travelDay', 'onlyDay', 'travelDay', 'hiddenDay', 'hiddenDay'];
-  return styles[map[index]] || '';
+  // Day 1 = travel, Day 2 = only park day, Day 3 = travel back, rest = hidden
+  if (index === 0) return styles.travelDay;
+  if (index === 1) return styles.onlyDay;
+  if (index === 2) return styles.travelDay;
+  return styles.hiddenDay;
 }
 
 export default function Timeline() {
@@ -21,14 +23,14 @@ export default function Timeline() {
   return (
     <section id="timeline" className={styles.section}>
       <div className="section-inner">
-        <SectionHeader title="Our Trip at a Glance" subtitle="5 days of magic, adventure, and family time" />
+        <SectionHeader title="Our Trip at a Glance" subtitle="8 days of magic, adventure, and family time" />
 
         <div className={`${styles.toggleBtns} reveal delay-1`}>
           <button
             className={`${styles.toggleBtn} ${!isThreeDay ? styles.toggleBtnActive : ''}`}
             onClick={() => setMode('full')}
           >
-            Full Week ✨
+            Full 8 Days ✨
           </button>
           <button
             className={`${styles.toggleBtn} ${styles.toggleBtnWarn} ${isThreeDay ? styles.toggleBtnWarnActive : ''}`}
@@ -46,7 +48,7 @@ export default function Timeline() {
               style={{ '--card-color': day.color }}
               onClick={() => setExpandedCard(expandedCard === i ? null : i)}
             >
-              <span className={styles.dayBadge} style={{ background: day.color }}>Day {day.day}</span>
+              <span className={styles.dayBadge} style={{ background: day.color }}>{day.date}</span>
               <span className={styles.cardIcon}>{day.icon}</span>
               <h4>{day.title}</h4>
               <p className={styles.cardSub}>{day.subtitle}</p>
