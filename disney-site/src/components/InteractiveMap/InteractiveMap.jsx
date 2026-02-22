@@ -205,6 +205,19 @@ function FlyToBoundary({ target, onDone }) {
   return null;
 }
 
+// Set initial bounds to match Overview (all park boundaries)
+function SetInitialBounds() {
+  const map = useMap();
+  useEffect(() => {
+    const allCoords = parkBoundaries.flatMap(b => b.coords);
+    if (allCoords.length) {
+      const bounds = L.latLngBounds(allCoords);
+      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
+    }
+  }, [map]);
+  return null;
+}
+
 // Lazy map resize when it comes into view
 function MapResizer() {
   const map = useMap();
@@ -433,6 +446,7 @@ export default function InteractiveMap({ onSelectItem }) {
           maxZoom={19}
         />
         <MapResizer />
+        <SetInitialBounds />
         <FlyToBoundary target={flyTarget} onDone={clearFlyTarget.current} />
 
         {/* Park markers (always visible) */}
