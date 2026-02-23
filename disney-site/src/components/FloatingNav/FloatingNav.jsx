@@ -4,8 +4,9 @@ import { ActiveSectionContext } from '../../context/ActiveSectionContext';
 import navSections from '../../data/navSections';
 import styles from './FloatingNav.module.css';
 
-export default function FloatingNav() {
+export default function FloatingNav({ sections, extraLinks }) {
   const activeSection = useContext(ActiveSectionContext);
+  const sectionList = sections || navSections;
 
   function handleClick(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -13,7 +14,7 @@ export default function FloatingNav() {
 
   return (
     <nav className={styles.nav} aria-label="Page sections">
-      {navSections.map(({ id, label }) => (
+      {sectionList.map(({ id, label }) => (
         <button
           key={id}
           className={`${styles.dot} ${activeSection === id ? styles.dotActive : ''}`}
@@ -22,6 +23,12 @@ export default function FloatingNav() {
         >
           <span className={styles.tooltip}>{label}</span>
         </button>
+      ))}
+      {extraLinks?.map(({ to, icon, label }) => (
+        <Link key={to} to={to} className={styles.mapLink} aria-label={label}>
+          <span className={styles.mapIcon}>{icon}</span>
+          <span className={styles.tooltip}>{label}</span>
+        </Link>
       ))}
       <Link to="/map" className={styles.mapLink} aria-label="Interactive Map">
         <span className={styles.mapIcon}>🗺️</span>
