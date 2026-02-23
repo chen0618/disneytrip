@@ -1,0 +1,13 @@
+.mapWrapper {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .mapWrapper {
+    height: 300px;
+  }
+}
