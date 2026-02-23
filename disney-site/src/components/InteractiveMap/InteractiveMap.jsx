@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup, Polyline, Polygon, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -88,7 +89,7 @@ function snackPark(location) {
 }
 
 // Imperative MarkerCluster layer for food items (snacks + venues)
-function FoodClusterLayer({ visible, foodParkFilter, onSelectItem }) {
+function FoodClusterLayer({ visible, foodParkFilter, foodServiceFilter, onSelectItem }) {
   const map = useMap();
   const clusterRef = useRef(null);
   const prevFilterRef = useRef(null);
@@ -123,13 +124,17 @@ function FoodClusterLayer({ visible, foodParkFilter, onSelectItem }) {
     cluster.clearLayers();
 
     // Filter and add snack markers
-    const filteredSnacks = foodParkFilter === 'all'
-      ? snacks
-      : snacks.filter(s => {
-          const park = snackPark(s.location);
-          if (foodParkFilter === 'Disney Springs') return park === 'other';
-          return park === foodParkFilter;
-        });
+    const filteredSnacks = snacks.filter(s => {
+      // Park filter
+      if (foodParkFilter !== 'all') {
+        const park = snackPark(s.location);
+        if (foodParkFilter === 'Disney Springs' && park !== 'other') return false;
+        if (foodParkFilter !== 'Disney Springs' && park !== foodParkFilter) return false;
+      }
+      // Service type filter
+      if (foodServiceFilter !== 'all' && s.serviceType !== foodServiceFilter) return false;
+      return true;
+    });
 
     filteredSnacks.forEach(s => {
       const marker = L.marker([s.lat, s.lng], { icon: emojiIcon(s.emoji) });
@@ -139,7 +144,10 @@ function FoodClusterLayer({ visible, foodParkFilter, onSelectItem }) {
 
     // Filter and add venue markers (Disney Springs)
     if (foodParkFilter === 'all' || foodParkFilter === 'Disney Springs') {
-      springsVenues.forEach(v => {
+      const filteredVenues = foodServiceFilter === 'all'
+        ? springsVenues
+        : springsVenues.filter(v => v.serviceType === foodServiceFilter);
+      filteredVenues.forEach(v => {
         const marker = L.marker([v.lat, v.lng], { icon: venueIcon(v.emoji) });
         marker.on('click', () => onSelectItem({ ...v, type: 'venue' }));
         cluster.addLayer(marker);
@@ -147,7 +155,7 @@ function FoodClusterLayer({ visible, foodParkFilter, onSelectItem }) {
     }
 
     prevFilterRef.current = foodParkFilter;
-  }, [foodParkFilter, onSelectItem]);
+  }, [foodParkFilter, foodServiceFilter, onSelectItem]);
 
   useEffect(() => {
     if (!clusterRef.current) return;
@@ -362,6 +370,7 @@ export default function InteractiveMap({ onSelectItem }) {
   const [rideParkFilter, setRideParkFilter] = useState('all');
   const [heightFilter, setHeightFilter] = useState(null);
   const [foodParkFilter, setFoodParkFilter] = useState('all');
+  const [foodServiceFilter, setFoodServiceFilter] = useState('all');
   const [shopParkFilter, setShopParkFilter] = useState('all');
   const [flyTarget, setFlyTarget] = useState(null);
 
@@ -426,106 +435,105 @@ export default function InteractiveMap({ onSelectItem }) {
 
   return (
     <div className="snack-map-container snack-map-fullpage">
-      <div className="map-toggle-bar">
-        <button className={`map-toggle-btn ${layer === 'rides' ? 'active' : ''}`} onClick={() => setLayer('rides')}>🎢 Rides</button>
-        <button className={`map-toggle-btn ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}>🍽️ Food & Dining</button>
-        <button className={`map-toggle-btn ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows & Events</button>
-        <button className={`map-toggle-btn ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}>🛍️ Shopping</button>
-        <button className={`map-toggle-btn ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transportation</button>
-      </div>
-
-      {/* Rides sub-filters */}
-      {layer === 'rides' && (
-        <div className="map-toggle-bar sub-toggle">
-          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => setRideParkFilter('all')}>All Parks</button>
-          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
-          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
-          <button className={`map-toggle-btn sub ride-sub ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
-          <span className="sub-separator">|</span>
-          <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'luna' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'luna' ? null : 'luna')}>Luna can ride</button>
-          <button className={`map-toggle-btn sub ride-sub ${heightFilter === 'clara' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'clara' ? null : 'clara')}>Clara can ride</button>
+      {/* ─── Overlay Controls ─── */}
+      <div className="map-overlay-controls">
+        {/* Row 1: Back link + layer tabs + Go To toggle */}
+        <div className="map-ctrl-row map-ctrl-primary">
+          <Link to="/" className="map-back-link">← Back</Link>
+          <div className="map-layer-tabs">
+            <button className={`map-tab ${layer === 'rides' ? 'active' : ''}`} onClick={() => setLayer('rides')}>🎢 Rides</button>
+            <button className={`map-tab ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}>🍽️ Food</button>
+            <button className={`map-tab ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows</button>
+            <button className={`map-tab ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}>🛍️ Shops</button>
+            <button className={`map-tab ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transport</button>
+          </div>
         </div>
-      )}
 
-      {/* Food sub-filters */}
-      {layer === 'food' && (
-        <div className="map-toggle-bar sub-toggle">
-          <button className={`map-toggle-btn sub ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodParkFilter('all')}>All</button>
-          <button className={`map-toggle-btn sub ${foodParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Magic Kingdom')}>MK</button>
-          <button className={`map-toggle-btn sub ${foodParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setFoodParkFilter('EPCOT')}>EPCOT</button>
-          <button className={`map-toggle-btn sub ${foodParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Hollywood Studios')}>HS</button>
-          <button className={`map-toggle-btn sub ${foodParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Disney Springs')}>Disney Springs</button>
+        {/* Row 2: Sub-filters (conditional) */}
+        <div className="map-ctrl-row map-ctrl-sub">
+          {layer === 'rides' && (<>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => setRideParkFilter('all')}>All</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
+            <span className="chip-sep">|</span>
+            <button className={`map-chip ride-chip ${heightFilter === 'luna' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'luna' ? null : 'luna')}>Luna</button>
+            <button className={`map-chip ride-chip ${heightFilter === 'clara' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'clara' ? null : 'clara')}>Clara</button>
+          </>)}
+          {layer === 'food' && (<>
+            <button className={`map-chip ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodParkFilter('all')}>All</button>
+            <button className={`map-chip ${foodParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Magic Kingdom')}>MK</button>
+            <button className={`map-chip ${foodParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setFoodParkFilter('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ${foodParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Hollywood Studios')}>HS</button>
+            <button className={`map-chip ${foodParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Disney Springs')}>DS</button>
+            <span className="chip-sep">|</span>
+            <button className={`map-chip ${foodServiceFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('all')}>All</button>
+            <button className={`map-chip ${foodServiceFilter === 'table-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('table-service')}>🍽️ Sit-Down</button>
+            <button className={`map-chip ${foodServiceFilter === 'quick-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('quick-service')}>🍔 Quick</button>
+            <button className={`map-chip ${foodServiceFilter === 'snack' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('snack')}>🍦 Snack</button>
+          </>)}
+          {layer === 'shopping' && (<>
+            <button className={`map-chip ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => setShopParkFilter('all')}>All</button>
+            <button className={`map-chip ${shopParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setShopParkFilter('Magic Kingdom')}>MK</button>
+            <button className={`map-chip ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setShopParkFilter('Hollywood Studios')}>HS</button>
+            <button className={`map-chip ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setShopParkFilter('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setShopParkFilter('Disney Springs')}>DS</button>
+          </>)}
+          {layer === 'transport' && (<>
+            <button className={`map-chip ${transportMode === 'all' ? 'active' : ''}`} onClick={() => setTransportMode('all')}>All</button>
+            <button className={`map-chip ${transportMode === 'bus' ? 'active' : ''}`} onClick={() => setTransportMode('bus')}>🚌 Bus</button>
+            <button className={`map-chip ${transportMode === 'skyliner' ? 'active' : ''}`} onClick={() => setTransportMode('skyliner')}>🚡 Skyliner</button>
+            <button className={`map-chip ${transportMode === 'boat' ? 'active' : ''}`} onClick={() => setTransportMode('boat')}>🚢 Boat</button>
+          </>)}
+          {layer === 'shows' && (<>
+            <button className={`map-chip show-chip ${showMode === 'all' ? 'active' : ''}`} onClick={() => setShowMode('all')}>All</button>
+            <button className={`map-chip show-chip ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage</button>
+            <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
+            <button className={`map-chip show-chip ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
+          </>)}
+          {/* Inline legend */}
+          {activeLegend.length > 0 && (<>
+            <span className="chip-sep">|</span>
+            {activeLegend.map(l => (
+              <span key={l.label} className="map-legend-chip">
+                <span className="legend-dot" style={{ background: l.color }} />{l.label}
+              </span>
+            ))}
+          </>)}
         </div>
-      )}
 
-      {/* Shopping sub-filters */}
-      {layer === 'shopping' && (
-        <div className="map-toggle-bar sub-toggle">
-          <button className={`map-toggle-btn sub ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => setShopParkFilter('all')}>All</button>
-          <button className={`map-toggle-btn sub ${shopParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setShopParkFilter('Magic Kingdom')}>MK</button>
-          <button className={`map-toggle-btn sub ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setShopParkFilter('Hollywood Studios')}>HS</button>
-          <button className={`map-toggle-btn sub ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setShopParkFilter('EPCOT')}>EPCOT</button>
-          <button className={`map-toggle-btn sub ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setShopParkFilter('Disney Springs')}>Disney Springs</button>
+        {/* Go To bar */}
+        <div className="map-ctrl-row map-ctrl-goto">
+          <span className="goto-label">Go To</span>
+          <button className="map-goto-btn" style={{ borderColor: '#2ECC71', color: '#2ECC71' }}
+            onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
+          >Overview</button>
+          {parkBoundaries
+            .filter(b => !['usf', 'ioa', 'epic'].includes(b.id))
+            .map(b => (
+              <button key={b.id} className="map-goto-btn" style={{ borderColor: b.color, color: b.color }}
+                onClick={() => flyToBoundary(b.id)}
+              >{b.name}</button>
+            ))}
+          <button className="map-goto-btn" style={{ borderColor: '#E74C3C', color: '#E74C3C' }}
+            onClick={() => setFlyTarget({ coords: parkBoundaries.filter(b => ['usf', 'ioa', 'epic'].includes(b.id)).flatMap(b => b.coords) })}
+          >Universal</button>
         </div>
-      )}
-
-      {/* Transport sub-toggles */}
-      {layer === 'transport' && (
-        <div className="map-toggle-bar sub-toggle">
-          <button className={`map-toggle-btn sub ${transportMode === 'all' ? 'active' : ''}`} onClick={() => setTransportMode('all')}>All Transport</button>
-          <button className={`map-toggle-btn sub ${transportMode === 'bus' ? 'active' : ''}`} onClick={() => setTransportMode('bus')}>🚌 Bus Routes</button>
-          <button className={`map-toggle-btn sub ${transportMode === 'skyliner' ? 'active' : ''}`} onClick={() => setTransportMode('skyliner')}>🚡 Skyliner</button>
-          <button className={`map-toggle-btn sub ${transportMode === 'boat' ? 'active' : ''}`} onClick={() => setTransportMode('boat')}>🚢 River Boat</button>
-        </div>
-      )}
-
-      {/* Shows sub-toggles */}
-      {layer === 'shows' && (
-        <div className="map-toggle-bar sub-toggle">
-          <button className={`map-toggle-btn sub show-sub ${showMode === 'all' ? 'active' : ''}`} onClick={() => setShowMode('all')}>All Events</button>
-          <button className={`map-toggle-btn sub show-sub ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage Shows</button>
-          <button className={`map-toggle-btn sub show-sub ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
-          <button className={`map-toggle-btn sub show-sub ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
-        </div>
-      )}
-
-      <div className="map-toggle-bar boundary-sub">
-        <span className="boundary-label">📍 Go To</span>
-        <button
-          className="map-toggle-btn sub"
-          style={{ borderColor: '#2ECC71', color: '#2ECC71' }}
-          onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
-        >🗺️ Overview</button>
-        {parkBoundaries.map(b => (
-          <button
-            key={b.id}
-            className="map-toggle-btn sub"
-            style={{ borderColor: b.color, color: b.color }}
-            onClick={() => flyToBoundary(b.id)}
-          >{b.name}</button>
-        ))}
-      </div>
-
-      <div className="map-legend">
-        {activeLegend.map(l => (
-          <span key={l.label} className="legend-item">
-            <span className="legend-line" style={{ background: l.color }} /> {l.label}
-          </span>
-        ))}
       </div>
 
       <MapContainer
         center={DISNEY_CENTER}
         zoom={13}
         minZoom={12}
-        maxZoom={18}
+        maxZoom={23}
         scrollWheelZoom={true}
         style={{ width: '100%', height: '100%', zIndex: 1 }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          maxZoom={19}
+          maxNativeZoom={19}
+          maxZoom={23}
         />
         <MapResizer />
         <SetInitialBounds />
@@ -564,6 +572,7 @@ export default function InteractiveMap({ onSelectItem }) {
         <FoodClusterLayer
           visible={showFood}
           foodParkFilter={foodParkFilter}
+          foodServiceFilter={foodServiceFilter}
           onSelectItem={stableOnSelectItem.current}
         />
         <ShoppingClusterLayer

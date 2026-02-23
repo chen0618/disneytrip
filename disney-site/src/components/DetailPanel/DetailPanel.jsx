@@ -114,10 +114,19 @@ export default function DetailPanel({ item, onClose }) {
                 </div>
               )}
 
-              {/* Food price badge */}
-              {type === 'food' && item.price && (
+              {/* Food price + service type badge */}
+              {(type === 'food' || type === 'venue') && (item.price || item.serviceType) && (
                 <div className={styles.badges}>
-                  <span className={styles.priceBadge}>{item.price}</span>
+                  {item.serviceType === 'table-service' && (
+                    <span className={styles.serviceTypeBadge} style={{ background: '#6C5CE7', color: 'white' }}>🍽️ Table Service</span>
+                  )}
+                  {item.serviceType === 'quick-service' && (
+                    <span className={styles.serviceTypeBadge} style={{ background: '#00B894', color: 'white' }}>🍔 Quick Service</span>
+                  )}
+                  {item.serviceType === 'snack' && (
+                    <span className={styles.serviceTypeBadge} style={{ background: '#FDCB6E', color: '#2d3436' }}>🍦 Snack</span>
+                  )}
+                  {item.price && <span className={styles.priceBadge}>{item.price}</span>}
                 </div>
               )}
 

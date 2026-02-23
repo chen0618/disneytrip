@@ -177,15 +177,35 @@
   color: var(--white);
 }
 
-.groupGrid {
+.familyGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1.2rem;
   justify-content: center;
-  margin-bottom: 2rem;
-  max-width: 700px;
+  margin-bottom: 1rem;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+.familyCluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.familyLabel {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.familyChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
 }
 .groupChip {
   display: flex;
@@ -203,6 +223,47 @@
 }
 .groupEmoji { font-size: 1.2rem; }
 .groupName { color: var(--text); }
+
+.crewLegend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.legendSwatch {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--coral);
+  background: var(--white);
+}
+.legendText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.splitBlurb {
+  background: var(--white);
+  border-left: 4px solid var(--mint);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-md);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.splitBlurb h4 {
+  color: var(--mint);
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+.splitBlurb p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
 
 @media (max-width: 768px) {
   .card { width: 100%; max-width: 320px; }

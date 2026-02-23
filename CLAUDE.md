@@ -31,7 +31,7 @@ disney-site/
 ├── package.json
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage)
-│   ├── App.jsx                   # ActiveSectionProvider + 7 trip-planning sections + nav + footer
+│   ├── App.jsx                   # ActiveSectionProvider + 8 trip-planning sections + nav + footer
 │   ├── styles/
 │   │   ├── global.css            # :root tokens, reset, typography, reveal classes, keyframes
 │   │   └── leaflet-overrides.css # Popup, marker, cluster, route animation, ride/show styles
@@ -52,9 +52,10 @@ disney-site/
 │   │   └── Footer/               # Map CTA button + credits
 │   ├── pages/
 │   │   └── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
-│   ├── sections/                 # One folder per main-page section (7 total)
+│   ├── sections/                 # One folder per main-page section (8 total)
 │   │   ├── Hero/
-│   │   ├── Timeline/             # 8-day itinerary, travel group (16 people)
+│   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families)
+│   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
 │   │   ├── RopeDrop/
@@ -63,7 +64,7 @@ disney-site/
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js
 │       ├── timelineDays.js
-│       ├── travelGroup.js        # 16-person travel party
+│       ├── travelGroup.js        # 20-person travel party with family grouping
 │       ├── springsVenues.js      # Disney Springs venues with lat/lng
 │       ├── hotelHighlights.js
 │       ├── transportInfo.js
@@ -78,7 +79,10 @@ disney-site/
 │       ├── showsInfo.js
 │       ├── snacks.js
 │       ├── mapParks.js
-│       ├── mapShows.js           # 13 show/event markers for interactive map
+│       ├── mapShows.js           # 11 show/event markers for interactive map
+│       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
+│       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
+│       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
 │       └── busRoutes.js
 ```
@@ -101,14 +105,15 @@ disney-site/
 - Some subjects have no Wikimedia photos (e.g., Art Smith's Homecoming, Ronto Wrap food)
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
-## Main Page Sections (in order, 7 total)
+## Main Page Sections (in order, 8 total)
 1. hero — Cinderella Castle background, sparkle animations
-2. timeline — 8-day trip cards, travel group (16 people), Jan 16–23 2027 dates
-3. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
-4. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
-5. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
-6. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
-7. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
+2. timeline — 8-day trip cards, travel group (20 people, 7 families), "split off" blurb
+3. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
+4. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
+5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
+6. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
+7. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
+8. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
 
 ## Interactive Map (/map page)
 - **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
@@ -122,6 +127,13 @@ disney-site/
 - Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
 - Park label markers and transport routes still use Leaflet popups (simple info)
 
+## Map Coordinates
+- All marker coordinates verified via OpenStreetMap Overpass API — see `src/data/COORDINATE_STATUS.md`
+- To verify a coordinate: `curl -s "https://overpass-api.de/api/interpreter" --data-urlencode "data=[out:json];(node[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4);way[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4););out center;"`
+- NEVER use rough/estimated coordinates — always look up via OSM Overpass API
+- When adding new map locations, update COORDINATE_STATUS.md with the verification date
+- Map TileLayer: maxNativeZoom=19, maxZoom=23 (OSM tiles max at 19, overzooms beyond)
+
 ## Adding a New Section (checklist)
 1. Create data file in src/data/
 2. Create section folder in src/sections/ with Component.jsx + Component.module.css
@@ -133,6 +145,7 @@ disney-site/
 
 ## Floating Nav
 - FloatingNav component reads ActiveSectionContext
+- Labels always visible on desktop (opacity 0.7, 1 on hover/active), dots-only on mobile
 - Includes map link (🗺️) at bottom that links to /map
 - useActiveSection hook tracks which section is in viewport via IntersectionObserver
 - When adding a section: add entry to data/navSections.js, create section component, add to App.jsx
@@ -142,7 +155,7 @@ disney-site/
 - Hotel: Pop Century Resort (Skyliner access)
 - Travel: ACY → MCO
 - Kids: Luna (born June 16, 2022, ~41-42" tall by trip), Clara (born April 2, 2024, ~34-35" tall)
-- Travel group: 16 people (Andrew, Rosy, Luna, Clara, Teresa, James, Sandy, Gavin, Paul, Kayla, Tuc, Oanh, Natali, Alex, Esme, Eli) — Esme and Eli are also kids
+- Travel group: 20 people in 7 families — Us (Andrew, Rosy, Luna, Clara), Grandparents (Tuc, Oanh), Teresa & James, Sandy & Gavin, Paul & Kayla, Natali & Alex & Esme & Eli, AJ & Amy & Liam & Asher — 6 kids total (Luna, Clara, Esme, Eli, Liam, Asher)
 - Day 1 (Jan 16): Travel, Day 2 (17): Pool + Disney Springs, Day 3 (18): MK, Day 4 (19): HS, Day 5 (20): Rest, Day 6 (21): EPCOT, Day 7 (22): MK again, Day 8 (23): Travel home
 - Skipping Animal Kingdom entirely — do not mention it
 - Airport transport: A Way We Go (private vehicle + stroller rentals)

@@ -1,0 +1,89 @@
+.section {
+  background: var(--bg-alt);
+}
+
+.checklistCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  max-width: 650px;
+  margin: 0 auto;
+}
+.checklistCard h3 {
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.checklistSub {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 0.95rem;
+}
+.checkItem:hover {
+  background: var(--bg);
+}
+.checkItemDone {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+.checkbox {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.checkIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.checkText {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.tipCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tipCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.tipIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.tipCard h4 {
+  margin-bottom: 0.3rem;
+}
+.tipCard p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}

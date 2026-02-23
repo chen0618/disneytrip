@@ -187,6 +187,9 @@
   background: var(--blue);
   color: #fff;
 }
+.serviceTypeBadge {
+  composes: badge;
+}
 .priceBadge {
   composes: badge;
   background: var(--mint);

@@ -7,7 +7,7 @@ import styles from './LightningLane.module.css';
 export default function LightningLane() {
   return (
     <section id="lightning-lane" className={styles.section}>
-      <WaveDivider position="top" fill="var(--bg-alt)" variant={3} />
+      <WaveDivider position="top" fill="var(--bg)" variant={3} />
       <div className="section-inner">
         <SectionHeader title="Lightning Lane ⚡" subtitle="Skip the Lines Like a Pro" />
 
@@ -54,7 +54,7 @@ export default function LightningLane() {
           </Callout>
         </div>
       </div>
-      <WaveDivider fill="var(--bg-alt)" variant={5} />
+      <WaveDivider fill="var(--bg)" variant={5} />
     </section>
   );
 }

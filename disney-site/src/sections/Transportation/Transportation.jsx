@@ -68,7 +68,7 @@ export default function Transportation() {
           ))}
         </div>
       </div>
-      <WaveDivider fill="var(--bg-alt)" variant={5} />
+      <WaveDivider fill="var(--bg)" variant={5} />
     </section>
   );
 }

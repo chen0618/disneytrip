@@ -48,7 +48,7 @@ export default function Hotel() {
           We pay for almost our ENTIRE Disney trip — hotel, tickets, food, merchandise — using Disney gift cards purchased at a discount. Costco, Sam's Club, and Target all sell Disney gift cards for less than face value. Target occasionally runs promos where spending a certain amount earns you Target merch credit on top of the discount. Historically, we've managed to buy gift cards at <strong>5–15% off</strong>, which on a big family trip adds up to hundreds in savings!
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg)" variant={4} />
+      <WaveDivider fill="var(--bg-alt)" variant={4} />
     </section>
   );
 }
