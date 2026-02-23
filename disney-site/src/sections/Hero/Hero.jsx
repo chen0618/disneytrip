@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import WaveDivider from '../../components/WaveDivider';
 import styles from './Hero.module.css';
 
@@ -37,6 +38,17 @@ export default function Hero() {
         <p className={styles.tagline}>
           Everything you need to know about our week at Walt Disney World &mdash; parks, hotels, transportation, and more!
         </p>
+        <div className={styles.parkLinks}>
+          <Link to="/park/magic-kingdom" className={styles.parkLink} style={{ background: 'var(--coral)' }}>
+            🏰 Magic Kingdom
+          </Link>
+          <Link to="/park/hollywood-studios" className={styles.parkLink} style={{ background: 'var(--purple)' }}>
+            🎬 Hollywood Studios
+          </Link>
+          <Link to="/park/epcot" className={styles.parkLink} style={{ background: 'var(--yellow)', color: 'var(--text)' }}>
+            🌍 EPCOT
+          </Link>
+        </div>
       </div>
       <a href="#timeline" className={styles.scrollIndicator} aria-label="Scroll to next section">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
