@@ -87,3 +87,28 @@
   color: var(--text-light);
   font-size: 0.9rem;
 }
+
+.packingCard {
+  text-align: left;
+}
+.packingItems {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.packingItems li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  padding-left: 1.2rem;
+  position: relative;
+}
+.packingItems li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--coral);
+  font-weight: bold;
+}

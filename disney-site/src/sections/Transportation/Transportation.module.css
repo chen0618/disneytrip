@@ -1,4 +1,4 @@
-.section { background: var(--bg-alt); }
+.section { background: var(--bg); }
 .intro {
   text-align: center;
   max-width: 700px;
@@ -74,6 +74,7 @@
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  max-width: 100%;
 }
 .photos img {
   width: 280px;

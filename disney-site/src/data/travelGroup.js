@@ -9,7 +9,7 @@ const travelGroup = [
   { name: 'Oanh', role: 'Grandma (Bà Ngoại)', emoji: '👩🏻', family: 'grandparents' },
   // Rosy's siblings & their partners
   { name: 'Teresa', role: "Rosy's Sister", emoji: '👩🏻', family: 'teresa' },
-  { name: 'James', role: "Rosy's Brother", emoji: '👨🏻', family: 'teresa' },
+  { name: 'James', role: "Rosy's Brother", emoji: '👨🏻', family: 'james' },
   { name: 'Sandy', role: "Rosy's Sister", emoji: '👩🏻', family: 'sandy' },
   { name: 'Gavin', role: "Sandy's Husband", emoji: '👨🏻', family: 'sandy' },
   { name: 'Paul', role: "Rosy's Brother", emoji: '👨🏻', family: 'paul' },
@@ -29,13 +29,14 @@ const travelGroup = [
 export const familyLabels = {
   andrew: 'Us',
   grandparents: 'Grandparents',
-  teresa: 'Teresa & James',
+  teresa: 'Teresa',
+  james: 'James',
   sandy: 'Sandy & Gavin',
   paul: 'Paul & Kayla',
   natali: 'Natali & Alex',
   aj: 'AJ & Amy',
 };
 
-export const familyOrder = ['andrew', 'grandparents', 'teresa', 'sandy', 'paul', 'natali', 'aj'];
+export const familyOrder = ['andrew', 'grandparents', 'teresa', 'james', 'sandy', 'paul', 'natali', 'aj'];
 
 export default travelGroup;

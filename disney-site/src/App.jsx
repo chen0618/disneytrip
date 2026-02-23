@@ -5,6 +5,7 @@ import FloatingNav from './components/FloatingNav/FloatingNav';
 import Hero from './sections/Hero/Hero';
 import Timeline from './sections/Timeline/Timeline';
 import BeforeYouGo from './sections/BeforeYouGo/BeforeYouGo';
+import WhatsNew from './sections/WhatsNew/WhatsNew';
 import Hotel from './sections/Hotel/Hotel';
 import Transportation from './sections/Transportation/Transportation';
 import RopeDrop from './sections/RopeDrop/RopeDrop';
@@ -22,6 +23,7 @@ function AppContent() {
       <Hero />
       <Timeline />
       <BeforeYouGo />
+      <WhatsNew />
       <Hotel />
       <Transportation />
       <RopeDrop />

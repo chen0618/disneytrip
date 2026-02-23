@@ -25,7 +25,7 @@ function StrategyCard({ strategy, variant, revealClass }) {
 export default function RopeDrop() {
   return (
     <section id="rope-drop" className={styles.section}>
-      <WaveDivider position="top" fill="var(--bg-alt)" variant={3} />
+      <WaveDivider position="top" fill="var(--bg)" variant={3} />
       <div className="section-inner">
         <SectionHeader title="Rope Drop Strategy ⏰" subtitle="How We Get Ahead of the Crowds Every Morning" />
 
@@ -58,7 +58,7 @@ export default function RopeDrop() {
           We learned this the hard way! On our first morning at MK, we took the resort bus and arrived to find huge crowds already inside the park. People who drove themselves or used rideshare had beaten us there. After that, we started calling a Minnie Van every morning at 6:45 &mdash; and it made a HUGE difference. We were walking onto rides that later had 60+ minute waits.
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg-alt)" variant={4} />
+      <WaveDivider fill="var(--bg)" variant={4} />
     </section>
   );
 }

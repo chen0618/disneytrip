@@ -1,5 +1,5 @@
 .section {
-  background: var(--bg);
+  background: var(--bg-alt);
 }
 .layout {
   display: flex;
@@ -24,6 +24,11 @@
 .info {
   flex: 1;
   min-width: 300px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .layout { flex-direction: column; gap: 1.5rem; }
+  .images, .info { min-width: 0; }
 }
 .highlights {
   list-style: none;

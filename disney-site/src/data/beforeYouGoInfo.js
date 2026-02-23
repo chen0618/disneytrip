@@ -8,6 +8,74 @@ export const checklist = [
   { text: 'Set up dining & Lightning Lane notifications in the app', icon: '🔔' },
 ];
 
+export const packingList = [
+  {
+    icon: '👕',
+    category: 'Layers & Clothing',
+    items: [
+      'Light jacket or fleece (mornings can be 50°F!)',
+      'Long pants + shorts — you may need both in one day',
+      'Comfortable broken-in walking shoes',
+      'Extra socks (blisters are real at 20k steps)',
+      'Pajamas for cold hotel AC',
+    ],
+  },
+  {
+    icon: '🌦️',
+    category: 'Rain & Sun Gear',
+    items: [
+      'Disposable ponchos (skip umbrellas — bulky in lines)',
+      'Sunscreen SPF 50+ (yes, even in January)',
+      'Sunglasses',
+      'Hat or visor',
+      'Lip balm with SPF',
+    ],
+  },
+  {
+    icon: '🔋',
+    category: 'Tech & Charging',
+    items: [
+      'Portable phone charger (2+ full charges)',
+      'Charging cables + wall adapter',
+      'Earbuds or headphones for ride queues',
+      'Phone waterproof pouch (rain + water rides)',
+    ],
+  },
+  {
+    icon: '🎒',
+    category: 'Park Bag Essentials',
+    items: [
+      'Refillable water bottle',
+      'Snacks & granola bars',
+      'Hand sanitizer & wet wipes',
+      'Blister band-aids',
+      'Zip-lock bags (protect phones on water rides)',
+    ],
+  },
+  {
+    icon: '🧸',
+    category: 'Kids Stuff',
+    items: [
+      'Autograph book + thick Sharpie for characters',
+      'Glow sticks / light-up toys for nighttime',
+      'Small comfort toy or blanket',
+      'Change of clothes in the park bag',
+      'Swim diapers for the little ones',
+    ],
+  },
+  {
+    icon: '🧳',
+    category: 'Travel & Hotel',
+    items: [
+      'Swimsuits & swim gear (hotel pool!)',
+      'Travel stroller',
+      'Car seats for A Way We Go transport',
+      'Medications & basic first aid',
+      'Insulated tumbler for morning coffee',
+    ],
+  },
+];
+
 export const firstTimerTips = [
   {
     icon: '👟',

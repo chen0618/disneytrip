@@ -52,10 +52,11 @@ disney-site/
 │   │   └── Footer/               # Map CTA button + credits
 │   ├── pages/
 │   │   └── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
-│   ├── sections/                 # One folder per main-page section (8 total)
+│   ├── sections/                 # One folder per main-page section (9 total)
 │   │   ├── Hero/
 │   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families)
 │   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
+│   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
 │   │   ├── RopeDrop/
@@ -82,6 +83,7 @@ disney-site/
 │       ├── mapShows.js           # 11 show/event markers for interactive map
 │       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
 │       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
+│       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
 │       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
 │       └── busRoutes.js
@@ -105,15 +107,16 @@ disney-site/
 - Some subjects have no Wikimedia photos (e.g., Art Smith's Homecoming, Ronto Wrap food)
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
-## Main Page Sections (in order, 8 total)
+## Main Page Sections (in order, 9 total)
 1. hero — Cinderella Castle background, sparkle animations
 2. timeline — 8-day trip cards, travel group (20 people, 7 families), "split off" blurb
 3. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
-4. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
-5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
-6. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
-7. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
-8. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
+4. whats-new — New/upgraded rides, restaurants, closures & heads-up alerts for 2026-2027
+5. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
+6. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
+7. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
+8. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
+9. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
 
 ## Interactive Map (/map page)
 - **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
