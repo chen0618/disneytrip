@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
 import timelineDays from '../../data/timelineDays';
@@ -64,6 +65,12 @@ export default function Timeline() {
               <div className={styles.cardDetails}>
                 <p>{day.details}</p>
               </div>
+              {day.parkLink && (
+                <Link to={day.parkLink} className={styles.parkGuideLink} style={{ color: day.color }}
+                  onClick={(e) => e.stopPropagation()}>
+                  View Park Guide →
+                </Link>
+              )}
               <div className={styles.cardBorder} style={{ background: day.color }} />
             </div>
           ))}

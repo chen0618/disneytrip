@@ -265,6 +265,19 @@
   line-height: 1.6;
 }
 
+.parkGuideLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.parkGuideLink:hover {
+  opacity: 0.8;
+}
+
 @media (max-width: 768px) {
   .card { width: 100%; max-width: 320px; }
 }

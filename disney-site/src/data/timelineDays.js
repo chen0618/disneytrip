@@ -27,6 +27,7 @@ const timelineDays = [
     icon: '🏰',
     color: 'var(--coral)',
     role: 'park',
+    parkLink: '/park/magic-kingdom',
     details: 'Cinderella Castle, Pirates, Space Mountain, fireworks — the full Disney experience from rope drop to close!',
   },
   {
@@ -37,6 +38,7 @@ const timelineDays = [
     icon: '🚀',
     color: 'var(--purple)',
     role: 'park',
+    parkLink: '/park/hollywood-studios',
     details: "Galaxy's Edge, Toy Story Land, Tower of Terror — immersive movie magic around every corner!",
   },
   {
@@ -57,6 +59,7 @@ const timelineDays = [
     icon: '🌍',
     color: 'var(--yellow)',
     role: 'park',
+    parkLink: '/park/epcot',
     details: 'Ride Guardians, explore 11 countries, eat around the world, and watch the fireworks over the lagoon!',
   },
   {
@@ -67,6 +70,7 @@ const timelineDays = [
     icon: '🏰',
     color: 'var(--coral)',
     role: 'park',
+    parkLink: '/park/magic-kingdom',
     details: 'A more relaxed pace — hitting favorites we missed and savoring the magic one more time.',
   },
   {
