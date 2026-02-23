@@ -1,0 +1,48 @@
+.shopGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+.shopCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.shopCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.shopHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.shopEmoji {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+.shopName {
+  font-size: 1.05rem;
+}
+.shopDesc {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.shopTip {
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #eef6ff;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--blue);
+}
+
+@media (max-width: 480px) {
+  .shopGrid { grid-template-columns: 1fr; }
+}

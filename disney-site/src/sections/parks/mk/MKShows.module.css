@@ -1,0 +1,112 @@
+.showGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+.showCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.showCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.showHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.showEmoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.showName {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.typeBadge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  display: inline-block;
+}
+.showDesc {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+.showTip {
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Fireworks Guide */
+.fireworksGuide {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  color: var(--white);
+  text-align: center;
+}
+.fwTitle {
+  font-size: 1.8rem;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+}
+.fwMeta {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.fwTip {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+.spotsTitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--yellow);
+}
+.spotsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.spotCard {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: left;
+}
+.spotName {
+  font-size: 1rem;
+  color: var(--yellow);
+  margin-bottom: 0.4rem;
+}
+.spotTip {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .showGrid { grid-template-columns: 1fr; }
+  .spotsGrid { grid-template-columns: 1fr; }
+  .fireworksGuide { padding: 1.5rem; }
+}
