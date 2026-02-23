@@ -17,6 +17,10 @@ import { mapShows } from '../../data/mapShows';
 import { mapShops } from '../../data/mapShops';
 
 const DISNEY_CENTER = [28.385, -81.564];
+const UNIVERSAL_IDS = ['usf', 'ioa', 'epic'];
+const disneyBounds = L.latLngBounds(
+  parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords)
+);
 
 const parkColors = {
   'Magic Kingdom': '#FF6B6B',
@@ -227,37 +231,67 @@ function ShoppingClusterLayer({ visible, shopParkFilter, onSelectItem }) {
   return null;
 }
 
-// Animated marker that bounces along coordinates
-function AnimatedMarker({ coords, icon, interval, popup }) {
-  const [index, setIndex] = useState(0);
+// Smoothly animated marker — uses requestAnimationFrame + Leaflet setLatLng directly
+function AnimatedMarker({ coords, icon, speed = 0.03, popup }) {
+  const map = useMap();
+  const markerRef = useRef(null);
+  const animRef = useRef(null);
+  const progressRef = useRef(0);
   const forwardRef = useRef(true);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setIndex(prev => {
-        if (forwardRef.current) {
-          if (prev >= coords.length - 1) {
-            forwardRef.current = false;
-            return prev - 1;
-          }
-          return prev + 1;
-        } else {
-          if (prev <= 0) {
-            forwardRef.current = true;
-            return prev + 1;
-          }
-          return prev - 1;
-        }
-      });
-    }, interval);
-    return () => clearInterval(id);
-  }, [coords.length, interval]);
+    if (coords.length < 2) return;
 
-  return (
-    <Marker position={coords[index]} icon={icon} zIndexOffset={2000}>
-      {popup && <Popup>{popup}</Popup>}
-    </Marker>
-  );
+    const marker = L.marker(coords[0], { icon, zIndexOffset: 2000 }).addTo(map);
+    if (popup) marker.bindPopup(popup);
+    markerRef.current = marker;
+
+    let lastTime = 0;
+
+    function lerp(a, b, t) {
+      return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+    }
+
+    function animate(time) {
+      if (!lastTime) lastTime = time;
+      const dt = (time - lastTime) / 1000; // seconds
+      lastTime = time;
+
+      // Advance progress along the path
+      const step = speed * dt * 60; // normalize so speed feels same at any fps
+      if (forwardRef.current) {
+        progressRef.current += step;
+        if (progressRef.current >= coords.length - 1) {
+          progressRef.current = coords.length - 1;
+          forwardRef.current = false;
+        }
+      } else {
+        progressRef.current -= step;
+        if (progressRef.current <= 0) {
+          progressRef.current = 0;
+          forwardRef.current = true;
+        }
+      }
+
+      const segIndex = Math.floor(progressRef.current);
+      const t = progressRef.current - segIndex;
+      const from = coords[Math.min(segIndex, coords.length - 1)];
+      const to = coords[Math.min(segIndex + 1, coords.length - 1)];
+      const pos = lerp(from, to, t);
+
+      marker.setLatLng(pos);
+      animRef.current = requestAnimationFrame(animate);
+    }
+
+    animRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      map.removeLayer(marker);
+    };
+  }, [map, coords, icon, speed, popup]);
+
+  return null;
 }
 
 // Fly map to a boundary's bounds
@@ -269,6 +303,17 @@ function FlyToBoundary({ target, onDone }) {
     map.flyToBounds(bounds, { padding: [40, 40], maxZoom: 15, duration: 0.8 });
     onDone();
   }, [target, map, onDone]);
+  return null;
+}
+
+// Fly to Disney-only bounds when layer changes
+function FlyToDisney({ layer }) {
+  const map = useMap();
+  const isFirst = useRef(true);
+  useEffect(() => {
+    if (isFirst.current) { isFirst.current = false; return; }
+    map.flyToBounds(disneyBounds, { padding: [40, 40], maxZoom: 15, duration: 0.8 });
+  }, [layer, map]);
   return null;
 }
 
@@ -365,7 +410,7 @@ const shoppingLegend = [
 
 export default function InteractiveMap({ onSelectItem }) {
   const [layer, setLayer] = useState('rides');
-  const [transportMode, setTransportMode] = useState('bus');
+  const [transportMode, setTransportMode] = useState('all');
   const [showMode, setShowMode] = useState('all');
   const [rideParkFilter, setRideParkFilter] = useState('all');
   const [heightFilter, setHeightFilter] = useState(null);
@@ -537,13 +582,18 @@ export default function InteractiveMap({ onSelectItem }) {
         />
         <MapResizer />
         <SetInitialBounds />
+        <FlyToDisney layer={layer} />
         <FlyToBoundary target={flyTarget} onDone={clearFlyTarget.current} />
 
         {/* Park markers (always visible) */}
         {mapParks.map(p => (
-          <Marker key={p.label} position={[p.lat, p.lng]} icon={parkIcon(p.label, p.cls)} zIndexOffset={1000}>
-            <Popup><b>{p.name}</b><br />{p.desc}</Popup>
-          </Marker>
+          <Marker
+            key={p.label}
+            position={[p.lat, p.lng]}
+            icon={parkIcon(p.label, p.cls)}
+            zIndexOffset={1000}
+            eventHandlers={{ click: () => flyToBoundary(p.cls) }}
+          />
         ))}
 
         {/* Boundary overlays (always visible) */}
@@ -591,8 +641,8 @@ export default function InteractiveMap({ onSelectItem }) {
             <AnimatedMarker
               coords={boatCoords}
               icon={boatIcon}
-              interval={800}
-              popup={<><b>Free Boat Ride!</b><br />Sassagoula River Cruise<br />Disney Springs → Port Orleans FQ<br />~17 min each way</>}
+              speed={0.02}
+              popup="<b>Free Boat Ride!</b><br/>Sassagoula River Cruise<br/>Disney Springs → Port Orleans FQ<br/>~17 min each way"
             />
           </>
         )}
@@ -612,8 +662,8 @@ export default function InteractiveMap({ onSelectItem }) {
                 key={`bus-${i}`}
                 coords={r.coords}
                 icon={busIconColored(r.color)}
-                interval={600}
-                popup={<><b>🚌 Disney Bus</b><br />{r.label}<br />{r.time}</>}
+                speed={0.04}
+                popup={`<b>🚌 Disney Bus</b><br/>${r.label}<br/>${r.time}`}
               />
             ))}
           </>
@@ -634,8 +684,8 @@ export default function InteractiveMap({ onSelectItem }) {
                 key={`sky-${i}`}
                 coords={r.coords}
                 icon={skylinerIconColored(r.color)}
-                interval={700}
-                popup={<><b>🚡 Disney Skyliner</b><br />{r.label}<br />{r.time}</>}
+                speed={0.035}
+                popup={`<b>🚡 Disney Skyliner</b><br/>${r.label}<br/>${r.time}`}
               />
             ))}
           </>
