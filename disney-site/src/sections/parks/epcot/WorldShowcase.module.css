@@ -1,0 +1,92 @@
+/* Passport Header */
+.passportHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.passportStamp {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--yellow);
+  border: 3px solid var(--yellow);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+  text-transform: uppercase;
+}
+.passportSub {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 0.75rem;
+}
+
+/* Country Grid */
+.countryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.countryCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 4px solid var(--accent);
+}
+.countryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardTop {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--white);
+}
+.flag {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.countryName {
+  font-size: 1.15rem;
+  color: var(--white);
+}
+
+.cardBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.foodItem {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.foodItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.foodLabel {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.foodItem p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .countryGrid { grid-template-columns: 1fr; }
+}

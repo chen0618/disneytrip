@@ -1,0 +1,93 @@
+.walkingPath {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.countrySection {
+  padding: 1.5rem 0;
+}
+.countryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.flag {
+  font-size: 2rem;
+}
+.countryName {
+  font-size: 1.3rem;
+}
+
+/* Detail Grid */
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-left: 2.5rem;
+}
+.detailCard {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--accent);
+  transition: transform 0.2s ease;
+}
+.detailCard:hover {
+  transform: translateX(3px);
+}
+.detailIcon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.detailLabel {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+.detailCard p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* Connector */
+.connector {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+.connectorArrow {
+  font-size: 1.2rem;
+  color: var(--yellow);
+  opacity: 0.6;
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .detailGrid { grid-template-columns: 1fr; margin-left: 0; }
+}

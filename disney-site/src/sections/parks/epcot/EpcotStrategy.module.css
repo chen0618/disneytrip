@@ -1,0 +1,92 @@
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.column {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.columnHeader {
+  padding: 1rem 1.25rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.periodEmoji {
+  font-size: 1.5rem;
+}
+.periodLabel {
+  font-size: 1.2rem;
+  color: var(--white);
+}
+.steps {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.step {
+  position: relative;
+  padding-left: 0;
+}
+.time {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #b8960a;
+  margin-bottom: 0.15rem;
+}
+.stepText {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Key Reminders Callout */
+.callout {
+  background: linear-gradient(135deg, #b8960a 0%, #d4a50a 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: var(--white);
+  text-align: center;
+}
+.calloutTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.reminders {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.reminder {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: left;
+}
+.reminder strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--white);
+}
+.reminder p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .columns { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .reminders { grid-template-columns: 1fr; }
+  .callout { padding: 1.5rem; }
+}

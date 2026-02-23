@@ -1,0 +1,70 @@
+/* Callout */
+.callout {
+  background: linear-gradient(135deg, #b8960a 0%, #d4a50a 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.calloutText {
+  color: var(--white);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.calloutText strong {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.4);
+  text-underline-offset: 3px;
+}
+
+/* Kid Grid */
+.kidGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.kidCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--yellow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kidCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.cardEmoji {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+.cardName {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.ageBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background: #fffbe6;
+  color: #b8960a;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .kidGrid { grid-template-columns: 1fr; }
+}
