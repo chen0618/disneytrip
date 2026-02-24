@@ -413,7 +413,6 @@ export default function InteractiveMap({ onSelectItem }) {
   const [transportMode, setTransportMode] = useState('all');
   const [showMode, setShowMode] = useState('all');
   const [rideParkFilter, setRideParkFilter] = useState('all');
-  const [heightFilter, setHeightFilter] = useState(null);
   const [foodParkFilter, setFoodParkFilter] = useState('all');
   const [foodServiceFilter, setFoodServiceFilter] = useState('all');
   const [shopParkFilter, setShopParkFilter] = useState('all');
@@ -441,8 +440,6 @@ export default function InteractiveMap({ onSelectItem }) {
           if (rideParkFilter === 'HS' && r.park !== 'Hollywood Studios') return false;
           if (rideParkFilter === 'EPCOT' && r.park !== 'EPCOT') return false;
         }
-        if (heightFilter === 'luna' && !r.lunaCanRide) return false;
-        if (heightFilter === 'clara' && !r.claraCanRide) return false;
         return true;
       })
     : [];
@@ -501,9 +498,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip ride-chip ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
             <button className={`map-chip ride-chip ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
             <button className={`map-chip ride-chip ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
-            <span className="chip-sep">|</span>
-            <button className={`map-chip ride-chip ${heightFilter === 'luna' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'luna' ? null : 'luna')}>Luna</button>
-            <button className={`map-chip ride-chip ${heightFilter === 'clara' ? 'active' : ''}`} onClick={() => setHeightFilter(heightFilter === 'clara' ? null : 'clara')}>Clara</button>
           </>)}
           {layer === 'food' && (<>
             <button className={`map-chip ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodParkFilter('all')}>All</button>
