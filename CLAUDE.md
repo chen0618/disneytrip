@@ -6,7 +6,8 @@
 - All images sourced from Wikimedia Commons (freely licensed) — no local image files
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
 - react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides)
-- Legacy single-file version preserved in `legacy/index.html`
+- Dark mode via `html[data-theme="dark"]` attribute + `useDarkMode` hook (localStorage-persisted)
+- `@media print` rules for printable packing list (hides everything except packing grid)
 
 ## Development
 - Install: `cd disney-site && npm install`
@@ -37,11 +38,14 @@ disney-site/
 │   │   └── leaflet-overrides.css # Popup, marker, cluster, route animation, ride/show styles
 │   ├── hooks/
 │   │   ├── useScrollReveal.js    # IntersectionObserver → adds .active to .reveal elements
-│   │   └── useActiveSection.js   # Tracks which section is in viewport for nav dots
+│   │   ├── useActiveSection.js   # Tracks which section is in viewport for nav dots
+│   │   └── useDarkMode.js        # localStorage-persisted dark/light theme toggle
 │   ├── context/
 │   │   └── ActiveSectionContext.jsx
 │   ├── components/               # Shared/reusable
-│   │   ├── FloatingNav/          # Nav dots + map link (reads ActiveSectionContext, accepts optional sections/extraLinks props)
+│   │   ├── FloatingNav/          # Nav dots + map link + dark mode toggle (reads ActiveSectionContext, accepts optional sections/extraLinks props)
+│   │   ├── LoadingSpinner/       # Branded Suspense fallback (castle emoji + orbiting sparkles)
+│   │   ├── BackToTop/            # Fixed bottom-right scroll-to-top button (shows after 1 viewport)
 │   │   ├── ParkMiniMap/          # Reusable Leaflet mini-map for park pages (boundary + emoji markers)
 │   │   ├── InteractiveMap/       # Full interactive map — rides, food, shows, transport, boundaries
 │   │   ├── DetailPanel/          # Slide-in detail panel (desktop: side, mobile: bottom sheet)
@@ -49,15 +53,15 @@ disney-site/
 │   │   ├── SectionHeader/        # h2 + subtitle with reveal class
 │   │   ├── AttractionCard/       # Image+body card (used by data files)
 │   │   ├── DayTimeline/          # Morning/Afternoon/Evening strip
-│   │   ├── Callout/              # Accent box (kids, highlight, world variants)
-│   │   └── Footer/               # Map CTA button + credits
+│   │   ├── Callout/              # Accent box (kids, highlight, world variants) — uses <div> body (not <p>) to support <br> breaks
+│   │   └── Footer/               # Map CTA + credits; variant="park" + currentPark prop for park page footers with nav links
 │   ├── pages/
 │   │   ├── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
 │   │   ├── MagicKingdomPage.jsx  # MK park guide (/park/magic-kingdom) — lazy loaded
 │   │   ├── HollywoodStudiosPage.jsx # HS park guide (/park/hollywood-studios) — lazy loaded
 │   │   └── EpcotPage.jsx         # EPCOT park guide (/park/epcot) — lazy loaded
 │   ├── sections/                 # One folder per main-page section (9 total)
-│   │   ├── Hero/                 # Cinderella Castle bg + 3 park guide link buttons
+│   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + 3 park guide link buttons
 │   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families), park guide links
 │   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
@@ -102,7 +106,8 @@ disney-site/
 
 ## Design System (CSS variables in :root — global.css)
 - Colors: --blue (#1E90FF), --yellow (#FFD700), --coral (#FF6B6B), --mint (#4ECDC4), --purple (#A29BFE)
-- Backgrounds: --bg (#FFF8F0), --bg-alt (#FFF0E0)
+- Backgrounds: --bg (#FFF8F0), --bg-alt (#FFF0E0); dark mode: --bg (#1a1520), --bg-alt (#231e2a), --text (#ede8f0)
+- `--footer-bg` variable keeps footer dark in both themes
 - Sections alternate between --bg and --bg-alt backgrounds
 - Wave SVG dividers between sections (WaveDivider component with variant prop)
 
@@ -119,7 +124,7 @@ disney-site/
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
 ## Main Page Sections (in order, 9 total)
-1. hero — Cinderella Castle background, sparkle animations
+1. hero — Cinderella Castle background, countdown timer, sparkle animations
 2. timeline — 8-day trip cards, travel group (20 people, 7 families), "split off" blurb
 3. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
 4. whats-new — New/upgraded rides, restaurants, closures & heads-up alerts for 2026-2027
@@ -187,7 +192,7 @@ disney-site/
 ## Floating Nav
 - FloatingNav component reads ActiveSectionContext
 - Labels always visible on desktop (opacity 0.7, 1 on hover/active), dots-only on mobile
-- Includes map link (🗺️) at bottom that links to /map
+- Includes map link (🗺️) and dark mode toggle (🌙/☀️) at bottom
 - useActiveSection hook tracks which section is in viewport via IntersectionObserver
 - When adding a section: add entry to data/navSections.js, create section component, add to App.jsx
 - **Park pages**: Pass `sections` prop to override default navSections, `extraLinks` for "Back to Home" link

@@ -55,7 +55,6 @@
   padding: 1.5rem;
   width: 200px;
   box-shadow: var(--shadow-md);
-  cursor: pointer;
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
@@ -93,14 +92,7 @@
   font-weight: 500;
 }
 .cardDetails {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, margin 0.4s ease;
-  margin-top: 0;
-}
-.cardExpanded .cardDetails {
-  max-height: 200px;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 .cardDetails p {
   font-size: 0.85rem;

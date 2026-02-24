@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Polygon } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Polygon, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../../styles/leaflet-overrides.css';
@@ -43,7 +43,9 @@ export default function ParkMiniMap({ parkId, markers = [], boundary = [], cente
             eventHandlers={onMarkerClick ? {
               click: () => onMarkerClick(marker.id),
             } : {}}
-          />
+          >
+            <Popup>{marker.name}</Popup>
+          </Marker>
         ))}
       </MapContainer>
     </div>

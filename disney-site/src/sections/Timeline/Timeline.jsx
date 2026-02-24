@@ -26,7 +26,6 @@ const kidCount = travelGroup.filter(p => p.isKid).length;
 
 export default function Timeline() {
   const [mode, setMode] = useState('full');
-  const [expandedCard, setExpandedCard] = useState(null);
 
   const isThreeDay = mode === 'three';
 
@@ -54,9 +53,8 @@ export default function Timeline() {
           {timelineDays.map((day, i) => (
             <div
               key={day.day}
-              className={`${styles.card} ${expandedCard === i ? styles.cardExpanded : ''} ${isThreeDay ? getThreeDayClass(i) : ''}`}
+              className={`${styles.card} ${isThreeDay ? getThreeDayClass(i) : ''}`}
               style={{ '--card-color': day.color }}
-              onClick={() => setExpandedCard(expandedCard === i ? null : i)}
             >
               <span className={styles.dayBadge} style={{ background: day.color }}>{day.date}</span>
               <span className={styles.cardIcon}>{day.icon}</span>

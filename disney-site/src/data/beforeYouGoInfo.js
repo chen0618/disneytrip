@@ -12,7 +12,7 @@ export const packingList = [
     icon: '👕',
     category: 'Layers & Clothing',
     items: [
-      'Light jacket or fleece (mornings can be 50°F!)',
+      'Light jacket or fleece (mornings can be 40°F!)',
       'Long pants + shorts — you may need both in one day',
       'Comfortable broken-in walking shoes',
       'Extra socks (blisters are real at 20k steps)',
@@ -45,7 +45,7 @@ export const packingList = [
     category: 'Park Bag Essentials',
     items: [
       'Refillable water bottle',
-      'Snacks & granola bars',
+      'Snacks',
       'Hand sanitizer & wet wipes',
       'Blister band-aids',
       'Zip-lock bags (protect phones on water rides)',
@@ -68,7 +68,6 @@ export const packingList = [
     items: [
       'Swimsuits & swim gear (hotel pool!)',
       'Travel stroller',
-      'Car seats for A Way We Go transport',
       'Medications & basic first aid',
       'Insulated tumbler for morning coffee',
     ],
@@ -79,7 +78,7 @@ export const firstTimerTips = [
   {
     icon: '👟',
     title: 'Comfortable Shoes & Weather',
-    text: 'Expect 20,000+ steps per day. January in Orlando means highs in the 50s–70s°F — bring layers, a light rain jacket, and comfortable walking shoes you\'ve already broken in.',
+    text: 'Expect 20,000+ steps per day. January in Orlando means highs in the 40s–70s°F — bring layers, a light rain jacket, and comfortable walking shoes you\'ve already broken in.',
   },
   {
     icon: '⌚',
