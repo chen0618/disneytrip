@@ -193,6 +193,11 @@ disney-site/
 - FloatingNav component reads ActiveSectionContext
 - Labels always visible on desktop (opacity 0.7, 1 on hover/active), dots-only on mobile
 - Includes map link (🗺️) and dark mode toggle (🌙/☀️) at bottom
+- **Touch-scrub**: Slide finger along nav to preview labels; uses proximity-based `getClosestItem()` (not `elementFromPoint`)
+- `touch-action: none` on nav permanently — must be set before touch starts (CSS evaluates at touch-start, not after JS)
+- All nav items (dots, map, dark mode) share `data-nav-id` attributes for unified touch detection
+- `.itemTouched` class with `.navTouching` parent for high-specificity override of mobile `:hover` stickiness
+- **React touch gotcha**: React touch listeners are `passive: true` — `e.preventDefault()` in `onTouchMove` is silently ignored; use CSS `touch-action: none` or native `addEventListener({ passive: false })` instead
 - useActiveSection hook tracks which section is in viewport via IntersectionObserver
 - When adding a section: add entry to data/navSections.js, create section component, add to App.jsx
 - **Park pages**: Pass `sections` prop to override default navSections, `extraLinks` for "Back to Home" link

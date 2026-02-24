@@ -1,21 +1,39 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import { SetActiveSectionContext } from '../context/ActiveSectionContext';
 
 export default function useActiveSection() {
   const setActiveSection = useContext(SetActiveSectionContext);
+  const activeRef = useRef('hero');
+  const rafRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    function update() {
+      const sections = document.querySelectorAll('section[id]');
+      const cutoff = window.innerHeight * 0.3;
+      let current = null;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= cutoff) {
+          current = section.id;
         }
-      });
-    }, { threshold: 0.3 });
+      }
+      if (current && current !== activeRef.current) {
+        activeRef.current = current;
+        setActiveSection(current);
+      }
+      rafRef.current = null;
+    }
 
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach(section => observer.observe(section));
+    function onScroll() {
+      if (!rafRef.current) {
+        rafRef.current = requestAnimationFrame(update);
+      }
+    }
 
-    return () => observer.disconnect();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update(); // set initial state
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, [setActiveSection]);
 }
