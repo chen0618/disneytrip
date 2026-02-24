@@ -9,6 +9,7 @@
   gap: 12px;
   padding-left: 40px;
   padding-right: 8px;
+  touch-action: none;
 }
 .dot {
   width: 14px;
@@ -17,7 +18,7 @@
   background: var(--text-muted);
   border: 2px solid var(--white);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.15s ease-out, background 0.15s ease-out, box-shadow 0.15s ease-out;
   position: relative;
   box-shadow: var(--shadow-sm);
 }
@@ -34,7 +35,7 @@
   position: absolute;
   right: 24px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(4px);
   background: var(--text);
   color: var(--white);
   padding: 3px 8px;
@@ -43,16 +44,35 @@
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.12s ease-out, transform 0.12s ease-out;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
 }
 .nav:hover .tooltip {
   opacity: 0.7;
+  transform: translateY(-50%) translateX(0);
 }
 .nav:hover .dotActive .tooltip,
 .dot:hover .tooltip {
   opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Touch-scrub: highlight the touched item (dot or mapLink) */
+.navTouching .itemTouched {
+  transform: scale(1.6);
+  background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.35);
+}
+.navTouching .itemTouched .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  transition: none;
+}
+/* Hide all non-touched tooltips during scrub */
+.navTouching [data-nav-id]:not(.itemTouched) .tooltip {
+  opacity: 0;
+  transition: none;
 }
 
 .mapLink {
@@ -62,7 +82,7 @@
   background: var(--blue);
   border: 2px solid var(--white);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
   position: relative;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -77,9 +97,11 @@
 }
 .nav:hover .mapLink .tooltip {
   opacity: 0.7;
+  transform: translateY(-50%) translateX(0);
 }
 .mapLink:hover .tooltip {
   opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 .mapIcon {
   font-size: 14px;
@@ -91,5 +113,17 @@
   .dot { width: 10px; height: 10px; }
   .mapLink { width: 22px; height: 22px; }
   .mapIcon { font-size: 11px; }
-  .tooltip { display: none; }
+  /* Hide tooltips on mobile by default */
+  .tooltip { opacity: 0; transform: translateY(-50%) translateX(4px); }
+  .nav:hover .tooltip,
+  .nav:hover .dotActive .tooltip,
+  .nav:hover .mapLink .tooltip,
+  .dot:hover .tooltip,
+  .mapLink:hover .tooltip { opacity: 0; }
+  /* Touch-scrub: show only the touched item's tooltip */
+  .navTouching .itemTouched .tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    transition: none;
+  }
 }
