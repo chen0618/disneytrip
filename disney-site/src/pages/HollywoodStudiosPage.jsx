@@ -1,6 +1,7 @@
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
+import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
 import { hsNavSections } from '../data/hollywoodStudiosData';
@@ -18,8 +19,9 @@ import HSStrategy from '../sections/parks/hs/HSStrategy';
 import Footer from '../components/Footer/Footer';
 import BackToTop from '../components/BackToTop/BackToTop';
 
-export default function HollywoodStudiosPage() {
+function HSContent() {
   useScrollReveal();
+  useActiveSection();
 
   const hsBoundary = parkBoundaries.find((b) => b.id === 'hs');
   const hsRides = mapRides.filter((r) => r.park === 'Hollywood Studios');
@@ -32,7 +34,7 @@ export default function HollywoodStudiosPage() {
   }));
 
   return (
-    <ActiveSectionProvider>
+    <>
       <FloatingNav
         sections={hsNavSections}
         extraLinks={[{ to: '/', icon: '🏠', label: 'Back to Home' }]}
@@ -79,6 +81,14 @@ export default function HollywoodStudiosPage() {
       </section>
       <Footer variant="park" currentPark="/park/hollywood-studios" />
       <BackToTop />
+    </>
+  );
+}
+
+export default function HollywoodStudiosPage() {
+  return (
+    <ActiveSectionProvider>
+      <HSContent />
     </ActiveSectionProvider>
   );
 }

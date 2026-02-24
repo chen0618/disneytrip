@@ -1,6 +1,7 @@
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
+import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
 import { epcotNavSections } from '../data/epcotData';
@@ -18,8 +19,9 @@ import EpcotStrategy from '../sections/parks/epcot/EpcotStrategy';
 import Footer from '../components/Footer/Footer';
 import BackToTop from '../components/BackToTop/BackToTop';
 
-export default function EpcotPage() {
+function EpcotContent() {
   useScrollReveal();
+  useActiveSection();
 
   const epcotBoundary = parkBoundaries.find((b) => b.id === 'epcot');
   const epcotRides = mapRides.filter((r) => r.park === 'EPCOT');
@@ -32,7 +34,7 @@ export default function EpcotPage() {
   }));
 
   return (
-    <ActiveSectionProvider>
+    <>
       <FloatingNav
         sections={epcotNavSections}
         extraLinks={[{ to: '/', icon: '\uD83C\uDFE0', label: 'Back to Home' }]}
@@ -79,6 +81,14 @@ export default function EpcotPage() {
       </section>
       <Footer variant="park" currentPark="/park/epcot" />
       <BackToTop />
+    </>
+  );
+}
+
+export default function EpcotPage() {
+  return (
+    <ActiveSectionProvider>
+      <EpcotContent />
     </ActiveSectionProvider>
   );
 }

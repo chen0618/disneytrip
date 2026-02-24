@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
-import { checklist, firstTimerTips, packingList } from '../../data/beforeYouGoInfo';
+import { checklist, firstTimerTips } from '../../data/beforeYouGoInfo';
 import styles from './BeforeYouGo.module.css';
 
 export default function BeforeYouGo() {
@@ -56,26 +56,6 @@ export default function BeforeYouGo() {
           ))}
         </div>
 
-        <div className={styles.packingHeader}>
-          <h3 className="reveal">Recommended Packing List</h3>
-          <button className={`${styles.printBtn} reveal`} onClick={() => window.print()}>
-            🖨️ Print Packing List
-          </button>
-        </div>
-        <h3 className={styles.printTitle} data-print="packing-title">Packing List — Disney Trip 2027</h3>
-        <div className={`${styles.tipGrid} reveal`} data-print="packing">
-          {packingList.map((group, i) => (
-            <div key={group.category} className={`${styles.tipCard} ${styles.packingCard} reveal delay-${i + 1}`}>
-              <span className={styles.tipIcon}>{group.icon}</span>
-              <h4>{group.category}</h4>
-              <ul className={styles.packingItems}>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
       </div>
       <WaveDivider fill="var(--bg)" variant={3} />
     </section>

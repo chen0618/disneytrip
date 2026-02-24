@@ -1,6 +1,7 @@
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
+import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
 import { mkNavSections } from '../data/magicKingdomData';
@@ -18,8 +19,9 @@ import MKShopping from '../sections/parks/mk/MKShopping';
 import Footer from '../components/Footer/Footer';
 import BackToTop from '../components/BackToTop/BackToTop';
 
-export default function MagicKingdomPage() {
+function MKContent() {
   useScrollReveal();
+  useActiveSection();
 
   const mkBoundary = parkBoundaries.find((b) => b.id === 'mk');
   const mkRides = mapRides.filter((r) => r.park === 'Magic Kingdom');
@@ -32,7 +34,7 @@ export default function MagicKingdomPage() {
   }));
 
   return (
-    <ActiveSectionProvider>
+    <>
       <FloatingNav
         sections={mkNavSections}
         extraLinks={[{ to: '/', icon: '🏠', label: 'Back to Home' }]}
@@ -79,6 +81,14 @@ export default function MagicKingdomPage() {
       <MKShopping />
       <Footer variant="park" currentPark="/park/magic-kingdom" />
       <BackToTop />
+    </>
+  );
+}
+
+export default function MagicKingdomPage() {
+  return (
+    <ActiveSectionProvider>
+      <MKContent />
     </ActiveSectionProvider>
   );
 }
