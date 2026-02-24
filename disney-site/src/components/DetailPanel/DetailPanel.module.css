@@ -162,26 +162,6 @@
   background: var(--text);
   color: #fff;
 }
-.lunaYes {
-  composes: badge;
-  background: #d4edda;
-  color: #155724;
-}
-.lunaNo {
-  composes: badge;
-  background: #f8d7da;
-  color: #721c24;
-}
-.claraYes {
-  composes: badge;
-  background: #d4edda;
-  color: #155724;
-}
-.claraNo {
-  composes: badge;
-  background: #f8d7da;
-  color: #721c24;
-}
 .llBadge {
   composes: badge;
   background: var(--blue);

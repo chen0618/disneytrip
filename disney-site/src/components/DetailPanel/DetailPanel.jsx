@@ -98,16 +98,6 @@ export default function DetailPanel({ item, onClose }) {
                       📏 {item.heightReq}
                     </span>
                   )}
-                  {item.lunaCanRide != null && (
-                    <span className={item.lunaCanRide ? styles.lunaYes : styles.lunaNo}>
-                      Luna {item.lunaCanRide ? '✓' : '✗'}
-                    </span>
-                  )}
-                  {item.claraCanRide != null && (
-                    <span className={item.claraCanRide ? styles.claraYes : styles.claraNo}>
-                      Clara {item.claraCanRide ? '✓' : '✗'}
-                    </span>
-                  )}
                   {item.lightningLane && (
                     <span className={styles.llBadge}>Lightning Lane ⚡</span>
                   )}
