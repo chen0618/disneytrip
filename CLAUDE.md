@@ -134,7 +134,7 @@ disney-site/
 - **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
 - Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Transportation
 - Independent boundary overlay toggle (Zillow-style park polygons)
-- **Rides layer**: 35 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT), height sub-filter (Luna can ride / Clara can ride)
+- **Rides layer**: 35 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
 - **Transport layer**: bus routes, Skyliner, boats with animated markers
@@ -158,7 +158,6 @@ disney-site/
 - **Shared data files are the source of truth** — mapRides.js, snacks.js, mapShows.js contain the canonical ride/food/show data
 - Park-specific data files (magicKingdomData.js, etc.) reference items from shared data — if a ride/restaurant exists in a callout or strategy, it MUST also exist in the shared data file
 - **Hardcoded stats in Hero sections** (ride counts, land counts) can go stale — verify against shared data when adding/removing items
-- **Height badges**: heightReq field already includes the unit (e.g., "40\"") — do NOT append "min" or other suffixes
 
 ### Cross-Page Conventions (must match across all 3 parks)
 - Dining section heading: "Dining Guide"
@@ -197,7 +196,7 @@ disney-site/
 - Dates: January 16–23, 2027
 - Hotel: Pop Century Resort (Skyliner access)
 - Travel: ACY → MCO
-- Kids: Luna (born June 16, 2022, ~41-42" tall by trip), Clara (born April 2, 2024, ~34-35" tall)
+- Kids: Luna (born June 16, 2022), Clara (born April 2, 2024)
 - Travel group: 20 people in 7 families — Us (Andrew, Rosy, Luna, Clara), Grandparents (Tuc, Oanh), Teresa & James, Sandy & Gavin, Paul & Kayla, Natali & Alex & Esme & Eli, AJ & Amy & Liam & Asher — 6 kids total (Luna, Clara, Esme, Eli, Liam, Asher)
 - Day 1 (Jan 16): Travel, Day 2 (17): Pool + Disney Springs, Day 3 (18): MK, Day 4 (19): HS, Day 5 (20): Rest, Day 6 (21): EPCOT, Day 7 (22): MK again, Day 8 (23): Travel home
 - Skipping Animal Kingdom entirely — do not mention it
