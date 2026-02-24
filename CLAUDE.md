@@ -134,7 +134,7 @@ disney-site/
 - **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
 - Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Transportation
 - Independent boundary overlay toggle (Zillow-style park polygons)
-- **Rides layer**: 33 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT), height sub-filter (Luna can ride / Clara can ride)
+- **Rides layer**: 35 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT), height sub-filter (Luna can ride / Clara can ride)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
 - **Transport layer**: bus routes, Skyliner, boats with animated markers
@@ -154,6 +154,20 @@ disney-site/
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
 
+### Data Consistency Gotchas
+- **Shared data files are the source of truth** — mapRides.js, snacks.js, mapShows.js contain the canonical ride/food/show data
+- Park-specific data files (magicKingdomData.js, etc.) reference items from shared data — if a ride/restaurant exists in a callout or strategy, it MUST also exist in the shared data file
+- **Hardcoded stats in Hero sections** (ride counts, land counts) can go stale — verify against shared data when adding/removing items
+- **Height badges**: heightReq field already includes the unit (e.g., "40\"") — do NOT append "min" or other suffixes
+
+### Cross-Page Conventions (must match across all 3 parks)
+- Dining section heading: "Dining Guide"
+- Must-try callout title: "Must-Try at [Park Name]"
+- Strategy subtitle: includes specific park day dates (e.g., "January 18 & 22")
+- Rides subtitle: "Every ride at [Park]..." pattern
+- Fireworks/nighttime badge label: "Nighttime Spectacular" (not "Fireworks")
+- Map subtitle: "rides and attractions" (not "rides and dining")
+
 ## Map Coordinates
 - All marker coordinates verified via OpenStreetMap Overpass API — see `src/data/COORDINATE_STATUS.md`
 - To verify a coordinate: `curl -s "https://overpass-api.de/api/interpreter" --data-urlencode "data=[out:json];(node[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4);way[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4););out center;"`
@@ -166,6 +180,7 @@ disney-site/
 2. Create section folder in src/sections/ with Component.jsx + Component.module.css
 3. Set background to --bg or --bg-alt (must alternate with neighbors)
 4. Set WaveDivider top fill to PREVIOUS section's background, bottom fill to NEXT section's background
+   - **Remember**: The wave's `fill` color = the color of the section the wave visually "belongs to" (i.e., what's below the wave)
 5. Add to App.jsx imports and JSX (order matters)
 6. Add to data/navSections.js
 7. Inserting an odd number of sections shifts all downstream backgrounds — recheck alternation
