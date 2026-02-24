@@ -2,10 +2,9 @@ import { useState, useMemo } from 'react';
 import { mapRides } from '../../../data/mapRides';
 import styles from './EpcotRides.module.css';
 
-const FILTERS = [
-  { key: 'all', label: 'All Rides' },
-  { key: 'luna', label: 'Luna Can Ride' },
-  { key: 'clara', label: 'Clara Can Ride' },
+const VIEW_MODES = [
+  { key: 'land', label: 'By Land' },
+  { key: 'height', label: 'By Height' },
 ];
 
 const CALLOUTS = [
@@ -27,23 +26,36 @@ const CALLOUTS = [
 ];
 
 export default function EpcotRides() {
-  const [filter, setFilter] = useState('all');
+  const [viewMode, setViewMode] = useState('land');
 
-  const epcotRides = useMemo(() => {
-    let rides = mapRides.filter((r) => r.park === 'EPCOT');
-    if (filter === 'luna') rides = rides.filter((r) => r.lunaCanRide);
-    if (filter === 'clara') rides = rides.filter((r) => r.claraCanRide);
-    return rides;
-  }, [filter]);
+  const epcotRides = useMemo(
+    () => mapRides.filter((r) => r.park === 'EPCOT'),
+    [],
+  );
 
   const grouped = useMemo(() => {
-    const map = {};
-    epcotRides.forEach((r) => {
-      if (!map[r.land]) map[r.land] = [];
-      map[r.land].push(r);
+    if (viewMode === 'land') {
+      const map = {};
+      epcotRides.forEach((r) => {
+        if (!map[r.land]) map[r.land] = [];
+        map[r.land].push(r);
+      });
+      return Object.entries(map);
+    }
+    const withReq = epcotRides.filter((r) => r.heightReqInches > 0);
+    const noReq = epcotRides.filter((r) => r.heightReqInches === 0);
+    const tierMap = {};
+    withReq.forEach((r) => {
+      const label = r.heightReq;
+      if (!tierMap[label]) tierMap[label] = { inches: r.heightReqInches, rides: [] };
+      tierMap[label].rides.push(r);
     });
-    return Object.entries(map);
-  }, [epcotRides]);
+    const sorted = Object.entries(tierMap)
+      .sort(([, a], [, b]) => b.inches - a.inches)
+      .map(([label, { rides }]) => [label, rides]);
+    if (noReq.length) sorted.push(['No Requirement', noReq]);
+    return sorted;
+  }, [epcotRides, viewMode]);
 
   return (
     <section id="epcot-rides" style={{ background: 'var(--bg)' }}>
@@ -67,20 +79,20 @@ export default function EpcotRides() {
         </div>
 
         <div className={styles.filters}>
-          {FILTERS.map((f) => (
+          {VIEW_MODES.map((m) => (
             <button
-              key={f.key}
-              className={`${styles.filterBtn} ${filter === f.key ? styles.active : ''}`}
-              onClick={() => setFilter(f.key)}
+              key={m.key}
+              className={`${styles.filterBtn} ${viewMode === m.key ? styles.active : ''}`}
+              onClick={() => setViewMode(m.key)}
             >
-              {f.label}
+              {m.label}
             </button>
           ))}
         </div>
 
-        {grouped.map(([land, rides]) => (
-          <div key={land} className={styles.landGroup}>
-            <h3 className={styles.landTitle}>{land}</h3>
+        {grouped.map(([group, rides]) => (
+          <div key={group} className={styles.landGroup}>
+            <h3 className={styles.landTitle}>{group}</h3>
             <div className={styles.rideGrid}>
               {rides.map((ride) => (
                 <div key={ride.id} className={styles.rideCard}>
@@ -89,17 +101,12 @@ export default function EpcotRides() {
                     <h4 className={styles.rideName}>{ride.name}</h4>
                   </div>
                   <div className={styles.badges}>
-                    {ride.heightReq && (
-                      <span
-                        className={styles.badge}
-                        style={{
-                          background: ride.claraCanRide ? '#d4edda' : '#f8d7da',
-                          color: ride.claraCanRide ? '#155724' : '#721c24',
-                        }}
-                      >
-                        {ride.heightReq}
-                      </span>
-                    )}
+                    <span
+                      className={styles.badge}
+                      style={{ background: '#e8e8e8', color: '#333' }}
+                    >
+                      {ride.heightReq || 'Any Height'}
+                    </span>
                     {ride.lightningLane && (
                       <span className={styles.llBadge}>Lightning Lane</span>
                     )}
@@ -111,12 +118,6 @@ export default function EpcotRides() {
             </div>
           </div>
         ))}
-
-        {epcotRides.length === 0 && (
-          <p style={{ textAlign: 'center', color: 'var(--text-light)', marginTop: '2rem' }}>
-            No rides match this filter.
-          </p>
-        )}
       </div>
     </section>
   );
