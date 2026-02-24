@@ -4,7 +4,7 @@ export default function Callout({ variant = 'kids', title, children }) {
   return (
     <div className={`${styles.callout} ${styles[variant]} reveal`}>
       <strong>{title}</strong>
-      <p>{children}</p>
+      <div className={styles.body}>{children}</div>
     </div>
   );
 }

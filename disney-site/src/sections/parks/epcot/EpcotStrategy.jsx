@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { epcotStrategy } from '../../../data/epcotData';
 import styles from './EpcotStrategy.module.css';
 
@@ -14,6 +15,7 @@ export default function EpcotStrategy() {
         <div className="section-header reveal">
           <h2>Our EPCOT Strategy</h2>
           <p className="subtitle">The game plan for conquering EPCOT on January 21</p>
+          <Link to="/#timeline" className={styles.timelineLink}>See this day on the Trip Timeline &rarr;</Link>
         </div>
 
         <div className={styles.columns}>

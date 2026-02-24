@@ -3,7 +3,6 @@ export const checklist = [
   { text: 'Download the My Disney Experience app', icon: '📱' },
   { text: 'Link park tickets to your account', icon: '🎟️' },
   { text: 'Accept family invitation for PhotoPass sharing', icon: '📸' },
-  { text: 'Buy Memory Maker in advance ($169 — saves $30)', icon: '💾' },
   { text: 'Purchase Disney gift cards at a discount (Costco / Sam\'s Club / Target)', icon: '💳' },
   { text: 'Set up dining & Lightning Lane notifications in the app', icon: '🔔' },
 ];

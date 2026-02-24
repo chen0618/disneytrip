@@ -56,10 +56,14 @@ export default function BeforeYouGo() {
           ))}
         </div>
 
-        <h3 className="reveal" style={{ textAlign: 'center', margin: '2.5rem 0 1.5rem' }}>
-          Recommended Packing List
-        </h3>
-        <div className={`${styles.tipGrid} reveal`}>
+        <div className={styles.packingHeader}>
+          <h3 className="reveal">Recommended Packing List</h3>
+          <button className={`${styles.printBtn} reveal`} onClick={() => window.print()}>
+            🖨️ Print Packing List
+          </button>
+        </div>
+        <h3 className={styles.printTitle} data-print="packing-title">Packing List — Disney Trip 2027</h3>
+        <div className={`${styles.tipGrid} reveal`} data-print="packing">
           {packingList.map((group, i) => (
             <div key={group.category} className={`${styles.tipCard} ${styles.packingCard} reveal delay-${i + 1}`}>
               <span className={styles.tipIcon}>{group.icon}</span>

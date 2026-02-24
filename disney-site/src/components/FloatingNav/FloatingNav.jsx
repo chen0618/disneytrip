@@ -1,11 +1,13 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ActiveSectionContext } from '../../context/ActiveSectionContext';
+import useDarkMode from '../../hooks/useDarkMode';
 import navSections from '../../data/navSections';
 import styles from './FloatingNav.module.css';
 
 export default function FloatingNav({ sections, extraLinks }) {
   const activeSection = useContext(ActiveSectionContext);
+  const [dark, toggleDark] = useDarkMode();
   const sectionList = sections || navSections;
 
   function handleClick(id) {
@@ -34,6 +36,14 @@ export default function FloatingNav({ sections, extraLinks }) {
         <span className={styles.mapIcon}>🗺️</span>
         <span className={styles.tooltip}>Interactive Map</span>
       </Link>
+      <button
+        className={styles.mapLink}
+        onClick={toggleDark}
+        aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        <span className={styles.mapIcon}>{dark ? '☀️' : '🌙'}</span>
+        <span className={styles.tooltip}>{dark ? 'Light Mode' : 'Dark Mode'}</span>
+      </button>
     </nav>
   );
 }

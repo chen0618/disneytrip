@@ -19,6 +19,15 @@ const sparkles = [
   { left: '45%', top: '10%', dur: '3.1s', delay: '0.9s' },
 ];
 
+function getCountdownText() {
+  const tripDate = new Date('2027-01-16T00:00:00');
+  const now = new Date();
+  const diffMs = tripDate - now;
+  if (diffMs <= 0) return 'Trip complete!';
+  const days = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+  return <><span className={styles.countNumber}>{days}</span> days until the magic begins!</>;
+}
+
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
@@ -35,6 +44,7 @@ export default function Hero() {
         <p className={styles.pre}>A Magical Family Trip</p>
         <h1 className={styles.title}>Our Disney Adventure</h1>
         <p className={styles.date}>January 16–23, 2027</p>
+        <p className={styles.countdown}>{getCountdownText()}</p>
         <p className={styles.tagline}>
           Everything you need to know about our week at Walt Disney World &mdash; parks, hotels, transportation, and more!
         </p>

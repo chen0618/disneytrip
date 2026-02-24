@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { hsStrategy } from '../../../data/hollywoodStudiosData';
 import styles from './HSStrategy.module.css';
 
@@ -14,6 +15,7 @@ export default function HSStrategy() {
         <div className="section-header reveal">
           <h2>Our HS Strategy</h2>
           <p className="subtitle">The game plan for conquering Hollywood Studios on January 19</p>
+          <Link to="/#timeline" className={styles.timelineLink}>See this day on the Trip Timeline &rarr;</Link>
         </div>
 
         <div className={styles.columns}>

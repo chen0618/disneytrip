@@ -12,6 +12,7 @@ import RopeDrop from './sections/RopeDrop/RopeDrop';
 import LightningLane from './sections/LightningLane/LightningLane';
 import PhotoPass from './sections/PhotoPass/PhotoPass';
 import Footer from './components/Footer/Footer';
+import BackToTop from './components/BackToTop/BackToTop';
 
 function AppContent() {
   useScrollReveal();
@@ -30,6 +31,7 @@ function AppContent() {
       <LightningLane />
       <PhotoPass />
       <Footer />
+      <BackToTop />
     </>
   );
 }

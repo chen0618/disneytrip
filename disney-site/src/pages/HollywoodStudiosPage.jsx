@@ -15,6 +15,8 @@ import ThrillGuide from '../sections/parks/hs/ThrillGuide';
 import HSShows from '../sections/parks/hs/HSShows';
 import HSDining from '../sections/parks/hs/HSDining';
 import HSStrategy from '../sections/parks/hs/HSStrategy';
+import Footer from '../components/Footer/Footer';
+import BackToTop from '../components/BackToTop/BackToTop';
 
 export default function HollywoodStudiosPage() {
   useScrollReveal();
@@ -75,6 +77,8 @@ export default function HollywoodStudiosPage() {
           />
         </div>
       </section>
+      <Footer variant="park" currentPark="/park/hollywood-studios" />
+      <BackToTop />
     </ActiveSectionProvider>
   );
 }

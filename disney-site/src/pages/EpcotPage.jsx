@@ -15,6 +15,8 @@ import CountryGuide from '../sections/parks/epcot/CountryGuide';
 import BestForKids from '../sections/parks/epcot/BestForKids';
 import EpcotDining from '../sections/parks/epcot/EpcotDining';
 import EpcotStrategy from '../sections/parks/epcot/EpcotStrategy';
+import Footer from '../components/Footer/Footer';
+import BackToTop from '../components/BackToTop/BackToTop';
 
 export default function EpcotPage() {
   useScrollReveal();
@@ -75,6 +77,8 @@ export default function EpcotPage() {
           />
         </div>
       </section>
+      <Footer variant="park" currentPark="/park/epcot" />
+      <BackToTop />
     </ActiveSectionProvider>
   );
 }

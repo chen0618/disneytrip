@@ -1,3 +1,17 @@
+.timelineLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--blue);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.timelineLink:hover {
+  transform: translateX(4px);
+}
+
 .columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

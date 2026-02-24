@@ -4,8 +4,13 @@
   margin-top: 2rem;
   font-size: 0.95rem;
 }
-.callout strong { display: block; margin-bottom: 0.3rem; }
-.callout p { color: inherit; }
+.callout strong:first-child {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.callout p { color: inherit; line-height: 1.7; }
+.body { color: inherit; line-height: 1.7; font-size: 0.95rem; }
 .kids {
   background: linear-gradient(135deg, rgba(78,205,196,0.15), rgba(30,144,255,0.1));
   border-left: 4px solid var(--mint);

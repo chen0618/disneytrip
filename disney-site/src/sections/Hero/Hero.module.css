@@ -37,13 +37,26 @@
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease 0.4s both;
 }
+.countdown {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.countNumber {
+  color: var(--yellow);
+  font-size: 1.3em;
+  font-weight: 800;
+}
 .tagline {
   font-size: clamp(1.1rem, 2vw, 1.5rem);
   font-weight: 500;
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto 2rem;
-  animation: fadeInUp 1s ease 0.6s both;
+  animation: fadeInUp 1s ease 0.7s both;
 }
 .scrollIndicator {
   position: absolute;
@@ -81,7 +94,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1.5rem;
-  animation: fadeInUp 1s ease 0.8s both;
+  animation: fadeInUp 1s ease 0.9s both;
 }
 .parkLink {
   padding: 0.6rem 1.2rem;

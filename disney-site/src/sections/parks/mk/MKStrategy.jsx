@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { mkStrategy, fireworksGuide } from '../../../data/magicKingdomData';
 import styles from './MKStrategy.module.css';
 
@@ -14,6 +15,7 @@ export default function MKStrategy() {
         <div className="section-header reveal">
           <h2>Our MK Strategy</h2>
           <p className="subtitle">The game plan for conquering Magic Kingdom on January 18 & 22</p>
+          <Link to="/#timeline" className={styles.timelineLink}>See this day on the Trip Timeline &rarr;</Link>
         </div>
 
         <div className={styles.columns}>

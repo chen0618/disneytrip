@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import InteractiveMap from '../components/InteractiveMap/InteractiveMap';
 import DetailPanel from '../components/DetailPanel/DetailPanel';
+import BackToTop from '../components/BackToTop/BackToTop';
 import '../styles/leaflet-overrides.css';
 import styles from './MapPage.module.css';
 
@@ -11,6 +12,7 @@ export default function MapPage() {
     <div className={styles.page}>
       <InteractiveMap onSelectItem={setSelectedItem} />
       <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
+      <BackToTop />
     </div>
   );
 }

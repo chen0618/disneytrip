@@ -15,6 +15,8 @@ import MKDining from '../sections/parks/mk/MKDining';
 import HiddenMagic from '../sections/parks/mk/HiddenMagic';
 import MKStrategy from '../sections/parks/mk/MKStrategy';
 import MKShopping from '../sections/parks/mk/MKShopping';
+import Footer from '../components/Footer/Footer';
+import BackToTop from '../components/BackToTop/BackToTop';
 
 export default function MagicKingdomPage() {
   useScrollReveal();
@@ -75,6 +77,8 @@ export default function MagicKingdomPage() {
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
       <MKShopping />
+      <Footer variant="park" currentPark="/park/magic-kingdom" />
+      <BackToTop />
     </ActiveSectionProvider>
   );
 }

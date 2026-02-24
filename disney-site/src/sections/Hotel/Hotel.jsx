@@ -45,7 +45,11 @@ export default function Hotel() {
           </div>
         </div>
         <Callout variant="highlight" title="💰 Budget Hack: Disney Gift Cards at a Discount">
-          We pay for almost our ENTIRE Disney trip — hotel, tickets, food, merchandise — using Disney gift cards purchased at a discount. Costco, Sam's Club, and Target all sell Disney gift cards for less than face value. Target occasionally runs promos where spending a certain amount earns you Target merch credit on top of the discount. Historically, we've managed to buy gift cards at <strong>5–15% off</strong>, which on a big family trip adds up to hundreds in savings!
+          We pay for almost our ENTIRE Disney trip &mdash; hotel, tickets, food, merchandise &mdash; using Disney gift cards purchased at a discount.
+          <br /><br />
+          Costco, Sam's Club, and Target all sell Disney gift cards for less than face value. Target occasionally runs promos where spending a certain amount earns you Target merch credit on top of the discount.
+          <br /><br />
+          Historically, we've managed to buy gift cards at <strong>5–15% off</strong>, which on a big family trip adds up to hundreds in savings!
         </Callout>
       </div>
       <WaveDivider fill="var(--bg)" variant={4} />
