@@ -2,7 +2,7 @@
 
 This document tracks which map locations have verified coordinates (sourced from OpenStreetMap Overpass API) vs. rough estimates. Use this as a living reference when updating or adding locations.
 
-**Last updated**: 2026-02-23
+**Last updated**: 2026-02-24
 
 ## Legend
 - **OSM** = Verified via OpenStreetMap Overpass API query
@@ -62,7 +62,7 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ## snacks.js (Food & Dining)
 
-### Magic Kingdom Food (~25 locations)
+### Magic Kingdom Food (~31 locations)
 | # | Name | Status | Date |
 |---|---|---|---|
 | 1 | Be Our Guest Restaurant | OSM | 2026-02-23 |
@@ -86,8 +86,18 @@ This document tracks which map locations have verified coordinates (sourced from
 | 19 | Churros | OSM | 2026-02-23 |
 | 20 | Auntie Gravity's Galactic Goodies | OSM | 2026-02-23 |
 | 21 | Main Street Confectionery | OSM | 2026-02-23 |
+| 22 | Skipper Canteen | OSM | 2026-02-24 |
+| 23 | Liberty Tree Tavern | OSM | 2026-02-24 |
+| 24 | Tony's Town Square Restaurant | OSM | 2026-02-24 |
+| 25 | Diamond Horseshoe | OSM | 2026-02-24 |
+| 26 | Pinocchio Village Haus | OSM | 2026-02-24 |
+| 27 | Tortuga Tavern | OSM | 2026-02-24 |
+| 28 | Friar's Nook | OSM | 2026-02-24 |
+| 29 | Tomorrowland Terrace | OSM | 2026-02-24 |
+| 30 | Storybook Treats | OSM | 2026-02-24 |
+| 31 | Golden Oak Outpost | OSM | 2026-02-24 |
 
-### Hollywood Studios Food (~12 locations)
+### Hollywood Studios Food (~19 locations)
 | # | Name | Status | Date |
 |---|---|---|---|
 | 1 | 50's Prime Time Café | OSM | 2026-02-23 |
@@ -100,8 +110,17 @@ This document tracks which map locations have verified coordinates (sourced from
 | 8 | Starbucks (HS) | OSM | 2026-02-23 |
 | 9 | Num Num Cookie | OSM | 2026-02-23 |
 | 10 | Blue Milk (Milk Stand) | OSM | 2026-02-23 |
+| 11 | Roundup Rodeo BBQ | OSM | 2026-02-24 |
+| 12 | ABC Commissary | OSM | 2026-02-24 |
+| 13 | BaseLine Tap House | OSM | 2026-02-24 |
+| 14 | Catalina Eddie's | OSM | 2026-02-24 |
+| 15 | Fairfax Fare | OSM | 2026-02-24 |
+| 16 | Rosie's All-American Café | OSM | 2026-02-24 |
+| 17 | Dockside Diner | OSM | 2026-02-24 |
+| 18 | Hollywood Scoops | OSM | 2026-02-24 |
+| 19 | Kat Saka's Kettle | OSM | 2026-02-24 |
 
-### EPCOT Food (~30 locations)
+### EPCOT Food (~47 locations)
 | # | Name | Status | Date |
 |---|---|---|---|
 | 1 | Space 220 | OSM | 2026-02-23 |
@@ -137,6 +156,21 @@ This document tracks which map locations have verified coordinates (sourced from
 | 31 | Frozen Drink Stand | OSM | 2026-02-23 |
 | 32 | Funnel Cake | OSM | 2026-02-23 |
 | 33 | Mickey Beignets | OSM | 2026-02-23 |
+| 34 | La Hacienda de San Angel | OSM | 2026-02-24 |
+| 35 | La Cantina de San Angel | OSM | 2026-02-24 |
+| 36 | Choza de Margarita | OSM | 2026-02-24 |
+| 37 | Tutto Italia Ristorante | OSM | 2026-02-24 |
+| 38 | Tutto Gusto Wine Cellar | OSM | 2026-02-24 |
+| 39 | Via Napoli | OSM | 2026-02-24 |
+| 40 | Rose & Crown Dining Room | OSM | 2026-02-24 |
+| 41 | La Crêperie de Paris | OSM | 2026-02-24 |
+| 42 | Spice Road Table | OSM | 2026-02-24 |
+| 43 | Block & Hans | OSM | 2026-02-24 |
+| 44 | Fife & Drum Tavern | OSM | 2026-02-24 |
+| 45 | Shiki-Sai: Sushi Izakaya | estimate | 2026-02-24 |
+| 46 | Club Cool | estimate | 2026-02-24 |
+| 47 | Joy of Tea | OSM | 2026-02-24 |
+| 48 | Cool Wash | OSM | 2026-02-24 |
 
 ---
 
@@ -165,10 +199,11 @@ Status: **All OSM verified**
 
 ---
 
-## springsVenues.js (60+ Disney Springs venues)
+## springsVenues.js (65+ Disney Springs venues)
 
 All coordinates sourced from OpenStreetMap Overpass API on initial creation.
-Status: **All OSM verified**
+6 new dining venues added 2026-02-24: Rainforest Café (OSM), Pepe by José Andrés (estimate), The Ganachery (OSM), Sunshine Churros (estimate), Swirls on the Water (estimate), The Basket at Wine Bar George (estimate).
+Status: **Mostly OSM verified** (4 new entries use estimated coords based on adjacent landmarks)
 
 ---
 
@@ -197,3 +232,4 @@ Status: **All OSM verified**
    - 2026-02-23: Full OSM Overpass API verification pass for all mapRides.js, snacks.js, and mapShows.js entries
    - 2026-02-23: mapShops.js created with OSM coordinates from the start
    - 2026-02-23: springsVenues.js created with OSM coordinates from the start
+   - 2026-02-24: Added ~41 new dining locations (10 MK, 9 HS, 15 EPCOT, 6 Disney Springs) — most OSM-verified, ~6 estimated from adjacent landmarks

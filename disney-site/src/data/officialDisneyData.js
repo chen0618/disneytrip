@@ -10,27 +10,27 @@ export const officialData = {
   // Magic Kingdom
   'pirates-of-the-caribbean': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/pirates-of-the-caribbean/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/pirates-of-the-caribbean/pirates-of-the-caribbean-00.jpg',
+    officialImage: '/images/pirates-of-the-caribbean.jpg',
   },
   'jungle-cruise': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/jungle-cruise/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/jungle-cruise/0826ZP_0049DR-16x9.jpg',
+    officialImage: '/images/jungle-cruise.jpg',
   },
   'big-thunder-mountain-railroad': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/big-thunder-mountain-railroad/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/big-thunder-mountain-railroad/big-thunder-mountain-railroad-00.jpg',
+    officialImage: '/images/big-thunder-mountain-railroad.jpg',
   },
   'tianas-bayou-adventure': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/tianas-bayou-adventure/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-vacation-club/member-benefits/3878153_WDWMK_FY24_TianasBayou_FINAL-Key-Image-16x9.jpg',
+    officialImage: '/images/tianas-bayou-adventure.jpg',
   },
   'haunted-mansion': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/haunted-mansion/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/the-haunted-mansion/haunted-mansion-00.jpg',
+    officialImage: '/images/haunted-mansion.jpg',
   },
   'its-a-small-world': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/its-a-small-world/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/its-a-small-world/its-a-small-world-00.jpg',
+    officialImage: '/images/its-a-small-world.jpg',
   },
   'peter-pans-flight': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/peter-pan-flight/',
@@ -38,11 +38,11 @@ export const officialData = {
   },
   'seven-dwarfs-mine-train': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/seven-dwarfs-mine-train/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/guest-services/genie/0514ZV_0721CR_EDIT-1-16x9.jpg',
+    officialImage: '/images/seven-dwarfs-mine-train.jpg',
   },
   'dumbo-the-flying-elephant': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/dumbo-the-flying-elephant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/dumbo-the-flying-elephant/dumbo-the-flying-elephant-00.jpg',
+    officialImage: '/images/dumbo-the-flying-elephant.jpg',
   },
   'the-barnstormer': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/barnstormer-starring-great-goofini/',
@@ -50,53 +50,53 @@ export const officialData = {
   },
   'many-adventures-of-winnie-the-pooh': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/many-adventures-of-winnie-the-pooh/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/the-many-adventures-of-winnie-the-pooh/many-adventures-of-winnie-the-pooh-00.jpg',
+    officialImage: '/images/many-adventures-of-winnie-the-pooh.jpg',
   },
   'under-the-sea-journey-of-the-little-mermaid': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/under-the-sea-journey-of-the-little-mermaid/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/under-the-sea-journey-of-the-little-mermaid/under-the-sea-journey-of-the-little-mermaid-new-00.jpg',
+    officialImage: '/images/under-the-sea-journey-of-the-little-mermaid.jpg',
   },
   'space-mountain': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/space-mountain/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/space-mountain/space-mountain-00.jpg',
+    officialImage: '/images/space-mountain.jpg',
   },
   'buzz-lightyears-space-ranger-spin': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/buzz-lightyear-space-ranger-spin/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/buzz-lightyears-space-ranger-spin/Buzz-Lightyear-Rendering-16x9.jpg',
+    officialImage: '/images/buzz-lightyears-space-ranger-spin.jpg',
   },
   'tron-lightcycle-run': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/tron-lightcycle-run/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/tron/TRON_KV_Sprint_1280x720-16x9.jpg',
+    officialImage: '/images/tron-lightcycle-run.jpg',
   },
   'tomorrowland-speedway': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/tomorrowland-speedway/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/tomorrowland-speedway/240824WS-_8945-1-16x9.jpg',
+    officialImage: '/images/tomorrowland-speedway.jpg',
   },
 
   // Hollywood Studios
   'rise-of-the-resistance': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/destinations/hollywood-studios/star-wars-galaxys-edge/rise-resistance-16x9.jpg',
+    officialImage: '/images/rise-of-the-resistance.jpg',
   },
   'millennium-falcon-smugglers-run': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/millennium-falcon-smugglers-run/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/smugglers-run/Smugglers-Run-Mando-Grogu-Asset-16x9.jpg',
+    officialImage: '/images/millennium-falcon-smugglers-run.jpg',
   },
   'slinky-dog-dash': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/slinky-dog-dash/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/destinations/hollywood-studios/toy-story-land/toy-story-slinky-dog-ride-16x9.jpg',
+    officialImage: '/images/slinky-dog-dash.jpg',
   },
   'toy-story-mania': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/toy-story-mania/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/hollywood-studios/toy-story-mania/toy-story-mania-00.jpg',
+    officialImage: '/images/toy-story-mania.jpg',
   },
   'alien-swirling-saucers': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/alien-swirling-saucers/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/alien-saucer-swirl/240824WS-_3839-1-16x9.jpg',
+    officialImage: '/images/alien-swirling-saucers.jpg',
   },
   'tower-of-terror': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/twilight-zone-tower-of-terror/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/hollywood-studios/the-twilight-zone-tower-of-terror/twilight-zone-tower-of-terror-00.jpg',
+    officialImage: '/images/tower-of-terror.jpg',
   },
   'rock-n-roller-coaster': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/rock-and-roller-coaster-starring-aerosmith/',
@@ -104,7 +104,7 @@ export const officialData = {
   },
   'star-tours': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/star-tours/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/hollywood-studios/star-tours-the-adventures-continue/star-tours-00.jpg',
+    officialImage: '/images/star-tours.jpg',
   },
   'mickey-minnies-runaway-railway': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/mickey-minnies-runaway-railway/',
@@ -114,43 +114,43 @@ export const officialData = {
   // EPCOT
   'spaceship-earth': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/spaceship-earth/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/spaceship-earth/Spaceship-Earth-16x9.jpg',
+    officialImage: '/images/spaceship-earth.jpg',
   },
   'guardians-of-the-galaxy-cosmic-rewind': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/guardians-of-the-galaxy-cosmic-rewind/video/Guardians-of-the-Galaxy-Cosmic-Rewind-Epcot-is-Rewound-16x9-16x9.jpg',
+    officialImage: '/images/guardians-of-the-galaxy-cosmic-rewind.jpg',
   },
   'test-track': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/test-track/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/test-track/0926ZL_07796OK_xak-16x9.jpg',
+    officialImage: '/images/test-track.jpg',
   },
   'mission-space': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/mission-space/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/epcot/mission-space/mission-space-00.jpg',
+    officialImage: '/images/mission-space.jpg',
   },
   'soarin-across-america': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/soarin/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disneyland/attractions/soarin-around-the-world/LL1_0039-16x9.jpg',
+    officialImage: '/images/soarin-across-america.jpg',
   },
   'living-with-the-land': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/living-with-the-land/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/epcot/living-with-the-land/living-with-the-land-00.jpg',
+    officialImage: '/images/living-with-the-land.jpg',
   },
   'frozen-ever-after': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/frozen-ever-after/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/attractions/epcot/frozen-ever-after/frozen-ever-after-olaf-anna-elsa-16x9.jpg',
+    officialImage: '/images/frozen-ever-after.jpg',
   },
   'remys-ratatouille-adventure': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/remys-ratatouille-adventure/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/remy-s-ratatouille-adventure/0629ZP_1967CM_xak-1-16x9.jpg',
+    officialImage: '/images/remys-ratatouille-adventure.jpg',
   },
   'journey-into-imagination': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/journey-into-imagination-with-figment/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/epcot/journey-into-imagination-with-figment/journey-into-imagination-with-figment-00.jpg',
+    officialImage: '/images/journey-into-imagination.jpg',
   },
   'seas-with-nemo': {
     officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/seas-with-nemo-and-friends/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/the-sea-with-nemo-and-friends/240824WS-300219-1-1-16x9.jpg',
+    officialImage: '/images/seas-with-nemo.jpg',
   },
 
   // ═══════════════════════════════════════════════════════════════
@@ -159,11 +159,11 @@ export const officialData = {
 
   'philharmagic': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/mickeys-philharmagic/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/mickeys-philharmagic/mickeys-philharmagic-00.jpg',
+    officialImage: '/images/philharmagic.jpg',
   },
   'laugh-floor': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/monsters-inc-laugh-floor/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/attractions/magic-kingdom/monsters-inc-laugh-floor/monsters-inc-laugh-floor-gallery02.jpg',
+    officialImage: '/images/laugh-floor.jpg',
   },
   'country-bears': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/country-bear-jamboree/',
@@ -175,11 +175,11 @@ export const officialData = {
   },
   'indiana-jones': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/indiana-jones-epic-stunt-spectacular/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/entertainment/hollywood-studios/indiana-jones-epic-stunt-spectacular/indiana-jones-epic-stunt-spectacular-00.jpg',
+    officialImage: '/images/indiana-jones.jpg',
   },
   'happily-ever-after': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/happily-ever-after-fireworks/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/MK17-HappilyEverAfter0507-263_1-16x9.jpg',
+    officialImage: '/images/happily-ever-after.jpg',
   },
   'luminous': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/epcot/luminous-the-symphony-us/',
@@ -187,7 +187,7 @@ export const officialData = {
   },
   'fantasmic': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/fantasmic/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/fantasmic/1024ZO_3792AFN_xak-16x9.jpg',
+    officialImage: '/images/fantasmic.jpg',
   },
   'festival-of-fantasy': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/festival-fantasy-parade/',
@@ -200,7 +200,7 @@ export const officialData = {
 
   'Be Our Guest Restaurant': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/be-our-guest-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/magic-kingdom/be-our-guest-restaurant/be-our-guest-restaurant-gallery04.jpg',
+    officialImage: '/images/be-our-guest-restaurant.jpg',
   },
   "Cinderella's Royal Table": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/cinderella-royal-table/',
@@ -208,43 +208,85 @@ export const officialData = {
   },
   'The Crystal Palace': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/crystal-palace/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/crystal-palace/Crystal_Palace_Magic_Kingdom_Hero-16x9.jpg',
+    officialImage: '/images/the-crystal-palace.jpg',
   },
   'The Plaza Restaurant': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/plaza-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/magic-kingdom/plaza-restaurant/plaza-restaurant-00.jpg',
+    officialImage: '/images/the-plaza-restaurant.jpg',
   },
   "Cosmic Ray's Starlight Café": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/cosmic-ray-starlight-cafe/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/cosmic-ray-starlight-cafe/WDW_MK_Cosmic_AngusBaconCheeseburger_STYLIZED_022525_8707_SN-16x9.jpg',
+    officialImage: '/images/cosmic-rays-starlight-cafe.jpg',
   },
   "Pecos Bill's": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/pecos-bill-tall-tale-inn-and-cafe/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/pecos-bill/WDW_MK_Pecos_PorkSandwhich_STYLIZED_081325_8754_CL.jpg',
+    officialImage: '/images/pecos-bills.jpg',
   },
   'Columbia Harbour House': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/columbia-harbour-house/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/columbia-harbour-house/WDW_MK_CHH_LobsterRoll_FULL_051425_8209_NT-1-16x9.jpg',
+    officialImage: '/images/columbia-harbour-house.jpg',
   },
   'Mickey Waffles': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/sleepy-hollow/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/magic-kingdom/sleepy-hollow/sleepy-hollow-gallery02.jpg',
+    officialImage: '/images/mickey-waffles.jpg',
   },
   'Corn Dog Nuggets': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/caseys-corner/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/magic-kingdom/caseys-corner/caseys-corner-hotdog-chili-cheese-deluxe-16x9.jpg',
+    officialImage: '/images/corn-dog-nuggets.jpg',
   },
   "LeFou's Brew": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/gastons-tavern/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/magic-kingdom/gastons-tavern/gaston-exteior-16x9.jpg',
+    officialImage: '/images/lefous-brew.jpg',
   },
   'The Lunching Pad': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/lunching-pad/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/magic-kingdom/the-lunching-pad/lunching-pad-00.jpg',
+    officialImage: '/images/the-lunching-pad.jpg',
   },
   'Dole Whip': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/aloha-isle/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/magic-kingdom/aloha-isle/aloha-isle-gallery04.jpg',
+    officialImage: '/images/dole-whip.jpg',
+  },
+
+  // --- MK Additional Dining ---
+  'Skipper Canteen': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/jungle-navigation-skipper-canteen/',
+    officialImage: '/images/skipper-canteen.jpg',
+  },
+  'Liberty Tree Tavern': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/liberty-tree-tavern/',
+    officialImage: null,
+  },
+  "Tony's Town Square Restaurant": {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/tonys-town-square-restaurant/',
+    officialImage: null,
+  },
+  'Diamond Horseshoe': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/diamond-horseshoe/',
+    officialImage: null,
+  },
+  'Pinocchio Village Haus': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/pinocchio-village-haus/',
+    officialImage: null,
+  },
+  'Tortuga Tavern': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/tortuga-tavern/',
+    officialImage: '/images/tortuga-tavern.jpg',
+  },
+  "Friar's Nook": {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/friars-nook/',
+    officialImage: '/images/friars-nook.jpg',
+  },
+  'Tomorrowland Terrace': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/tomorrowland-terrace-restaurant/',
+    officialImage: '/images/tomorrowland-terrace.jpg',
+  },
+  'Storybook Treats': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/storybook-treats/',
+    officialImage: '/images/storybook-treats.jpg',
+  },
+  'Golden Oak Outpost': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/golden-oak-outpost/',
+    officialImage: '/images/golden-oak-outpost.jpg',
   },
 
   // ═══════════════════════════════════════════════════════════════
@@ -253,31 +295,31 @@ export const officialData = {
 
   "50's Prime Time Café": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/50s-prime-time-cafe/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/50s-prime-time/WDW_DHS_PrimeTime_FriedChicken_FULL_DH-16x9.jpg',
+    officialImage: '/images/50s-prime-time-cafe.jpg',
   },
   "Oga's Cantina": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/ogas-cantina/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/destinations/disneyland/star-wars-galaxys-edge/photography/ogas-cantina-16x9.jpg',
+    officialImage: '/images/ogas-cantina.jpg',
   },
   'Hollywood & Vine': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/hollywood-and-vine/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/entertainment/meet-greet/Silverscreen-4-1-16x9.jpg',
+    officialImage: '/images/hollywood-and-vine.jpg',
   },
   'Sci-Fi Dine-In Theater': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/sci-fi-dine-in-theater/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/hollywood-studios/sci-fi-dine-in-theater/sci-fi-dine-in-theater-gallery02.jpg',
+    officialImage: '/images/sci-fi-dine-in-theater.jpg',
   },
   'The Hollywood Brown Derby': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/hollywood-brown-derby/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/hollywood-studios/hollywood-brown-derby/WDW_DHS_30th_HollywoodBrownDerby_CobbSalad_16x9.jpg',
+    officialImage: '/images/the-hollywood-brown-derby.jpg',
   },
   'Ronto Wrap': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/ronto-roasters/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/hollywood-studios/ronto-roasters/rontos-roasters-16x9.jpg',
+    officialImage: '/images/ronto-wrap.jpg',
   },
   'Docking Bay 7': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/docking-bay-7-food-and-cargo/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/dining/disneyland/docking-bay-7-food-and-cargo/docking-bay-guests-food-16x9.jpg',
+    officialImage: '/images/docking-bay-7.jpg',
   },
   "Woody's Lunch Box": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/woodys-lunchbox/',
@@ -285,7 +327,45 @@ export const officialData = {
   },
   'Num Num Cookie': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/backlot-express/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/backlot-express/DHS_BacklotExpress_SmokedBBQPulledPorkBurger-16x9.jpg',
+    officialImage: '/images/num-num-cookie.jpg',
+  },
+
+  // --- HS Additional Dining ---
+  'Roundup Rodeo BBQ': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/roundup-rodeo-bbq/',
+    officialImage: '/images/roundup-rodeo-bbq.jpg',
+  },
+  'ABC Commissary': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/abc-commissary/',
+    officialImage: null,
+  },
+  'BaseLine Tap House': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/baseline-tap-house/',
+    officialImage: '/images/baseline-tap-house.jpg',
+  },
+  "Catalina Eddie's": {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/catalina-eddies/',
+    officialImage: null,
+  },
+  'Fairfax Fare': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/fairfax-fare/',
+    officialImage: '/images/fairfax-fare.jpg',
+  },
+  "Rosie's All-American Café": {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/rosies-all-american-cafe/',
+    officialImage: null,
+  },
+  'Dockside Diner': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/dockside-diner/',
+    officialImage: '/images/dockside-diner.jpg',
+  },
+  'Hollywood Scoops': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/hollywood-scoops/',
+    officialImage: '/images/hollywood-scoops.jpg',
+  },
+  "Kat Saka's Kettle": {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/kat-sakas-kettle/',
+    officialImage: '/images/kat-sakas-kettle.jpg',
   },
 
   // ═══════════════════════════════════════════════════════════════
@@ -294,59 +374,59 @@ export const officialData = {
 
   'Le Cellier Steakhouse': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/le-cellier-steakhouse/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/le-cellier/WDW_EC_LeCellier_DurocPorkChop-WithSauce_STYLIZED_102324_9091_SN-16x9.jpg',
+    officialImage: '/images/le-cellier-steakhouse.jpg',
   },
   'Space 220': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/space-220/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/space-220/0324ZO_0259KP_xak-16x9.jpg',
+    officialImage: '/images/space-220.jpg',
   },
   'Biergarten Restaurant': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/biergarten-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/epcot/biergarten-restaurant/biergarten-restaurant-gallery03.jpg',
+    officialImage: '/images/biergarten-restaurant.jpg',
   },
   'Chefs de France': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/chefs-de-france/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/epcot/chefs-de-france/chefs-de-france-gallery07.jpg',
+    officialImage: '/images/chefs-de-france.jpg',
   },
   'San Angel Inn Restaurante': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/san-angel-inn-restaurante/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/epcot/san-angel-inn-restaurante/san-angel-inn-restaurante-gallery07.jpg',
+    officialImage: '/images/san-angel-inn-restaurante.jpg',
   },
   'The Garden Grill': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/garden-grill-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/entertainment/meet-greet/Garden_Grill_Epcot_204-Edit-16x9.jpg',
+    officialImage: '/images/the-garden-grill.jpg',
   },
   'Coral Reef Restaurant': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/coral-reef-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/coral-reef/WDW_EC_CoralReef_MahiMahi_STYLIZED_040224_1597_KE-16x9.jpg',
+    officialImage: '/images/coral-reef-restaurant.jpg',
   },
   'Akershus Royal Banquet Hall': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/akershus-royal-banquet-hall/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/epcot/akershus-royal-banquet-hall/akershus-royal-banquet-hall-07.jpg',
+    officialImage: '/images/akershus-royal-banquet-hall.jpg',
   },
   'Teppan Edo': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/teppan-edo/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/epcot/teppan-edo/teppan-edo-00.jpg',
+    officialImage: '/images/teppan-edo.jpg',
   },
   'Nine Dragons Restaurant': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/nine-dragons-restaurant/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/epcot/nine-dragons-restaurant/nine-dragons-restaurant-00.jpg',
+    officialImage: '/images/nine-dragons-restaurant.jpg',
   },
   'Les Halles Pastries': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/les-halles-boulangerie-patisserie/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/epcot/les-halles-boulangerie-and-patisserie/les-halles-boulangerie-patisserie-strawberry-dessert-16x9.jpg',
+    officialImage: '/images/les-halles-pastries.jpg',
   },
   'Sunshine Seasons': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/sunshine-seasons/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/dining/epcot/sunshine-seasons/sunshine-seasons-gallery00.jpg',
+    officialImage: '/images/sunshine-seasons.jpg',
   },
   'Regal Eagle Smokehouse': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/regal-eagle-smokehouse/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/dining/regal-eagle/WDW_EC_RegalEagle_Brisket-Sandwhich-16x9.jpg',
+    officialImage: '/images/regal-eagle-smokehouse.jpg',
   },
   'Tangierine Café': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/tangierine-cafe/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/events/festival-of-the-holidays/dining/tangierine-cafe-gallery01-16x9.jpg',
+    officialImage: '/images/tangierine-cafe.jpg',
   },
   'Starbucks (EPCOT)': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/connections-cafe/',
@@ -354,7 +434,69 @@ export const officialData = {
   },
   'School Bread': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/kringla-bakeri-og-kafe/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/epcot/kringla-bakeri-og-kafe/kringla-skoolbread-16x9.jpg',
+    officialImage: '/images/school-bread.jpg',
+  },
+
+  // --- EPCOT Additional Dining ---
+  'La Hacienda de San Angel': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/hacienda-de-san-angel/',
+    officialImage: '/images/la-hacienda-de-san-angel.jpg',
+  },
+  'La Cantina de San Angel': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/cantina-de-san-angel/',
+    officialImage: '/images/la-cantina-de-san-angel.jpg',
+  },
+  'Choza de Margarita': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/choza-de-margarita/',
+    officialImage: '/images/choza-de-margarita.jpg',
+  },
+  'Tutto Italia Ristorante': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/tutto-italia-ristorante/',
+    officialImage: '/images/tutto-italia.jpg',
+  },
+  'Tutto Gusto Wine Cellar': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/tutto-gusto-wine-cellar/',
+    officialImage: '/images/tutto-gusto.jpg',
+  },
+  'Via Napoli Ristorante e Pizzeria': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/via-napoli/',
+    officialImage: '/images/via-napoli.jpg',
+  },
+  'Rose & Crown Dining Room': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/rose-and-crown-dining-room/',
+    officialImage: '/images/rose-and-crown.jpg',
+  },
+  'La Crêperie de Paris': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/creperie-de-paris/',
+    officialImage: '/images/la-creperie-de-paris.jpg',
+  },
+  'Spice Road Table': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/spice-road-table/',
+    officialImage: '/images/spice-road-table.jpg',
+  },
+  'Block & Hans': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/block-hans/',
+    officialImage: '/images/block-and-hans.jpg',
+  },
+  'Fife & Drum Tavern': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/fife-and-drum-tavern/',
+    officialImage: '/images/fife-and-drum.jpg',
+  },
+  'Shiki-Sai: Sushi Izakaya': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/katsura-grill/',
+    officialImage: '/images/shiki-sai.jpg',
+  },
+  'Club Cool': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/club-cool/',
+    officialImage: '/images/club-cool.jpg',
+  },
+  'Joy of Tea': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/joy-of-tea/',
+    officialImage: '/images/joy-of-tea.jpg',
+  },
+  'Cool Wash': {
+    officialUrl: null,
+    officialImage: null,
   },
 
   // ═══════════════════════════════════════════════════════════════
@@ -367,34 +509,60 @@ export const officialData = {
   },
   'art-smiths-homecoming': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/chef-art-smiths-homecomin/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-springs/dining/homecoming/Homecomin_Chicken-16x9.jpg',
+    officialImage: '/images/art-smiths-homecoming.jpg',
   },
   'morimoto-asia': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/morimoto-asia/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/downtown-disney/morimoto-asia/morimoto-family-16x9.jpg',
+    officialImage: '/images/morimoto-asia.jpg',
   },
   'jaleo': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/jaleo/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-springs/dining/jaleo/Jaleo_Carousel_3-16x9.jpg',
+    officialImage: '/images/jaleo.jpg',
   },
   'wine-bar-george': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/wine-bar-george/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/disney-springs/wine-bar-george/exterior-16x9.jpg',
+    officialImage: '/images/wine-bar-george.jpg',
   },
   'the-edison': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/edison/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-springs/dining/the-edison/0725ZM_1266AFN-16x9.jpg',
+    officialImage: '/images/the-edison.jpg',
   },
   't-rex': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/t-rex/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/downtown-disney/t-rex-prehistoric-family-adventure/t-rex-prehistoric-family-adventure-hero-00.jpg',
+    officialImage: '/images/t-rex.jpg',
   },
   'gideons-bakehouse': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/gideons-bakehouse/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disney-world/dining/disney-springs/gideons-bakehouse/GideonsGallery01-16x9.jpg',
+    officialImage: '/images/gideons-bakehouse.jpg',
   },
   'earl-of-sandwich': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/earl-of-sandwich/',
-    officialImage: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/things-to-do/dining/downtown-disney/earl-of-sandwich/earl-of-sandwich-01.jpg',
+    officialImage: '/images/earl-of-sandwich.jpg',
+  },
+
+  // --- Disney Springs Additional ---
+  'rainforest-cafe': {
+    officialUrl: null,
+    officialImage: null,
+  },
+  'pepe-by-jose-andres': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/pepe/',
+    officialImage: '/images/pepe-by-jose-andres.jpg',
+  },
+  'the-ganachery': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/the-ganachery/',
+    officialImage: '/images/the-ganachery.jpg',
+  },
+  'sunshine-churros': {
+    officialUrl: null,
+    officialImage: null,
+  },
+  'swirls-on-the-water': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/disney-springs/swirls-on-the-water/',
+    officialImage: '/images/swirls-on-the-water.jpg',
+  },
+  'basket-at-wine-bar-george': {
+    officialUrl: null,
+    officialImage: null,
   },
 };
