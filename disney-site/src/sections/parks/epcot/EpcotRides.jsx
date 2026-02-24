@@ -17,12 +17,12 @@ const CALLOUTS = [
   {
     name: 'Test Track',
     emoji: '\uD83C\uDFC1',
-    tip: 'Design your own car in the pre-show area before the ride! Your car gets scored on speed, efficiency, and more. Kids LOVE the design phase even if they can\'t ride (40" min).',
+    tip: 'Design your own car in the pre-show area before the ride! Your car gets scored on speed, efficiency, and more. Kids LOVE the design phase even if they can\'t ride (40" height requirement).',
   },
   {
     name: 'Frozen Ever After',
     emoji: '\u2744\uFE0F',
-    tip: 'Rope drop priority #1! Lines hit 60+ minutes by mid-morning. During Early Entry (7:30 AM), you can walk on in under 10 minutes. No height requirement \u2014 perfect for Luna AND Clara.',
+    tip: 'Rope drop priority #1! Lines hit 60+ minutes by mid-morning. During Early Entry (7:30 AM), you can walk on in under 10 minutes. No height requirement \u2014 perfect for the whole family.',
   },
 ];
 

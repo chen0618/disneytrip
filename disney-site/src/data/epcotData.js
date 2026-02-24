@@ -34,7 +34,7 @@ export const festivalGuide = {
 };
 
 export const kidGuide = [
-  { name: 'Frozen Ever After', emoji: '\u2744\uFE0F', description: 'Boat ride through Arendelle with Elsa, Anna, Olaf, and the gang. Luna will be OBSESSED. No height requirement \u2014 Clara can ride too!', ageGroup: 'All ages' },
+  { name: 'Frozen Ever After', emoji: '\u2744\uFE0F', description: 'Boat ride through Arendelle with Elsa, Anna, Olaf, and the gang. No height requirement \u2014 the whole family can ride!', ageGroup: 'All ages' },
   { name: 'The Seas with Nemo & Friends', emoji: '\u{1F420}', description: 'Gentle ride through the ocean with Nemo, then walk through an actual aquarium with real sea life! Dolphins, manatees, and sea turtles.', ageGroup: 'All ages' },
   { name: 'Journey Into Imagination with Figment', emoji: '\u{1F409}', description: 'Tour the Imagination Institute with the lovable purple dragon Figment. Quirky, sensory, and fun for little ones.', ageGroup: 'All ages' },
   { name: 'Kidcot Fun Stops', emoji: '\u{1F3A8}', description: 'FREE craft activity at every World Showcase country! Kids get a card and collect stamps/stickers at each stop. It gives them a mission as you walk the World Showcase.', ageGroup: 'Ages 3-12' },
