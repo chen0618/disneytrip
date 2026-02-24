@@ -1,12 +1,4 @@
 // Height tiers organized from no requirement to tallest
-// Luna: ~39" in Jan 2026, estimated ~41-42" by Jan 2027
-// Clara: born April 2024, estimated ~34-35" by Jan 2027
-// Esme and Eli: ages unknown, listed as kids
-
-export const kidProfiles = [
-  { name: 'Luna', height: '~41–42"', age: '4.5 years', note: 'Can ride most 40" rides!' },
-  { name: 'Clara', height: '~34–35"', age: '2 years 9 months', note: 'Limited to no-requirement and 32" rides' },
-];
 
 export const heightTiers = [
   {
@@ -14,8 +6,6 @@ export const heightTiers = [
     emoji: '👶',
     color: '#4ECDC4',
     note: 'Everyone can ride!',
-    lunaCanRide: true,
-    claraCanRide: true,
     rides: [
       { name: 'Haunted Mansion', park: 'Magic Kingdom' },
       { name: 'Pirates of the Caribbean', park: 'Magic Kingdom' },
@@ -38,9 +28,7 @@ export const heightTiers = [
     tier: '32 inches',
     emoji: '🟢',
     color: '#2ECC71',
-    note: 'Clara might just make this!',
-    lunaCanRide: true,
-    claraCanRide: true,
+    note: 'Mild — most kids can handle this',
     rides: [
       { name: 'Tomorrowland Speedway', park: 'Magic Kingdom', note: '54" to drive alone' },
       { name: 'Alien Swirling Saucers', park: 'Hollywood Studios' },
@@ -50,9 +38,7 @@ export const heightTiers = [
     tier: '35 inches',
     emoji: '🟡',
     color: '#F1C40F',
-    note: 'Clara might not be tall enough yet',
-    lunaCanRide: true,
-    claraCanRide: false,
+    note: 'First coaster territory',
     rides: [
       { name: 'The Barnstormer', park: 'Magic Kingdom', note: 'Great first coaster!' },
     ],
@@ -61,9 +47,7 @@ export const heightTiers = [
     tier: '38 inches',
     emoji: '🟠',
     color: '#FF6B35',
-    note: 'Luna can ride! Clara will need Rider Swap.',
-    lunaCanRide: true,
-    claraCanRide: false,
+    note: 'Rider Swap available for shorter kids',
     rides: [
       { name: 'Seven Dwarfs Mine Train', park: 'Magic Kingdom' },
       { name: 'Slinky Dog Dash', park: 'Hollywood Studios' },
@@ -74,9 +58,7 @@ export const heightTiers = [
     tier: '40 inches',
     emoji: '🔴',
     color: '#FF6B6B',
-    note: 'Luna is borderline — measure her before the trip! Rider Swap for Clara.',
-    lunaCanRide: true,
-    claraCanRide: false,
+    note: 'Rider Swap available for shorter kids',
     rides: [
       { name: 'Big Thunder Mountain Railroad', park: 'Magic Kingdom' },
       { name: "Tiana's Bayou Adventure", park: 'Magic Kingdom' },
@@ -92,9 +74,7 @@ export const heightTiers = [
     tier: '42 inches',
     emoji: '🚫',
     color: '#A29BFE',
-    note: 'Luna might not be tall enough. Rider Swap for both kids.',
-    lunaCanRide: false,
-    claraCanRide: false,
+    note: 'Rider Swap available for shorter kids',
     rides: [
       { name: 'Guardians of the Galaxy: Cosmic Rewind', park: 'EPCOT' },
     ],
@@ -103,9 +83,7 @@ export const heightTiers = [
     tier: '44 inches',
     emoji: '🚫',
     color: '#636e72',
-    note: 'Adults only — Rider Swap for both kids.',
-    lunaCanRide: false,
-    claraCanRide: false,
+    note: 'Taller riders only — Rider Swap available',
     rides: [
       { name: 'Space Mountain', park: 'Magic Kingdom' },
     ],
@@ -114,9 +92,7 @@ export const heightTiers = [
     tier: '48 inches',
     emoji: '🚫',
     color: '#2D3436',
-    note: 'Adults only — Rider Swap for both kids.',
-    lunaCanRide: false,
-    claraCanRide: false,
+    note: 'Taller riders only — Rider Swap available',
     rides: [
       { name: 'TRON Lightcycle / Run', park: 'Magic Kingdom' },
       { name: 'Rock \'n\' Roller Coaster', park: 'Hollywood Studios' },
