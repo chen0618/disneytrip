@@ -7,6 +7,7 @@ import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import '../../styles/leaflet-overrides.css';
+import { enrichItem } from '../../utils/enrichItem';
 import snacks from '../../data/snacks';
 import { mapRides } from '../../data/mapRides';
 import springsVenues from '../../data/springsVenues';
@@ -24,7 +25,7 @@ const disneyBounds = L.latLngBounds(
 
 const parkColors = {
   'Magic Kingdom': '#FF6B6B',
-  'Hollywood Studios': '#4ECDC4',
+  'Hollywood Studios': '#A29BFE',
   'EPCOT': '#FFD700',
 };
 
@@ -375,8 +376,8 @@ function skylinerIconColored(color) {
 const busLegend = [
   { color: '#FF6B6B', label: 'Magic Kingdom' },
   { color: '#FFD700', label: 'EPCOT' },
-  { color: '#4ECDC4', label: 'Hollywood Studios' },
-  { color: '#A29BFE', label: 'Disney Springs' },
+  { color: '#A29BFE', label: 'Hollywood Studios' },
+  { color: '#1E90FF', label: 'Disney Springs' },
 ];
 
 const skylinerLegend = [
@@ -397,15 +398,15 @@ const showsLegend = [
 
 const ridesLegend = [
   { color: '#FF6B6B', label: 'Magic Kingdom' },
-  { color: '#4ECDC4', label: 'Hollywood Studios' },
+  { color: '#A29BFE', label: 'Hollywood Studios' },
   { color: '#FFD700', label: 'EPCOT' },
 ];
 
 const shoppingLegend = [
   { color: '#FF6B6B', label: 'Magic Kingdom' },
-  { color: '#4ECDC4', label: 'Hollywood Studios' },
+  { color: '#A29BFE', label: 'Hollywood Studios' },
   { color: '#FFD700', label: 'EPCOT' },
-  { color: '#A29BFE', label: 'Disney Springs' },
+  { color: '#1E90FF', label: 'Disney Springs' },
 ];
 
 export default function InteractiveMap({ onSelectItem }) {
@@ -473,7 +474,7 @@ export default function InteractiveMap({ onSelectItem }) {
   // Stable callback ref for FoodClusterLayer
   const onSelectItemRef = useRef(onSelectItem);
   onSelectItemRef.current = onSelectItem;
-  const stableOnSelectItem = useRef((item) => onSelectItemRef.current(item));
+  const stableOnSelectItem = useRef((item) => onSelectItemRef.current(enrichItem(item)));
 
   return (
     <div className="snack-map-container snack-map-fullpage">
@@ -608,7 +609,7 @@ export default function InteractiveMap({ onSelectItem }) {
             position={[r.lat, r.lng]}
             icon={rideIcon(r.emoji, r.park)}
             zIndexOffset={1500}
-            eventHandlers={{ click: () => onSelectItem(r) }}
+            eventHandlers={{ click: () => onSelectItem(enrichItem(r)) }}
           />
         ))}
 
@@ -694,7 +695,7 @@ export default function InteractiveMap({ onSelectItem }) {
               position={[s.lat, s.lng]}
               icon={showIcon(s.emoji, s.type)}
               zIndexOffset={1500}
-              eventHandlers={{ click: () => onSelectItem(s) }}
+              eventHandlers={{ click: () => onSelectItem(enrichItem(s)) }}
             />
           ))
         }

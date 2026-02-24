@@ -76,5 +76,6 @@ export const epcotNavSections = [
   { id: 'epcot-kids', label: 'Best for Kids' },
   { id: 'epcot-dining', label: 'Dining Guide' },
   { id: 'epcot-strategy', label: 'Our EPCOT Strategy' },
+  { id: 'epcot-shopping', label: 'Shopping' },
   { id: 'epcot-map', label: 'Park Map' },
 ];

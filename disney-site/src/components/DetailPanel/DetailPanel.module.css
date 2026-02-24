@@ -117,7 +117,7 @@
   color: #fff;
 }
 .parkTag.mk { background: var(--coral); }
-.parkTag.hs { background: var(--mint); }
+.parkTag.hs { background: var(--purple); }
 .parkTag.epcot { background: var(--yellow); color: var(--text); }
 .parkTag.springs { background: var(--blue); }
 
@@ -192,6 +192,31 @@
   font-style: italic;
   color: var(--text-light);
   line-height: 1.5;
+}
+
+/* ========== ACTION LINKS ========== */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.actionLink:hover {
+  background: var(--blue);
+  color: #fff;
 }
 
 /* ========== MOBILE ========== */

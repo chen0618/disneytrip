@@ -12,6 +12,7 @@ export const mapShows = [
     lat: 28.41995,
     lng: -81.58167,
     description: '3D concert film with Donald Duck — feel water and smell pie!',
+    image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/attractions/magic-kingdom/mickeys-philharmagic/mickeys-philharmagic-00.jpg',
     tip: 'Great for all ages. Air conditioned!',
   },
   {
@@ -23,6 +24,7 @@ export const mapShows = [
     lat: 28.41819,
     lng: -81.57993,
     description: 'Interactive comedy show with animated monsters and live audience.',
+    image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/gallery/attractions/magic-kingdom/monsters-inc-laugh-floor/monsters-inc-laugh-floor-gallery02.jpg',
     tip: 'Every show is different!',
   },
   {
@@ -58,6 +60,7 @@ export const mapShows = [
     lat: 28.35665,
     lng: -81.55838,
     description: 'Live stunt show with explosions, fights & audience volunteers.',
+    image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/parks-and-tickets/entertainment/hollywood-studios/indiana-jones-epic-stunt-spectacular/indiana-jones-epic-stunt-spectacular-00.jpg',
     tip: 'Runs ~30 minutes. Arrive early for a seat.',
   },
   {
@@ -82,6 +85,7 @@ export const mapShows = [
     lat: 28.41922,
     lng: -81.58120,
     description: 'Castle projections + fireworks spectacular.',
+    image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/cinderella-castle/MK17-HappilyEverAfter0507-263_1-16x9.jpg',
     tip: 'Claim a Main Street spot 30–45 min early.',
     time: '~8:00–9:00 PM',
   },
@@ -106,6 +110,7 @@ export const mapShows = [
     lat: 28.36121,
     lng: -81.55831,
     description: 'Water, fire, projections & Disney villains in an amphitheater.',
+    image: 'https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/vision-dam/digital/parks-platform/parks-global-assets/disney-world/attractions/fantasmic/1024ZO_3792AFN_xak-16x9.jpg',
     tip: 'Arrive 45–60 min early for good seats.',
     time: '~8:00 PM (select nights)',
   },

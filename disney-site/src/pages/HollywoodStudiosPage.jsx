@@ -16,6 +16,7 @@ import ThrillGuide from '../sections/parks/hs/ThrillGuide';
 import HSShows from '../sections/parks/hs/HSShows';
 import HSDining from '../sections/parks/hs/HSDining';
 import HSStrategy from '../sections/parks/hs/HSStrategy';
+import HSShopping from '../sections/parks/hs/HSShopping';
 import Footer from '../components/Footer/Footer';
 import BackToTop from '../components/BackToTop/BackToTop';
 
@@ -63,7 +64,10 @@ function HSContent() {
       <HSStrategy />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <section id="hs-map" style={{ background: 'var(--bg)', padding: '5rem 2rem' }}>
+      <HSShopping />
+      {/* bg -> bg-alt */}
+      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
+      <section id="hs-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>

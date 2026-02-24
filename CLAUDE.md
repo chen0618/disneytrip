@@ -3,7 +3,7 @@
 ## Architecture
 - **Vite + React** app in `disney-site/` directory — JSX components, CSS Modules, JS data files
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
-- All images sourced from Wikimedia Commons (freely licensed) — no local image files
+- Images from Wikimedia Commons + official Disney CDN (cdn1.parksmedia.wdprapps.disney.com) — no local image files
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
 - react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides)
 - Dark mode via `html[data-theme="dark"]` attribute + `useDarkMode` hook (localStorage-persisted)
@@ -40,6 +40,8 @@ disney-site/
 │   │   ├── useScrollReveal.js    # IntersectionObserver → adds .active to .reveal elements
 │   │   ├── useActiveSection.js   # Tracks which section is in viewport for nav dots
 │   │   └── useDarkMode.js        # localStorage-persisted dark/light theme toggle
+│   ├── utils/
+│   │   └── enrichItem.js         # Merges officialDisneyData into map items at render time
 │   ├── context/
 │   │   └── ActiveSectionContext.jsx
 │   ├── components/               # Shared/reusable
@@ -72,8 +74,8 @@ disney-site/
 │   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup
 │   │   └── parks/                # Park-specific sections (8 per park)
 │   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping
-│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy
-│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy
+│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy, HSShopping
+│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy, EpcotShopping
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js
 │       ├── timelineDays.js
@@ -101,7 +103,8 @@ disney-site/
 │       ├── epcotData.js         # EPCOT countries, food tour, festivals, kid guide, strategy
 │       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
-│       └── busRoutes.js
+│       ├── busRoutes.js
+│       └── officialDisneyData.js # Official Disney URLs + CDN images, keyed by marker ID/name
 ```
 
 ## Design System (CSS variables in :root — global.css)
@@ -116,6 +119,15 @@ disney-site/
 - useScrollReveal hook uses IntersectionObserver to add .active class imperatively
 - Stagger with .delay-1 through .delay-6
 - SVG animations use <animateMotion> with path and rotate="auto" (SkylineRouteMap)
+
+## Official Disney Data Layer
+- `src/data/officialDisneyData.js` — supplementary lookup keyed by marker ID or restaurant name
+- `src/utils/enrichItem.js` — merges official data into map items at render time: `enrichItem(item)` → adds `officialUrl`, `officialImage`
+- DetailPanel image priority: `officialImage || image || cardImage`
+- DetailPanel shows "View on DisneyWorld.com" link when `officialUrl` is non-null
+- Disney website blocks Playwright/WebFetch — use `curl -sL -H "User-Agent: Mozilla/5.0..."` to scrape
+- Disney URL slugs are inconsistent (e.g., `rock-and-roller-coaster` not `rock-n-roller-coaster`, `luminous-the-symphony-us` not `luminous-the-symphony-of-us`) — always verify with `curl` or `site:disneyworld.disney.go.com` Google search
+- Disney CDN image pattern: `cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/{width}/{height}/75/{path}`
 
 ## Image Sourcing
 - Use Wikimedia Commons API: `curl -s "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=TERM&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=960&format=json"`

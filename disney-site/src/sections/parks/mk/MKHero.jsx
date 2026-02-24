@@ -36,12 +36,12 @@ export default function MKHero() {
         </p>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statValue}>6</span>
-            <span className={styles.statLabel}>Themed Lands</span>
-          </div>
-          <div className={styles.stat}>
             <span className={styles.statValue}>30+</span>
             <span className={styles.statLabel}>Attractions</span>
+          </div>
+          <div className={styles.stat}>
+            <span className={styles.statValue}>6</span>
+            <span className={styles.statLabel}>Themed Lands</span>
           </div>
           <div className={styles.stat}>
             <span className={styles.statValue}>2</span>

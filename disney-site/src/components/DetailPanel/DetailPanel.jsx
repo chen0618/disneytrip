@@ -24,10 +24,13 @@ export default function DetailPanel({ item, onClose }) {
   const isOpen = item != null;
   const type = item?.type;
 
-  // Shows, fireworks, parades have no image — use emoji hero instead
+  // Shows, fireworks, parades — use emoji hero unless official image available
   const showTypes = ['show', 'fireworks', 'parade'];
   const isShowType = showTypes.includes(type);
-  const imgSrc = item?.image || item?.cardImage || null;
+
+  // Official image takes priority, then existing image/cardImage
+  const imgSrc = item?.officialImage || item?.image || item?.cardImage || null;
+  const showEmojiHero = isShowType && !imgSrc;
 
   // Determine park string
   const park = item?.park || (type === 'venue' ? 'Disney Springs' : null);
@@ -54,7 +57,7 @@ export default function DetailPanel({ item, onClose }) {
             </div>
 
             {/* Hero area */}
-            {isShowType ? (
+            {showEmojiHero ? (
               <div className={styles.emojiHero}>{item.emoji}</div>
             ) : imgSrc ? (
               <img className={styles.image} src={imgSrc} alt={item.name} />
@@ -130,6 +133,20 @@ export default function DetailPanel({ item, onClose }) {
               {/* Tip */}
               {item.tip && (
                 <div className={styles.tip}>💡 {item.tip}</div>
+              )}
+
+              {/* Action links */}
+              {item.officialUrl && (
+                <div className={styles.actions}>
+                  <a
+                    href={item.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.actionLink}
+                  >
+                    View on DisneyWorld.com
+                  </a>
+                </div>
               )}
             </div>
           </>

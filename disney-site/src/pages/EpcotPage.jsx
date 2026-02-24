@@ -16,6 +16,7 @@ import CountryGuide from '../sections/parks/epcot/CountryGuide';
 import BestForKids from '../sections/parks/epcot/BestForKids';
 import EpcotDining from '../sections/parks/epcot/EpcotDining';
 import EpcotStrategy from '../sections/parks/epcot/EpcotStrategy';
+import EpcotShopping from '../sections/parks/epcot/EpcotShopping';
 import Footer from '../components/Footer/Footer';
 import BackToTop from '../components/BackToTop/BackToTop';
 
@@ -63,7 +64,10 @@ function EpcotContent() {
       <EpcotStrategy />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <section id="epcot-map" style={{ background: 'var(--bg)', padding: '5rem 2rem' }}>
+      <EpcotShopping />
+      {/* bg -> bg-alt */}
+      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
+      <section id="epcot-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>
