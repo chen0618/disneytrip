@@ -5,7 +5,7 @@
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
 - All images sourced from Wikimedia Commons (freely licensed) — no local image files
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
-- react-router-dom for client-side routing (/ main site, /map full-page interactive map)
+- react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides)
 - Legacy single-file version preserved in `legacy/index.html`
 
 ## Development
@@ -30,7 +30,7 @@ disney-site/
 ├── vite.config.js
 ├── package.json
 ├── src/
-│   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage)
+│   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage, /park/* → park pages)
 │   ├── App.jsx                   # ActiveSectionProvider + 8 trip-planning sections + nav + footer
 │   ├── styles/
 │   │   ├── global.css            # :root tokens, reset, typography, reveal classes, keyframes
@@ -41,7 +41,8 @@ disney-site/
 │   ├── context/
 │   │   └── ActiveSectionContext.jsx
 │   ├── components/               # Shared/reusable
-│   │   ├── FloatingNav/          # Nav dots + map link (reads ActiveSectionContext)
+│   │   ├── FloatingNav/          # Nav dots + map link (reads ActiveSectionContext, accepts optional sections/extraLinks props)
+│   │   ├── ParkMiniMap/          # Reusable Leaflet mini-map for park pages (boundary + emoji markers)
 │   │   ├── InteractiveMap/       # Full interactive map — rides, food, shows, transport, boundaries
 │   │   ├── DetailPanel/          # Slide-in detail panel (desktop: side, mobile: bottom sheet)
 │   │   ├── WaveDivider.jsx       # SVG wave separator (props: position, fill, variant)
@@ -51,17 +52,24 @@ disney-site/
 │   │   ├── Callout/              # Accent box (kids, highlight, world variants)
 │   │   └── Footer/               # Map CTA button + credits
 │   ├── pages/
-│   │   └── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
+│   │   ├── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
+│   │   ├── MagicKingdomPage.jsx  # MK park guide (/park/magic-kingdom) — lazy loaded
+│   │   ├── HollywoodStudiosPage.jsx # HS park guide (/park/hollywood-studios) — lazy loaded
+│   │   └── EpcotPage.jsx         # EPCOT park guide (/park/epcot) — lazy loaded
 │   ├── sections/                 # One folder per main-page section (9 total)
-│   │   ├── Hero/
-│   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families)
+│   │   ├── Hero/                 # Cinderella Castle bg + 3 park guide link buttons
+│   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families), park guide links
 │   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
 │   │   ├── RopeDrop/
 │   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap
-│   │   └── PhotoPass/            # Memory Maker, family sharing, account setup
+│   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup
+│   │   └── parks/                # Park-specific sections (8 per park)
+│   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping
+│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy
+│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js
 │       ├── timelineDays.js
@@ -84,6 +92,9 @@ disney-site/
 │       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
 │       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
+│       ├── magicKingdomData.js  # MK lands, easter eggs, strategy, fireworks, nav sections
+│       ├── hollywoodStudiosData.js # HS Galaxy's Edge, Toy Story Land, thrill guide, strategy
+│       ├── epcotData.js         # EPCOT countries, food tour, festivals, kid guide, strategy
 │       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
 │       └── busRoutes.js
@@ -130,6 +141,19 @@ disney-site/
 - Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
 - Park label markers and transport routes still use Leaflet popups (simple info)
 
+## Park Guide Pages (/park/*)
+- 3 dedicated park guide pages: Magic Kingdom, Hollywood Studios, EPCOT
+- **Routes**: `/park/magic-kingdom`, `/park/hollywood-studios`, `/park/epcot`
+- **Lazy loaded** via React.lazy + Suspense (code-split into separate JS/CSS chunks)
+- Each page has its own ActiveSectionProvider + FloatingNav with park-specific sections
+- FloatingNav accepts optional `sections` prop (overrides navSections.js) and `extraLinks` (e.g., "Back to Home")
+- Park theme colors: MK=coral (#FF6B6B), HS=purple (#A29BFE), EPCOT=yellow (#FFD700)
+- **Shared data**: Rides, food, shows, shops filtered from mapRides.js, snacks.js, mapShows.js, mapShops.js by park field
+- **Park-specific data**: magicKingdomData.js, hollywoodStudiosData.js, epcotData.js
+- **ParkMiniMap**: Reusable Leaflet component showing park boundary polygon + emoji ride/food markers
+- **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
+- Each page: 8 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
+
 ## Map Coordinates
 - All marker coordinates verified via OpenStreetMap Overpass API — see `src/data/COORDINATE_STATUS.md`
 - To verify a coordinate: `curl -s "https://overpass-api.de/api/interpreter" --data-urlencode "data=[out:json];(node[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4);way[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4););out center;"`
@@ -152,6 +176,7 @@ disney-site/
 - Includes map link (🗺️) at bottom that links to /map
 - useActiveSection hook tracks which section is in viewport via IntersectionObserver
 - When adding a section: add entry to data/navSections.js, create section component, add to App.jsx
+- **Park pages**: Pass `sections` prop to override default navSections, `extraLinks` for "Back to Home" link
 
 ## Trip Details
 - Dates: January 16–23, 2027
