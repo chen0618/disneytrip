@@ -59,8 +59,8 @@ export const stageShows = [
   {
     icon: '🐻',
     park: 'Magic Kingdom',
-    name: 'Country Bear Jamboree',
-    description: "A classic Disney attraction featuring audio-animatronic bears performing country songs. Recently updated with a new show featuring Imagineer-curated music. A relaxing, indoor sit-down.",
+    name: 'Country Bear Musical Jamboree',
+    description: "A completely reimagined classic featuring audio-animatronic bears performing Disney song covers. A relaxing, indoor sit-down.",
   },
   {
     icon: '❄️',
@@ -72,7 +72,8 @@ export const stageShows = [
     icon: '🐸',
     park: 'Hollywood Studios',
     name: 'Muppet*Vision 3D',
-    description: "A classic 3D film starring the Muppets with physical in-theater effects. One of the last projects Jim Henson worked on. Funny, charming, and a great break from the sun.",
+    closed: true,
+    description: "Permanently closed for the Monstropolis construction project. This classic 3D Muppets film was one of the last projects Jim Henson worked on.",
   },
   {
     icon: '🤠',

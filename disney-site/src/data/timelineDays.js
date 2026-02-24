@@ -28,7 +28,7 @@ const timelineDays = [
     color: 'var(--coral)',
     role: 'park',
     parkLink: '/park/magic-kingdom',
-    details: 'Cinderella Castle, Pirates, Space Mountain, fireworks — the full Disney experience from rope drop to close!',
+    details: 'Cinderella Castle, Pirates, TRON Lightcycle / Run, fireworks — the full Disney experience from rope drop to close!',
   },
   {
     day: 4,

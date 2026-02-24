@@ -6,7 +6,7 @@ export const lands = [
   { id: 'frontierland', name: 'Frontierland', emoji: '🤠', color: '#D35400', vibe: 'Wild West & thrilling coasters', topAttractions: ['Big Thunder Mountain Railroad', "Tiana's Bayou Adventure"] },
   { id: 'liberty-square', name: 'Liberty Square', emoji: '🔔', color: '#2C3E50', vibe: 'Colonial charm & the haunted', topAttractions: ['Haunted Mansion', 'Liberty Belle Riverboat'] },
   { id: 'fantasyland', name: 'Fantasyland', emoji: '🏰', color: '#E84393', vibe: 'Classic Disney fairytales', topAttractions: ['Seven Dwarfs Mine Train', "Peter Pan's Flight", "It's a Small World", 'Dumbo'] },
-  { id: 'tomorrowland', name: 'Tomorrowland', emoji: '🚀', color: '#0984E3', vibe: 'Space-age thrills & laser battles', topAttractions: ['TRON Lightcycle / Run', 'Space Mountain', "Buzz Lightyear's Space Ranger Spin"] },
+  { id: 'tomorrowland', name: 'Tomorrowland', emoji: '🚀', color: '#0984E3', vibe: 'Space-age thrills & laser battles', topAttractions: ['TRON Lightcycle / Run', 'Tomorrowland Transit Authority PeopleMover', "Buzz Lightyear's Space Ranger Spin"] },
 ];
 
 export const easterEggs = [
@@ -29,7 +29,7 @@ export const mkStrategy = {
   ],
   afternoon: [
     { time: '11:30 AM', step: 'Mobile order lunch at Cosmic Ray\'s or Pecos Bill' },
-    { time: '12:00 PM', step: 'Use Lightning Lane for Space Mountain or TRON' },
+    { time: '12:00 PM', step: 'Use Lightning Lane for TRON Lightcycle / Run' },
     { time: '1:00 PM', step: 'Cool off at indoor rides: PhilharMagic, Laugh Floor, Carousel of Progress' },
     { time: '2:00 PM', step: 'Catch the Festival of Fantasy parade from Frontierland (~2:00-3:00 PM)' },
     { time: '3:00 PM', step: 'Pool break back at Pop Century (optional!)' },

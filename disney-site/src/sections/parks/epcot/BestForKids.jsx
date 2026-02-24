@@ -12,8 +12,8 @@ export default function BestForKids() {
 
         <div className={`${styles.callout} reveal`}>
           <p className={styles.calloutText}>
-            <strong>Luna</strong> will love the Frozen ride and character meets!{' '}
-            <strong>Clara</strong> will enjoy the interactive fountains and Kidcot crafts.
+            Little ones will love the Frozen ride and character meets!{' '}
+            Toddlers and preschoolers will enjoy the interactive fountains and Kidcot crafts.
           </p>
         </div>
 

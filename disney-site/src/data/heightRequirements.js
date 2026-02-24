@@ -62,7 +62,7 @@ export const heightTiers = [
     rides: [
       { name: 'Big Thunder Mountain Railroad', park: 'Magic Kingdom' },
       { name: "Tiana's Bayou Adventure", park: 'Magic Kingdom' },
-      { name: 'Soarin\' Around the World', park: 'EPCOT' },
+      { name: 'Soarin\' Across America', park: 'EPCOT' },
       { name: 'Test Track', park: 'EPCOT' },
       { name: 'Mission: SPACE', park: 'EPCOT' },
       { name: 'Tower of Terror', park: 'Hollywood Studios' },
@@ -83,9 +83,9 @@ export const heightTiers = [
     tier: '44 inches',
     emoji: '🚫',
     color: '#636e72',
-    note: 'Taller riders only — Rider Swap available',
+    note: 'Currently closed — Space Mountain is being rebuilt',
     rides: [
-      { name: 'Space Mountain', park: 'Magic Kingdom' },
+      { name: 'Space Mountain', park: 'Magic Kingdom', note: 'Closed for refurbishment — reopening 2027' },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const heightTiers = [
     note: 'Taller riders only — Rider Swap available',
     rides: [
       { name: 'TRON Lightcycle / Run', park: 'Magic Kingdom' },
-      { name: 'Rock \'n\' Roller Coaster', park: 'Hollywood Studios' },
+      { name: 'Rock \'n\' Roller Coaster Starring The Muppets', park: 'Hollywood Studios' },
     ],
   },
 ];

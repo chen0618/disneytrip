@@ -25,6 +25,12 @@ export const newExperiences = [
         badge: 'New',
         description: "A pirate-themed tavern right next to Pirates of the Caribbean — Magic Kingdom's first bar! Themed rooms, sing-alongs, and a 45-minute reservation experience. Family-friendly with mocktails for kids.",
       },
+      {
+        name: 'Country Bear Musical Jamboree',
+        emoji: '🐻',
+        badge: 'Reimagined',
+        description: 'The beloved Country Bear show was completely reimagined in 2024! The same classic animatronic bears now perform Disney song covers instead of the original country tunes. A fun, refreshed experience!',
+      },
     ],
   },
   // --- Hollywood Studios ---
@@ -116,5 +122,11 @@ export const headsUpAlerts = [
     title: 'WDW Railroad — Partial Service',
     description: 'Frontierland station is closed. The train runs as a shuttle between Main Street and Fantasyland stations only.',
     severity: 'info',
+  },
+  {
+    emoji: '🚀',
+    title: 'Space Mountain Closed for Rebuild',
+    description: 'Space Mountain closed in July 2024 for a complete rebuild with enhanced effects and new storytelling. It will NOT be open during our January 2027 trip. The new version is expected to reopen sometime in 2027.',
+    severity: 'warning',
   },
 ];

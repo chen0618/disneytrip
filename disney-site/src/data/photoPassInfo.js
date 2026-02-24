@@ -13,7 +13,7 @@ export const photoPassFeatures = [
   {
     icon: '🎢',
     title: 'Ride Photo Moments',
-    text: "Big rides like Space Mountain, Tower of Terror, Slinky Dog Dash, and Test Track automatically capture your photo mid-ride. These link to your account via your MagicBand or ticket.",
+    text: "Big rides like TRON Lightcycle / Run, Tower of Terror, Slinky Dog Dash, and Test Track automatically capture your photo mid-ride. These link to your account via your MagicBand or ticket.",
   },
   {
     icon: '✨',

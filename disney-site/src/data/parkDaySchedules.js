@@ -1,5 +1,5 @@
 export const magicKingdomSchedule = {
-  morning: 'Arrive early (rope drop!). Hit the big rides: Pirates, Space Mountain, Jungle Cruise',
+  morning: 'Arrive early (rope drop!). Hit the big rides: Pirates, TRON Lightcycle / Run, Jungle Cruise',
   afternoon: "Explore the lands, meet characters. It's a Small World, Buzz Lightyear, Haunted Mansion",
   evening: 'Slow down, grab dinner, and end the night with the FIREWORKS spectacular!',
 };

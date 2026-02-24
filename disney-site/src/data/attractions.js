@@ -6,7 +6,7 @@ export const magicKingdom = [
   },
   {
     name: 'Space Mountain',
-    description: 'Indoor roller coaster in the dark. A true classic and must-do for thrill seekers!',
+    description: 'Classic indoor coaster — currently closed for rebuild, reopening 2027.',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Space_Mountain_%28Magic_Kingdom%29_3.jpg/960px-Space_Mountain_%28Magic_Kingdom%29_3.jpg',
   },
   {
@@ -26,7 +26,7 @@ export const magicKingdom = [
   },
   {
     name: "Buzz Lightyear's Space Ranger Spin",
-    description: 'Shoot targets with laser blasters from your moving car. Competitive and fun for everyone!',
+    description: 'Shoot targets with laser blasters from your moving car. Competitive and fun for everyone! Recently upgraded with new interactive elements.',
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Buzz_Lightyear%27s_Space_Ranger_Spin_Entrance_%284730826024%29.jpg/960px-Buzz_Lightyear%27s_Space_Ranger_Spin_Entrance_%284730826024%29.jpg",
   },
 ];

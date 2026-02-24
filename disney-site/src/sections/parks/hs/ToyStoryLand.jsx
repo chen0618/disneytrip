@@ -14,7 +14,7 @@ export default function ToyStoryLand() {
           <span className={styles.kidEmoji}>🧒</span>
           <div>
             <strong>Perfect for our little ones!</strong>
-            <p>Everything in Toy Story Land is perfect for Luna & Clara's age! Even Clara at 34" can ride Alien Saucers and Toy Story Mania.</p>
+            <p>Everything in Toy Story Land has low or no height requirements — Alien Saucers (32″) and Toy Story Mania (any height) are great for the whole crew!</p>
           </div>
         </div>
 

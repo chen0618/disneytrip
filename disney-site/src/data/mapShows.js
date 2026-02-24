@@ -27,13 +27,13 @@ export const mapShows = [
   },
   {
     id: 'country-bears',
-    name: 'Country Bear Jamboree',
+    name: 'Country Bear Musical Jamboree',
     emoji: '🐻',
     type: 'show',
     park: 'Magic Kingdom',
     lat: 28.41873,
     lng: -81.58382,
-    description: 'Audio-animatronic bears performing country songs. Recently updated!',
+    description: 'Audio-animatronic bears performing Disney classic song covers in a completely reimagined show!',
     tip: 'Relaxing indoor sit-down.',
   },
 
