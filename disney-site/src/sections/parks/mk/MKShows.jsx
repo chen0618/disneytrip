@@ -5,7 +5,7 @@ import styles from './MKShows.module.css';
 
 const TYPE_COLORS = {
   show: { bg: '#fce4ec', color: '#c2185b', label: 'Stage Show' },
-  fireworks: { bg: '#fff8e1', color: '#f57f17', label: 'Fireworks' },
+  fireworks: { bg: '#fff8e1', color: '#f57f17', label: 'Nighttime Spectacular' },
   parade: { bg: '#f3e5f5', color: '#7b1fa2', label: 'Parade' },
 };
 

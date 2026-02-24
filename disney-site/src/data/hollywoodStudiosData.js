@@ -53,7 +53,7 @@ export const hsNavSections = [
   { id: 'hs-rides', label: 'Rides & Attractions' },
   { id: 'hs-thrills', label: 'Thrill Guide' },
   { id: 'hs-shows', label: 'Shows & Entertainment' },
-  { id: 'hs-dining', label: 'Dining & Snacks' },
+  { id: 'hs-dining', label: 'Dining Guide' },
   { id: 'hs-strategy', label: 'Our HS Strategy' },
   { id: 'hs-map', label: 'Park Map' },
 ];

@@ -28,7 +28,7 @@ export default function HSDining() {
     <section id="hs-dining" style={{ background: 'var(--bg)' }}>
       <div className="section-inner">
         <div className="section-header reveal">
-          <h2>Dining & Snacks</h2>
+          <h2>Dining Guide</h2>
           <p className="subtitle">From galactic cantinas to toy-sized lunch boxes</p>
         </div>
 
@@ -62,7 +62,7 @@ export default function HSDining() {
 
         <div className={styles.diningGrid}>
           {hsDining.map((item, i) => (
-            <div key={item.name + i} className={`${styles.diningCard} reveal`}>
+            <div key={item.name + i} className={styles.diningCard}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>

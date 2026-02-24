@@ -9,7 +9,7 @@ export default function MKShopping() {
   );
 
   return (
-    <section id="mk-shopping" style={{ background: 'var(--bg-alt)' }}>
+    <section id="mk-shopping" style={{ background: 'var(--bg)' }}>
       <div className="section-inner">
         <div className="section-header reveal">
           <h2>Shopping</h2>

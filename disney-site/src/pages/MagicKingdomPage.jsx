@@ -60,7 +60,7 @@ export default function MagicKingdomPage() {
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>
-            <p className="subtitle">Explore Magic Kingdom rides and dining</p>
+            <p className="subtitle">Explore Magic Kingdom rides and attractions</p>
           </div>
           <ParkMiniMap
             parkId="mk"
@@ -72,7 +72,7 @@ export default function MagicKingdomPage() {
           />
         </div>
       </section>
-      {/* bg-alt -> bg-alt (shopping is bg-alt, but we need wave between map and shopping) */}
+      {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
       <MKShopping />
     </ActiveSectionProvider>

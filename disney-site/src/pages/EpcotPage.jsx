@@ -63,7 +63,7 @@ export default function EpcotPage() {
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>
-            <p className="subtitle">Explore EPCOT rides and dining</p>
+            <p className="subtitle">Explore EPCOT rides and attractions</p>
           </div>
           <ParkMiniMap
             parkId="epcot"

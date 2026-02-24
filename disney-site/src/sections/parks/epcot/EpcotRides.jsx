@@ -12,7 +12,7 @@ const CALLOUTS = [
   {
     name: 'Guardians of the Galaxy: Cosmic Rewind',
     emoji: '\uD83C\uDFB6',
-    tip: 'Virtual Queue ONLY \u2014 no standby line! Join at 7:00 AM (park open) or 1:00 PM. Everyone in your party must have a valid park ticket and reservation linked to My Disney Experience. Set an alarm!',
+    tip: 'Virtual Queue ONLY \u2014 no standby line! Join at 7:00 AM sharp from your phone, or try again at 1:00 PM. Everyone in your party must have a valid park ticket and reservation linked to My Disney Experience. Set an alarm!',
   },
   {
     name: 'Test Track',
@@ -50,7 +50,7 @@ export default function EpcotRides() {
       <div className="section-inner">
         <div className="section-header reveal">
           <h2>Rides & Attractions</h2>
-          <p className="subtitle">Every EPCOT ride, filtered for our crew</p>
+          <p className="subtitle">Every ride at EPCOT, filtered for our crew</p>
         </div>
 
         {/* Feature Callouts */}
@@ -80,10 +80,10 @@ export default function EpcotRides() {
 
         {grouped.map(([land, rides]) => (
           <div key={land} className={styles.landGroup}>
-            <h3 className={`${styles.landTitle} reveal`}>{land}</h3>
+            <h3 className={styles.landTitle}>{land}</h3>
             <div className={styles.rideGrid}>
               {rides.map((ride) => (
-                <div key={ride.id} className={`${styles.rideCard} reveal`}>
+                <div key={ride.id} className={styles.rideCard}>
                   <div className={styles.rideHeader}>
                     <span className={styles.rideEmoji}>{ride.emoji}</span>
                     <h4 className={styles.rideName}>{ride.name}</h4>
@@ -97,7 +97,7 @@ export default function EpcotRides() {
                           color: ride.claraCanRide ? '#155724' : '#721c24',
                         }}
                       >
-                        {ride.heightReq} min
+                        {ride.heightReq}
                       </span>
                     )}
                     {ride.lightningLane && (

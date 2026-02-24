@@ -289,6 +289,16 @@ const snacks = [
     location: 'Hollywood & Vine — Echo Lake, Hollywood Studios',
   },
   {
+    name: 'Sci-Fi Dine-In Theater',
+    emoji: '🎬',
+    lat: 28.35639,
+    lng: -81.55883,
+    serviceType: 'table-service',
+    description: 'Eat in a vintage car under the stars while B-movie clips play on a drive-in screen! Burgers, ribs, and milkshakes. The theming is worth the visit alone.',
+    price: '$$ Table Service',
+    location: 'Sci-Fi Dine-In Theater — Commissary Lane, Hollywood Studios',
+  },
+  {
     name: 'The Hollywood Brown Derby',
     emoji: '🎩',
     lat: 28.35769,
@@ -380,6 +390,16 @@ const snacks = [
   // ═══════════════════════════════════════════════════════════════
 
   // --- EPCOT Table Service ---
+  {
+    name: 'Le Cellier Steakhouse',
+    emoji: '🥩',
+    lat: 28.37175,
+    lng: -81.55080,
+    serviceType: 'table-service',
+    description: 'The #1 rated restaurant at EPCOT. Canadian filet mignon, pretzel bread, and the famous cheddar cheese soup. Book 60 days out!',
+    price: '$$$ Table Service',
+    location: 'Le Cellier Steakhouse — Canada Pavilion, EPCOT',
+  },
   {
     name: 'Space 220',
     emoji: '🚀',

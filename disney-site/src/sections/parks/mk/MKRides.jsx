@@ -50,10 +50,10 @@ export default function MKRides() {
 
         {grouped.map(([land, rides]) => (
           <div key={land} className={styles.landGroup}>
-            <h3 className={`${styles.landTitle} reveal`}>{land}</h3>
+            <h3 className={styles.landTitle}>{land}</h3>
             <div className={styles.rideGrid}>
               {rides.map((ride) => (
-                <div key={ride.id} className={`${styles.rideCard} reveal`}>
+                <div key={ride.id} className={styles.rideCard}>
                   <div className={styles.rideHeader}>
                     <span className={styles.rideEmoji}>{ride.emoji}</span>
                     <h4 className={styles.rideName}>{ride.name}</h4>
@@ -67,7 +67,7 @@ export default function MKRides() {
                           color: ride.claraCanRide ? '#155724' : '#721c24',
                         }}
                       >
-                        {ride.heightReq} min
+                        {ride.heightReq}
                       </span>
                     )}
                     {ride.lightningLane && (

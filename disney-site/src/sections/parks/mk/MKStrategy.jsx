@@ -13,7 +13,7 @@ export default function MKStrategy() {
       <div className="section-inner">
         <div className="section-header reveal">
           <h2>Our MK Strategy</h2>
-          <p className="subtitle">The game plan for conquering Magic Kingdom</p>
+          <p className="subtitle">The game plan for conquering Magic Kingdom on January 18 & 22</p>
         </div>
 
         <div className={styles.columns}>

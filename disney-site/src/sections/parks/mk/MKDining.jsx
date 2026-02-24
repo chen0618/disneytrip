@@ -34,7 +34,7 @@ export default function MKDining() {
 
         {/* Must-Try Callout */}
         <div className={`${styles.mustTry} reveal`}>
-          <h3 className={styles.mustTryTitle}>Must-Try Treats</h3>
+          <h3 className={styles.mustTryTitle}>Must-Try at Magic Kingdom</h3>
           <div className={styles.mustTryGrid}>
             {MUST_TRY.map((item) => (
               <div key={item.name} className={styles.mustTryItem}>
@@ -62,7 +62,7 @@ export default function MKDining() {
 
         <div className={styles.diningGrid}>
           {mkDining.map((item, i) => (
-            <div key={item.name + i} className={`${styles.diningCard} reveal`}>
+            <div key={item.name + i} className={styles.diningCard}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>

@@ -40,7 +40,7 @@ export default function HSHero() {
             <span className={styles.statLabel}>Rides</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statValue}>4</span>
+            <span className={styles.statValue}>5</span>
             <span className={styles.statLabel}>Themed Lands</span>
           </div>
           <div className={styles.stat}>

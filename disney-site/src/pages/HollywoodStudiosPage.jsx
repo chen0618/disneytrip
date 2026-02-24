@@ -63,7 +63,7 @@ export default function HollywoodStudiosPage() {
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>
-            <p className="subtitle">Explore Hollywood Studios rides and dining</p>
+            <p className="subtitle">Explore Hollywood Studios rides and attractions</p>
           </div>
           <ParkMiniMap
             parkId="hs"

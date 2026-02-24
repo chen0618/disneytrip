@@ -13,7 +13,7 @@ const MUST_TRY = [
   { name: 'Le Cellier Steakhouse', emoji: '\uD83E\uDD69', note: 'The #1 rated restaurant at EPCOT. Canadian filet mignon, pretzel bread, and cheddar cheese soup. Book 60 days out!' },
   { name: 'Space 220', emoji: '\uD83D\uDE80', note: 'Dine in a simulated space station 220 miles above Earth! The elevator ride up is half the experience. Book ASAP.' },
   { name: 'Les Halles Boulangerie', emoji: '\uD83E\uDD50', note: "EPCOT's best-kept secret. Authentic French pastries, croissants, and sandwiches at quick-service prices." },
-  { name: 'Teppan Edo', emoji: '\uD83C\uDF63', note: 'Teppanyaki-style cooking at your table in Japan. The chef puts on a show — kids will love it!' },
+  { name: 'Teppan Edo', emoji: '\uD83D\uDD25', note: 'Teppanyaki-style cooking at your table in Japan. The chef puts on a show — kids will love it!' },
 ];
 
 export default function EpcotDining() {
@@ -35,7 +35,7 @@ export default function EpcotDining() {
 
         {/* Must-Try Callout */}
         <div className={`${styles.mustTry} reveal`}>
-          <h3 className={styles.mustTryTitle}>Top EPCOT Dining Picks</h3>
+          <h3 className={styles.mustTryTitle}>Must-Try at EPCOT</h3>
           <div className={styles.mustTryGrid}>
             {MUST_TRY.map((item) => (
               <div key={item.name} className={styles.mustTryItem}>
@@ -63,7 +63,7 @@ export default function EpcotDining() {
 
         <div className={styles.diningGrid}>
           {epcotDining.map((item, i) => (
-            <div key={item.name + i} className={`${styles.diningCard} reveal`}>
+            <div key={item.name + i} className={styles.diningCard}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>
