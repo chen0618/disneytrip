@@ -318,14 +318,12 @@ function FlyToDisney({ layer }) {
   return null;
 }
 
-// Set initial bounds to match Overview (all park boundaries)
+// Set initial bounds to Disney parks only (excludes Universal)
 function SetInitialBounds() {
   const map = useMap();
   useEffect(() => {
-    const allCoords = parkBoundaries.flatMap(b => b.coords);
-    if (allCoords.length) {
-      const bounds = L.latLngBounds(allCoords);
-      map.fitBounds(bounds, { padding: [40, 40], maxZoom: 15 });
+    if (disneyBounds.isValid()) {
+      map.fitBounds(disneyBounds, { padding: [40, 40], maxZoom: 15 });
     }
   }, [map]);
   return null;
