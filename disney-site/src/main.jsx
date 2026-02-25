@@ -10,6 +10,7 @@ const MagicKingdomPage = lazy(() => import('./pages/MagicKingdomPage'));
 const HollywoodStudiosPage = lazy(() => import('./pages/HollywoodStudiosPage'));
 const EpcotPage = lazy(() => import('./pages/EpcotPage'));
 const GuidePage = lazy(() => import('./pages/GuidePage'));
+const NewsPage = lazy(() => import('./pages/NewsPage'));
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/park/hollywood-studios" element={<HollywoodStudiosPage />} />
           <Route path="/park/epcot" element={<EpcotPage />} />
           <Route path="/guide" element={<GuidePage />} />
+          <Route path="/news" element={<NewsPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
