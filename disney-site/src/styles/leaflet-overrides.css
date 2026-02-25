@@ -121,7 +121,6 @@
 .map-chip.ride-chip.active { background: #FF6B6B; color: white; }
 .map-chip.show-chip { border-color: #E84393; color: #E84393; }
 .map-chip.show-chip.active { background: #E84393; color: white; }
-.map-chip.map-chip-universal { border-color: #E74C3C; color: #E74C3C; }
 
 .chip-sep {
   color: var(--text-muted, #ccc);

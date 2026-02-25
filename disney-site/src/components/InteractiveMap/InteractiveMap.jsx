@@ -405,9 +405,6 @@ export default function InteractiveMap({ onSelectItem }) {
     setFlyTarget({ coords: parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) });
   }
 
-  function flyToUniversal() {
-    setFlyTarget({ coords: parkBoundaries.filter(b => UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) });
-  }
 
   // Park chip helpers: filter + fly (only fly if the filter actually changes)
   const PARK_BOUNDARY_MAP = { MK: 'mk', HS: 'hs', EPCOT: 'epcot', 'Magic Kingdom': 'mk', 'Hollywood Studios': 'hs', 'Disney Springs': 'ds' };
@@ -460,8 +457,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip ride-chip ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => selectRidePark('MK')}>MK</button>
             <button className={`map-chip ride-chip ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => selectRidePark('HS')}>HS</button>
             <button className={`map-chip ride-chip ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectRidePark('EPCOT')}>EPCOT</button>
-            <span className="chip-sep">|</span>
-            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'food' && (<>
             <button className={`map-chip ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectFoodPark('all')}>All</button>
@@ -474,8 +469,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip ${foodServiceFilter === 'table-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('table-service')}>🍽️ Sit-Down</button>
             <button className={`map-chip ${foodServiceFilter === 'quick-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('quick-service')}>🍔 Quick</button>
             <button className={`map-chip ${foodServiceFilter === 'snack' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('snack')}>🍦 Snack</button>
-            <span className="chip-sep">|</span>
-            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'shopping' && (<>
             <button className={`map-chip ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectShopPark('all')}>All</button>
@@ -483,8 +476,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectShopPark('Hollywood Studios')}>HS</button>
             <button className={`map-chip ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectShopPark('EPCOT')}>EPCOT</button>
             <button className={`map-chip ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectShopPark('Disney Springs')}>DS</button>
-            <span className="chip-sep">|</span>
-            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'transport' && (<>
             <button className={`map-chip ${transportMode === 'all' ? 'active' : ''}`} onClick={() => setTransportMode('all')}>All</button>
