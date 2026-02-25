@@ -131,6 +131,9 @@
 }
 .sourceDFB { background: var(--coral); }
 .sourceAllEars { background: var(--purple); }
+.sourceBlogMickey { background: var(--blue); }
+.sourceDTB { background: var(--mint); }
+.sourceTouringPlans { background: #e67e22; }
 .statusDot {
   width: 8px;
   height: 8px;

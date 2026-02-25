@@ -61,6 +61,9 @@ export default function Hero() {
           <Link to="/guide" className={styles.parkLink} style={{ background: 'var(--mint)' }}>
             📋 Planning Guide
           </Link>
+          <Link to="/news" className={styles.parkLink} style={{ background: 'var(--blue)' }}>
+            📰 Disney News
+          </Link>
         </div>
       </div>
       <a href="#timeline" className={styles.scrollIndicator} aria-label="Scroll to next section">

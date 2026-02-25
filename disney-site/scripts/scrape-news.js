@@ -9,7 +9,65 @@ import { XMLParser } from 'fast-xml-parser';
 const FEEDS = [
   { url: 'https://www.disneyfoodblog.com/feed/', source: 'DFB' },
   { url: 'https://allears.net/feed/', source: 'AllEars' },
+  { url: 'https://blogmickey.com/feed/', source: 'BlogMickey' },
+  { url: 'https://www.disneytouristblog.com/feed/', source: 'DTB' },
+  { url: 'https://touringplans.com/blog/feed/', source: 'TouringPlans' },
 ];
+
+// --- WDW Relevance Filter ---
+// Exclude articles clearly about other parks/topics
+const EXCLUDE_PATTERNS = [
+  /\bdisneyland\b/i, /\bcalifornia adventure\b/i, /\bDCA\b/, /\banaheim\b/i,
+  /\btokyo disney/i, /\bshanghai disney/i, /\bhong kong disney/i, /\bparis disney/i,
+  /\buniversal\b/i, /\bseaworld\b/i, /\bbusch gardens\b/i, /\blegoland\b/i,
+  /\bdisney cruise\b/i, /\bdisney wish\b/i, /\bdisney treasure\b/i, /\bdisney adventure\b/i,
+  /\bdisney\+/i, /\bdisneyplus\b/i, /\bstreaming\b/i,
+  /\bbox office\b/i, /\bmovie review\b/i,
+];
+
+// Include if title/categories/description mention WDW-specific terms
+const INCLUDE_PATTERNS = [
+  /\bwalt disney world\b/i, /\bwdw\b/i, /\bdisneyworld\b/i,
+  /\bmagic kingdom\b/i, /\bhollywood studios\b/i, /\bepcot\b/i,
+  /\banimal kingdom\b/i, // relevant for general WDW news even though we're skipping AK
+  /\bdisney springs\b/i, /\bboardwalk\b/i,
+  /\bpop century\b/i, /\bart of animation\b/i, /\ball-star\b/i,
+  /\bcontemporary\b/i, /\bpolynesian\b/i, /\bgrand floridian\b/i,
+  /\bwilderness lodge\b/i, /\bfort wilderness\b/i, /\bcoronado\b/i,
+  /\bcaribbean beach\b/i, /\briviera\b/i, /\byacht club\b/i, /\bbeach club\b/i,
+  /\bskyliner\b/i, /\bmonorail\b/i, /\blightning lane\b/i, /\bgenie\+/i,
+  /\bmemory maker\b/i, /\bphotopass\b/i,
+  /\borlando\b/i, /\bflorida\b/i, /\bmco\b/i,
+  /\brope drop\b/i, /\bpark hopper\b/i, /\bmy disney experience\b/i,
+  /\btron\b/i, /\bspace mountain\b/i, /\bbig thunder\b/i, /\bseven dwarfs\b/i,
+  /\btower of terror\b/i, /\brise of the resistance\b/i, /\bslinky dog\b/i,
+  /\btest track\b/i, /\bguardians of the galaxy.+coaster/i, /\bremy/i,
+  /\bfrozen.+ride/i, /\btiny world\b/i, /\bcountry bear/i,
+];
+
+function isWdwRelevant(article) {
+  const text = `${article.title} ${article.description} ${article.categories.join(' ')}`;
+
+  // Hard exclude: clearly about other parks/topics
+  for (const pat of EXCLUDE_PATTERNS) {
+    if (pat.test(text)) return false;
+  }
+
+  // Hard include: mentions WDW-specific terms
+  for (const pat of INCLUDE_PATTERNS) {
+    if (pat.test(text)) return true;
+  }
+
+  // Generic Disney articles without specific park mentions — include from
+  // WDW-focused sources, skip from general sources
+  const wdwFocusedSources = ['BlogMickey', 'TouringPlans'];
+  if (wdwFocusedSources.includes(article.source)) return true;
+
+  // For general sources (DFB, AllEars, DTB), if no WDW keywords matched
+  // and no exclude keywords matched, it's ambiguous — include it anyway
+  // since these sources are still mostly WDW-oriented
+  return true;
+}
 
 const DATA_PATH = new URL('../src/data/newsArticles.json', import.meta.url);
 
@@ -21,7 +79,9 @@ function stripHtml(html) {
     .replace(/&#8217;/g, "'")
     .replace(/&#8220;|&#8221;/g, '"')
     .replace(/&#8230;/g, '...')
-    .replace(/&#038;|&amp;/g, '&')
+    .replace(/&#8211;/g, '–')
+    .replace(/&#8212;/g, '—')
+    .replace(/&#0?38;|&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/\s+/g, ' ')
@@ -111,14 +171,20 @@ async function main() {
       console.log(`Fetching ${feed.source}...`);
       const xml = await fetchFeed(feed.url);
       const items = parseItems(xml, feed.source);
+      let accepted = 0;
+      let filtered = 0;
       for (const item of items) {
-        if (!existingUrls.has(item.link)) {
-          existing.push(item);
-          existingUrls.add(item.link);
-          newCount++;
+        if (existingUrls.has(item.link)) continue;
+        if (!isWdwRelevant(item)) {
+          filtered++;
+          continue;
         }
+        existing.push(item);
+        existingUrls.add(item.link);
+        accepted++;
+        newCount++;
       }
-      console.log(`  ${items.length} items parsed`);
+      console.log(`  ${items.length} items parsed, ${accepted} added, ${filtered} filtered (non-WDW)`);
     } catch (err) {
       console.error(`Error fetching ${feed.source}: ${err.message}`);
     }

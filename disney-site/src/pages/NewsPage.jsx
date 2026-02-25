@@ -4,7 +4,7 @@ import articles from '../data/newsArticles.json';
 import styles from './NewsPage.module.css';
 
 const STATUS_FILTERS = ['all', 'new', 'dismissed', 'incorporated'];
-const SOURCE_FILTERS = ['all', 'DFB', 'AllEars'];
+const SOURCE_FILTERS = ['all', 'DFB', 'AllEars', 'BlogMickey', 'DTB', 'TouringPlans'];
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -36,7 +36,7 @@ export default function NewsPage() {
 
         <div className={styles.header}>
           <h1>Disney News Staging</h1>
-          <p>{articles.length} articles from Disney Food Blog &amp; AllEars.net</p>
+          <p>{articles.length} articles from {SOURCE_FILTERS.length - 1} sources</p>
         </div>
 
         <div className={styles.filters}>
@@ -85,7 +85,7 @@ export default function NewsPage() {
                 )}
                 <div className={styles.cardBody}>
                   <div className={styles.cardMeta}>
-                    <span className={`${styles.sourceBadge} ${article.source === 'DFB' ? styles.sourceDFB : styles.sourceAllEars}`}>
+                    <span className={`${styles.sourceBadge} ${styles['source' + article.source] || ''}`}>
                       {article.source}
                     </span>
                     <span className={`${styles.statusDot} ${styles['status' + article.status.charAt(0).toUpperCase() + article.status.slice(1)]}`} />
