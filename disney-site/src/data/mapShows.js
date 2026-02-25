@@ -36,6 +36,7 @@ export const mapShows = [
     lat: 28.41873,
     lng: -81.58382,
     description: 'Audio-animatronic bears performing Disney classic song covers in a completely reimagined show!',
+    image: '/images/country-bears.jpg',
     tip: 'Relaxing indoor sit-down.',
   },
 
@@ -98,6 +99,7 @@ export const mapShows = [
     lat: 28.41674,
     lng: -81.58079,
     description: 'Meet Mickey Mouse and Tinker Bell in their own theater on Main Street! Lightning Lane available for shorter waits.',
+    image: '/images/town-square-theater.jpg',
     tip: 'Mickey is here all day. Lightning Lane highly recommended — saves 30+ min.',
   },
   {
@@ -109,6 +111,7 @@ export const mapShows = [
     lat: 28.41989,
     lng: -81.58085,
     description: 'Meet Disney princesses in their royal hall — Cinderella, Rapunzel, Tiana, and more rotate throughout the day. Lightning Lane available.',
+    image: '/images/princess-fairytale-hall.jpg',
     tip: 'A must for princess fans! Go at rope drop or use Lightning Lane. Luna & Clara will love this!',
   },
   {
@@ -120,6 +123,7 @@ export const mapShows = [
     lat: 28.42116,
     lng: -81.58113,
     description: 'Interactive storytelling experience where kids get to act out scenes with Belle. A magical mirror, walking wardrobe, and Lumiere bring the story to life!',
+    image: '/images/enchanted-tales-with-belle.jpg',
     tip: 'Kids get a role in the show! One of the most magical character experiences in any park.',
   },
 
@@ -133,6 +137,7 @@ export const mapShows = [
     lat: 28.35653,
     lng: -81.55971,
     description: 'Hilarious Frozen retelling with audience sing-alongs.',
+    image: '/images/frozen-singalong.jpg',
     tip: 'Air conditioned! Fun even if you know every word.',
   },
   {
@@ -156,6 +161,7 @@ export const mapShows = [
     lat: 28.36007,
     lng: -81.56122,
     description: "Stage show celebrating Disney's iconic villains through song & dance.",
+    image: '/images/villains.jpg',
     tip: 'Features Maleficent, Ursula, Jafar, and more.',
   },
 
@@ -228,6 +234,7 @@ export const mapShows = [
     lat: 28.3578404,
     lng: -81.5605203,
     description: 'Interactive live show where kids dance and sing along with Disney Junior characters like Mickey, Bluey, and Spidey. Perfect for toddlers and preschoolers!',
+    image: '/images/disney-junior-dance-party.jpg',
     tip: 'Ages 2-6 will go wild. Multiple shows daily — check the schedule.',
   },
   {
@@ -239,6 +246,7 @@ export const mapShows = [
     lat: 28.3557123,
     lng: -81.5587216,
     description: 'Kids (ages 4-12) are chosen to train as Jedi and battle Darth Vader and the Seventh Sister! Sign up at the Indiana Jones Adventure Outpost early in the morning.',
+    image: '/images/jedi-training.jpg',
     tip: 'Sign up at park opening — spots fill FAST. Kids must be 4-12 and present at sign-up.',
   },
 
@@ -312,6 +320,7 @@ export const mapShows = [
     lat: 28.3714,
     lng: -81.5520,
     description: '360-degree CircleVision film showcasing Canada\'s stunning landscapes, cities, and culture. Standing room only — you\'re surrounded by screens!',
+    image: '/images/canada-far-and-wide.jpg',
     tip: 'Now a sit-down show! Narrated by Catherine O\'Hara. Air-conditioned and rarely a wait.',
   },
   {
@@ -323,6 +332,7 @@ export const mapShows = [
     lat: 28.3699540,
     lng: -81.5459366,
     description: '360-degree CircleVision film touring China\'s landmarks — the Great Wall, Forbidden City, Shanghai skyline, and natural wonders.',
+    image: '/images/reflections-of-china.jpg',
     tip: 'Standing room only. Beautiful cinematography. Walk-on show.',
   },
   {
@@ -334,6 +344,7 @@ export const mapShows = [
     lat: 28.3687300,
     lng: -81.5531797,
     description: 'Beautiful widescreen film touring the French countryside, chateaux, and cities set to classical music. Alternates with the Beauty and the Beast Sing-Along.',
+    image: '/images/impressions-de-france.jpg',
     tip: 'One of EPCOT\'s most relaxing shows. Check schedule — alternates with BatB Sing-Along.',
   },
   {
@@ -345,6 +356,7 @@ export const mapShows = [
     lat: 28.3683472,
     lng: -81.5493783,
     description: 'Outdoor lakeside amphitheater hosting Eat to the Beat concerts during Food & Wine Festival and other seasonal live music events.',
+    image: '/images/america-gardens-theatre.jpg',
     tip: 'Free concerts during festivals! Arrive early for seats — standing room fills up too.',
   },
 
@@ -371,6 +383,7 @@ export const mapShows = [
     lat: 28.36998,
     lng: -81.54847,
     description: 'Fireworks over World Showcase Lagoon.',
+    image: '/images/luminous.jpg',
     tip: 'Best view from bridge between Mexico and Canada.',
     time: '~9:00 PM',
   },
@@ -425,6 +438,7 @@ export const mapShows = [
     lat: 28.41778,
     lng: -81.58120,
     description: 'Floats, dancers & characters through Frontierland → Main Street.',
+    image: '/images/festival-of-fantasy.jpg',
     tip: 'Watch from Frontierland for fewer crowds, then ride while others watch on Main Street.',
     time: '~2:00 PM or 3:00 PM daily',
   },
@@ -439,6 +453,7 @@ export const mapShows = [
     lat: 28.37049,
     lng: -81.52011,
     description: 'Street performers, live music, and seasonal events throughout the district.',
+    image: '/images/ds-live-entertainment.jpg',
     tip: 'Always something happening — check the My Disney Experience app for schedules.',
   },
   {
@@ -450,6 +465,7 @@ export const mapShows = [
     lat: 28.37085,
     lng: -81.52290,
     description: 'Breathtaking Cirque du Soleil show blending Disney animation with world-class acrobatics. A love letter to Disney\'s art of animation!',
+    image: '/images/cirque-du-soleil.jpg',
     tip: 'Tickets start around $80. Worth it for the spectacle — no park ticket needed!',
   },
   {
@@ -461,6 +477,7 @@ export const mapShows = [
     lat: 28.36974,
     lng: -81.52043,
     description: 'Massive 24-screen movie theater with IMAX, Dolby Cinema, and dine-in options. See the latest releases on a rest day!',
+    image: '/images/amc-disney-springs.jpg',
     tip: 'Great rest-day activity. Dolby Cinema and IMAX screens are top-notch. Fork & Screen dine-in available.',
   },
   {
@@ -472,6 +489,7 @@ export const mapShows = [
     lat: 28.37098,
     lng: -81.51948,
     description: 'Ride 400 feet up in a tethered helium balloon for panoramic views of Walt Disney World! Weather permitting, especially beautiful at sunset.',
+    image: '/images/aerophile.jpg',
     tip: 'Best at sunset! $25/adult, $20/child. Closes in rain or high winds — go early in case of weather.',
   },
 ];

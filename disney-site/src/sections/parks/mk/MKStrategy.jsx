@@ -37,9 +37,9 @@ export default function MKStrategy() {
           ))}
         </div>
 
-        {/* Fireworks Spots Callout */}
+        {/* Nighttime Spectacular Callout */}
         <div className={`${styles.callout} reveal`}>
-          <h3 className={styles.calloutTitle}>Fireworks Viewing Tips</h3>
+          <h3 className={styles.calloutTitle}>Nighttime Spectacular Viewing Tips</h3>
           <p className={styles.calloutDesc}>{fireworksGuide.tips}</p>
           <div className={styles.spotsRow}>
             {fireworksGuide.bestSpots.map((s) => (

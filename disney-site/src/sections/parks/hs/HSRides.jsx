@@ -72,7 +72,7 @@ export default function HSRides({ onSelectItem }) {
                   <div className={styles.badges}>
                     <span
                       className={styles.badge}
-                      style={{ background: '#e8e8e8', color: '#333' }}
+                      style={{ background: 'var(--badge-bg, #e8e8e8)', color: 'var(--text)' }}
                     >
                       {ride.heightReq || 'Any Height'}
                     </span>

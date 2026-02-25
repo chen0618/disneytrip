@@ -66,6 +66,9 @@
   animation: bounce 2s infinite;
   cursor: pointer;
   z-index: 2;
+  background: none;
+  border: none;
+  padding: 0;
 }
 .scrollIndicator svg {
   width: 40px;

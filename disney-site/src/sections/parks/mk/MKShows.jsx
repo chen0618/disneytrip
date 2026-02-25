@@ -4,9 +4,9 @@ import { fireworksGuide } from '../../../data/magicKingdomData';
 import styles from './MKShows.module.css';
 
 const TYPE_COLORS = {
-  show: { bg: '#fce4ec', color: '#c2185b', label: 'Stage Show' },
-  fireworks: { bg: '#fff8e1', color: '#f57f17', label: 'Nighttime Spectacular' },
-  parade: { bg: '#f3e5f5', color: '#7b1fa2', label: 'Parade' },
+  show: { bg: 'var(--show-badge-bg, #fce4ec)', color: 'var(--show-badge-color, #c2185b)', label: 'Stage Show' },
+  fireworks: { bg: 'var(--fireworks-badge-bg, #fff8e1)', color: 'var(--fireworks-badge-color, #f57f17)', label: 'Nighttime Spectacular' },
+  parade: { bg: 'var(--parade-badge-bg, #f3e5f5)', color: 'var(--parade-badge-color, #7b1fa2)', label: 'Parade' },
 };
 
 export default function MKShows({ onSelectItem }) {
@@ -19,7 +19,7 @@ export default function MKShows({ onSelectItem }) {
     <section id="mk-shows" style={{ background: 'var(--bg-alt)' }}>
       <div className="section-inner">
         <div className="section-header reveal">
-          <h2>Shows & Fireworks</h2>
+          <h2>Shows & Entertainment</h2>
           <p className="subtitle">Entertainment that brings the magic to life</p>
         </div>
 

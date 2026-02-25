@@ -79,7 +79,7 @@
 }
 .boothName {
   font-size: 1rem;
-  color: #b8960a;
+  color: var(--epcot-accent, #b8960a);
   margin-bottom: 0.25rem;
 }
 .boothDish {

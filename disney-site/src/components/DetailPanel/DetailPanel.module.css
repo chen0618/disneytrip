@@ -167,6 +167,11 @@
   background: var(--blue);
   color: #fff;
 }
+.closedBadge {
+  composes: badge;
+  background: #e74c3c;
+  color: #fff;
+}
 .serviceTypeBadge {
   composes: badge;
 }

@@ -2,7 +2,7 @@
 
 This document tracks which map locations have verified coordinates (sourced from OpenStreetMap Overpass API) vs. rough estimates. Use this as a living reference when updating or adding locations.
 
-**Last updated**: 2026-02-24
+**Last updated**: 2026-02-25
 
 ## Legend
 - **OSM** = Verified via OpenStreetMap Overpass API query
@@ -11,9 +11,9 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ---
 
-## mapRides.js (40 rides)
+## mapRides.js (44 rides)
 
-### Magic Kingdom (22 rides)
+### Magic Kingdom (23 rides)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | pirates-of-the-caribbean | Pirates of the Caribbean | OSM | 2026-02-23 |
@@ -38,8 +38,9 @@ This document tracks which map locations have verified coordinates (sourced from
 | 20 | prince-charming-regal-carrousel | Prince Charming Regal Carrousel | OSM | 2026-02-24 |
 | 21 | astro-orbiter | Astro Orbiter | OSM | 2026-02-24 |
 | 22 | peoplemover | Tomorrowland Transit Authority PeopleMover | OSM | 2026-02-24 |
+| 23 | swiss-family-treehouse | Swiss Family Treehouse | OSM | 2026-02-25 |
 
-### Hollywood Studios (10 rides)
+### Hollywood Studios (9 rides)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | rise-of-the-resistance | Rise of the Resistance | OSM | 2026-02-23 |
@@ -52,18 +53,21 @@ This document tracks which map locations have verified coordinates (sourced from
 | 8 | star-tours | Star Tours | OSM | 2026-02-23 |
 | 9 | mickey-minnies-runaway-railway | Mickey & Minnie's Runaway Railway | OSM | 2026-02-23 |
 
-### EPCOT (8 rides)
+### EPCOT (12 rides)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | spaceship-earth | Spaceship Earth | OSM | 2026-02-23 |
 | 2 | guardians-of-the-galaxy-cosmic-rewind | Guardians of the Galaxy: Cosmic Rewind | OSM | 2026-02-23 |
 | 3 | test-track | Test Track | OSM | 2026-02-23 |
 | 4 | mission-space | Mission: SPACE | OSM | 2026-02-23 |
-| 5 | soarin-around-the-world | Soarin' Around the World | OSM | 2026-02-23 |
+| 5 | soarin-across-america | Soarin' Across America | OSM | 2026-02-23 |
 | 6 | living-with-the-land | Living with the Land | OSM | 2026-02-23 |
 | 7 | frozen-ever-after | Frozen Ever After | OSM | 2026-02-23 |
 | 8 | remys-ratatouille-adventure | Remy's Ratatouille Adventure | OSM | 2026-02-23 |
 | 9 | gran-fiesta-tour | Gran Fiesta Tour | OSM | 2026-02-24 |
+| 10 | journey-into-imagination | Journey Into Imagination with Figment | OSM | 2026-02-25 |
+| 11 | seas-with-nemo | The Seas with Nemo & Friends | OSM | 2026-02-25 |
+| 12 | journey-of-water | Journey of Water | OSM | 2026-02-25 |
 
 ---
 
@@ -181,9 +185,9 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ---
 
-## mapShows.js (27 shows/events)
+## mapShows.js (39 shows/events)
 
-### Magic Kingdom Shows (7 + 1 fireworks + 2 parades)
+### Magic Kingdom Shows (10 + 1 fireworks + 2 parades)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | philharmagic | Mickey's PhilharMagic | OSM | 2026-02-23 |
@@ -196,8 +200,11 @@ This document tracks which map locations have verified coordinates (sourced from
 | 8 | happily-ever-after | Happily Ever After (Fireworks) | OSM | 2026-02-23 |
 | 9 | disney-starlight | Disney Starlight: Dream the Night Away | OSM | 2026-02-24 |
 | 10 | festival-of-fantasy | Festival of Fantasy Parade | OSM | 2026-02-23 |
+| 11 | town-square-theater | Town Square Theater Meet & Greet | OSM | 2026-02-25 |
+| 12 | princess-fairytale-hall | Princess Fairytale Hall | OSM | 2026-02-25 |
+| 13 | enchanted-tales-with-belle | Enchanted Tales with Belle | OSM | 2026-02-25 |
 
-### Hollywood Studios Shows (9 + 2 fireworks)
+### Hollywood Studios Shows (10 + 2 fireworks)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | frozen-singalong | For the First Time in Forever | OSM | 2026-02-23 |
@@ -210,8 +217,10 @@ This document tracks which map locations have verified coordinates (sourced from
 | 8 | mickey-shorts-theater | Mickey Shorts Theater | OSM | 2026-02-24 |
 | 9 | fantasmic | Fantasmic! | OSM | 2026-02-23 |
 | 10 | wonderful-world-animation | Wonderful World of Animation | OSM | 2026-02-24 |
+| 11 | disney-junior-dance-party | Disney Junior Dance Party | OSM | 2026-02-25 |
+| 12 | jedi-training | Jedi Training: Trials of the Temple | OSM | 2026-02-25 |
 
-### EPCOT Shows (5 + 1 fireworks)
+### EPCOT Shows (9 + 1 fireworks)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | turtle-talk-with-crush | Turtle Talk with Crush | OSM | 2026-02-24 |
@@ -220,15 +229,22 @@ This document tracks which map locations have verified coordinates (sourced from
 | 4 | awesome-planet | Awesome Planet | OSM | 2026-02-24 |
 | 5 | american-adventure | The American Adventure | OSM | 2026-02-24 |
 | 6 | luminous | Luminous (EPCOT Fireworks) | OSM | 2026-02-23 |
+| 7 | canada-far-and-wide | Canada Far and Wide | OSM | 2026-02-25 |
+| 8 | reflections-of-china | Reflections of China | OSM | 2026-02-25 |
+| 9 | impressions-de-france | Impressions de France | OSM | 2026-02-25 |
+| 10 | america-gardens-theatre | America Gardens Theatre | OSM | 2026-02-25 |
 
-### Disney Springs
+### Disney Springs (4 entries)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | ds-live-entertainment | Disney Springs Live Entertainment | OSM | 2026-02-23 |
+| 2 | cirque-du-soleil | Cirque du Soleil: Drawn to Life | OSM | 2026-02-25 |
+| 3 | aerophile | Aerophile Balloon | OSM | 2026-02-25 |
+| 4 | amc-disney-springs | AMC Disney Springs 24 | OSM | 2026-02-25 |
 
 ---
 
-## mapShops.js (90+ shops)
+## mapShops.js (157 shops)
 
 All coordinates sourced from OpenStreetMap Overpass API on 2026-02-23.
 Status: **All OSM verified**
@@ -267,6 +283,7 @@ Status: **All OSM verified**
    - 2026-02-22: Initial rough coordinates for all ride, food, and show markers
    - 2026-02-23: Full OSM Overpass API verification pass for all mapRides.js, snacks.js, and mapShows.js entries
    - 2026-02-23: mapShops.js created with OSM coordinates from the start
+   - 2026-02-25: Full audit — updated ride counts (40→44), show counts (27→39), fixed Soarin' ID, added missing entries to tracking tables
    - 2026-02-23: springsVenues.js created with OSM coordinates from the start
    - 2026-02-24: Added ~41 new dining locations (10 MK, 9 HS, 15 EPCOT, 6 Disney Springs) — most OSM-verified, ~6 estimated from adjacent landmarks
    - 2026-02-24: Added 7 new rides (6 MK, 1 EPCOT) and 16 new shows/fireworks/parades — all OSM-verified except Muppet*Vision 3D (estimate)

@@ -11,7 +11,7 @@ const CALLOUTS = [
   {
     name: 'Guardians of the Galaxy: Cosmic Rewind',
     emoji: '\uD83C\uDFB6',
-    tip: 'Virtual Queue ONLY \u2014 no standby line! Join at 7:00 AM sharp from your phone, or try again at 1:00 PM. Everyone in your party must have a valid park ticket and reservation linked to My Disney Experience. Set an alarm!',
+    tip: 'Virtual queue or Lightning Lane Single Pass \u2014 no standby line! Join the virtual queue at 7:00 AM sharp from your phone, or try again at 1:00 PM. Everyone in your party must have a valid park ticket and reservation linked to My Disney Experience. Set an alarm!',
   },
   {
     name: 'Test Track',
@@ -103,7 +103,7 @@ export default function EpcotRides({ onSelectItem }) {
                   <div className={styles.badges}>
                     <span
                       className={styles.badge}
-                      style={{ background: '#e8e8e8', color: '#333' }}
+                      style={{ background: 'var(--badge-bg, #e8e8e8)', color: 'var(--text)' }}
                     >
                       {ride.heightReq || 'Any Height'}
                     </span>

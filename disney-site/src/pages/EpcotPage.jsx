@@ -43,7 +43,7 @@ function EpcotContent() {
     <>
       <FloatingNav
         sections={epcotNavSections}
-        extraLinks={[{ to: '/', icon: '\uD83C\uDFE0', label: 'Back to Home' }]}
+        extraLinks={[{ to: '/', icon: '🏠', label: 'Back to Home' }]}
       />
       <EpcotHero />
       {/* hero (bg-alt via wave) -> WorldShowcase (bg-alt) */}

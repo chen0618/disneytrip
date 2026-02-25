@@ -18,7 +18,7 @@ export const toyStoryLandGuide = [
 export const thrillGuide = [
   { id: 'tower', name: 'Tower of Terror — Drop Sequences', emoji: '🗼', description: "The Hollywood Tower Hotel uses a randomized drop sequence — each ride is different! Sometimes you get 2 drops, sometimes 4+. The moment of weightlessness at the top, with the doors opening to reveal the park, is unforgettable. 40\" height req.", tip: 'Front row has the best view when doors open. 40" height requirement' },
   { id: 'rock-n-roller', name: "Rock 'n' Roller Coaster Starring The Muppets", emoji: '🎸', description: "High-speed launch coaster that goes 0-57 mph in 2.8 seconds, with 3 inversions in the dark, now featuring The Muppets' Electric Mayhem band. The only Disney World coaster with inversions. 48\" req — adults only for our group.", tip: 'Use Rider Swap so both parents can ride. Single rider line is also fast.' },
-  { id: 'rider-swap-strategy', name: 'Rider Swap Strategy', emoji: '🔄', description: "For rides the kids can't do, use Disney's Rider Swap. Parent A rides while Parent B waits with kids. Then Parent B gets to ride with up to 2 others without waiting again! Works for Tower, the Muppets coaster, and Rise of the Resistance.", tip: 'Ask a Cast Member at the ride entrance to set up Rider Swap before joining the line.' },
+  { id: 'rider-swap-strategy', name: 'Rider Swap Strategy', emoji: '🔄', description: "For rides the kids can't do, use Disney's Rider Swap. Parent A rides while Parent B waits with kids. Then Parent B gets to ride with up to 2 others without waiting again! Works great for Tower of Terror and the Muppets coaster.", tip: 'Ask a Cast Member at the ride entrance to set up Rider Swap before joining the line.' },
 ];
 
 export const hsStrategy = {

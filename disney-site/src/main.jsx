@@ -2,7 +2,7 @@ import { StrictMode, lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import MapPage from './pages/MapPage';
+const MapPage = lazy(() => import('./pages/MapPage'));
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import './styles/global.css';
 

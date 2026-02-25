@@ -85,8 +85,8 @@
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-family: 'Nunito', sans-serif;
-  background: #fff3cd;
-  color: #856404;
+  background: var(--badge-ll-bg, #fff3cd);
+  color: var(--badge-ll-color, #856404);
 }
 .rideDesc {
   font-size: 0.9rem;
@@ -99,7 +99,7 @@
   font-weight: 600;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background: #f0eefe;
+  background: var(--badge-tip-bg, #f0eefe);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--purple);
 }

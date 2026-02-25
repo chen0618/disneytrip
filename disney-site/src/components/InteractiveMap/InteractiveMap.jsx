@@ -66,11 +66,13 @@ function showIcon(emoji, type) {
   });
 }
 
-function rideIcon(emoji, park) {
+function rideIcon(emoji, park, closed) {
   const color = parkColors[park] || '#1E90FF';
+  const closedStyle = closed ? 'opacity:0.5;filter:grayscale(1);' : '';
+  const closedLabel = closed ? '<span style="position:absolute;top:-6px;right:-6px;background:#e74c3c;color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;">X</span>' : '';
   return L.divIcon({
     className: '',
-    html: `<div class="emoji-marker ride-marker" style="border-color:${color};box-shadow:0 2px 8px ${color}80;">${emoji}</div>`,
+    html: `<div class="emoji-marker ride-marker" style="border-color:${color};box-shadow:0 2px 8px ${color}80;${closedStyle}position:relative;">${emoji}${closedLabel}</div>`,
     iconSize: [40, 40],
     iconAnchor: [20, 20],
   });
@@ -563,7 +565,7 @@ export default function InteractiveMap({ onSelectItem }) {
           <Marker
             key={r.id}
             position={[r.lat, r.lng]}
-            icon={rideIcon(r.emoji, r.park)}
+            icon={rideIcon(r.emoji, r.park, r.closed)}
             zIndexOffset={1500}
             eventHandlers={{ click: () => onSelectItem(enrichItem(r)) }}
           />

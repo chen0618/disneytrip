@@ -24,13 +24,13 @@ export default function DetailPanel({ item, onClose }) {
   const isOpen = item != null;
   const type = item?.type;
 
-  // Shows, fireworks, parades — use emoji hero unless official image available
-  const showTypes = ['show', 'fireworks', 'parade'];
-  const isShowType = showTypes.includes(type);
+  // Types that use emoji hero when no image is available
+  const emojiHeroTypes = ['show', 'fireworks', 'parade', 'shop'];
+  const isShowType = ['show', 'fireworks', 'parade'].includes(type);
 
   // Official image takes priority, then existing image/cardImage
   const imgSrc = item?.officialImage || item?.image || item?.cardImage || null;
-  const showEmojiHero = isShowType && !imgSrc;
+  const showEmojiHero = emojiHeroTypes.includes(type) && !imgSrc;
 
   // Determine park string
   const park = item?.park || (type === 'venue' ? 'Disney Springs' : null);
@@ -96,12 +96,15 @@ export default function DetailPanel({ item, onClose }) {
               {/* Badges */}
               {type === 'ride' && (
                 <div className={styles.badges}>
+                  {item.closed && (
+                    <span className={styles.closedBadge}>🚧 Temporarily Closed</span>
+                  )}
                   {item.heightReq && (
                     <span className={styles.heightBadge}>
                       📏 {item.heightReq}
                     </span>
                   )}
-                  {item.lightningLane && (
+                  {item.lightningLane && !item.closed && (
                     <span className={styles.llBadge}>Lightning Lane ⚡</span>
                   )}
                 </div>

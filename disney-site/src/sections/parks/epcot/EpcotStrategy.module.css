@@ -53,7 +53,7 @@
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   font-size: 0.8rem;
-  color: #b8960a;
+  color: var(--epcot-accent, #b8960a);
   margin-bottom: 0.15rem;
 }
 .stepText {

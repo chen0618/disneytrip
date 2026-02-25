@@ -48,7 +48,7 @@
   border: 2px solid var(--yellow);
   border-radius: var(--radius-lg);
   background: transparent;
-  color: #b8960a;
+  color: var(--epcot-accent, #b8960a);
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -56,7 +56,7 @@
   transition: all 0.2s ease;
 }
 .filterBtn:hover {
-  background: #fff3b0;
+  background: var(--epcot-accent-bg, #fff3b0);
 }
 .filterBtn.active {
   background: var(--yellow);

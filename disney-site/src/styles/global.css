@@ -50,6 +50,19 @@ html[data-theme="dark"] {
   --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
   --shadow-xl: 0 16px 48px rgba(0,0,0,0.45);
   --footer-bg: #151018;
+  --badge-bg: #3a3344;
+  --badge-tip-bg: #2e2838;
+  --badge-ll-bg: #3d3520;
+  --badge-ll-color: #ffd97a;
+  --show-badge-bg: #3d2838;
+  --show-badge-color: #f48fb1;
+  --fireworks-badge-bg: #3d3520;
+  --fireworks-badge-color: #ffd97a;
+  --parade-badge-bg: #332840;
+  --parade-badge-color: #ce93d8;
+  --card-hover-bg: #2e2838;
+  --epcot-accent: #ffd97a;
+  --epcot-accent-bg: #3d3520;
 }
 
 /* ========== TYPOGRAPHY ========== */

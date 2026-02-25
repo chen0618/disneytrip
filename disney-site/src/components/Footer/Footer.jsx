@@ -38,6 +38,9 @@ export default function Footer({ variant, currentPark }) {
           🗺️ Explore the Interactive Map
         </Link>
         <div className={styles.secondaryLinks}>
+          <Link to="/park/magic-kingdom" className={styles.link}>Magic Kingdom</Link>
+          <Link to="/park/hollywood-studios" className={styles.link}>Hollywood Studios</Link>
+          <Link to="/park/epcot" className={styles.link}>EPCOT</Link>
           <Link to="/guide" className={styles.link}>Planning Guide</Link>
         </div>
       </div>

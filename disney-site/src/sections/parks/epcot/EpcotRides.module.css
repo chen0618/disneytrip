@@ -42,7 +42,7 @@
   border: 2px solid var(--yellow);
   border-radius: var(--radius-lg);
   background: transparent;
-  color: #b8960a;
+  color: var(--epcot-accent, #b8960a);
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
@@ -50,7 +50,7 @@
   transition: all 0.2s ease;
 }
 .filterBtn:hover {
-  background: #fff3b0;
+  background: var(--epcot-accent-bg, #fff3b0);
 }
 .filterBtn.active {
   background: var(--yellow);
@@ -118,8 +118,8 @@
   border-radius: var(--radius-sm);
   font-weight: 700;
   font-family: 'Nunito', sans-serif;
-  background: #fff3cd;
-  color: #856404;
+  background: var(--badge-ll-bg, #fff3cd);
+  color: var(--badge-ll-color, #856404);
 }
 .rideDesc {
   font-size: 0.9rem;
@@ -128,11 +128,11 @@
 }
 .rideTip {
   font-size: 0.85rem;
-  color: #b8960a;
+  color: var(--yellow);
   font-weight: 600;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background: #fffbe6;
+  background: var(--badge-tip-bg, #fffbe6);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--yellow);
 }

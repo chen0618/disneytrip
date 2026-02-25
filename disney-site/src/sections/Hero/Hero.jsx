@@ -66,11 +66,15 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <a href="#timeline" className={styles.scrollIndicator} aria-label="Scroll to next section">
+      <button
+        className={styles.scrollIndicator}
+        aria-label="Scroll to next section"
+        onClick={() => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })}
+      >
         <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="6 9 12 15 18 9" />
         </svg>
-      </a>
+      </button>
       <WaveDivider fill="var(--bg)" variant={1} />
     </section>
   );

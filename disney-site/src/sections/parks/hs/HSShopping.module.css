@@ -39,7 +39,7 @@
   font-weight: 600;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background: #eef6ff;
+  background: var(--badge-tip-bg, #eef6ff);
   border-radius: var(--radius-sm);
   border-left: 3px solid var(--blue);
 }

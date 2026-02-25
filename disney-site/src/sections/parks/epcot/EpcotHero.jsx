@@ -36,7 +36,7 @@ export default function EpcotHero() {
         </p>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statValue}>10</span>
+            <span className={styles.statValue}>12</span>
             <span className={styles.statLabel}>Rides</span>
           </div>
           <div className={styles.stat}>

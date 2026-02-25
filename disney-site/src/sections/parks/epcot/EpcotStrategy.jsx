@@ -3,9 +3,9 @@ import { epcotStrategy } from '../../../data/epcotData';
 import styles from './EpcotStrategy.module.css';
 
 const PERIODS = [
-  { key: 'morning', label: 'Morning', emoji: '\uD83C\uDF05', color: '#b8960a' },
+  { key: 'morning', label: 'Morning', emoji: '🌅', color: '#b8960a' },
   { key: 'afternoon', label: 'Afternoon', emoji: '\u2600\uFE0F', color: '#d4a50a' },
-  { key: 'evening', label: 'Evening', emoji: '\uD83C\uDF19', color: '#8b7209' },
+  { key: 'evening', label: 'Evening', emoji: '🌙', color: '#8b7209' },
 ];
 
 export default function EpcotStrategy() {

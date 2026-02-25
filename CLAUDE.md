@@ -5,9 +5,8 @@
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
 - Images from Wikimedia Commons + official Disney CDN (cdn1.parksmedia.wdprapps.disney.com) — no local image files
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
-- react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides, /news staging page)
+- react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides, /guide planning guide, /news staging page)
 - Dark mode via `html[data-theme="dark"]` attribute + `useDarkMode` hook (localStorage-persisted)
-- `@media print` rules for printable packing list (hides everything except packing grid)
 
 ## Development
 - Install: `cd disney-site && npm install`
@@ -34,7 +33,7 @@ disney-site/
 │   └── scrape-news.js           # RSS scraper — 5 feeds with WDW relevance filter
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage, /park/* → park pages)
-│   ├── App.jsx                   # ActiveSectionProvider + 8 trip-planning sections + nav + footer
+│   ├── App.jsx                   # ActiveSectionProvider + 5 main sections + nav + footer
 │   ├── styles/
 │   │   ├── global.css            # :root tokens, reset, typography, reveal classes, keyframes
 │   │   └── leaflet-overrides.css # Popup, marker, cluster, route animation, ride/show styles
@@ -60,27 +59,29 @@ disney-site/
 │   │   ├── Callout/              # Accent box (kids, highlight, world variants) — uses <div> body (not <p>) to support <br> breaks
 │   │   └── Footer/               # Map CTA + credits; variant="park" + currentPark prop for park page footers with nav links
 │   ├── pages/
-│   │   ├── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
-│   │   ├── NewsPage.jsx           # News staging page (/news route) — article cards with status/source filters
+│   │   ├── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel — lazy loaded
+│   │   ├── GuidePage.jsx         # Planning guide (/guide route) — BeforeYouGo, RopeDrop, LightningLane, PhotoPass — lazy loaded
+│   │   ├── NewsPage.jsx           # News staging page (/news route) — article cards with status/source filters — lazy loaded
 │   │   ├── MagicKingdomPage.jsx  # MK park guide (/park/magic-kingdom) — lazy loaded
 │   │   ├── HollywoodStudiosPage.jsx # HS park guide (/park/hollywood-studios) — lazy loaded
 │   │   └── EpcotPage.jsx         # EPCOT park guide (/park/epcot) — lazy loaded
-│   ├── sections/                 # One folder per main-page section (9 total)
+│   ├── sections/                 # One folder per section
 │   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + park guide + news link buttons
-│   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families), park guide links
-│   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
+│   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 8 families), park guide links
+│   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips (rendered on /guide)
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
-│   │   ├── RopeDrop/
-│   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap
-│   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup
-│   │   └── parks/                # Park-specific sections (8 per park)
+│   │   ├── RopeDrop/             # Morning strategy (rendered on /guide)
+│   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap (rendered on /guide)
+│   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup (rendered on /guide)
+│   │   └── parks/                # Park-specific sections (8-10 per park)
 │   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping
 │   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy, HSShopping
 │   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy, EpcotShopping
 │   └── data/                     # All content extracted from HTML
-│       ├── navSections.js
+│       ├── navSections.js        # Main page FloatingNav sections (5 entries)
+│       ├── guideNavSections.js   # Guide page FloatingNav sections (4 entries)
 │       ├── timelineDays.js
 │       ├── travelGroup.js        # 20-person travel party with family grouping
 │       ├── springsVenues.js      # Disney Springs venues with lat/lng
@@ -88,7 +89,7 @@ disney-site/
 │       ├── transportInfo.js
 │       ├── skylinerPhotos.js
 │       ├── attractions.js        # {magicKingdom, hollywoodStudios, epcot}
-│       ├── mapRides.js           # 33 rides with coordinates, height data, images
+│       ├── mapRides.js           # 44 rides with coordinates, height data, images
 │       ├── parkDaySchedules.js
 │       ├── ropeDropSteps.js
 │       ├── lightningLaneInfo.js
@@ -97,7 +98,7 @@ disney-site/
 │       ├── showsInfo.js
 │       ├── snacks.js
 │       ├── mapParks.js
-│       ├── mapShows.js           # 11 show/event markers for interactive map
+│       ├── mapShows.js           # 39 show/event markers for interactive map
 │       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
 │       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
@@ -139,23 +140,25 @@ disney-site/
 - Some subjects have no Wikimedia photos (e.g., Art Smith's Homecoming, Ronto Wrap food)
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
-## Main Page Sections (in order, 9 total)
+## Main Page Sections (in order, 5 on home page)
 1. hero — Cinderella Castle background, countdown timer, sparkle animations
-2. timeline — 8-day trip cards, travel group (20 people, 7 families), "split off" blurb
-3. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
-4. whats-new — New/upgraded rides, restaurants, closures & heads-up alerts for 2026-2027
-5. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
-6. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
-7. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
-8. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
-9. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
+2. timeline — 8-day trip cards, travel group (20 people, 8 families), "split off" blurb
+3. whats-new — New/upgraded rides, restaurants, closures & heads-up alerts for 2026-2027
+4. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
+5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
+
+## Planning Guide Page (/guide, 4 sections)
+1. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
+2. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
+3. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
+4. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
 
 ## Interactive Map (/map page)
 - **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
 - **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
 - Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Transportation
 - Independent boundary overlay toggle (Zillow-style park polygons)
-- **Rides layer**: 35 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
+- **Rides layer**: 44 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
 - **Transport layer**: bus routes, Skyliner, boats with animated markers
@@ -214,8 +217,8 @@ disney-site/
 3. Set background to --bg or --bg-alt (must alternate with neighbors)
 4. Set WaveDivider top fill to PREVIOUS section's background, bottom fill to NEXT section's background
    - **Remember**: The wave's `fill` color = the color of the section the wave visually "belongs to" (i.e., what's below the wave)
-5. Add to App.jsx imports and JSX (order matters)
-6. Add to data/navSections.js
+5. Add to App.jsx or GuidePage.jsx imports and JSX (order matters)
+6. Add to data/navSections.js or data/guideNavSections.js (depending on which page)
 7. Inserting an odd number of sections shifts all downstream backgrounds — recheck alternation
 
 ## Floating Nav
@@ -236,7 +239,7 @@ disney-site/
 - Hotel: Pop Century Resort (Skyliner access)
 - Travel: ACY → MCO
 - Kids: Luna (born June 16, 2022), Clara (born April 2, 2024)
-- Travel group: 20 people in 7 families — Us (Andrew, Rosy, Luna, Clara), Grandparents (Tuc, Oanh), Teresa & James, Sandy & Gavin, Paul & Kayla, Natali & Alex & Esme & Eli, AJ & Amy & Liam & Asher — 6 kids total (Luna, Clara, Esme, Eli, Liam, Asher)
+- Travel group: 20 people in 8 families — Us (Andrew, Rosy, Luna, Clara), Grandparents (Tuc, Oanh), Teresa, James, Sandy & Gavin, Paul & Kayla, Natali & Alex & Esme & Eli, AJ & Amy & Liam & Asher — 6 kids total (Luna, Clara, Esme, Eli, Liam, Asher)
 - Day 1 (Jan 16): Travel, Day 2 (17): Pool + Disney Springs, Day 3 (18): MK, Day 4 (19): HS, Day 5 (20): Rest, Day 6 (21): EPCOT, Day 7 (22): MK again, Day 8 (23): Travel home
 - Skipping Animal Kingdom entirely — do not mention it
 - Airport transport: A Way We Go (private vehicle + stroller rentals)

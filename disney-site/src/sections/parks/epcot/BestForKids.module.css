@@ -54,8 +54,8 @@
   font-size: 0.75rem;
   font-weight: 700;
   font-family: 'Nunito', sans-serif;
-  background: #fffbe6;
-  color: #b8960a;
+  background: var(--epcot-accent-bg, #fffbe6);
+  color: var(--epcot-accent, #b8960a);
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-sm);
 }
