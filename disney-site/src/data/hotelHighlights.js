@@ -24,6 +24,11 @@ const hotelHighlights = [
     title: 'Everything POP',
     description: 'Large food court with tons of options \u2014 burgers, pizza, pasta, salads, and a refillable mug station',
   },
+  {
+    icon: '🎮',
+    title: 'Arcade & Activities',
+    description: 'Pop Century has one of the best resort arcades (Play Cards ~$0.50/game), plus Mickey Tie-Dye crafts ($18/shirt), Movies Under the Stars, and nightly campfires with free marshmallows',
+  },
 ];
 
 export default hotelHighlights;

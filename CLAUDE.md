@@ -5,7 +5,7 @@
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
 - Images from Wikimedia Commons + official Disney CDN (cdn1.parksmedia.wdprapps.disney.com) — no local image files
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
-- react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides)
+- react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides, /news staging page)
 - Dark mode via `html[data-theme="dark"]` attribute + `useDarkMode` hook (localStorage-persisted)
 - `@media print` rules for printable packing list (hides everything except packing grid)
 
@@ -30,6 +30,8 @@ disney-site/
 ├── index.html                    # Vite entry (Google Fonts)
 ├── vite.config.js
 ├── package.json
+├── scripts/
+│   └── scrape-news.js           # RSS scraper — 5 feeds with WDW relevance filter
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage, /park/* → park pages)
 │   ├── App.jsx                   # ActiveSectionProvider + 8 trip-planning sections + nav + footer
@@ -59,11 +61,12 @@ disney-site/
 │   │   └── Footer/               # Map CTA + credits; variant="park" + currentPark prop for park page footers with nav links
 │   ├── pages/
 │   │   ├── MapPage.jsx           # Full-page interactive map (/map route) with DetailPanel
+│   │   ├── NewsPage.jsx           # News staging page (/news route) — article cards with status/source filters
 │   │   ├── MagicKingdomPage.jsx  # MK park guide (/park/magic-kingdom) — lazy loaded
 │   │   ├── HollywoodStudiosPage.jsx # HS park guide (/park/hollywood-studios) — lazy loaded
 │   │   └── EpcotPage.jsx         # EPCOT park guide (/park/epcot) — lazy loaded
 │   ├── sections/                 # One folder per main-page section (9 total)
-│   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + 3 park guide link buttons
+│   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + park guide + news link buttons
 │   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 7 families), park guide links
 │   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
@@ -103,6 +106,7 @@ disney-site/
 │       ├── epcotData.js         # EPCOT countries, food tour, festivals, kid guide, strategy
 │       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
+│       ├── newsArticles.json    # RSS-scraped Disney news articles (status: new/incorporated/dismissed)
 │       ├── busRoutes.js
 │       └── officialDisneyData.js # Official Disney URLs + CDN images, keyed by marker ID/name
 ```
@@ -183,6 +187,13 @@ disney-site/
 - Rides subtitle: "Every ride at [Park]..." pattern
 - Fireworks/nighttime badge label: "Nighttime Spectacular" (not "Fireworks")
 - Map subtitle: "rides and attractions" (not "rides and dining")
+
+## News Pipeline
+- **Scraper**: `node scripts/scrape-news.js` — fetches 5 RSS feeds (DFB, AllEars, BlogMickey, DTB, TouringPlans), filters non-WDW articles, appends to `newsArticles.json`
+- **Slash commands**: `/pullnews` (scrape + build + deploy), `/processnews` (triage articles, update site data, mark statuses)
+- **Article statuses**: `new` → `incorporated` (with data file updates) or `dismissed` (with reason in `notes`)
+- **Blog scraping gotcha**: Disney blog sites are JS-rendered — WebFetch and curl return ad scripts, not article content. Use Playwright browser to read full articles.
+- **RSS dependency**: `fast-xml-parser` for XML parsing
 
 ## Map Coordinates
 - All marker coordinates verified via OpenStreetMap Overpass API — see `src/data/COORDINATE_STATUS.md`

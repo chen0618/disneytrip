@@ -31,6 +31,12 @@ export const newExperiences = [
         badge: 'Reimagined',
         description: 'The beloved Country Bear show was completely reimagined in 2024! The same classic animatronic bears now perform Disney song covers instead of the original country tunes. A fun, refreshed experience!',
       },
+      {
+        name: 'Cinderella Castle — Fresh Paint',
+        emoji: '🏰',
+        badge: 'Upgraded',
+        description: 'The castle began a full repaint in January 2026 with a refreshed "Classic" color scheme. By our trip it will look brand new — perfect for photos!',
+      },
     ],
   },
   // --- Hollywood Studios ---

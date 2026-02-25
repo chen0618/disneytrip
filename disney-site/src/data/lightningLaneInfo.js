@@ -26,7 +26,7 @@ export const llStrategy = [
   {
     icon: '⏰',
     title: "Running Late? You're Still Fine",
-    text: "If you miss your exact return window, Disney gives a grace period. You can usually still tap in a few minutes late without any issue. Don't stress if you're running behind.",
+    text: "Your return window is actually about 3 hours — much longer than the 1-hour window shown in the app. If you're running behind, don't cancel! Just show up and tap in within the extended grace period.",
   },
   {
     icon: '📱',
@@ -37,6 +37,16 @@ export const llStrategy = [
     icon: '🎯',
     title: 'Prioritize High-Wait Rides',
     text: "Use Lightning Lane for rides with 60+ minute standby waits. For rides with shorter waits (under 20 min), save your LL slots for bigger attractions.",
+  },
+  {
+    icon: '🎲',
+    title: 'The "Burner" LL Trick',
+    text: "Use a low-demand Tier 2 ride (like Buzz Lightyear or The Barnstormer) as your first Lightning Lane of the day. Once you tap in, tier restrictions loosen and you can stack more popular rides for the rest of the day.",
+  },
+  {
+    icon: '✏️',
+    title: 'Modify, Don\'t Cancel',
+    text: "Treat your initial 7 AM bookings as placeholders. Throughout the day, check back to modify reservations to better times or different rides — modifying is free and keeps your slot active.",
   },
 ];
 

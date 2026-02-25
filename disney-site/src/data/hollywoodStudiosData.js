@@ -3,7 +3,7 @@
 export const galaxysEdgeGuide = [
   { id: 'savis', name: "Savi's Workshop — Lightsaber Building", emoji: '⚔️', description: "Build your own custom lightsaber in a secret workshop guided by Gatherers. Choose from 4 crystal colors and 4 hilt themes. It's an immersive 20-minute ceremony — genuinely emotional for Star Wars fans. Costs ~$250 but includes the lightsaber.", tip: 'Reservations required and sell out fast. Book at 7AM ET exactly 60 days before your visit.' },
   { id: 'ogas', name: "Oga's Cantina", emoji: '🍹', description: "The only bar in a Disney park! Themed as a smuggler's watering hole with DJ R-3X spinning tunes. Try the Fuzzy Tauntaun (foam that makes your lips tingle) or the Jedi Mind Trick. Non-alcoholic options and blue/green milk available for kids.", tip: 'Reservations strongly recommended. 45-minute time limit. Standing room only gets you in faster.' },
-  { id: 'smugglers-run', name: "Millennium Falcon: Smuggler's Run", emoji: '🛸', description: "YOU pilot the Millennium Falcon in a 6-person cockpit. Pilots steer, gunners fire weapons, engineers manage systems. The ride adapts based on how well you perform — crash enough and your Falcon will show damage in the queue!", tip: 'Request to be a pilot for the most interactive experience. 38" height requirement' },
+  { id: 'smugglers-run', name: "Millennium Falcon: Smugglers Run — A New Mission", emoji: '🛸', description: "Fly the Falcon with Din Djarin and Grogu! The crew picks their destination — Bespin, Endor's Death Star wreckage, or Coruscant. Pilots steer, gunners fire, and engineers can now communicate with Grogu. Launched May 2026 with a full Mandalorian overlay.", tip: 'Request to be a pilot for the most interactive experience. 38" height requirement' },
   { id: 'droid-depot', name: "Droid Depot", emoji: '🤖', description: "Build your own R-unit or BB-unit droid from interchangeable parts on a conveyor belt. Your droid interacts with Bluetooth beacons throughout Galaxy's Edge, beeping and reacting to its surroundings. ~$100.", tip: 'A great activity for kids. Droids work best when you walk slowly through Batuu.' },
   { id: 'hidden-details', name: 'Hidden Details of Batuu', emoji: '🔍', description: "Cast Members say 'Bright Suns' (hello) and 'Til the Spire' (goodbye). Droid tracks in the ground, cockroach-like creatures in the walls, and the spires of the ancient ruins all tell a story. The Coke bottles are even shaped like thermal detonators!", tip: 'Download the Play Disney Parks app for interactive Batuu experiences.' },
 ];
@@ -40,8 +40,8 @@ export const hsStrategy = {
   evening: [
     { time: '5:00 PM', step: '50\'s Prime Time Café or Sci-Fi Dine-In' },
     { time: '6:30 PM', step: 'Re-ride favorites or catch anything missed' },
-    { time: '7:30 PM', step: 'Grab spot for Fantasmic! (if performing)' },
-    { time: '8:00 PM', step: 'Fantasmic! water, fire, and projection spectacular' },
+    { time: '7:30 PM', step: 'Grab spot for Fantasmic! — aim for mid-level center seats (avoid front rows: splash zone + visible effects mechanics). Consider the Fantasmic Dining Package for reserved seating.' },
+    { time: '8:00 PM', step: 'Fantasmic! water, fire, and projection spectacular (30 min)' },
     { time: '9:00 PM', step: 'Post-show: low-wait rides or head back to resort' },
   ],
 };

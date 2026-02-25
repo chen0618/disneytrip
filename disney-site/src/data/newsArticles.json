@@ -12,8 +12,8 @@
     ],
     "imageUrl": "https://blogmickey.com/wp-content/uploads/2023/03/cropped-blog-mickey-logo-april-2023-150x150.png?x51919",
     "contentSnippet": "The Walt Disney Company has announced that Hugh Johnston, Senior Executive Vice President & Chief Financial Officer, The Walt Disney Company will participate in a question-and-answer session at the Morgan Stanley Technology, Media & Telecom Conference on Monday, March 2, 2026 at approximately 4:05pm...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Corporate/financial news"
   },
   {
     "id": "allears-2026-02-25-we-found-new-bluey-crocs-and-we-think-theyll-set-out-fast",
@@ -33,8 +33,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/Screenshot-2026-02-24-at-10.57.14-AM.png",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Merchandise"
   },
   {
     "id": "dfb-2026-02-25-the-disney-world-game-changer-that-could-fix-a-major-dining-problems",
@@ -59,8 +59,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2025/04/2025-wdw-all-star-sports-resort-end-zone-food-court-review-full-spread.jpg",
     "contentSnippet": "Picture this: You just got off the Disney bus at your resort after a long day of walking 20,000+ steps, and you're hungry because dinner was hours ago, but now you're faced with the issue of where to get food from. End Zone Food Court You leave the park after the fireworks. Maybe you stayed for Exte...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Opinion piece about late-night dining gap, no new info"
   },
   {
     "id": "allears-2026-02-25-i-go-to-disney-world-every-day-these-are-the-biggest-mistakes-ive-mad",
@@ -84,8 +84,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/AE-EPCOT-Flower-and-Garden-Festival-2026-Phineas-and-Ferb-Topiaries-Photo-Feb-11-2026-12-21-36-PM-3672-x-2066-scaled.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "EPCOT Flower & Garden — outside Jan 16-23 window"
   },
   {
     "id": "allears-2026-02-25-the-plan-for-a-new-mary-poppins-attraction-in-disney-world-is-dead",
@@ -113,8 +113,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2019/10/Epcot-Experience-Model-Video-007-UK-Pavilion-Mary-Poppins-Attraction.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Years-old cancellation retrospective, no 2027 impact"
   },
   {
     "id": "allears-2026-02-25-6-new-unspoken-rules-for-using-lightning-lanes-in-magic-kingdom",
@@ -135,8 +135,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2025/12/2025-WDW-hollywood-studios-toy-story-mania-lightning-lane-atmo-1.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added LL tips to lightningLaneInfo.js: 3-hour return window, burner trick, modify strategy"
   },
   {
     "id": "dfb-2026-02-25-9-new-perks-announced-for-disney-fans-this-month-february-2026",
@@ -167,8 +167,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/2025-wdw-dak-riverside-depot-annual-passholder-magnet-nick-and-judy-1.jpg",
     "contentSnippet": "February has come and gone — but not before leaving Disney fans with some seriously sweet perks! New Annual Passholder magnet A major benefit of being a die-hard Disney fan who is enrolled in Disney programs is how often we get perks! Each month, Disney reveals a ton of new deals and freebies — and ...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "All perks are AP/DVC/Disneyland-only or expired by Jan 2027"
   },
   {
     "id": "dfb-2026-02-25-disney-just-released-a-new-princess-athletic-dress-collection-that-yo",
@@ -217,8 +217,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/Screenshot-2026-02-25-at-9.40.31-AM.png",
     "contentSnippet": "Disney and Her Universe have a new dress collection, and we need all of them! They're athletic dresses that are perfect for your next park day. ©Disney Store These dresses are perfect for any occasion, whether you're working out or headed to the parks. They have full performance flexibility with att...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Merchandise"
   },
   {
     "id": "allears-2026-02-25-new-disney-princess-athletic-dresses-are-now-online",
@@ -244,8 +244,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/her-universe-princess-athletic-dresses-e1772035776315.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Merchandise"
   },
   {
     "id": "allears-2026-02-25-warning-this-one-hollywood-studios-hack-could-ruin-the-magic",
@@ -271,8 +271,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2025/09/2025-wdw-dhs-sunset-boulevard-crowds-atmo-scaled.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added Fantasmic seating tip to hollywoodStudiosData.js strategy"
   },
   {
     "id": "touringplans-blog-disney-data-dump-february-25-2026",
@@ -288,8 +288,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Weekly crowd data for Feb 2026, not predictive for Jan 2027"
   },
   {
     "id": "allears-2026-02-25-the-disney-x-brooks-collab-just-got-so-much-better",
@@ -314,8 +314,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/brooks-rundisney-princess.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Merchandise"
   },
   {
     "id": "dtb-disney-worlds-second-worst-week-of-year-wraps-up",
@@ -331,8 +331,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Feb 2026 crowd recap, general insights already in strategy"
   },
   {
     "id": "dfb-2026-02-25-5-bath-and-body-works-candles-that-make-your-house-smell-like-disney-",
@@ -353,8 +353,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2023/09/2023-wdw-riviera-resort-hotel-atmos.jpg",
     "contentSnippet": "Staying at a Disney World resort is a huge part of your vacation, and it can feel like home while you're staying there. Disney's Riviera Resort If you are constantly dreaming of your favorite resort and wishing you could be there right now, we have a solution for you that won't cost you a plane tick...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Home decor/merchandise"
   },
   {
     "id": "dtb-mickeys-not-so-scary-halloween-party-review-tips",
@@ -374,8 +374,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Halloween party — outside Jan 16-23 window"
   },
   {
     "id": "dfb-2026-02-25-the-12-lunch-with-a-beer-hiding-in-a-disney-world-hotel",
@@ -406,8 +406,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2025/02/2025-wdw-lake-buena-vista-golf-course-saratoga-springs-chip-n-dales-cafe-beer-bottled-water.jpg",
     "contentSnippet": "Dining in Disney World can add up quickly, so when we find a bargin on a meal, we're going to talk about it! Saratoga Springs With price increases on hotel rooms, park tickets, Lightning Lanes, and food — our readers want to make their dollars stretch further in Disney World, so we do our best to ke...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Saratoga Springs dining — wrong resort, impractical detour"
   },
   {
     "id": "dfb-2026-02-25-brooks-releases-new-disney-princess-collection",
@@ -432,8 +432,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/brooks-rundisney-princess.jpg",
     "contentSnippet": "Brooks CANNOT stop releasing Disney-themed shoes, and we're literally so obsessed. They've been releasing it for every runDisney weekend lately, and you need to check out the 2026 Disney Princess Half Marathon Weekend collection. ©Disney Whether you're into runDisney or not, you're probably going to...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Merchandise"
   },
   {
     "id": "blogmickey-2026-02-popular-entertainment-returning-for-2026-mickeys-not-so-scary-halloween-",
@@ -448,8 +448,8 @@
     ],
     "imageUrl": "https://blogmickey.com/wp-content/uploads/2022/08/hocus-pocus-villain-spelltacular-2022-1.jpg?x51919",
     "contentSnippet": "New audition notices posted by Disney confirms that two popular entertainment offerings are returning for the 2026 version of Mickey's Not-So-Scary Halloween Party. While we're still awaiting confirmation of event dates, we can start to piece together event offerings thanks to the recent notices. He...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Halloween party — outside Jan 16-23 window"
   },
   {
     "id": "touringplans-blog-un-deux-trois-so-many-reasons-to-visit-les-halles",
@@ -468,8 +468,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Enhanced France entry in epcotData.js with Les Halles menu picks and prices"
   },
   {
     "id": "touringplans-blog-four-things-to-know-about-arcades-in-walt-disney-world",
@@ -488,8 +488,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added Pop Century arcade info to hotelHighlights.js"
   },
   {
     "id": "dtb-buy-100-disney-or-travel-gift-card-get-free-10-gc",
@@ -504,8 +504,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Time-sensitive deal expired by Jan 2027, gift card strategy already covered"
   },
   {
     "id": "blogmickey-2026-02-walt-disney-world-updates-millennium-falcon-attraction-name",
@@ -521,8 +521,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2024/08/20002539/millennium-falcon-smugglers-run-mandalorian-grogu-concept-art-1-2000x870.jpg",
     "contentSnippet": "Walt Disney World has updated the name of the Millennium Falcon attraction at Disney's Hollywood Studios to indicate that the ride is receiving an update. The updated name adds \"A New Mission\" tagline to the already wordy attraction. Here's a look at the change, and new descriptions for the attracti...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Updated ride name in mapRides.js and hollywoodStudiosData.js to Mandalorian overlay"
   },
   {
     "id": "blogmickey-2026-02-once-upon-a-studio-theater-enchanted-art-gallery-hollywood-studios",
@@ -538,8 +538,8 @@
     ],
     "imageUrl": "https://blogmickey.com/wp-content/uploads/2024/07/disneys-hollywood-studios-entrance-07242024-1-2000x1333.jpg?x51919",
     "contentSnippet": "As part of an update on the under-construction Walt Disney Studios Lot area at Disney's Hollywood Studios, Walt Disney World announced new details for the venue. As a reminder, the Walt Disney Studios Lot is the new name for the former Animation Courtyard, and there will be all-new offerings for gue...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Already in whatsNewInfo.js as Magic of Disney Animation entry"
   },
   {
     "id": "blogmickey-2026-02-first-ever-nonstop-passenger-flight-from-tokyo-to-florida-marks-major-mi",
@@ -554,8 +554,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2026/02/24092119/zipair-nonstop-tokyo-landing-2000x1334.jpg",
     "contentSnippet": "The Orlando International Airport (MCO) has announced a major milestone for not only Florida as a whole, but for Disney fans as well! The first-ever nonstop passenger flight between Tokyo and Orlando landed yesterday, bringing some 280 passengers along for the historic connection between the major t...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Tokyo-Orlando flight, not relevant (flying ACY to MCO)"
   },
   {
     "id": "blogmickey-2026-02-full-list-character-meet-greets-the-magic-of-disney-animation-hollywood-",
@@ -572,8 +572,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2025/12/03091817/rapunzel-off-the-page-meet-greet-concept-art.jpg",
     "contentSnippet": "Walt Disney World has announced additional details for The Magic of Disney Animation, coming to Disney's Hollywood Studios later this Summer. The reimagined offering replaces the Star Wars Launch Bay, and is a return to the roots of this area of the theme park following the Star Wars takeover. In th...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Part of Magic of Disney Animation entry in whatsNewInfo.js"
   },
   {
     "id": "blogmickey-2026-02-richard-irvine-ferryboat-refurbishment",
@@ -590,8 +590,8 @@
     ],
     "imageUrl": "https://blogmickey.com/wp-content/uploads/2023/04/richard-f-irvine-ferryboat-1.jpg?x51919",
     "contentSnippet": "The Magic Kingdom ferryboat fleet is down to two vessels at the moment, with the Richard F. Irvine ferryboat taken out of service for refurbishment. That leaves the General Joe Potter and Admiral Joe Fowler ferryboats as the only two in service at the moment. Here's the latest, and when we expect th...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Ferryboat refurb completed by April 2026, long before trip"
   },
   {
     "id": "touringplans-blog-new-animation-academy-experience-coming-to-hollywood-studios",
@@ -606,8 +606,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Part of Magic of Disney Animation entry in whatsNewInfo.js"
   },
   {
     "id": "blogmickey-2026-02-crane-less-cinderella-castle-painting-project-continues-magic-kingdom",
@@ -624,8 +624,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2026/02/23163651/cinderella-castle-painting-0223-2026-1-2000x1334.jpg",
     "contentSnippet": "We're experiencing a sort of \"bank error in your favor\" situation at Magic Kingdom as we approach one month of the Cinderella Castle painting project, and have yet to spot a single crane. The first coat of grey paint was applied to Cinderella Castle in late January, and while Disney fans are used to...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added castle repaint to whatsNewInfo.js MK section"
   },
   {
     "id": "touringplans-blog-new-cinderella-castle-repaint-photos",
@@ -642,8 +642,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Combined with castle repaint entry in whatsNewInfo.js"
   },
   {
     "id": "touringplans-blog-new-menu-at-harambe-market",
@@ -662,8 +662,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Animal Kingdom — skipping AK"
   },
   {
     "id": "touringplans-blog-flower-garden-topiary-maps",
@@ -681,8 +681,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Flower & Garden festival — outside Jan 16-23 window"
   },
   {
     "id": "touringplans-blog-saturday-six-artist-spotlight-the-theme-park-artwork-of-andres-orellana-aka",
@@ -697,8 +697,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Artist spotlight/opinion piece"
   },
   {
     "id": "touringplans-blog-a-disney-world-vacation-plan-for-a-family-of-four-for-4024",
@@ -719,8 +719,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Budget plan for different family/resort/dates"
   },
   {
     "id": "touringplans-blog-the-best-dishes-returning-to-epcots-flower-garden-festival",
@@ -739,8 +739,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Flower & Garden festival — outside Jan 16-23 window"
   },
   {
     "id": "touringplans-blog-disney-data-dump-february-18-2026",
@@ -756,8 +756,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Weekly crowd data for Feb 2026, not predictive for Jan 2027"
   },
   {
     "id": "touringplans-blog-disney-resort-activities",
@@ -776,8 +776,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added Pop Century activities to hotelHighlights.js (arcade, tie-dye, movies, campfire)"
   },
   {
     "id": "touringplans-blog-typhoon-lagoon-closes-as-blizzard-beach-reopens",
@@ -795,8 +795,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Water parks not in itinerary"
   },
   {
     "id": "touringplans-blog-update-cinderella-castle-repaint-photos",
@@ -813,7 +813,7 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Combined with castle repaint entry in whatsNewInfo.js"
   }
 ]
