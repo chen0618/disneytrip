@@ -11,9 +11,9 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ---
 
-## mapRides.js (33 rides)
+## mapRides.js (40 rides)
 
-### Magic Kingdom (16 rides)
+### Magic Kingdom (22 rides)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | pirates-of-the-caribbean | Pirates of the Caribbean | OSM | 2026-02-23 |
@@ -32,6 +32,12 @@ This document tracks which map locations have verified coordinates (sourced from
 | 14 | buzz-lightyears-space-ranger-spin | Buzz Lightyear's Space Ranger Spin | OSM | 2026-02-23 |
 | 15 | tron-lightcycle-run | TRON Lightcycle / Run | OSM | 2026-02-23 |
 | 16 | tomorrowland-speedway | Tomorrowland Speedway | OSM | 2026-02-23 |
+| 17 | wdw-railroad | Walt Disney World Railroad | OSM | 2026-02-24 |
+| 18 | magic-carpets-of-aladdin | Magic Carpets of Aladdin | OSM | 2026-02-24 |
+| 19 | mad-tea-party | Mad Tea Party | OSM | 2026-02-24 |
+| 20 | prince-charming-regal-carrousel | Prince Charming Regal Carrousel | OSM | 2026-02-24 |
+| 21 | astro-orbiter | Astro Orbiter | OSM | 2026-02-24 |
+| 22 | peoplemover | Tomorrowland Transit Authority PeopleMover | OSM | 2026-02-24 |
 
 ### Hollywood Studios (10 rides)
 | # | ID | Name | Status | Date |
@@ -46,7 +52,7 @@ This document tracks which map locations have verified coordinates (sourced from
 | 8 | star-tours | Star Tours | OSM | 2026-02-23 |
 | 9 | mickey-minnies-runaway-railway | Mickey & Minnie's Runaway Railway | OSM | 2026-02-23 |
 
-### EPCOT (7 rides)
+### EPCOT (8 rides)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | spaceship-earth | Spaceship Earth | OSM | 2026-02-23 |
@@ -57,6 +63,7 @@ This document tracks which map locations have verified coordinates (sourced from
 | 6 | living-with-the-land | Living with the Land | OSM | 2026-02-23 |
 | 7 | frozen-ever-after | Frozen Ever After | OSM | 2026-02-23 |
 | 8 | remys-ratatouille-adventure | Remy's Ratatouille Adventure | OSM | 2026-02-23 |
+| 9 | gran-fiesta-tour | Gran Fiesta Tour | OSM | 2026-02-24 |
 
 ---
 
@@ -174,21 +181,50 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ---
 
-## mapShows.js (11 shows/events)
+## mapShows.js (27 shows/events)
 
+### Magic Kingdom Shows (7 + 1 fireworks + 2 parades)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | philharmagic | Mickey's PhilharMagic | OSM | 2026-02-23 |
 | 2 | laugh-floor | Monsters, Inc. Laugh Floor | OSM | 2026-02-23 |
-| 3 | country-bears | Country Bear Jamboree | OSM | 2026-02-23 |
-| 4 | frozen-singalong | For the First Time in Forever | OSM | 2026-02-23 |
-| 5 | indiana-jones | Indiana Jones Stunt Spectacular | OSM | 2026-02-23 |
-| 7 | villains | Disney Villains After Hours | OSM | 2026-02-23 |
+| 3 | country-bears | Country Bear Musical Jamboree | OSM | 2026-02-23 |
+| 4 | carousel-of-progress | Walt Disney's Carousel of Progress | OSM | 2026-02-24 |
+| 5 | hall-of-presidents | The Hall of Presidents | OSM | 2026-02-24 |
+| 6 | enchanted-tiki-room | Walt Disney's Enchanted Tiki Room | OSM | 2026-02-24 |
+| 7 | friendship-faire | Mickey's Magical Friendship Faire | OSM | 2026-02-24 |
 | 8 | happily-ever-after | Happily Ever After (Fireworks) | OSM | 2026-02-23 |
-| 9 | luminous | Luminous (EPCOT Fireworks) | OSM | 2026-02-23 |
-| 10 | fantasmic | Fantasmic! | OSM | 2026-02-23 |
-| 11 | festival-of-fantasy | Festival of Fantasy Parade | OSM | 2026-02-23 |
-| 12 | ds-live-entertainment | Disney Springs Live Entertainment | OSM | 2026-02-23 |
+| 9 | disney-starlight | Disney Starlight: Dream the Night Away | OSM | 2026-02-24 |
+| 10 | festival-of-fantasy | Festival of Fantasy Parade | OSM | 2026-02-23 |
+
+### Hollywood Studios Shows (9 + 2 fireworks)
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | frozen-singalong | For the First Time in Forever | OSM | 2026-02-23 |
+| 2 | indiana-jones | Indiana Jones Stunt Spectacular | OSM | 2026-02-23 |
+| 3 | villains | Disney Villains: Unforgettable | OSM | 2026-02-23 |
+| 4 | batb-live-on-stage | Beauty and the Beast – Live on Stage | OSM | 2026-02-24 |
+| 5 | little-mermaid-musical | The Little Mermaid – A Musical Adventure | OSM | 2026-02-24 |
+| 6 | muppet-vision-3d | Muppet*Vision 3D | estimate | 2026-02-24 |
+| 7 | walt-disney-presents | Walt Disney Presents | OSM | 2026-02-24 |
+| 8 | mickey-shorts-theater | Mickey Shorts Theater | OSM | 2026-02-24 |
+| 9 | fantasmic | Fantasmic! | OSM | 2026-02-23 |
+| 10 | wonderful-world-animation | Wonderful World of Animation | OSM | 2026-02-24 |
+
+### EPCOT Shows (5 + 1 fireworks)
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | turtle-talk-with-crush | Turtle Talk with Crush | OSM | 2026-02-24 |
+| 2 | short-film-festival | Disney & Pixar Short Film Festival | OSM | 2026-02-24 |
+| 3 | batb-singalong | Beauty and the Beast Sing-Along | OSM | 2026-02-24 |
+| 4 | awesome-planet | Awesome Planet | OSM | 2026-02-24 |
+| 5 | american-adventure | The American Adventure | OSM | 2026-02-24 |
+| 6 | luminous | Luminous (EPCOT Fireworks) | OSM | 2026-02-23 |
+
+### Disney Springs
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | ds-live-entertainment | Disney Springs Live Entertainment | OSM | 2026-02-23 |
 
 ---
 
@@ -233,3 +269,5 @@ Status: **All OSM verified**
    - 2026-02-23: mapShops.js created with OSM coordinates from the start
    - 2026-02-23: springsVenues.js created with OSM coordinates from the start
    - 2026-02-24: Added ~41 new dining locations (10 MK, 9 HS, 15 EPCOT, 6 Disney Springs) — most OSM-verified, ~6 estimated from adjacent landmarks
+   - 2026-02-24: Added 7 new rides (6 MK, 1 EPCOT) and 16 new shows/fireworks/parades — all OSM-verified except Muppet*Vision 3D (estimate)
+   - 2026-02-24: Added officialDisneyData entries for all new rides/shows + all 89 shops (park + Disney Springs)

@@ -153,8 +153,38 @@ export const officialData = {
     officialImage: '/images/seas-with-nemo.jpg',
   },
 
+  // New rides (7)
+  'wdw-railroad': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/walt-disney-world-railroad/',
+    officialImage: '/images/wdw-railroad.jpg',
+  },
+  'astro-orbiter': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/astro-orbiter/',
+    officialImage: '/images/astro-orbiter.jpg',
+  },
+  'mad-tea-party': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/mad-tea-party/',
+    officialImage: '/images/mad-tea-party.jpg',
+  },
+  'prince-charming-regal-carrousel': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/prince-charming-regal-carrousel/',
+    officialImage: '/images/prince-charming-regal-carrousel.jpg',
+  },
+  'magic-carpets-of-aladdin': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/magic-carpets-of-aladdin/',
+    officialImage: '/images/magic-carpets-of-aladdin.jpg',
+  },
+  'peoplemover': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/tomorrowland-transit-authority-peoplemover/',
+    officialImage: '/images/peoplemover.jpg',
+  },
+  'gran-fiesta-tour': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/gran-fiesta-tour-starring-three-caballeros/',
+    officialImage: '/images/gran-fiesta-tour.jpg',
+  },
+
   // ═══════════════════════════════════════════════════════════════
-  // SHOWS & ENTERTAINMENT (12)
+  // SHOWS & ENTERTAINMENT (12 + 14 new)
   // ═══════════════════════════════════════════════════════════════
 
   'philharmagic': {
@@ -192,6 +222,72 @@ export const officialData = {
   'festival-of-fantasy': {
     officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/festival-fantasy-parade/',
     officialImage: null,
+  },
+
+  // New shows (14)
+  'carousel-of-progress': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/walt-disney-carousel-of-progress/',
+    officialImage: '/images/carousel-of-progress.jpg',
+  },
+  'hall-of-presidents': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/hall-of-presidents/',
+    officialImage: '/images/hall-of-presidents.jpg',
+  },
+  'enchanted-tiki-room': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/enchanted-tiki-room/',
+    officialImage: '/images/enchanted-tiki-room.jpg',
+  },
+  'friendship-faire': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/mickeys-magical-friendship-faire/',
+    officialImage: '/images/friendship-faire.jpg',
+  },
+  'disney-starlight': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/starlight-dream-night-away-parade/',
+    officialImage: '/images/disney-starlight.jpg',
+  },
+  'batb-live-on-stage': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/beauty-and-the-beast-live-on-stage/',
+    officialImage: '/images/batb-live-on-stage.jpg',
+  },
+  'little-mermaid-musical': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/little-mermaid-musical-adventure/',
+    officialImage: '/images/little-mermaid-musical.jpg',
+  },
+  'muppet-vision-3d': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/muppet-vision-3d/',
+    officialImage: '/images/muppet-vision-3d.jpg',
+  },
+  'walt-disney-presents': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/walt-disney-presents/',
+    officialImage: '/images/walt-disney-presents.jpg',
+  },
+  'mickey-shorts-theater': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/vacation-fun/',
+    officialImage: '/images/mickey-shorts-theater.jpg',
+  },
+  'wonderful-world-animation': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/wonderful-world-of-animation/',
+    officialImage: '/images/wonderful-world-animation.jpg',
+  },
+  'turtle-talk-with-crush': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/turtle-talk-with-crush/',
+    officialImage: '/images/turtle-talk-with-crush.jpg',
+  },
+  'short-film-festival': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/disney-pixar-short-film-festival/',
+    officialImage: '/images/short-film-festival.jpg',
+  },
+  'batb-singalong': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/epcot/beauty-and-the-beast-sing-along/',
+    officialImage: '/images/batb-singalong.jpg',
+  },
+  'awesome-planet': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/the-land-awesome-planet/',
+    officialImage: '/images/awesome-planet.jpg',
+  },
+  'american-adventure': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/american-adventure/',
+    officialImage: '/images/american-adventure.jpg',
   },
 
   // ═══════════════════════════════════════════════════════════════
@@ -564,5 +660,431 @@ export const officialData = {
   'basket-at-wine-bar-george': {
     officialUrl: null,
     officialImage: null,
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // SHOPS — Park Shops (14)
+  // ═══════════════════════════════════════════════════════════════
+
+  // Magic Kingdom
+  'emporium': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/emporium/',
+    officialImage: '/images/emporium.jpg',
+  },
+  'memento-mori': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/memento-mori/',
+    officialImage: '/images/memento-mori.jpg',
+  },
+  'big-top-souvenirs': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/big-top-souvenirs/',
+    officialImage: '/images/big-top-souvenirs.jpg',
+  },
+  'frontier-trading-post': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/frontier-trading-post/',
+    officialImage: '/images/frontier-trading-post.jpg',
+  },
+  'merchant-of-venus': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/merchant-of-venus/',
+    officialImage: '/images/merchant-of-venus.jpg',
+  },
+
+  // Hollywood Studios
+  'tatooine-traders': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/tatooine-traders/',
+    officialImage: '/images/tatooine-traders.jpg',
+  },
+  'dok-ondars': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/dok-ondars-den-of-antiquities/',
+    officialImage: '/images/dok-ondars.jpg',
+  },
+  'mickeys-of-hollywood': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/mickeys-of-hollywood/',
+    officialImage: '/images/mickeys-of-hollywood.jpg',
+  },
+  'tower-hotel-gifts': {
+    officialUrl: null,
+    officialImage: null,
+  },
+
+  // EPCOT
+  'creations-shop': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/creations-shop/',
+    officialImage: '/images/creations-shop.jpg',
+  },
+  'mitsukoshi': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/mitsukoshi-department-store/',
+    officialImage: '/images/mitsukoshi.jpg',
+  },
+  'northwest-mercantile': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/trading-post/',
+    officialImage: '/images/northwest-mercantile.jpg',
+  },
+  'la-bottega-italiana': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/la-bottega-italiana/',
+    officialImage: '/images/la-bottega-italiana.jpg',
+  },
+  'die-weihnachts-ecke': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/die-weihnachts-ecke/',
+    officialImage: '/images/die-weihnachts-ecke.jpg',
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // SHOPS — Disney Springs (75)
+  // ═══════════════════════════════════════════════════════════════
+
+  // Disney Merchandise
+  'world-of-disney': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/world-of-disney/',
+    officialImage: null,
+  },
+  'pin-traders': {
+    officialUrl: 'https://www.disneysprings.com/shopping/pin-traders/',
+    officialImage: null,
+  },
+  'marketplace-co-op': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/marketplace-co-op/',
+    officialImage: '/images/marketplace-co-op.jpg',
+  },
+  'once-upon-a-toy': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/once-upon-a-toy/',
+    officialImage: '/images/once-upon-a-toy.jpg',
+  },
+  'days-of-christmas': {
+    officialUrl: 'https://www.disneysprings.com/shopping/days-of-christmas/',
+    officialImage: null,
+  },
+  'disney-ever-after': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/disney-ever-after/',
+    officialImage: null,
+  },
+  'disneystyle': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/disneystyle/',
+    officialImage: '/images/disneystyle.jpg',
+  },
+  'art-of-disney': {
+    officialUrl: 'https://www.disneysprings.com/shopping/art-of-disney/',
+    officialImage: null,
+  },
+  'wonderful-world-memories': {
+    officialUrl: 'https://www.disneysprings.com/shopping/wonderful-world-memories/',
+    officialImage: null,
+  },
+  'tren-d': {
+    officialUrl: 'https://www.disneysprings.com/shopping/tren-d/',
+    officialImage: null,
+  },
+  'crystal-arts': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/crystal-arts/',
+    officialImage: null,
+  },
+  'star-wars-galactic': {
+    officialUrl: 'https://www.disneysprings.com/shopping/star-wars-galactic/',
+    officialImage: null,
+  },
+  'super-hero-hq': {
+    officialUrl: 'https://www.disneysprings.com/shopping/super-hero-hq/',
+    officialImage: null,
+  },
+  'mickeys-pantry': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/mickeys-pantry/',
+    officialImage: null,
+  },
+  'cirque-boutique': {
+    officialUrl: 'https://www.disneysprings.com/shopping/cirque-boutique/',
+    officialImage: null,
+  },
+
+  // Toys
+  'lego-store': {
+    officialUrl: 'https://www.disneysprings.com/shopping/lego-store/',
+    officialImage: null,
+  },
+  'build-a-dino': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/build-a-dino/',
+    officialImage: '/images/build-a-dino.jpg',
+  },
+  'dino-store': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/dino-store/',
+    officialImage: '/images/dino-store.jpg',
+  },
+  'rainforest-retail': {
+    officialUrl: 'https://www.disneysprings.com/shopping/rainforest-retail/',
+    officialImage: null,
+  },
+
+  // Fashion
+  'zara': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/zara/',
+    officialImage: '/images/zara.jpg',
+  },
+  'uniqlo': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/uniqlo/',
+    officialImage: '/images/uniqlo.jpg',
+  },
+  'anthropologie': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/anthropologie/',
+    officialImage: '/images/anthropologie.jpg',
+  },
+  'free-people': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/free-people/',
+    officialImage: '/images/free-people.jpg',
+  },
+  'lilly-pulitzer': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/lilly-pulitzer/',
+    officialImage: '/images/lilly-pulitzer.jpg',
+  },
+  'tommy-bahama': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/tommy-bahama/',
+    officialImage: '/images/tommy-bahama.jpg',
+  },
+  'vineyard-vines': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/vineyard-vines/',
+    officialImage: '/images/vineyard-vines.jpg',
+  },
+  'lacoste': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/lacoste/',
+    officialImage: '/images/lacoste.jpg',
+  },
+  'levis': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/levis/',
+    officialImage: '/images/levis.jpg',
+  },
+  'lululemon': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/lululemon/',
+    officialImage: '/images/lululemon.jpg',
+  },
+  'fabletics': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/fabletics/',
+    officialImage: '/images/fabletics.jpg',
+  },
+  'columbia': {
+    officialUrl: 'https://www.disneysprings.com/shopping/columbia/',
+    officialImage: null,
+  },
+  'ron-jon': {
+    officialUrl: 'https://www.disneysprings.com/shopping/ron-jon/',
+    officialImage: null,
+  },
+  'johnny-was': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/johnny-was/',
+    officialImage: '/images/johnny-was.jpg',
+  },
+  'american-threads': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/american-threads/',
+    officialImage: '/images/american-threads.jpg',
+  },
+  'everything-but-water': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/everything-but-water/',
+    officialImage: '/images/everything-but-water.jpg',
+  },
+  'shore': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/shore/',
+    officialImage: '/images/shore.jpg',
+  },
+  'under-armour': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/under-armour/',
+    officialImage: '/images/under-armour.jpg',
+  },
+  'harley-davidson': {
+    officialUrl: 'https://www.disneysprings.com/shopping/harley-davidson/',
+    officialImage: null,
+  },
+
+  // Shoes
+  'sperry': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/sperry/',
+    officialImage: '/images/sperry.jpg',
+  },
+  'havaianas': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/havaianas/',
+    officialImage: null,
+  },
+  'fit2run': {
+    officialUrl: 'https://www.disneysprings.com/shopping/fit2run/',
+    officialImage: null,
+  },
+  'johnston-murphy': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/johnston-murphy/',
+    officialImage: '/images/johnston-murphy.jpg',
+  },
+  'rothys': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/rothys/',
+    officialImage: '/images/rothys.jpg',
+  },
+  'olukai': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/olukai/',
+    officialImage: '/images/olukai.jpg',
+  },
+
+  // Jewelry & Accessories
+  'pandora': {
+    officialUrl: 'https://www.disneysprings.com/shopping/pandora/',
+    officialImage: null,
+  },
+  'kendra-scott': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/kendra-scott/',
+    officialImage: '/images/kendra-scott.jpg',
+  },
+  'na-hoku': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/na-hoku/',
+    officialImage: '/images/na-hoku.jpg',
+  },
+  'luxury-of-time': {
+    officialUrl: 'https://www.disneysprings.com/shopping/luxury-of-time/',
+    officialImage: null,
+  },
+  'unode50': {
+    officialUrl: 'https://www.disneysprings.com/shopping/unode50/',
+    officialImage: null,
+  },
+  'chapel-hats': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/chapel-hats/',
+    officialImage: '/images/chapel-hats.jpg',
+  },
+  'pura-vida': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/pura-vida/',
+    officialImage: '/images/pura-vida.jpg',
+  },
+
+  // Beauty & Personal Care
+  'basin': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/basin/',
+    officialImage: '/images/basin.jpg',
+  },
+  'sephora': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/sephora/',
+    officialImage: '/images/sephora.jpg',
+  },
+  'mac-cosmetics': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/mac-cosmetics/',
+    officialImage: '/images/mac-cosmetics.jpg',
+  },
+  'loccitane': {
+    officialUrl: 'https://www.disneysprings.com/shopping/loccitane/',
+    officialImage: null,
+  },
+  'rinse-bath': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/rinse-bath/',
+    officialImage: null,
+  },
+
+  // Home, Gifts & Specialty
+  'coca-cola-store': {
+    officialUrl: 'https://www.disneysprings.com/shopping/coca-cola-store/',
+    officialImage: null,
+  },
+  'mms-store': {
+    officialUrl: 'https://www.disneysprings.com/shopping/mms-store/',
+    officialImage: null,
+  },
+  'vera-bradley': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/vera-bradley/',
+    officialImage: '/images/vera-bradley.jpg',
+  },
+  'kate-spade': {
+    officialUrl: 'https://www.disneysprings.com/shopping/kate-spade/',
+    officialImage: null,
+  },
+  'coach': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/coach/',
+    officialImage: '/images/coach.jpg',
+  },
+  'sugarboo': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/sugarboo/',
+    officialImage: null,
+  },
+  'lovepop': {
+    officialUrl: 'https://www.disneysprings.com/shopping/lovepop/',
+    officialImage: null,
+  },
+  'spice-tea-exchange': {
+    officialUrl: 'https://www.disneysprings.com/shopping/spice-tea-exchange/',
+    officialImage: null,
+  },
+  'pop-gallery': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/pop-gallery/',
+    officialImage: '/images/pop-gallery.jpg',
+  },
+  'lefty-store': {
+    officialUrl: 'https://www.disneysprings.com/shopping/lefty-store/',
+    officialImage: null,
+  },
+  'sublime-gifts': {
+    officialUrl: 'https://www.disneysprings.com/shopping/sublime-gifts/',
+    officialImage: null,
+  },
+  'swings-n-things': {
+    officialUrl: 'https://www.disneysprings.com/shopping/swings-n-things/',
+    officialImage: null,
+  },
+  'boathouse-boutique': {
+    officialUrl: 'https://www.disneysprings.com/shopping/boathouse-boutique/',
+    officialImage: null,
+  },
+  'shop-for-ireland': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/shop-for-ireland/',
+    officialImage: null,
+  },
+  'planet-hollywood-store': {
+    officialUrl: 'https://www.disneysprings.com/shopping/planet-hollywood-store/',
+    officialImage: null,
+  },
+  'hob-gear-shop': {
+    officialUrl: 'https://www.disneysprings.com/shopping/hob-gear-shop/',
+    officialImage: null,
+  },
+  'bowes-candles': {
+    officialUrl: 'https://www.disneysprings.com/shopping/bowes-candles/',
+    officialImage: null,
+  },
+
+  // Sunglasses & Eyewear
+  'oakley': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/oakley/',
+    officialImage: '/images/oakley.jpg',
+  },
+  'sunglass-hut': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/sunglass-hut/',
+    officialImage: '/images/sunglass-hut.jpg',
+  },
+  'edward-beiner': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/edward-beiner/',
+    officialImage: '/images/edward-beiner.jpg',
+  },
+
+  // Sports & Socks
+  'pele-soccer': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/pele-soccer/',
+    officialImage: null,
+  },
+  'stance': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/stance/',
+    officialImage: '/images/stance.jpg',
+  },
+  'just-fun-socks': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/just-fun-socks/',
+    officialImage: '/images/just-fun-socks.jpg',
+  },
+
+  // Misc
+  'happy-hound': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/happy-hound/',
+    officialImage: '/images/happy-hound.jpg',
+  },
+  'silhouette-portraits': {
+    officialUrl: 'https://www.disneysprings.com/shopping/silhouette-portraits/',
+    officialImage: null,
+  },
+  'art-corner': {
+    officialUrl: 'https://www.disneysprings.com/shopping/art-corner/',
+    officialImage: null,
+  },
+  'pearl-factory': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/pearl-factory/',
+    officialImage: '/images/pearl-factory.jpg',
+  },
+  'initial-rings': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/initial-rings/',
+    officialImage: '/images/initial-rings.jpg',
   },
 };
