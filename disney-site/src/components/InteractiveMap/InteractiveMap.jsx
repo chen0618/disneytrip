@@ -307,16 +307,6 @@ function FlyToBoundary({ target, onDone }) {
   return null;
 }
 
-// Fly to Disney-only bounds when layer changes
-function FlyToDisney({ layer }) {
-  const map = useMap();
-  const isFirst = useRef(true);
-  useEffect(() => {
-    if (isFirst.current) { isFirst.current = false; return; }
-    map.flyToBounds(disneyBounds, { padding: [40, 40], maxZoom: 15, duration: 0.8 });
-  }, [layer, map]);
-  return null;
-}
 
 // Set initial bounds to Disney parks only (excludes Universal)
 function SetInitialBounds() {
@@ -575,7 +565,6 @@ export default function InteractiveMap({ onSelectItem }) {
         />
         <MapResizer />
         <SetInitialBounds />
-        <FlyToDisney layer={layer} />
         <FlyToBoundary target={flyTarget} onDone={clearFlyTarget.current} />
 
         {/* Park markers (always visible) */}
