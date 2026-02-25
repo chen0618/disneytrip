@@ -83,27 +83,6 @@
   box-shadow: 0 1px 4px rgba(30, 144, 255, 0.3);
 }
 
-/* Go To row */
-.map-ctrl-goto {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.2rem 0.6rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.goto-label {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  margin-right: 2px;
-  white-space: nowrap;
-}
 
 /* Sub-filter row */
 .map-ctrl-sub {
@@ -142,6 +121,7 @@
 .map-chip.ride-chip.active { background: #FF6B6B; color: white; }
 .map-chip.show-chip { border-color: #E84393; color: #E84393; }
 .map-chip.show-chip.active { background: #E84393; color: white; }
+.map-chip.map-chip-universal { border-color: #E74C3C; color: #E74C3C; }
 
 .chip-sep {
   color: var(--text-muted, #ccc);
@@ -152,19 +132,6 @@
 }
 
 
-.map-goto-btn {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.6rem;
-  border: 1.5px solid currentColor;
-  border-radius: 999px;
-  background: transparent;
-  cursor: pointer;
-  transition: opacity 0.15s ease;
-  white-space: nowrap;
-}
-.map-goto-btn:hover { opacity: 0.65; }
 
 /* ═══ Leaflet popup styling ═══ */
 .snack-popup { font-family: 'Inter', sans-serif; min-width: 220px; }
@@ -251,7 +218,7 @@
   .map-tab { font-size: 0.7rem; padding: 0.3rem 0.55rem; }
   .map-back-link { font-size: 0.72rem; padding: 0.25rem 0.4rem; }
   .map-chip { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
-  .map-goto-btn { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
+
   .emoji-marker { width: 34px; height: 34px; font-size: 18px; }
   .emoji-marker.park-marker { width: 40px; height: 40px; font-size: 13px; }
   .bus-marker { width: 26px; height: 26px; font-size: 14px; }

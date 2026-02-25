@@ -401,6 +401,33 @@ export default function InteractiveMap({ onSelectItem }) {
     setFlyTarget(parkBoundaries.find(b => b.id === id));
   }
 
+  function flyToOverview() {
+    setFlyTarget({ coords: parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) });
+  }
+
+  function flyToUniversal() {
+    setFlyTarget({ coords: parkBoundaries.filter(b => UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) });
+  }
+
+  // Park chip helpers: filter + fly (only fly if the filter actually changes)
+  const PARK_BOUNDARY_MAP = { MK: 'mk', HS: 'hs', EPCOT: 'epcot', 'Magic Kingdom': 'mk', 'Hollywood Studios': 'hs', 'Disney Springs': 'ds' };
+
+  function selectRidePark(val) {
+    if (val === rideParkFilter) return;
+    setRideParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
+  function selectFoodPark(val) {
+    if (val === foodParkFilter) return;
+    setFoodParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
+  function selectShopPark(val) {
+    if (val === shopParkFilter) return;
+    setShopParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
+
   const clearFlyTarget = useRef(() => setFlyTarget(null));
   clearFlyTarget.current = () => setFlyTarget(null);
 
@@ -426,32 +453,38 @@ export default function InteractiveMap({ onSelectItem }) {
           </div>
         </div>
 
-        {/* Row 2: Sub-filters (conditional) */}
+        {/* Row 2: Park filters (with fly-to) + type sub-filters */}
         <div className="map-ctrl-row map-ctrl-sub">
           {layer === 'rides' && (<>
-            <button className={`map-chip ride-chip ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => setRideParkFilter('all')}>All</button>
-            <button className={`map-chip ride-chip ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => setRideParkFilter('MK')}>MK</button>
-            <button className={`map-chip ride-chip ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => setRideParkFilter('HS')}>HS</button>
-            <button className={`map-chip ride-chip ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setRideParkFilter('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectRidePark('all')}>All</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'MK' ? 'active' : ''}`} onClick={() => selectRidePark('MK')}>MK</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'HS' ? 'active' : ''}`} onClick={() => selectRidePark('HS')}>HS</button>
+            <button className={`map-chip ride-chip ${rideParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectRidePark('EPCOT')}>EPCOT</button>
+            <span className="chip-sep">|</span>
+            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'food' && (<>
-            <button className={`map-chip ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodParkFilter('all')}>All</button>
-            <button className={`map-chip ${foodParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Magic Kingdom')}>MK</button>
-            <button className={`map-chip ${foodParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setFoodParkFilter('EPCOT')}>EPCOT</button>
-            <button className={`map-chip ${foodParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Hollywood Studios')}>HS</button>
-            <button className={`map-chip ${foodParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setFoodParkFilter('Disney Springs')}>DS</button>
+            <button className={`map-chip ${foodParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectFoodPark('all')}>All</button>
+            <button className={`map-chip ${foodParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => selectFoodPark('Magic Kingdom')}>MK</button>
+            <button className={`map-chip ${foodParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectFoodPark('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ${foodParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectFoodPark('Hollywood Studios')}>HS</button>
+            <button className={`map-chip ${foodParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectFoodPark('Disney Springs')}>DS</button>
             <span className="chip-sep">|</span>
             <button className={`map-chip ${foodServiceFilter === 'all' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('all')}>All</button>
             <button className={`map-chip ${foodServiceFilter === 'table-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('table-service')}>🍽️ Sit-Down</button>
             <button className={`map-chip ${foodServiceFilter === 'quick-service' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('quick-service')}>🍔 Quick</button>
             <button className={`map-chip ${foodServiceFilter === 'snack' ? 'active' : ''}`} onClick={() => setFoodServiceFilter('snack')}>🍦 Snack</button>
+            <span className="chip-sep">|</span>
+            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'shopping' && (<>
-            <button className={`map-chip ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => setShopParkFilter('all')}>All</button>
-            <button className={`map-chip ${shopParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => setShopParkFilter('Magic Kingdom')}>MK</button>
-            <button className={`map-chip ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => setShopParkFilter('Hollywood Studios')}>HS</button>
-            <button className={`map-chip ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => setShopParkFilter('EPCOT')}>EPCOT</button>
-            <button className={`map-chip ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => setShopParkFilter('Disney Springs')}>DS</button>
+            <button className={`map-chip ${shopParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectShopPark('all')}>All</button>
+            <button className={`map-chip ${shopParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => selectShopPark('Magic Kingdom')}>MK</button>
+            <button className={`map-chip ${shopParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectShopPark('Hollywood Studios')}>HS</button>
+            <button className={`map-chip ${shopParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectShopPark('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectShopPark('Disney Springs')}>DS</button>
+            <span className="chip-sep">|</span>
+            <button className="map-chip map-chip-universal" onClick={flyToUniversal}>Universal</button>
           </>)}
           {layer === 'transport' && (<>
             <button className={`map-chip ${transportMode === 'all' ? 'active' : ''}`} onClick={() => setTransportMode('all')}>All</button>
@@ -465,24 +498,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
             <button className={`map-chip show-chip ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
           </>)}
-        </div>
-
-        {/* Go To bar */}
-        <div className="map-ctrl-row map-ctrl-goto">
-          <span className="goto-label">Go To</span>
-          <button className="map-goto-btn" style={{ borderColor: '#2ECC71', color: '#2ECC71' }}
-            onClick={() => setFlyTarget({ coords: parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) })}
-          >Overview</button>
-          {parkBoundaries
-            .filter(b => !['usf', 'ioa', 'epic'].includes(b.id))
-            .map(b => (
-              <button key={b.id} className="map-goto-btn" style={{ borderColor: b.color, color: b.color }}
-                onClick={() => flyToBoundary(b.id)}
-              >{b.name}</button>
-            ))}
-          <button className="map-goto-btn" style={{ borderColor: '#E74C3C', color: '#E74C3C' }}
-            onClick={() => setFlyTarget({ coords: parkBoundaries.filter(b => ['usf', 'ioa', 'epic'].includes(b.id)).flatMap(b => b.coords) })}
-          >Universal</button>
         </div>
       </div>
 
