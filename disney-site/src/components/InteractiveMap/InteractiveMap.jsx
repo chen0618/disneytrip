@@ -360,42 +360,6 @@ function skylinerIconColored(color) {
   });
 }
 
-// Legend entries for each transport mode
-const busLegend = [
-  { color: '#FF6B6B', label: 'Magic Kingdom' },
-  { color: '#FFD700', label: 'EPCOT' },
-  { color: '#A29BFE', label: 'Hollywood Studios' },
-  { color: '#1E90FF', label: 'Disney Springs' },
-];
-
-const skylinerLegend = [
-  { color: '#FF6B35', label: 'Pop Century → Caribbean Beach' },
-  { color: '#9B59B6', label: 'Caribbean Beach → EPCOT' },
-  { color: '#2ECC71', label: 'Caribbean Beach → Hollywood Studios' },
-];
-
-const boatLegend = [
-  { color: '#1E90FF', label: 'Sassagoula River Cruise' },
-];
-
-const showsLegend = [
-  { color: '#E84393', label: 'Stage Shows' },
-  { color: '#FDCB6E', label: 'Fireworks' },
-  { color: '#6C5CE7', label: 'Parades' },
-];
-
-const ridesLegend = [
-  { color: '#FF6B6B', label: 'Magic Kingdom' },
-  { color: '#A29BFE', label: 'Hollywood Studios' },
-  { color: '#FFD700', label: 'EPCOT' },
-];
-
-const shoppingLegend = [
-  { color: '#FF6B6B', label: 'Magic Kingdom' },
-  { color: '#A29BFE', label: 'Hollywood Studios' },
-  { color: '#FFD700', label: 'EPCOT' },
-  { color: '#1E90FF', label: 'Disney Springs' },
-];
 
 export default function InteractiveMap({ onSelectItem }) {
   const [layer, setLayer] = useState('rides');
@@ -440,24 +404,6 @@ export default function InteractiveMap({ onSelectItem }) {
   const clearFlyTarget = useRef(() => setFlyTarget(null));
   clearFlyTarget.current = () => setFlyTarget(null);
 
-  // Build legend based on active layer
-  let activeLegend = [];
-  if (layer === 'rides') {
-    activeLegend = ridesLegend;
-  } else if (layer === 'shows') {
-    activeLegend = showMode === 'all'
-      ? showsLegend
-      : showsLegend.filter(l => l.label.toLowerCase().includes(showMode));
-  } else if (layer === 'shopping') {
-    activeLegend = shoppingLegend;
-  } else if (layer === 'transport') {
-    activeLegend = transportMode === 'all'
-      ? [...busLegend, ...skylinerLegend, ...boatLegend]
-      : transportMode === 'bus' ? busLegend
-      : transportMode === 'skyliner' ? skylinerLegend
-      : transportMode === 'boat' ? boatLegend
-      : [...busLegend, ...skylinerLegend, ...boatLegend];
-  }
 
   // Stable callback ref for FoodClusterLayer
   const onSelectItemRef = useRef(onSelectItem);
@@ -518,15 +464,6 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip show-chip ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage</button>
             <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
             <button className={`map-chip show-chip ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
-          </>)}
-          {/* Inline legend */}
-          {activeLegend.length > 0 && (<>
-            <span className="chip-sep">|</span>
-            {activeLegend.map(l => (
-              <span key={l.label} className="map-legend-chip">
-                <span className="legend-dot" style={{ background: l.color }} />{l.label}
-              </span>
-            ))}
           </>)}
         </div>
 
