@@ -544,7 +544,7 @@ export default function InteractiveMap({ onSelectItem }) {
         <div className="map-ctrl-row map-ctrl-goto">
           <span className="goto-label">Go To</span>
           <button className="map-goto-btn" style={{ borderColor: '#2ECC71', color: '#2ECC71' }}
-            onClick={() => setFlyTarget({ coords: parkBoundaries.flatMap(b => b.coords) })}
+            onClick={() => setFlyTarget({ coords: parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords) })}
           >Overview</button>
           {parkBoundaries
             .filter(b => !['usf', 'ioa', 'epic'].includes(b.id))
