@@ -35,10 +35,27 @@
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-top: 4px solid var(--accent);
+  cursor: pointer;
 }
 .countryCard:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+/* Expanded card spans full grid width */
+.countryCard.expanded {
+  grid-column: 1 / -1;
+  transform: none;
+  box-shadow: var(--shadow-md);
+}
+.countryCard.expanded .cardBody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.countryCard.expanded .foodItem {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .cardTop {
@@ -55,6 +72,15 @@
 .countryName {
   font-size: 1.15rem;
   color: var(--white);
+  flex: 1;
+}
+.expandIcon {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.countryCard:hover .expandIcon {
+  opacity: 1;
 }
 
 .cardBody {
@@ -87,6 +113,87 @@
   line-height: 1.4;
 }
 
+/* Sub-item list (multiple items in one food category) */
+.subItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Food thumbnail layout — collapsed */
+.foodContent {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.foodContent p {
+  flex: 1;
+  min-width: 0;
+}
+.foodThumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--accent);
+  background: rgba(0,0,0,0.05);
+  transition: width 0.25s ease, height 0.25s ease, border-radius 0.25s ease;
+}
+.foodThumbFallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  opacity: 0.35;
+}
+
+/* Food thumbnail layout — expanded */
+.foodContentExpanded {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.foodContentExpanded p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.foodThumbExpanded {
+  width: 100%;
+  max-height: 200px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.03);
+}
+.foodThumbFallbackExpanded {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 180px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  opacity: 0.35;
+}
+
+@media (max-width: 768px) {
+  .countryCard.expanded .cardBody {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 480px) {
   .countryGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .foodThumb,
+  .foodThumbFallback { display: none; }
+  .foodContent { gap: 0; }
 }

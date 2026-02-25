@@ -188,6 +188,12 @@ disney-site/
 - Fireworks/nighttime badge label: "Nighttime Spectacular" (not "Fireworks")
 - Map subtitle: "rides and attractions" (not "rides and dining")
 
+### World Showcase Data Patterns
+- Optional `<key>Items` arrays (e.g., `mustTryFoodItems`) override single-image rendering for that category
+- Convention: WorldShowcase.jsx checks `country[key + 'Items']` — works for mustTryFood, mustTryDrink, kidFriendlyOption
+- Keep original scalar fields (`mustTryFood`, `mustTryFoodImg`) alongside Items array as fallback/summary
+- **Edit tool + emoji flags**: Flag emojis render as `\u{1F1EB}` escapes in Read output — use a unique non-emoji substring when editing epcotData.js country entries
+
 ## News Pipeline
 - **Scraper**: `node scripts/scrape-news.js` — fetches 5 RSS feeds (DFB, AllEars, BlogMickey, DTB, TouringPlans), filters non-WDW articles, appends to `newsArticles.json`
 - **Slash commands**: `/pullnews` (scrape + build + deploy), `/processnews` (triage articles, update site data, mark statuses)
