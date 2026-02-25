@@ -369,6 +369,8 @@ export default function InteractiveMap({ onSelectItem }) {
   const [foodParkFilter, setFoodParkFilter] = useState('all');
   const [foodServiceFilter, setFoodServiceFilter] = useState('all');
   const [shopParkFilter, setShopParkFilter] = useState('all');
+  const [showParkFilter, setShowParkFilter] = useState('all');
+  const [transportParkNav, setTransportParkNav] = useState('all');
   const [flyTarget, setFlyTarget] = useState(null);
 
   const showFood = layer === 'food';
@@ -422,6 +424,16 @@ export default function InteractiveMap({ onSelectItem }) {
   function selectShopPark(val) {
     if (val === shopParkFilter) return;
     setShopParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
+  function selectShowPark(val) {
+    if (val === showParkFilter) return;
+    setShowParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
+  function selectTransportPark(val) {
+    if (val === transportParkNav) return;
+    setTransportParkNav(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
 
@@ -478,12 +490,24 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip ${shopParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectShopPark('Disney Springs')}>DS</button>
           </>)}
           {layer === 'transport' && (<>
+            <button className={`map-chip ${transportParkNav === 'all' ? 'active' : ''}`} onClick={() => selectTransportPark('all')}>All</button>
+            <button className={`map-chip ${transportParkNav === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => selectTransportPark('Magic Kingdom')}>MK</button>
+            <button className={`map-chip ${transportParkNav === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectTransportPark('Hollywood Studios')}>HS</button>
+            <button className={`map-chip ${transportParkNav === 'EPCOT' ? 'active' : ''}`} onClick={() => selectTransportPark('EPCOT')}>EPCOT</button>
+            <button className={`map-chip ${transportParkNav === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectTransportPark('Disney Springs')}>DS</button>
+            <span className="chip-sep">|</span>
             <button className={`map-chip ${transportMode === 'all' ? 'active' : ''}`} onClick={() => setTransportMode('all')}>All</button>
             <button className={`map-chip ${transportMode === 'bus' ? 'active' : ''}`} onClick={() => setTransportMode('bus')}>🚌 Bus</button>
             <button className={`map-chip ${transportMode === 'skyliner' ? 'active' : ''}`} onClick={() => setTransportMode('skyliner')}>🚡 Skyliner</button>
             <button className={`map-chip ${transportMode === 'boat' ? 'active' : ''}`} onClick={() => setTransportMode('boat')}>🚢 Boat</button>
           </>)}
           {layer === 'shows' && (<>
+            <button className={`map-chip show-chip ${showParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectShowPark('all')}>All</button>
+            <button className={`map-chip show-chip ${showParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => selectShowPark('Magic Kingdom')}>MK</button>
+            <button className={`map-chip show-chip ${showParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectShowPark('Hollywood Studios')}>HS</button>
+            <button className={`map-chip show-chip ${showParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectShowPark('EPCOT')}>EPCOT</button>
+            <button className={`map-chip show-chip ${showParkFilter === 'Disney Springs' ? 'active' : ''}`} onClick={() => selectShowPark('Disney Springs')}>DS</button>
+            <span className="chip-sep">|</span>
             <button className={`map-chip show-chip ${showMode === 'all' ? 'active' : ''}`} onClick={() => setShowMode('all')}>All</button>
             <button className={`map-chip show-chip ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage</button>
             <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
@@ -619,6 +643,7 @@ export default function InteractiveMap({ onSelectItem }) {
         {/* Shows & Events markers */}
         {visibleShowTypes.length > 0 && mapShows
           .filter(s => visibleShowTypes.includes(s.type))
+          .filter(s => showParkFilter === 'all' || s.park === showParkFilter)
           .map(s => (
             <Marker
               key={s.id}
