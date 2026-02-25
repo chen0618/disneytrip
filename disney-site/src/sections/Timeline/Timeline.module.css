@@ -109,9 +109,21 @@
 
 /* 3-day mode states */
 .travelDay {
-  opacity: 0.4;
-  filter: grayscale(0.8);
   transform: scale(0.92);
+  position: relative;
+}
+.travelDay > * {
+  filter: grayscale(0.8);
+  opacity: 0.35;
+}
+.travelDay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  border-radius: inherit;
+  z-index: 1;
+  pointer-events: none;
 }
 .travelDay::after {
   content: 'TRAVEL';
@@ -121,11 +133,11 @@
   transform: translate(-50%, -50%) rotate(-15deg);
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #E74C3C;
-  opacity: 1;
   letter-spacing: 3px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 .hiddenDay {
   opacity: 0;
