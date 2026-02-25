@@ -15,7 +15,7 @@ const MUST_TRY = [
   { name: 'Blue/Green Milk', emoji: '🥛', note: "Frozen plant-based milk from the Milk Stand — weirdly addictive Galaxy's Edge exclusive" },
 ];
 
-export default function HSDining() {
+export default function HSDining({ onSelectItem }) {
   const [filter, setFilter] = useState('all');
 
   const hsDining = useMemo(() => {
@@ -62,7 +62,7 @@ export default function HSDining() {
 
         <div className={styles.diningGrid}>
           {hsDining.map((item, i) => (
-            <div key={item.name + i} className={styles.diningCard}>
+            <div key={item.name + i} className={styles.diningCard} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>

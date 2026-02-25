@@ -183,6 +183,16 @@ export const officialData = {
     officialImage: '/images/gran-fiesta-tour.jpg',
   },
 
+  // New rides (added from image audit)
+  'swiss-family-treehouse': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/swiss-family-treehouse/',
+    officialImage: '/images/swiss-family-treehouse.jpg',
+  },
+  'journey-of-water': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/journey-of-water/',
+    officialImage: '/images/journey-of-water.jpg',
+  },
+
   // ═══════════════════════════════════════════════════════════════
   // SHOWS & ENTERTAINMENT (12 + 14 new)
   // ═══════════════════════════════════════════════════════════════
@@ -290,6 +300,56 @@ export const officialData = {
     officialImage: '/images/american-adventure.jpg',
   },
 
+  // Shows added from image audit
+  'town-square-theater': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/character-meet-mickey-town-square/',
+    officialImage: '/images/town-square-theater.jpg',
+  },
+  'princess-fairytale-hall': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/magic-kingdom/character-meet-princess-fantasyland/',
+    officialImage: '/images/princess-fairytale-hall.jpg',
+  },
+  'enchanted-tales-with-belle': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/magic-kingdom/enchanted-tales-with-belle/',
+    officialImage: '/images/enchanted-tales-with-belle.jpg',
+  },
+  'villains': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/disney-villains-unfairly-ever-after/',
+    officialImage: '/images/villains.jpg',
+  },
+  'disney-junior-dance-party': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/hollywood-studios/disney-junior-play-dance/',
+    officialImage: null,
+  },
+  'jedi-training': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-jedi-training/',
+    officialImage: '/images/jedi-training.jpg',
+  },
+  'canada-far-and-wide': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/canada-far-and-wide/',
+    officialImage: '/images/canada-far-and-wide.jpg',
+  },
+  'reflections-of-china': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/reflections-of-china/',
+    officialImage: '/images/reflections-of-china.jpg',
+  },
+  'impressions-de-france': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/epcot/impressions-de-france/',
+    officialImage: '/images/impressions-de-france.jpg',
+  },
+  'america-gardens-theatre': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/epcot/broadway-concert-series/',
+    officialImage: '/images/america-gardens-theatre.jpg',
+  },
+  'cirque-du-soleil': {
+    officialUrl: 'https://disneyworld.disney.go.com/entertainment/disney-springs/cirque-du-soleil/',
+    officialImage: '/images/cirque-du-soleil.jpg',
+  },
+  'aerophile': {
+    officialUrl: 'https://disneyworld.disney.go.com/attractions/disney-springs/characters-in-flight/',
+    officialImage: '/images/aerophile.jpg',
+  },
+
   // ═══════════════════════════════════════════════════════════════
   // DINING — Magic Kingdom
   // ═══════════════════════════════════════════════════════════════
@@ -385,6 +445,16 @@ export const officialData = {
     officialImage: '/images/golden-oak-outpost.jpg',
   },
 
+  // MK additional dining (from image audit)
+  'Plaza Ice Cream': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/plaza-ice-cream-parlor/',
+    officialImage: '/images/plaza-ice-cream.jpg',
+  },
+  'Main Street Confectionery': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/magic-kingdom/main-street-confectionery/',
+    officialImage: '/images/main-street-confectionery.jpg',
+  },
+
   // ═══════════════════════════════════════════════════════════════
   // DINING — Hollywood Studios
   // ═══════════════════════════════════════════════════════════════
@@ -419,11 +489,21 @@ export const officialData = {
   },
   "Woody's Lunch Box": {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/woodys-lunchbox/',
-    officialImage: null,
+    officialImage: '/images/woodys-lunch-box.jpg',
   },
   'Num Num Cookie': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/backlot-express/',
     officialImage: '/images/num-num-cookie.jpg',
+  },
+
+  // HS additional dining (from image audit)
+  'Starbucks (HS)': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/trolley-car-cafe/',
+    officialImage: '/images/trolley-car-cafe.jpg',
+  },
+  'Backlot Express': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/hollywood-studios/backlot-express/',
+    officialImage: '/images/backlot-express.jpg',
   },
 
   // --- HS Additional Dining ---
@@ -531,6 +611,20 @@ export const officialData = {
   'School Bread': {
     officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/kringla-bakeri-og-kafe/',
     officialImage: '/images/school-bread.jpg',
+  },
+
+  // EPCOT additional dining (from image audit)
+  'Monsieur Paul': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/monsieur-paul/',
+    officialImage: '/images/monsieur-paul.jpg',
+  },
+  'Takumi-Tei': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/takumi-tei-restaurant/',
+    officialImage: '/images/takumi-tei.jpg',
+  },
+  'Lotus Blossom Cafe': {
+    officialUrl: 'https://disneyworld.disney.go.com/dining/epcot/lotus-blossom-cafe/',
+    officialImage: '/images/lotus-blossom.jpg',
   },
 
   // --- EPCOT Additional Dining ---
@@ -688,6 +782,80 @@ export const officialData = {
     officialImage: '/images/merchant-of-venus.jpg',
   },
 
+  // MK shops (from image audit)
+  'uptown-jewelers': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/uptown-jewelers/',
+    officialImage: '/images/uptown-jewelers.jpg',
+  },
+  'ye-olde-christmas-shoppe': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/ye-olde-christmas-shoppe/',
+    officialImage: '/images/ye-olde-christmas-shoppe.jpg',
+  },
+  'sir-mickeys': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/sir-mickey/',
+    officialImage: '/images/sir-mickeys.jpg',
+  },
+  'plaza-del-sol-caribe-bazaar': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/plaza-del-sol-caribe-bazaar/',
+    officialImage: '/images/plaza-del-sol-caribe-bazaar.jpg',
+  },
+  'curtain-call-collectibles': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/curtain-call-collectibles/',
+    officialImage: '/images/curtain-call-collectibles.jpg',
+  },
+  'bonjour-village-gifts': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/bonjour-village-gifts/',
+    officialImage: '/images/bonjour-village-gifts.jpg',
+  },
+  'tomorrowland-launch-depot': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/tomorrowland-launch-depot/',
+    officialImage: '/images/tomorrowland-launch-depot.jpg',
+  },
+  'hundred-acre-goods': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/hundred-acre-goods/',
+    officialImage: '/images/hundred-acre-goods.jpg',
+  },
+  'island-supply-sunglass-hut': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/island-supply-sunglass-hut/',
+    officialImage: '/images/island-supply-sunglass-hut.jpg',
+  },
+  'mickeys-star-traders': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/mickeys-star-traders/',
+    officialImage: '/images/mickeys-star-traders.jpg',
+  },
+  'castle-couture': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/castle-couture/',
+    officialImage: null,
+  },
+  'agrabah-bazaar': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/agrabah-bazaar/',
+    officialImage: null,
+  },
+  'critter-co-op': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/critter-co-op/',
+    officialImage: '/images/critter-co-op.jpg',
+  },
+  'main-street-cinema': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/main-street-cinema/',
+    officialImage: '/images/main-street-cinema.jpg',
+  },
+  'harmony-barber-shop': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/harmony-barber-shop/',
+    officialImage: '/images/harmony-barber-shop.jpg',
+  },
+  'fantasy-faire': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/fantasy-faire/',
+    officialImage: '/images/fantasy-faire.jpg',
+  },
+  'frontier-mercantile': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/frontier-trading-post/',
+    officialImage: '/images/frontier-mercantile.jpg',
+  },
+  'box-office-gifts': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/magic-kingdom/box-office-gifts/',
+    officialImage: '/images/box-office-gifts.jpg',
+  },
+
   // Hollywood Studios
   'tatooine-traders': {
     officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/tatooine-traders/',
@@ -704,6 +872,72 @@ export const officialData = {
   'tower-hotel-gifts': {
     officialUrl: null,
     officialImage: null,
+  },
+
+  // HS shops (from image audit)
+  'keystone-clothiers': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/keystone-clothiers/',
+    officialImage: '/images/keystone-clothiers.jpg',
+  },
+  'once-upon-a-time-hs': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/once-upon-a-time/',
+    officialImage: '/images/once-upon-a-time-hs.jpg',
+  },
+  'launch-bay-cargo': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/star-wars-launch-bay-cargo-store/',
+    officialImage: null,
+  },
+  'droid-depot': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/droid-depot/',
+    officialImage: '/images/droid-depot.jpg',
+  },
+  'savis-workshop': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/savis-workshop-handbuilt-lightsabers/',
+    officialImage: '/images/savis-workshop.jpg',
+  },
+  'black-spire-outfitters': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/black-spire-outfitters/',
+    officialImage: '/images/black-spire-outfitters.jpg',
+  },
+  'creature-stall': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/creature-stall/',
+    officialImage: '/images/creature-stall.jpg',
+  },
+  'first-order-cargo': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/first-order/',
+    officialImage: '/images/first-order-cargo.jpg',
+  },
+  'resistance-supply': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/resistance-supply/',
+    officialImage: '/images/resistance-supply.jpg',
+  },
+  'toydarian-toymaker': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/toydarian-toymaker/',
+    officialImage: '/images/toydarian-toymaker.jpg',
+  },
+  'celebrity-5-and-10': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/celebrity-5-and-10/',
+    officialImage: '/images/celebrity-5-and-10.jpg',
+  },
+  'rock-around-the-shop': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/rock-around-the-shop/',
+    officialImage: '/images/rock-around-the-shop.jpg',
+  },
+  'in-character': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/in-character/',
+    officialImage: null,
+  },
+  'frozen-fractal-gifts': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/frozen-fractal-gifts/',
+    officialImage: '/images/frozen-fractal-gifts.jpg',
+  },
+  'indiana-jones-adventure-outpost': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/adventure-outpost/',
+    officialImage: null,
+  },
+  'legends-of-hollywood': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/hollywood-studios/legends/',
+    officialImage: '/images/legends-of-hollywood.jpg',
   },
 
   // EPCOT
@@ -726,6 +960,92 @@ export const officialData = {
   'die-weihnachts-ecke': {
     officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/die-weihnachts-ecke/',
     officialImage: '/images/die-weihnachts-ecke.jpg',
+  },
+
+  // EPCOT shops (from image audit)
+  'la-signature': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/la-signature/',
+    officialImage: '/images/la-signature.jpg',
+  },
+  'toy-soldier': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/the-toy-soldier/',
+    officialImage: null,
+  },
+  'plaza-de-los-amigos': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/plaza-de-los-amigos/',
+    officialImage: '/images/plaza-de-los-amigos.jpg',
+  },
+  'la-princesa-de-cristal': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/la-princesa-de-cristal-mexico/',
+    officialImage: '/images/la-princesa-de-cristal.jpg',
+  },
+  'the-fjording': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/fjording/',
+    officialImage: '/images/the-fjording.jpg',
+  },
+  'stave-church-gallery': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/stave-church-gallery/',
+    officialImage: '/images/stave-church-gallery.jpg',
+  },
+  'house-of-good-fortune': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/house-of-good-fortune/',
+    officialImage: null,
+  },
+  'der-teddybar': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/der-teddybar-toyshop/',
+    officialImage: '/images/der-teddybar.jpg',
+  },
+  'volkskunst': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/volkskunst/',
+    officialImage: '/images/volkskunst.jpg',
+  },
+  'karamell-kuche': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/karamell-kuche/',
+    officialImage: '/images/karamell-kuche.jpg',
+  },
+  'il-bel-cristallo': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/il-bel-cristallo/',
+    officialImage: null,
+  },
+  'the-tea-caddy': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/the-tea-caddy/',
+    officialImage: '/images/the-tea-caddy.jpg',
+  },
+  'crown-and-crest': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/the-crown-and-crest/',
+    officialImage: '/images/crown-and-crest.jpg',
+  },
+  'the-queens-table': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/the-queens-table/',
+    officialImage: null,
+  },
+  'tangier-traders': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/tangier-traders/',
+    officialImage: null,
+  },
+  'marketplace-in-the-medina': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/marketplace-in-the-medina/',
+    officialImage: '/images/marketplace-in-the-medina.jpg',
+  },
+  'plume-et-palette': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/plume-et-palette/',
+    officialImage: null,
+  },
+  'les-vins-de-france': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/les-vins-de-france/',
+    officialImage: null,
+  },
+  'souvenirs-de-france': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/souvenirs-de-france/',
+    officialImage: null,
+  },
+  'port-of-entry': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/epcot/port-of-entry/',
+    officialImage: '/images/port-of-entry.jpg',
+  },
+  'crystal-arts-ds': {
+    officialUrl: 'https://disneyworld.disney.go.com/shops/disney-springs/crystal-arts/',
+    officialImage: null,
   },
 
   // ═══════════════════════════════════════════════════════════════

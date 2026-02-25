@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { mapShops } from '../../../data/mapShops';
 import styles from './HSShopping.module.css';
 
-export default function HSShopping() {
+export default function HSShopping({ onSelectItem }) {
   const hsShops = useMemo(
     () => mapShops.filter((s) => s.park === 'Hollywood Studios'),
     []
@@ -18,7 +18,7 @@ export default function HSShopping() {
 
         <div className={styles.shopGrid}>
           {hsShops.map((shop) => (
-            <div key={shop.id} className={`${styles.shopCard} reveal`}>
+            <div key={shop.id} className={`${styles.shopCard} reveal`} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...shop, type: 'shop' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...shop, type: 'shop' })}>
               <div className={styles.shopHeader}>
                 <span className={styles.shopEmoji}>{shop.emoji}</span>
                 <h3 className={styles.shopName}>{shop.name}</h3>

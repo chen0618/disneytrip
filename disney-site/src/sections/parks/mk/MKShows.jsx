@@ -9,7 +9,7 @@ const TYPE_COLORS = {
   parade: { bg: '#f3e5f5', color: '#7b1fa2', label: 'Parade' },
 };
 
-export default function MKShows() {
+export default function MKShows({ onSelectItem }) {
   const mkShows = useMemo(
     () => mapShows.filter((s) => s.park === 'Magic Kingdom'),
     []
@@ -27,7 +27,7 @@ export default function MKShows() {
           {mkShows.map((show) => {
             const typeStyle = TYPE_COLORS[show.type] || TYPE_COLORS.show;
             return (
-              <div key={show.id} className={`${styles.showCard} reveal`}>
+              <div key={show.id} className={`${styles.showCard} reveal`} role="button" tabIndex={0} onClick={() => onSelectItem?.(show)} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.(show)}>
                 <div className={styles.showHeader}>
                   <span className={styles.showEmoji}>{show.emoji}</span>
                   <div>

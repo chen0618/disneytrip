@@ -16,7 +16,7 @@ const MUST_TRY = [
   { name: 'Teppan Edo', emoji: '\uD83D\uDD25', note: 'Teppanyaki-style cooking at your table in Japan. The chef puts on a show — kids will love it!' },
 ];
 
-export default function EpcotDining() {
+export default function EpcotDining({ onSelectItem }) {
   const [filter, setFilter] = useState('all');
 
   const epcotDining = useMemo(() => {
@@ -63,7 +63,7 @@ export default function EpcotDining() {
 
         <div className={styles.diningGrid}>
           {epcotDining.map((item, i) => (
-            <div key={item.name + i} className={styles.diningCard}>
+            <div key={item.name + i} className={styles.diningCard} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...item, type: 'food', park: 'EPCOT' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...item, type: 'food', park: 'EPCOT' })}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>

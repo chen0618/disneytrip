@@ -53,6 +53,16 @@
   background: rgba(30, 144, 255, 0.08);
 }
 
+/* Hotel button — inherits .map-chip base, adds orange accent */
+.map-home-btn {
+  color: #FF6B35;
+  border: 1.5px solid #FF6B35;
+}
+.map-home-btn:hover {
+  background: #FF6B35;
+  color: white;
+}
+
 /* Layer tabs */
 .map-layer-tabs {
   display: flex;

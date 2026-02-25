@@ -1,19 +1,9 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
 import timelineDays from '../../data/timelineDays';
 import travelGroup, { familyLabels, familyOrder } from '../../data/travelGroup';
 import styles from './Timeline.module.css';
-
-// Map roles to 3-day mode classes
-function getThreeDayClass(index) {
-  // Day 1 = travel, Day 2 = only park day, Day 3 = travel back, rest = hidden
-  if (index === 0) return styles.travelDay;
-  if (index === 1) return styles.onlyDay;
-  if (index === 2) return styles.travelDay;
-  return styles.hiddenDay;
-}
 
 // Build family groups in display order
 const familyGroups = familyOrder.map(key => ({
@@ -25,35 +15,16 @@ const familyGroups = familyOrder.map(key => ({
 const kidCount = travelGroup.filter(p => p.isKid).length;
 
 export default function Timeline() {
-  const [mode, setMode] = useState('full');
-
-  const isThreeDay = mode === 'three';
-
   return (
     <section id="timeline" className={styles.section}>
       <div className="section-inner">
         <SectionHeader title="Our Trip at a Glance" subtitle="8 days of magic, adventure, and family time" />
 
-        <div className={`${styles.toggleBtns} reveal delay-1`}>
-          <button
-            className={`${styles.toggleBtn} ${!isThreeDay ? styles.toggleBtnActive : ''}`}
-            onClick={() => setMode('full')}
-          >
-            Full 8 Days ✨
-          </button>
-          <button
-            className={`${styles.toggleBtn} ${styles.toggleBtnWarn} ${isThreeDay ? styles.toggleBtnWarnActive : ''}`}
-            onClick={() => setMode('three')}
-          >
-            Paul's Version: 3 Days? 🤔
-          </button>
-        </div>
-
         <div className={`${styles.cards} reveal delay-2`}>
           {timelineDays.map((day, i) => (
             <div
               key={day.day}
-              className={`${styles.card} ${isThreeDay ? getThreeDayClass(i) : ''}`}
+              className={styles.card}
               style={{ '--card-color': day.color }}
             >
               <span className={styles.dayBadge} style={{ background: day.color }}>{day.date}</span>
@@ -113,10 +84,6 @@ export default function Timeline() {
           </p>
         </div>
 
-        <div className={`${styles.callout} ${isThreeDay ? styles.calloutVisible : ''}`}>
-          <h3>1 park day. That's it. 😬</h3>
-          <p>After flights, airport time, bus to the hotel, and settling in... you'd have <strong>ONE day</strong> to experience Disney. The first and last days are almost entirely travel. Is that really enough?</p>
-        </div>
       </div>
       <WaveDivider fill="var(--bg-alt)" variant={2} />
     </section>

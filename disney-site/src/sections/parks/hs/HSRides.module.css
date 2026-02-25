@@ -46,6 +46,7 @@
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 .rideCard:hover {
   transform: translateY(-3px);

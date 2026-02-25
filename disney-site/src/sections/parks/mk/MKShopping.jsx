@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { mapShops } from '../../../data/mapShops';
 import styles from './MKShopping.module.css';
 
-export default function MKShopping() {
+export default function MKShopping({ onSelectItem }) {
   const mkShops = useMemo(
     () => mapShops.filter((s) => s.park === 'Magic Kingdom'),
     []
@@ -18,7 +18,7 @@ export default function MKShopping() {
 
         <div className={styles.shopGrid}>
           {mkShops.map((shop) => (
-            <div key={shop.id} className={`${styles.shopCard} reveal`}>
+            <div key={shop.id} className={`${styles.shopCard} reveal`} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...shop, type: 'shop' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...shop, type: 'shop' })}>
               <div className={styles.shopHeader}>
                 <span className={styles.shopEmoji}>{shop.emoji}</span>
                 <h3 className={styles.shopName}>{shop.name}</h3>

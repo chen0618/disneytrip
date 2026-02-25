@@ -629,7 +629,7 @@ export const mapShops = [
   },
   {
     id: 'karamell-kuche',
-    name: 'Karamell-Kuche',
+    name: 'Karamell-Küche',
     emoji: '🍬',
     park: 'EPCOT',
     lat: 28.36836,
@@ -840,7 +840,7 @@ export const mapShops = [
     tip: 'More fashion-focused Disney apparel than the main stores.',
   },
   {
-    id: 'crystal-arts',
+    id: 'crystal-arts-ds',
     name: 'Crystal Arts by Arribas Brothers',
     emoji: '💎',
     park: 'Disney Springs',

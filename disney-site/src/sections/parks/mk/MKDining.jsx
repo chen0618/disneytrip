@@ -15,7 +15,7 @@ const MUST_TRY = [
   { name: 'The Grey Stuff', emoji: '🍰', note: "Try it at Be Our Guest — 'it's delicious, don't believe me? Ask the dishes!'" },
 ];
 
-export default function MKDining() {
+export default function MKDining({ onSelectItem }) {
   const [filter, setFilter] = useState('all');
 
   const mkDining = useMemo(() => {
@@ -62,7 +62,7 @@ export default function MKDining() {
 
         <div className={styles.diningGrid}>
           {mkDining.map((item, i) => (
-            <div key={item.name + i} className={styles.diningCard}>
+            <div key={item.name + i} className={styles.diningCard} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...item, type: 'food', park: 'Magic Kingdom' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...item, type: 'food', park: 'Magic Kingdom' })}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardEmoji}>{item.emoji}</span>
                 <div>

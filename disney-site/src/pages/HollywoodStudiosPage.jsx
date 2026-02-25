@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
 import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
+import DetailPanel from '../components/DetailPanel/DetailPanel';
+import { enrichItem } from '../utils/enrichItem';
 import { hsNavSections } from '../data/hollywoodStudiosData';
 import { mapRides } from '../data/mapRides';
 import { parkBoundaries } from '../data/parkBoundaries';
@@ -23,6 +26,8 @@ import BackToTop from '../components/BackToTop/BackToTop';
 function HSContent() {
   useScrollReveal();
   useActiveSection();
+  const [selectedItem, setSelectedItem] = useState(null);
+  const handleSelectItem = (item) => setSelectedItem(enrichItem(item));
 
   const hsBoundary = parkBoundaries.find((b) => b.id === 'hs');
   const hsRides = mapRides.filter((r) => r.park === 'Hollywood Studios');
@@ -49,22 +54,22 @@ function HSContent() {
       <ToyStoryLand />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
-      <HSRides />
+      <HSRides onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
       <ThrillGuide />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
-      <HSShows />
+      <HSShows onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <HSDining />
+      <HSDining onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
       <HSStrategy />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <HSShopping />
+      <HSShopping onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
       <section id="hs-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
@@ -84,6 +89,7 @@ function HSContent() {
         </div>
       </section>
       <Footer variant="park" currentPark="/park/hollywood-studios" />
+      <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
       <BackToTop />
     </>
   );

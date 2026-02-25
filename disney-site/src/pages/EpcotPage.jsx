@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
 import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
+import DetailPanel from '../components/DetailPanel/DetailPanel';
+import { enrichItem } from '../utils/enrichItem';
 import { epcotNavSections } from '../data/epcotData';
 import { mapRides } from '../data/mapRides';
 import { parkBoundaries } from '../data/parkBoundaries';
@@ -23,6 +26,8 @@ import BackToTop from '../components/BackToTop/BackToTop';
 function EpcotContent() {
   useScrollReveal();
   useActiveSection();
+  const [selectedItem, setSelectedItem] = useState(null);
+  const handleSelectItem = (item) => setSelectedItem(enrichItem(item));
 
   const epcotBoundary = parkBoundaries.find((b) => b.id === 'epcot');
   const epcotRides = mapRides.filter((r) => r.park === 'EPCOT');
@@ -46,7 +51,7 @@ function EpcotContent() {
       <WorldShowcase />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <EpcotRides />
+      <EpcotRides onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
       <FestivalGuide />
@@ -58,13 +63,13 @@ function EpcotContent() {
       <BestForKids />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <EpcotDining />
+      <EpcotDining onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
       <EpcotStrategy />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <EpcotShopping />
+      <EpcotShopping onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
       <section id="epcot-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
@@ -84,6 +89,7 @@ function EpcotContent() {
         </div>
       </section>
       <Footer variant="park" currentPark="/park/epcot" />
+      <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
       <BackToTop />
     </>
   );

@@ -7,7 +7,7 @@ const VIEW_MODES = [
   { key: 'height', label: 'By Height' },
 ];
 
-export default function HSRides() {
+export default function HSRides({ onSelectItem }) {
   const [viewMode, setViewMode] = useState('land');
 
   const hsRides = useMemo(
@@ -64,7 +64,7 @@ export default function HSRides() {
             <h3 className={styles.landTitle}>{group}</h3>
             <div className={styles.rideGrid}>
               {rides.map((ride) => (
-                <div key={ride.id} className={styles.rideCard}>
+                <div key={ride.id} className={styles.rideCard} role="button" tabIndex={0} onClick={() => onSelectItem?.(ride)} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.(ride)}>
                   <div className={styles.rideHeader}>
                     <span className={styles.rideEmoji}>{ride.emoji}</span>
                     <h4 className={styles.rideName}>{ride.name}</h4>

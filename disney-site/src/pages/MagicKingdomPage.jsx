@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import ActiveSectionProvider from '../context/ActiveSectionContext';
 import FloatingNav from '../components/FloatingNav/FloatingNav';
 import useScrollReveal from '../hooks/useScrollReveal';
 import useActiveSection from '../hooks/useActiveSection';
 import WaveDivider from '../components/WaveDivider';
 import ParkMiniMap from '../components/ParkMiniMap/ParkMiniMap';
+import DetailPanel from '../components/DetailPanel/DetailPanel';
+import { enrichItem } from '../utils/enrichItem';
 import { mkNavSections } from '../data/magicKingdomData';
 import { mapRides } from '../data/mapRides';
 import { parkBoundaries } from '../data/parkBoundaries';
@@ -22,6 +25,8 @@ import BackToTop from '../components/BackToTop/BackToTop';
 function MKContent() {
   useScrollReveal();
   useActiveSection();
+  const [selectedItem, setSelectedItem] = useState(null);
+  const handleSelectItem = (item) => setSelectedItem(enrichItem(item));
 
   const mkBoundary = parkBoundaries.find((b) => b.id === 'mk');
   const mkRides = mapRides.filter((r) => r.park === 'Magic Kingdom');
@@ -45,13 +50,13 @@ function MKContent() {
       <LandsExplorer />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <MKRides />
+      <MKRides onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
-      <MKShows />
+      <MKShows onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <MKDining />
+      <MKDining onSelectItem={handleSelectItem} />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
       <HiddenMagic />
@@ -78,8 +83,9 @@ function MKContent() {
       </section>
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <MKShopping />
+      <MKShopping onSelectItem={handleSelectItem} />
       <Footer variant="park" currentPark="/park/magic-kingdom" />
+      <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
       <BackToTop />
     </>
   );

@@ -2,46 +2,6 @@
   background: var(--bg);
   padding-bottom: 6rem;
 }
-.toggleBtns {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
-}
-.toggleBtn {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
-  padding: 0.8rem 2rem;
-  border-radius: var(--radius-xl);
-  border: 3px solid var(--blue);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: var(--blue);
-}
-.toggleBtnActive {
-  background: var(--blue);
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(30,144,255,0.4);
-}
-.toggleBtn:hover:not(.toggleBtnActive) {
-  background: rgba(30,144,255,0.1);
-}
-.toggleBtnWarn {
-  border-color: var(--coral);
-  color: var(--coral);
-}
-.toggleBtnWarnActive {
-  background: var(--coral);
-  border-color: var(--coral);
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(255,107,107,0.4);
-}
-.toggleBtnWarn:hover:not(.toggleBtnWarnActive) {
-  background: rgba(255,107,107,0.1);
-}
 .cards {
   display: flex;
   gap: 1.2rem;
@@ -105,81 +65,6 @@
   left: 0;
   right: 0;
   height: 4px;
-}
-
-/* 3-day mode states */
-.travelDay {
-  transform: scale(0.92);
-  position: relative;
-}
-.travelDay > * {
-  filter: grayscale(0.8);
-  opacity: 0.35;
-}
-.travelDay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: color-mix(in srgb, var(--bg) 60%, transparent);
-  border-radius: inherit;
-  z-index: 1;
-  pointer-events: none;
-}
-.travelDay::after {
-  content: 'TRAVEL';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-15deg);
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: #E74C3C;
-  letter-spacing: 3px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-.hiddenDay {
-  opacity: 0;
-  transform: scale(0.5);
-  width: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.onlyDay {
-  border: 3px solid var(--blue);
-  box-shadow: 0 0 0 4px rgba(30,144,255,0.2), var(--shadow-lg);
-  animation: pulse-border 2s ease infinite;
-}
-.callout {
-  background: var(--coral);
-  color: var(--white);
-  padding: 2rem;
-  border-radius: var(--radius-md);
-  text-align: center;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.6s ease;
-  margin-top: 0;
-}
-.calloutVisible {
-  max-height: 300px;
-  opacity: 1;
-  margin-top: 2rem;
-  animation: shakeIn 0.6s ease;
-}
-.callout h3 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  margin-bottom: 0.5rem;
-}
-.callout p {
-  max-width: 50ch;
-  margin: 0 auto;
-  opacity: 0.95;
-  color: var(--white);
 }
 
 .familyGrid {

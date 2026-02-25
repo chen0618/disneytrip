@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { mapShops } from '../../../data/mapShops';
 import styles from './EpcotShopping.module.css';
 
-export default function EpcotShopping() {
+export default function EpcotShopping({ onSelectItem }) {
   const epcotShops = useMemo(
     () => mapShops.filter((s) => s.park === 'EPCOT'),
     []
@@ -18,7 +18,7 @@ export default function EpcotShopping() {
 
         <div className={styles.shopGrid}>
           {epcotShops.map((shop) => (
-            <div key={shop.id} className={`${styles.shopCard} reveal`}>
+            <div key={shop.id} className={`${styles.shopCard} reveal`} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...shop, type: 'shop' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...shop, type: 'shop' })}>
               <div className={styles.shopHeader}>
                 <span className={styles.shopEmoji}>{shop.emoji}</span>
                 <h3 className={styles.shopName}>{shop.name}</h3>

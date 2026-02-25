@@ -513,6 +513,8 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
             <button className={`map-chip show-chip ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
           </>)}
+          <span className="chip-sep">|</span>
+          <button className="map-chip map-home-btn" onClick={() => flyToBoundary('pc')}>🏠 Hotel</button>
         </div>
       </div>
 
