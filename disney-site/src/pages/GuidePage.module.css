@@ -1,0 +1,40 @@
+.hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 50%, var(--coral) 100%);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem 6rem;
+}
+
+.pre {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto;
+}

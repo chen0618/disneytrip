@@ -52,7 +52,7 @@ export default function Hotel() {
           Historically, we've managed to buy gift cards at <strong>5–15% off</strong>, which on a big family trip adds up to hundreds in savings!
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg)" variant={4} />
+      <WaveDivider fill="var(--bg-alt)" variant={4} />
     </section>
   );
 }

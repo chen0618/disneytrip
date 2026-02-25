@@ -6,11 +6,12 @@ const parkPages = [
   { path: '/park/magic-kingdom', label: 'Magic Kingdom' },
   { path: '/park/hollywood-studios', label: 'Hollywood Studios' },
   { path: '/park/epcot', label: 'EPCOT' },
+  { path: '/guide', label: 'Planning Guide' },
 ];
 
 export default function Footer({ variant, currentPark }) {
   if (variant === 'park') {
-    const otherParks = parkPages.filter((p) => p.path !== currentPark);
+    const otherPages = parkPages.filter((p) => p.path !== currentPark);
 
     return (
       <footer className={styles.footer}>
@@ -21,7 +22,7 @@ export default function Footer({ variant, currentPark }) {
           </Link>
           <div className={styles.secondaryLinks}>
             <Link to="/map" className={styles.link}>Interactive Map</Link>
-            {otherParks.map((p) => (
+            {otherPages.map((p) => (
               <Link key={p.path} to={p.path} className={styles.link}>{p.label}</Link>
             ))}
           </div>
@@ -37,7 +38,7 @@ export default function Footer({ variant, currentPark }) {
           🗺️ Explore the Interactive Map
         </Link>
         <div className={styles.secondaryLinks}>
-          <a href="#before-you-go" className={styles.link}>Before You Go Checklist</a>
+          <Link to="/guide" className={styles.link}>Planning Guide</Link>
         </div>
       </div>
     </footer>
