@@ -601,6 +601,16 @@ const springsVenues = [
     lat: 28.37269,
     lng: -81.51532,
   },
+  {
+    id: 'sprinkles',
+    name: 'Sprinkles',
+    description: 'Famous gourmet cupcakes in classic and seasonal flavors, plus cookies and brownies. Known for their iconic cupcake ATM!',
+    emoji: '🧁',
+    type: 'venue',
+    serviceType: 'snack',
+    lat: 28.3708967,
+    lng: -81.5171355,
+  },
 
   // --- Coffee ---
   {
