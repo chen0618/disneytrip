@@ -30,7 +30,8 @@ disney-site/
 ├── vite.config.js
 ├── package.json
 ├── scripts/
-│   └── scrape-news.js           # RSS scraper — 5 feeds with WDW relevance filter
+│   ├── scrape-news.js           # RSS scraper — 5 feeds with WDW relevance filter
+│   └── daily-news-pull.sh       # Cron wrapper — scrapes, builds, deploys (8 AM EST daily)
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage, /park/* → park pages)
 │   ├── App.jsx                   # ActiveSectionProvider + 5 main sections + nav + footer
@@ -97,7 +98,7 @@ disney-site/
 │       ├── showsInfo.js
 │       ├── snacks.js
 │       ├── mapParks.js
-│       ├── mapShows.js           # 39 show/event markers for interactive map
+│       ├── mapShows.js           # 37 show/event markers for interactive map
 │       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
 │       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
@@ -177,11 +178,18 @@ disney-site/
 - Each page has its own ActiveSectionProvider + FloatingNav with park-specific sections
 - FloatingNav accepts optional `sections` prop (overrides navSections.js) and `extraLinks` (e.g., "Back to Home")
 - Park theme colors: MK=coral (#FF6B6B), HS=purple (#A29BFE), EPCOT=yellow (#FFD700)
+- **EPCOT area names** (retired "Future World"): World Celebration (Spaceship Earth, Figment), World Discovery (Guardians, Test Track, Mission: SPACE), World Nature (Soarin', Land, Seas)
 - **Shared data**: Rides, food, shows, shops filtered from mapRides.js, snacks.js, mapShows.js, mapShops.js by park field
 - **Park-specific data**: magicKingdomData.js, hollywoodStudiosData.js, epcotData.js
 - **ParkMiniMap**: Reusable Leaflet component showing park boundary polygon + emoji ride/food markers
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
+
+### Data Accuracy Gotchas
+- **Disneyland vs WDW confusion**: Many Disney "facts" apply to Disneyland (CA), not Walt Disney World (FL) — always verify location-specific claims (e.g., Pirates skulls = DL only, Astro Orbiter height req = DL only, Space Mountain rebuild = Tokyo DL)
+- **Temporal tense**: Site targets January 2027 trip — rides currently closed but reopening before the trip should have `closed: true` with descriptions noting the expected reopening
+- **Callout tips in JSX duplicate shared data**: EpcotRides.jsx, HSStrategy.jsx, EpcotStrategy.jsx contain hardcoded ride tips/facts that can drift from mapRides.js — update BOTH when facts change
+- **lightningLane boolean limitation**: `lightningLane: true/false` in mapRides.js doesn't distinguish Multi Pass (included) vs Single Pass (paid individually) — tips should clarify when it's Single Pass
 
 ### Data Consistency Gotchas
 - **Shared data files are the source of truth** — mapRides.js, snacks.js, mapShows.js contain the canonical ride/food/show data
