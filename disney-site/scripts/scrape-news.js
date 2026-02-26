@@ -144,7 +144,7 @@ function parseYouTubeItems(xml, source) {
         typeof entry.title === 'string' ? entry.title : entry.title?.['#text'] || ''
       );
       return {
-        id: makeId(source, link),
+        id: `${source.toLowerCase().replace(/\s/g, '-')}-${videoId}`,
         title, link, source,
         pubDate: entry.published ? new Date(entry.published).toISOString() : new Date().toISOString(),
         description: description.slice(0, 300),

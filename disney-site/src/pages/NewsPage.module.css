@@ -130,6 +130,7 @@
   letter-spacing: 0.04em;
 }
 .sourceDFB { background: var(--coral); }
+.sourceDFBVideo { background: #ff4444; color: white; }
 .sourceAllEars { background: var(--purple); }
 .sourceBlogMickey { background: var(--blue); }
 .sourceDTB { background: var(--mint); }

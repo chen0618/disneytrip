@@ -4,7 +4,9 @@ import articles from '../data/newsArticles.json';
 import styles from './NewsPage.module.css';
 
 const STATUS_FILTERS = ['all', 'new', 'dismissed', 'incorporated'];
-const SOURCE_FILTERS = ['all', 'DFB', 'AllEars', 'BlogMickey', 'DTB', 'TouringPlans'];
+const SOURCE_FILTERS = ['all', 'DFB', 'DFB Video', 'AllEars', 'BlogMickey', 'DTB', 'TouringPlans'];
+
+const sourceClass = source => styles['source' + source.replace(/\s/g, '')];
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -85,7 +87,7 @@ export default function NewsPage() {
                 )}
                 <div className={styles.cardBody}>
                   <div className={styles.cardMeta}>
-                    <span className={`${styles.sourceBadge} ${styles['source' + article.source] || ''}`}>
+                    <span className={`${styles.sourceBadge} ${sourceClass(article.source)}`}>
                       {article.source}
                     </span>
                     <span className={`${styles.statusDot} ${styles['status' + article.status.charAt(0).toUpperCase() + article.status.slice(1)]}`} />
@@ -112,7 +114,7 @@ export default function NewsPage() {
                         rel="noopener noreferrer"
                         onClick={e => e.stopPropagation()}
                       >
-                        Read Full Article &rarr;
+                        {article.source === 'DFB Video' ? 'Watch Video' : 'Read Full Article'} &rarr;
                       </a>
                     </div>
                   )}
