@@ -42,7 +42,7 @@ export default function HSStrategy() {
           <div className={styles.reminders}>
             <div className={styles.reminder}>
               <strong>Rise of the Resistance</strong>
-              <p>This is THE rope drop priority. Head straight there during Early Entry at 7:30 AM.</p>
+              <p>This is THE rope drop priority. Head straight there during Early Entry at 8:30 AM.</p>
             </div>
             <div className={styles.reminder}>
               <strong>Mobile Order Lunch</strong>

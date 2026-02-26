@@ -11,17 +11,17 @@ const CALLOUTS = [
   {
     name: 'Guardians of the Galaxy: Cosmic Rewind',
     emoji: '\uD83C\uDFB6',
-    tip: 'Virtual queue or Lightning Lane Single Pass \u2014 no standby line! Join the virtual queue at 7:00 AM sharp from your phone, or try again at 1:00 PM. Everyone in your party must have a valid park ticket and reservation linked to My Disney Experience. Set an alarm!',
+    tip: 'Lightning Lane Single Pass available, or use the standby queue. Go at rope drop for shortest waits \u2014 lines hit 90+ minutes by mid-morning. Rider Swap available for kids under 42".',
   },
   {
     name: 'Test Track',
     emoji: '\uD83C\uDFC1',
-    tip: 'Design your own car in the pre-show area before the ride! Your car gets scored on speed, efficiency, and more. Kids LOVE the design phase even if they can\'t ride (40" height requirement).',
+    tip: 'Reimagined in 2025 with a fresh new look and updated storyline! High-speed outdoor track section is still a blast. 40" height requirement \u2014 Rider Swap available.',
   },
   {
     name: 'Frozen Ever After',
     emoji: '\u2744\uFE0F',
-    tip: 'Rope drop priority #1! Lines hit 60+ minutes by mid-morning. During Early Entry (7:30 AM), you can walk on in under 10 minutes. No height requirement \u2014 perfect for the whole family.',
+    tip: 'Rope drop priority #1! Lines hit 60+ minutes by mid-morning. During Early Entry (8:30 AM), you can walk on in under 10 minutes. No height requirement \u2014 perfect for the whole family.',
   },
 ];
 

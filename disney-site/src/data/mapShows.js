@@ -150,19 +150,19 @@ export const mapShows = [
     lng: -81.55838,
     description: 'Live stunt show with explosions, fights & audience volunteers.',
     image: '/images/indiana-jones.jpg',
-    tip: 'Runs ~30 minutes. Arrive early for a seat.',
+    tip: 'Runs ~35 minutes. Arrive early for a seat.',
   },
   {
     id: 'villains',
-    name: 'Disney Villains: Unforgettable',
+    name: 'Disney Villains: Unfairly Ever After',
     emoji: '🎭',
     type: 'show',
     park: 'Hollywood Studios',
     lat: 28.36007,
     lng: -81.56122,
-    description: "Stage show celebrating Disney's iconic villains through song & dance.",
+    description: "Fiendishly funny stage show where the Magic Mirror reveals which villain has been treated the most unfairly — audience votes for the winner!",
     image: '/images/villains.jpg',
-    tip: 'Features Maleficent, Ursula, Jafar, and more.',
+    tip: 'Features Cruella de Vil, Captain Hook, Maleficent, and more. 18-minute show at Sunset Showcase.',
   },
 
   {
@@ -187,19 +187,7 @@ export const mapShows = [
     lng: -81.56099,
     description: 'Brand new stage show retelling The Little Mermaid with stunning puppetry, singing, and special effects in the Animation Courtyard theater.',
     image: '/images/little-mermaid-musical.jpg',
-    tip: 'New in 2025! Indoor A/C theater. Great for all ages.',
-  },
-  {
-    id: 'muppet-vision-3d',
-    name: 'Muppet*Vision 3D',
-    emoji: '🐸',
-    type: 'show',
-    park: 'Hollywood Studios',
-    lat: 28.35608,
-    lng: -81.56010,
-    description: '3D film directed by Jim Henson himself, with in-theater Muppet effects and a hilarious pre-show. A Disney classic!',
-    image: '/images/muppet-vision-3d.jpg',
-    tip: 'One of the last things Jim Henson worked on. The pre-show is just as funny as the main event.',
+    tip: 'Opened May 2025. Indoor A/C theater. Great for all ages.',
   },
   {
     id: 'walt-disney-presents',
@@ -236,18 +224,6 @@ export const mapShows = [
     description: 'Interactive live show where kids dance and sing along with Disney Junior characters like Mickey, Bluey, and Spidey. Perfect for toddlers and preschoolers!',
     image: '/images/disney-junior-dance-party.jpg',
     tip: 'Ages 2-6 will go wild. Multiple shows daily — check the schedule.',
-  },
-  {
-    id: 'jedi-training',
-    name: 'Jedi Training: Trials of the Temple',
-    emoji: '⚔️',
-    type: 'show',
-    park: 'Hollywood Studios',
-    lat: 28.3557123,
-    lng: -81.5587216,
-    description: 'Kids (ages 4-12) are chosen to train as Jedi and battle Darth Vader and the Seventh Sister! Sign up at the Indiana Jones Adventure Outpost early in the morning.',
-    image: '/images/jedi-training.jpg',
-    tip: 'Sign up at park opening — spots fill FAST. Kids must be 4-12 and present at sign-up.',
   },
 
   // --- EPCOT Shows ---
@@ -372,7 +348,7 @@ export const mapShows = [
     description: 'Castle projections + fireworks spectacular.',
     image: '/images/happily-ever-after.jpg',
     tip: 'Claim a Main Street spot 30–45 min early.',
-    time: '~8:00–9:00 PM',
+    time: '~9:00 PM (varies by season)',
   },
   {
     id: 'luminous',
@@ -398,7 +374,7 @@ export const mapShows = [
     description: 'Water, fire, projections & Disney villains in an amphitheater.',
     image: '/images/fantasmic.jpg',
     tip: 'Arrive 45–60 min early for good seats.',
-    time: '~8:00 PM (select nights)',
+    time: '~8:30-9:30 PM (select nights, varies by season)',
   },
 
   {

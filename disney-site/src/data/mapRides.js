@@ -14,12 +14,12 @@ export const mapRides = [
     land: 'Main Street, U.S.A.',
     lat: 28.4166757,
     lng: -81.5819726,
-    description: 'Steam-powered train circling the entire Magic Kingdom with stops at Main Street, Frontierland, and Fantasyland. A relaxing 20-minute loop!',
+    description: 'Steam-powered train running in shuttle mode between Main Street and Fantasyland (Frontierland station closed for Cars expansion). A relaxing ride with great park views!',
     image: '/images/wdw-railroad.jpg',
     heightReq: null,
     heightReqInches: 0,
     lightningLane: false,
-    tip: 'Great way to rest your feet. Board at any of the 3 stations and ride the full loop.',
+    tip: 'Currently shuttle mode only — boards at Main Street or Fantasyland. Great way to rest your feet!',
   },
 
   // Adventureland
@@ -36,7 +36,7 @@ export const mapRides = [
     image: '/images/magic-carpets-of-aladdin.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'The camel near the ride spits water at riders — kids think it\'s hilarious!',
   },
   {
@@ -98,7 +98,8 @@ export const mapRides = [
     land: 'Frontierland',
     lat: 28.4203061,
     lng: -81.5847249,
-    description: 'Runaway mine train coaster through the desert — recently reopened with a stunning new underground scene and rebuilt track! Fun, bouncy, and not too scary for brave kids.',
+    closed: true,
+    description: 'Runaway mine train coaster through the desert — reopening spring 2026 with a brand-new Rainbow Caverns underground scene and rebuilt track! Should be open for our January 2027 trip.',
     image: '/images/big-thunder-mountain-railroad.jpg',
     heightReq: '40"',
     heightReqInches: 40,
@@ -154,7 +155,7 @@ export const mapRides = [
     image: '/images/its-a-small-world.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: null,
   },
   {
@@ -202,7 +203,7 @@ export const mapRides = [
     image: '/images/dumbo-the-flying-elephant.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'Has an indoor play area in the queue — great for keeping little ones entertained.',
   },
   {
@@ -218,7 +219,7 @@ export const mapRides = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Barnstormer_%28Magic_Kingdom%29_1.jpg/960px-Barnstormer_%28Magic_Kingdom%29_1.jpg',
     heightReq: '35"',
     heightReqInches: 35,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'Great first coaster for little ones!',
   },
   {
@@ -250,7 +251,7 @@ export const mapRides = [
     image: '/images/under-the-sea-journey-of-the-little-mermaid.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: null,
   },
 
@@ -267,7 +268,7 @@ export const mapRides = [
     image: '/images/mad-tea-party.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'Spin the center disc to go faster — or not, if you prefer a gentle ride!',
   },
   {
@@ -299,8 +300,8 @@ export const mapRides = [
     lng: -81.5791503,
     description: 'Rocket ships orbiting high above Tomorrowland! Ride up an elevator to board, then control your rocket\'s altitude as you spin with great views.',
     image: '/images/astro-orbiter.jpg',
-    heightReq: '35"',
-    heightReqInches: 35,
+    heightReq: null,
+    heightReqInches: 0,
     lightningLane: false,
     tip: 'Higher up than Dumbo — beautiful at night with the Tomorrowland lights!',
   },
@@ -329,13 +330,12 @@ export const mapRides = [
     land: 'Tomorrowland',
     lat: 28.4191503,
     lng: -81.5772484,
-    closed: true,
-    description: 'Classic indoor roller coaster in the dark. Currently closed for a complete rebuild — reopening 2027 with enhanced effects and new storytelling. Use Rider Swap at TRON instead!',
+    description: 'Classic indoor roller coaster in the dark. Sharp twists and turns in near-total darkness — a must-ride for thrill seekers!',
     image: '/images/space-mountain.jpg',
     heightReq: '44"',
     heightReqInches: 44,
-    lightningLane: false,
-    tip: 'Closed for refurbishment during our trip. The new version will be incredible when it reopens!',
+    lightningLane: true,
+    tip: 'A fan favorite with long lines. Use Lightning Lane or ride at park close for shorter waits.',
   },
   {
     id: 'buzz-lightyears-space-ranger-spin',
@@ -346,7 +346,8 @@ export const mapRides = [
     land: 'Tomorrowland',
     lat: 28.4180156,
     lng: -81.5797768,
-    description: 'Shoot targets with all-new handheld blasters from redesigned ride vehicles. Recently upgraded with new interactive scenes and overhauled gameplay — way better than before!',
+    closed: true,
+    description: 'Interactive shooting ride being reimagined with handheld blasters, new ride vehicles, and overhauled scenes. Reopening spring 2026 — should be open for our January 2027 trip!',
     image: '/images/buzz-lightyears-space-ranger-spin.jpg',
     heightReq: null,
     heightReqInches: 0,
@@ -367,7 +368,7 @@ export const mapRides = [
     heightReq: '48"',
     heightReqInches: 48,
     lightningLane: true,
-    tip: 'Adults only — use Rider Swap for both kids. Virtual queue or Lightning Lane recommended.',
+    tip: 'Adults only — use Rider Swap for both kids. Use Lightning Lane Single Pass or go at rope drop.',
   },
   {
     id: 'tomorrowland-speedway',
@@ -382,7 +383,7 @@ export const mapRides = [
     image: '/images/tomorrowland-speedway.jpg',
     heightReq: '32"',
     heightReqInches: 32,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'Must be 54" to drive alone — smaller kids can ride with an adult.',
   },
 
@@ -468,7 +469,7 @@ export const mapRides = [
     image: '/images/alien-swirling-saucers.jpg',
     heightReq: '32"',
     heightReqInches: 32,
-    lightningLane: false,
+    lightningLane: true,
     tip: null,
   },
 
@@ -542,7 +543,7 @@ export const mapRides = [
 
   // ─── EPCOT ─────────────────────────────────────────────────────
 
-  // Future World / Spaceship Earth area
+  // World Celebration / Spaceship Earth area
   {
     id: 'spaceship-earth',
     name: 'Spaceship Earth',
@@ -556,7 +557,7 @@ export const mapRides = [
     image: '/images/spaceship-earth.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'Walk-on most of the day. A great ride to do when you need a cool-down break.',
   },
 
@@ -575,7 +576,7 @@ export const mapRides = [
     heightReq: '42"',
     heightReqInches: 42,
     lightningLane: true,
-    tip: 'Virtual queue or Lightning Lane Single Pass required. Rider Swap available for kids under 42".',
+    tip: 'Lightning Lane Single Pass or standby queue. Rider Swap available for kids under 42". Go at rope drop for shorter standby waits.',
   },
   {
     id: 'test-track',
@@ -586,7 +587,7 @@ export const mapRides = [
     land: 'World Discovery',
     lat: 28.37286,
     lng: -81.54722,
-    description: 'Design your own virtual car, then ride it through tests at high speed on an outdoor track!',
+    description: 'High-speed ride testing your vehicle on an outdoor track — reimagined in 2025 with a fresh new look and updated storyline!',
     image: '/images/test-track.jpg',
     heightReq: '40"',
     heightReqInches: 40,
@@ -602,7 +603,7 @@ export const mapRides = [
     land: 'World Discovery',
     lat: 28.37390,
     lng: -81.54672,
-    description: 'Space flight simulator with two intensity levels: Green (mild) and Orange (intense spinning). Choose wisely!',
+    description: 'Space flight simulator with two intensity levels: Green (mild, 40" req) and Orange (intense spinning, 44" req). Choose wisely!',
     image: '/images/mission-space.jpg',
     heightReq: '40"',
     heightReqInches: 40,
@@ -620,7 +621,7 @@ export const mapRides = [
     land: 'World Nature',
     lat: 28.37285,
     lng: -81.55270,
-    description: 'Hang-glider simulation soaring over stunning American landscapes and iconic cityscapes, with wind, scents, and a patriotic score celebrating America\'s 250th. A crowd favorite!',
+    description: 'Hang-glider simulation soaring over stunning American landscapes with wind, scents, and a patriotic score. Limited-time film celebrating America\'s 250th — a crowd favorite!',
     image: '/images/soarin-across-america.jpg',
     heightReq: '40"',
     heightReqInches: 40,
@@ -640,7 +641,7 @@ export const mapRides = [
     image: '/images/living-with-the-land.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'A hidden gem! Great for a relaxing break. Usually short wait times.',
   },
 
@@ -706,7 +707,7 @@ export const mapRides = [
     image: '/images/journey-into-imagination.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'A gentle, classic EPCOT ride. Usually a walk-on — great for a quick cool-down break.',
   },
   {
@@ -722,7 +723,7 @@ export const mapRides = [
     image: '/images/seas-with-nemo.jpg',
     heightReq: null,
     heightReqInches: 0,
-    lightningLane: false,
+    lightningLane: true,
     tip: 'The aquarium after the ride is the real highlight — plan to spend 20-30 minutes exploring.',
   },
   {

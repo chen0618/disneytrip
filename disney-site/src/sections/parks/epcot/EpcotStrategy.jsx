@@ -41,12 +41,12 @@ export default function EpcotStrategy() {
           <h3 className={styles.calloutTitle}>Key Reminders</h3>
           <div className={styles.reminders}>
             <div className={styles.reminder}>
-              <strong>Guardians Virtual Queue</strong>
-              <p>Opens at 7:00 AM and 1:00 PM. Everyone needs a ticket linked to My Disney Experience. Set an alarm for both windows!</p>
+              <strong>Guardians of the Galaxy</strong>
+              <p>Now has a standby queue — no more virtual queue! Go at rope drop for shortest waits, or buy Lightning Lane Single Pass.</p>
             </div>
             <div className={styles.reminder}>
-              <strong>World Showcase Opens Later</strong>
-              <p>World Showcase countries open at 11 AM (except Norway and France). Use mornings for Future World rides, afternoons for food touring.</p>
+              <strong>World Showcase Strategy</strong>
+              <p>World Showcase now opens at park open! But mornings are best for the bigger rides in World Discovery/Nature. Save the food touring for afternoon.</p>
             </div>
             <div className={styles.reminder}>
               <strong>Festival of the Arts</strong>

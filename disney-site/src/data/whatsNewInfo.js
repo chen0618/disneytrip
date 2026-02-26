@@ -73,7 +73,7 @@ export const newExperiences = [
         name: "Soarin' Across America",
         emoji: '🦅',
         badge: 'New Film',
-        description: "Replacing Soarin' Around the World since May 2026. A brand-new film celebrating America's 250th birthday — fly over stunning landscapes and iconic cityscapes from 13+ American locations.",
+        description: "A limited-time film debuting Memorial Day 2026, celebrating America's 250th birthday — fly over stunning landscapes and iconic cityscapes from 13+ American locations. Replaces Soarin' Around the World (which may return).",
       },
       {
         name: 'GEO-82 Lounge',
@@ -107,14 +107,14 @@ export const newExperiences = [
 export const headsUpAlerts = [
   {
     emoji: '🚡',
-    title: 'Skyliner Closes Jan 24–30',
-    description: 'Annual maintenance. We leave Jan 23 — we\'re safe! But if plans shift even one day, buses replace the Skyliner.',
+    title: 'Skyliner Annual Maintenance (late January)',
+    description: 'Annual maintenance typically late January (Jan 25-31 in 2026). We leave Jan 23 — we\'re safe! Watch for 2027 dates closer to the trip.',
     severity: 'info', // 'info' or 'warning'
   },
   {
     emoji: '🏗️',
     title: 'Monstropolis Under Construction',
-    description: 'The old Muppet*Vision 3D area at Hollywood Studios is being transformed into a Monsters, Inc. land. Expect construction walls near Grand Avenue. Won\'t be open for our trip.',
+    description: 'Muppet*Vision 3D permanently closed June 2025. The area at Hollywood Studios is being transformed into a Monsters, Inc. land (Monstropolis). Expect construction walls near Grand Avenue. Won\'t be open for our trip.',
     severity: 'info',
   },
   {
@@ -128,11 +128,5 @@ export const headsUpAlerts = [
     title: 'WDW Railroad — Partial Service',
     description: 'Frontierland station is closed. The train runs as a shuttle between Main Street and Fantasyland stations only.',
     severity: 'info',
-  },
-  {
-    emoji: '🚀',
-    title: 'Space Mountain Closed for Rebuild',
-    description: 'Space Mountain closed in July 2024 for a complete rebuild with enhanced effects and new storytelling. It will NOT be open during our January 2027 trip. The new version is expected to reopen sometime in 2027.',
-    severity: 'warning',
   },
 ];

@@ -83,9 +83,9 @@ export const heightTiers = [
     tier: '44 inches',
     emoji: '🚫',
     color: '#636e72',
-    note: 'Currently closed — Space Mountain is being rebuilt',
+    note: 'Rider Swap available for shorter kids',
     rides: [
-      { name: 'Space Mountain', park: 'Magic Kingdom', note: 'Closed for refurbishment — reopening 2027' },
+      { name: 'Space Mountain', park: 'Magic Kingdom' },
     ],
   },
   {

@@ -23,7 +23,7 @@ export const photoPassFeatures = [
   {
     icon: '💾',
     title: 'Memory Maker Package',
-    text: "Memory Maker ($169 in advance, $199 at the park) gives you unlimited digital downloads of ALL your PhotoPass photos for the entire trip. Without it, individual photos cost $15–$20 each.",
+    text: "Memory Maker ($185 in advance, $210 at the park) gives you unlimited digital downloads of ALL your PhotoPass photos for the entire trip. Without it, individual photos cost $15–$20 each.",
   },
 ];
 
