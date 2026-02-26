@@ -99,7 +99,7 @@ disney-site/
 │       ├── snacks.js
 │       ├── mapParks.js
 │       ├── mapShows.js           # 37 show/event markers for interactive map
-│       ├── mapShops.js           # 90+ shop markers (MK, HS, EPCOT, Disney Springs)
+│       ├── mapShops.js           # 157 shop markers (MK, HS, EPCOT, Disney Springs)
 │       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
 │       ├── magicKingdomData.js  # MK lands, easter eggs, strategy, fireworks, nav sections
@@ -153,7 +153,7 @@ disney-site/
 4. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
 5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
 
-## Planning Guide Page (/guide, 4 sections)
+## Planning Guide Page (/guide, 5 sections — including hero)
 1. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
 2. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
 3. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap

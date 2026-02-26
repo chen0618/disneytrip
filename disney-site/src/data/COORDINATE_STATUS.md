@@ -185,7 +185,7 @@ This document tracks which map locations have verified coordinates (sourced from
 
 ---
 
-## mapShows.js (39 shows/events)
+## mapShows.js (37 shows/events)
 
 ### Magic Kingdom Shows (10 + 1 fireworks + 2 parades)
 | # | ID | Name | Status | Date |
