@@ -44,6 +44,7 @@ export const kidGuide = [
   { name: 'Kidcot Fun Stops', emoji: '\u{1F3A8}', description: 'FREE craft activity at every World Showcase country! Kids get a card and collect stamps/stickers at each stop. It gives them a mission as you walk the World Showcase.', ageGroup: 'Ages 3-12' },
   { name: 'Character Meets', emoji: '\u{1F478}', description: 'Meet Anna & Elsa in Norway, Mulan in China, Belle in France, Jasmine in Morocco, and Mary Poppins & Alice in the UK. More characters than any other park!', ageGroup: 'All ages' },
   { name: 'Interactive Fountains', emoji: '\u26F2', description: 'Between World Celebration and World Showcase, there are playful water fountains that shoot unexpectedly. Kids go crazy for them \u2014 bring a change of clothes!', ageGroup: 'Toddlers-6' },
+  { name: 'World Discovery Playground', emoji: '\u{1F6DD}', description: 'Renovated outdoor playground near Creations Shop with separate toddler and older-kid zones, shaded parent seating, and stroller parking. Great midday break spot!', ageGroup: 'Toddlers-10' },
 ];
 
 export const epcotStrategy = {

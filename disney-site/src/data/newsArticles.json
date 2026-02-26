@@ -1,5 +1,35 @@
 [
   {
+    "id": "dfb-2026-02-26-2027-walt-disney-world-marathon-weekend-themes-revealed",
+    "title": "NEWS: 2027 Walt Disney World Marathon Weekend Themes Revealed",
+    "link": "https://www.disneyfoodblog.com/2026/02/26/2027-walt-disney-world-marathon-weekend-themes-revealed/",
+    "source": "DFB",
+    "pubDate": "2026-02-26T19:35:28.000Z",
+    "description": "The new Walt Disney World Marathon Weekend themes are here for 2027!",
+    "categories": [
+      "Featured",
+      "Walt Disney World",
+      "2027 rundisney",
+      "2027 Walt Disney World Marathon Weekend",
+      "Disney",
+      "disney news",
+      "disney parks",
+      "Disney World",
+      "Epcot",
+      "Hollywood Studios",
+      "rundisney 2027",
+      "runDisney Walt Disney World Marathon Weekend",
+      "walt disney world marathon weekend",
+      "walt disney world marathon weekend 2027",
+      "Walt Disney World Marathon Weekend Registration",
+      "WDW"
+    ],
+    "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/Walt-Disney-World-Marathon-Weekend-2027-runDisney.png",
+    "contentSnippet": "It's hard to believe that the Walt Disney World Marathon Weekend is turning 30 years old next year! To celebrate, the Walt Disney World Marathon Weekend will be hosted by some of our favorite classic Disney characters. ©Disney The Walt Disney World Marathon Weekend will take place on January 6th thr...",
+    "status": "dismissed",
+    "notes": "Marathon Weekend is Jan 6-9 2027, a week before our trip. No impact on our dates."
+  },
+  {
     "id": "allears-2026-02-26-this-magic-kingdom-ride-gives-me-anxiety-and-i-know-im-not-the-only-o",
     "title": "This Magic Kingdom Ride Gives Me Anxiety, and I Know I’m Not the Only One",
     "link": "https://allears.net/2026/02/26/this-magic-kingdom-ride-gives-me-anxiety-and-i-know-im-not-the-only-one-2/",
@@ -18,8 +48,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2025/06/2025-WDW-magic-kingdom-astro-orbiter-reopening-06.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Opinion piece about Astro Orbiter anxiety, no new facts"
   },
   {
     "id": "dfb-2026-02-26-why-i-will-only-stay-at-a-non-disney-world-hotel-from-now-on",
@@ -41,8 +71,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2021/02/2021-wdw-walt-disney-world-home2-suites-hilton-flamingo-crossings-town-center.jpg",
     "contentSnippet": "It’s no secret that there are a lot of hotel options near Walt Disney World. From Disney’s own 20+ hotels, to third-party hotels on Disney Property (the Swan and Dolphin Resorts, the Four Seasons), Good Neighbor Hotels in the Disney Springs area, and our focus today: Flamingo Crossings. ©Home2Suites...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Opinion piece favoring off-property hotels, already booked Pop Century"
   },
   {
     "id": "dtb-magic-kingdoms-bigger-villains-land-rumor-emperors-new-groove-coaster-maleficent",
@@ -59,8 +89,8 @@
     ],
     "imageUrl": null,
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Villains Land rumors, won't be open by Jan 2027"
   },
   {
     "id": "allears-2026-02-26-3-new-essentials-were-adding-to-our-disney-world-must-have-list",
@@ -80,8 +110,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/amazon-2026-J.L.-Childress-Disney-Baby-Side-Sling-Stroller-Cargo-Net-scaled.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Packing/gear listicle, no park changes"
   },
   {
     "id": "allears-2026-02-26-3-reasons-why-you-shouldnt-stay-in-a-moderate-hotel-in-disney-world-t",
@@ -108,8 +138,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2025/10/2025-WDW-coronado-springs-resort-hotel-atmo-06.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Opinion on moderate resorts, not relevant to Pop Century"
   },
   {
     "id": "dfb-2026-02-26-why-is-it-taking-disney-world-over-a-year-to-refurbish-big-thunder-mo",
@@ -141,8 +171,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2025/07/20250726-DFB-Big-Thunder-Mountain-Attraction-Frontierland-Magic-Kingdom-Photo-Jul-26-2025-10-33-28-AM-4032-x-3024.jpg",
     "contentSnippet": "Big Thunder Mountain Railroad has been closed for a while now, and honestly, the timeline might surprise you. Big Thunder Mountain Railroad If you've been keeping up with Magic Kingdom news, you already know that the wildest ride in the wilderness went offline back in January 2025. But what you migh...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "BTMR refurb details already reflected in whatsNewInfo.js (Rainbow Caverns, spring 2026 reopening)"
   },
   {
     "id": "allears-2026-02-26-first-look-at-the-2026-epcot-flower-garden-festival-souvenirs",
@@ -175,8 +205,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2025/03/2025-wdw-epcot-flower-and-garden-festival-banners-atmo-logo-scaled.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "F&G Festival souvenirs, wrong season (trip is Jan = Festival of the Arts)"
   },
   {
     "id": "allears-2026-02-26-sneak-peek-at-the-new-milkshake-pop-up-coming-to-disney-springs",
@@ -203,8 +233,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/2025-wdw-disney-springs-black-tap-crazyshake-special-edition-mickey-mouse-shake-1.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Black Tap CrazyShakes pop-up, 3-month run starting Mar 2026 — gone by Jan 2027"
   },
   {
     "id": "dfb-2026-02-26-first-look-at-a-new-pop-up-coming-to-disney-springs-next-week",
@@ -230,8 +260,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/DFB-Special-Edition-Mickey-Mouse-Shake-CrazyShake-by-Black-Tap-Popup-Food-Town-Center-Disney-Springs-Photo-Feb-26-2026-11-30-49-AM-3672-x-2066-1-scaled.jpg",
     "contentSnippet": "This is your very, VERY important reminder that a special pop-up experience is coming to Disney Springs. We know things pop up in Disney Springs all the time, but this one is dedicated to milkshakes, which means it might just be the best one yet. Let's try some milkshakes! Black Tap Craft Burgers & ...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Same Black Tap pop-up, temporary — gone by Jan 2027"
   },
   {
     "id": "allears-2026-02-26-if-youre-going-to-disney-in-2026-you-need-this",
@@ -258,8 +288,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/01/2026-WDW-magic-kingdom-cinderella-castle-atmo-2.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "General 2026 tips article, no new policy info"
   },
   {
     "id": "dfb-2026-02-26-aldi-is-releasing-new-disney-travel-essentials-next-week",
@@ -284,8 +314,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2024/07/2024-aldi-grocery-store-aldi-finds-weekly-deals-aisle-sign.jpg",
     "contentSnippet": "It's that time of the week again, that time when we find out what kinda' goodies ALDI is going to have stocked in its stores in just a week. Now, we always find great deals at ALDI on everything from food to kids' toys to travel essentials and more. ©ALDI Well, next week isn't any different, and we ...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Aldi Disney-themed merchandise, not park info"
   },
   {
     "id": "allears-2026-02-26-review-the-disney-world-food-court-that-will-always-surprise-you-in-a",
@@ -315,8 +345,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2026/02/2025-wdw-port-orleans-french-quarter-sassagoula-floatworks-and-food-factory-strawberry-cheesecake-1.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Existing food court review, no new openings or changes"
   },
   {
     "id": "dfb-2026-02-26-virtual-queues-could-make-a-comeback-in-disney-world-this-year",
@@ -340,8 +370,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/2026-WDW-magic-kingdom-cinderella-castle-repainting-atmo-08.jpg",
     "contentSnippet": "Disney World is in the midst of a massive transformation, with massive construction projects in the Magic Kingdom, Hollywood Studios, and Animal Kingdom all set to open in the next few years. However, all of the new attractions and IP coming to the parks could lead to the return of a controversial D...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "VQ speculation + Muppets re-theme confirmation — already reflected in mapRides.js"
   },
   {
     "id": "dfb-2026-02-26-news-a-popular-disney-world-playground-just-reopened",
@@ -370,8 +400,8 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2024/06/2024-wdw-epcot-spaceship-earth-stock-ride.jpg",
     "contentSnippet": "If you're coming to Disney World with little kids, you'll probably be looking for any chance you can get to have them burn off a little energy. EPCOT You spend a lot of time waiting in lines, sitting at restaurants, and staying still while watching shows, so it makes sense that the kids will want a ...",
-    "status": "new",
-    "notes": ""
+    "status": "incorporated",
+    "notes": "Added World Discovery Playground to epcotData.js kidGuide"
   },
   {
     "id": "allears-2026-02-26-disneys-villains-land-to-include-emperors-new-groove-coaster-malefice",
@@ -399,8 +429,8 @@
     ],
     "imageUrl": "https://allears.net/wp-content/uploads/2024/09/2024-d23-disney-concept-art-magic-kingdom-WDW_Villians_Land-scaled.jpg",
     "contentSnippet": "",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Villains Land rumors, won't be open by Jan 2027"
   },
   {
     "id": "dfb-2026-02-26-breaking-new-reports-reveal-disneys-villains-land-will-include-empero",
@@ -425,9 +455,9 @@
       "whats coming to villains land"
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2024/09/2024-d23-disney-concept-art-magic-kingdom-WDW_Villians_Land-1-scaled.jpg",
-    "contentSnippet": "According to TheWrap, Villains Land coming to Magic Kingdom might be better than we've ever thought. Villains Land ©Disney There's been a lot of speculation lately about the project being scrapped or even the budget being unlimited, but some sources are saying that Disney is looking to change some e...",
-    "status": "new",
-    "notes": ""
+    "contentSnippet": "According to TheWrap, Villains Land coming to Magic Kingdom might be better than we've ever thought. Villains Land ©Disney There's been a lot of speculation lately about the project being scrapped or even the budget being unlimited, but many sources are saying that Disney is looking to change some e...",
+    "status": "dismissed",
+    "notes": "Villains Land rumors, won't be open by Jan 2027"
   },
   {
     "id": "dfb-2026-02-26-disney-loungefly-fans-are-racing-to-boxlunch-for-these-7-deals",
@@ -459,26 +489,29 @@
     ],
     "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2025/07/Loungefly-Deals-Featured-Image.png",
     "contentSnippet": "If you're a Loungefly collector, you already know that a good sale doesn't last long, and right now, BoxLunch is running some seriously good deals on Disney Loungefly mini backpacks that fans are absolutely snapping up. Fantasia Loungefly We're talking up to 40% off some of the most coveted styles, ...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Loungefly merchandise deals"
   },
   {
-    "id": "dfb-video-ZoOjVz-qYJ8",
-    "title": "15 Things You Didn't Know You Could Do in Disney World",
-    "link": "https://www.youtube.com/watch?v=ZoOjVz-qYJ8",
-    "source": "DFB Video",
-    "pubDate": "2026-02-26T15:30:22.000Z",
-    "description": "You already know a lot about Disney World, but you follow us here at DFB for the under the radar surprises that nobody else knows about! https://www.disneyfoodblog.com/special Join our FREE newsletter: https://www.disneyfoodblog.com/newsletter-youtube-bd5fc75d You can find our guide books, tees, and",
+    "id": "dfb-2026-02-26-dfb-video-15-things-you-didnt-know-you-could-do-in-disney-world",
+    "title": "DFB Video: 15 Things You Didn't Know You Could Do in Disney World",
+    "link": "https://www.disneyfoodblog.com/2026/02/26/dfb-video-15-things-you-didnt-know-you-could-do-in-disney-world/",
+    "source": "DFB",
+    "pubDate": "2026-02-26T15:30:31.000Z",
+    "description": "You already know a lot about Disney World, but you follow us here at DFB for the under the radar surprises that nobody else knows about!",
     "categories": [
-      "YouTube",
-      "Video"
+      "Featured",
+      "Walt Disney World",
+      "DFB Guide",
+      "dfb video",
+      "DFB Videos",
+      "DFB YouTube",
+      "DFB YouTube Channel"
     ],
-    "imageUrl": "https://i3.ytimg.com/vi/ZoOjVz-qYJ8/hqdefault.jpg",
-    "contentSnippet": "You already know a lot about Disney World, but you follow us here at DFB for the under the radar surprises that nobody else knows about. Hey everybody, it&#39;s AJ for Disney Food Blog. One of the most exciting moments of a Disney World trip is when you stumble on a hidden gem experience and realize Disney has a lot more going on than I expected it to. So, today we&#39;re going to show you a handful of super underrated stuff, experiences, activities, add-ons that some of them we just learned about that&#39;ll make your future Disney World trip not only more fun, but also unique. So, first up, my script writer, Briot, knows how much I love the roasted corn with African spices that&#39;s typically served at the Harambe Fruit Market in Animal Kingdom. So, during her last visit to Disney Sprin...",
-    "transcript": "You already know a lot about Disney World, but you follow us here at DFB for the under the radar surprises that nobody else knows about. Hey everybody, it&#39;s AJ for Disney Food Blog. One of the most exciting moments of a Disney World trip is when you stumble on a hidden gem experience and realize Disney has a lot more going on than I expected it to. So, today we&#39;re going to show you a handful of super underrated stuff, experiences, activities, add-ons that some of them we just learned about that&#39;ll make your future Disney World trip not only more fun, but also unique. So, first up, my script writer, Briot, knows how much I love the roasted corn with African spices that&#39;s typically served at the Harambe Fruit Market in Animal Kingdom. So, during her last visit to Disney Springs, after popping into the spice and tea exchange, she sent me a picture that really got me pumped for the future of roasted corn in my own household. So, you might have a spice and tea exchange in your hometown. But if you don&#39;t, it&#39;s pretty straightforward. They sell spices, they sell teas, they exchange stuff. But if you head over to one of the spice displays in this little store, you&#39;ll find the copycat recipe for the seasonings that they sprinkle across the Animal Kingdom corn. It&#39;s 1 tbspoon Berber spice blend and 1 teaspoon garam masala. Also, if you&#39;re a tea fan and you&#39;re burnt out on all the gold peak that Disney sells everywhere, the Spice and Tea Exchange regularly rotates out tasty tea blends that they can make for you, hot or iced, in store. If you&#39;re looking for an adults only escape, would you believe me if I told you Disney World can absolutely hook you up? Disney World&#39;s been coming up with more and more locations that have age restrictions attached to them just to give the grown-ups some time to relax and unwind and have a drink or two. When it comes to 21 and over locations, GO82 in Epcot is your newest option. This lounge is attached to and inspired by the ever so iconic beauty spaceship earth. You can also book a 21 and over fireworks experience for the evening if you want to get a little more bougie with it. Trader Sam&#39;s Grog Grotto in Polynesian Village Resort is an interactive, enchanted, and tropical bar. And while it&#39;s a family-friendly experience during the day, it also becomes strictly 21 and over after 8:00 p.m. And on Thursday through Sunday nights, the Atlantic Dance Hall at Boardwalk in Resort opens up for everyone 21 and older to provide a stylish and groovy nightclub experience. Typically, Atlantic Dance Club&#39;s hours run from 8:00 p.m. to 1:00 a.m. When it comes to Disney&#39;s ultra fancy restaurants like Victoria and Alberts and Grand Fian or Tacumit Tay and Mr. Paul and Epcot, you don&#39;t have to be 21 to dine at these locations, but there&#39;s still an age limit. You have to be at least 8 years old to dine at Tumi Tay and 10 years old to dine at Victoria and Albert&#39;s and Mi",
-    "videoId": "ZoOjVz-qYJ8",
-    "status": "new",
-    "notes": ""
+    "imageUrl": "https://www.disneyfoodblog.com/wp-content/uploads/2026/02/15ThingsYouDidntKnowThumbnail_01.jpg",
+    "contentSnippet": "You already know a lot about Disney World, but you follow us here at DFB for the under-the-radar surprises that nobody else knows about! Magic Kingdom entrance See what we mean in this DFB Video! Check out our video below:15 Things You Didn't Know You Could Do in Disney World Are you a DFB Video sub...",
+    "status": "dismissed",
+    "notes": "Video listicle, no new factual info"
   },
   {
     "id": "blogmickey-2026-02-bigger-bolder-villains-land-plans-revealed",
@@ -494,8 +527,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2026/02/26101451/villains-land-new-plans-header-2000x1125.jpg",
     "contentSnippet": "A new report from The Wrap continues the story of \"bigger and bolder\" plans for Magic Kingdom's Villains Land. We first reported that plans were recently \"scrapped\" last week. Now, The Wrap has more details that align with whispers that are growing louder. Here's the latest on the Villains Land plan...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Villains Land rumors, won't be open by Jan 2027"
   },
   {
     "id": "blogmickey-2026-02-imagineer-joe-rohde-book-floating-mountains",
@@ -510,8 +543,8 @@
     ],
     "imageUrl": "https://media.blogmickey.com/wp-content/uploads/2026/02/25194149/rohde-book-floating-mountains-header.jpg",
     "contentSnippet": "Disney Legend and legendary Imagineer Joe Rohde is coming out with a book on the secrets of creativity. The book, titled \"Floating Mountains: The Art of Imagining the Impossible,\" is already available for pre-order on the Disney website. Here's a look at what will surely be a must-buy book! Joe Rohd...",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Book release about Animal Kingdom Imagineer, skipping AK"
   },
   {
     "id": "dfb-2026-02-25-my-honest-must-haves-for-magic-kingdom",
@@ -1246,8 +1279,8 @@
     "contentSnippet": "When you&#39;re in Disney World, there is no escape from the continuous eyes of the mouse. But maybe it&#39;s better that way. Here&#39;s a behind-the-scenes look into how Disney World security is able to keep tabs on you all vacation long and why that&#39;s crucial information for your upcoming trip. Hey everybody, it&#39;s AJ for Disney Food Blog. Thousands upon thousands of guests enter the Disney World parks every single day. And yet, Disney still has their sights set on you. Yep, you. But I&#39;m not here to just tell you that. I&#39;m here to prove it. While also assuring you that you&#39;re going to be 110% grateful for the security spotlight when all is said and done. Outside of every single Disney World park, before you reach the front gate, Tap Styles, you&#39;ll encounter a secu...",
     "transcript": "When you&#39;re in Disney World, there is no escape from the continuous eyes of the mouse. But maybe it&#39;s better that way. Here&#39;s a behind-the-scenes look into how Disney World security is able to keep tabs on you all vacation long and why that&#39;s crucial information for your upcoming trip. Hey everybody, it&#39;s AJ for Disney Food Blog. Thousands upon thousands of guests enter the Disney World parks every single day. And yet, Disney still has their sights set on you. Yep, you. But I&#39;m not here to just tell you that. I&#39;m here to prove it. While also assuring you that you&#39;re going to be 110% grateful for the security spotlight when all is said and done. Outside of every single Disney World park, before you reach the front gate, Tap Styles, you&#39;ll encounter a security checkpoint. This checkpoint is made up of a dozen odd security cast members as well as a few walkthrough security detectors like you&#39;d find at the airport. But thankfully, you don&#39;t have to take off your shoes for this one. Instead, you will probably benefit from taking things out of your park bag that might set security detectors off, like any large electronics like portable chargers and tablets, metal items including mint tins, cases for your sunglasses or glasses, umbrellas, or really just anything that you&#39;re questioning if it&#39;ll trigger security or not. I mean, if you got the hands to hold those items and walk them through the security checkpoint out of your bag, you might as well. So, what happens then if you accidentally leave one of these electronics or metal items in your bag, and it does trigger security? Well, you&#39;re not in trouble or anything. Owning an umbrella is not a federal offense yet, but you will be directed to enter a second line where you&#39;ll go through a more thorough bag check before you&#39;re clear to go. During this more thorough bag check, if a security member finds something in your bag you&#39;re not allowed to have, like glass containers, or outside alcohol, drug paraphernalia, selfie sticks, or something else that&#39;s banned from the parks, you&#39;re not going to get wheeled off to the brrig or anything, unless it&#39;s really bad, of course. But you will be asked to either dispose of the banned item or backtrack to your vehicle or hotel room to put it away before you&#39;re allowed to start your day. And that&#39;s a major time suck. So, just don&#39;t bring banned items. Maybe we have a whole video about what&#39;s banned, so you can just watch that and make sure you don&#39;t have that stuff. Now, if you&#39;re bringing a stroller or a wheelchair with you to the parks that day, those will not go through the same security detectors. Instead, you&#39;ll have to take them through a different line, which is usually just directly to the left or right of the regular security checkpoint, and you&#39;ll have it more thoroughly inspected by a security cast member. Kids in the strollers will still be requir",
     "videoId": "XDmOTOkmVSE",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "General security overview — no new policy changes, just educational content about bag checks and surveillance."
   },
   {
     "id": "blogmickey-2026-02-once-upon-a-studio-theater-enchanted-art-gallery-hollywood-studios",
@@ -1405,8 +1438,8 @@
     "contentSnippet": "Do you want to go on a Disney World vacation, but you&#39;re already exhausted thinking about all the lines and the crowds and the lack of personal space? We&#39;re here to show you how to survive Disney World, even when it&#39;s packed. Hey everybody, it&#39;s AJ for Disney Food Blog. There are three things that I really have to brace myself for every time I go to Disney World. Price hikes, heat exhaustion, and crowds. We&#39;re talking so many people everywhere. Even during their slow seasons, Disney World still has thousands upon thousands of guests swarming their parks each day. But if navigating those crowds is the sole reason why you haven&#39;t locked in your big Disney World vacation yet, let me show you how to juggle the parks, the hotels, and Disney Springs in ways that&#39;ll ev...",
     "transcript": "Do you want to go on a Disney World vacation, but you&#39;re already exhausted thinking about all the lines and the crowds and the lack of personal space? We&#39;re here to show you how to survive Disney World, even when it&#39;s packed. Hey everybody, it&#39;s AJ for Disney Food Blog. There are three things that I really have to brace myself for every time I go to Disney World. Price hikes, heat exhaustion, and crowds. We&#39;re talking so many people everywhere. Even during their slow seasons, Disney World still has thousands upon thousands of guests swarming their parks each day. But if navigating those crowds is the sole reason why you haven&#39;t locked in your big Disney World vacation yet, let me show you how to juggle the parks, the hotels, and Disney Springs in ways that&#39;ll even make the busiest day more manageable and more fun. So, Epcot has two separate entrances. The more popular and more crowded entrance tends to be at the front of the park, which will put you right where Spaceship Earth is, and the less popular and therefore less crowded entrance is at the back of the park, Epcot&#39;s International Gateway, which is located right between the France pavilion and the UK pavilion. The World Showcase is always less crowded before everything officially opens up for the day since most pavilion offerings won&#39;t open till 11:00 a.m. However, the rides in all of those World Showcase Pavilions open right as early theme park entry starts. So, if you use the International Gateway, you&#39;ll be right there next to Remy&#39;s Ratatouille Adventure just as soon as you enter into Epcot, giving you a straight shot at being one of the first folks in line for it at the start of the day. Then you can go over to Lelay all and have a nice relaxing breakfast and then wander through the World Showcase a little bit before all the crowds make their way over there. Waiting in long lines for characters is not the most fun. Waiting no time for the characters with way fewer people surrounding you, super fun. Now, in the past, being able to see Disney characters pop up around the hotels was a nice hidden treat, but nothing was ever guaranteed. But lately, some of the Disney resorts have scheduled character appearances, so you don&#39;t have to gamble on whether or not you&#39;ll be visiting a resort when one of these free meet and greets is taking place. Normally, scheduled character appearances take place at Porteran&#39;s French Quarter and Wilderness Lodge. But during Cool Kids Summer, taking place from May 26th to September 8th, you&#39;ll also be able to find scheduled character meet and greets at additional hotels, including Art of Animation, Caribbean Beach, Pop Century, and Porter&#39;s Riverside. Okay, this one&#39;s weird, I know, but in our personal experience, and as you know, we&#39;ve got reporters in the parks all day, every day, Disney resorts that have convention centers do tend to have fairly peaceful locations with little to no guests ",
     "videoId": "9eEZZDBm71A",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Crowd tips — EPCOT gateway strategy already in our data, Cool Kids Summer is May-Sep only (not Jan), no new actionable info."
   },
   {
     "id": "touringplans-blog-flower-garden-topiary-maps",
@@ -1458,8 +1491,8 @@
     "contentSnippet": "Flower and garden menus are finally here. We&#39;ve already spotted some returning favorites and a few surprises you&#39;re definitely going to want on your must eat list at the next Epcot Festival. Meanwhile, the internet is buzzing about rumors that Villain&#39;s Land might be getting scrapped. Don&#39;t panic. We&#39;re breaking down what&#39;s actually being said and what it means. And over in Magic Kingdoms, Cinderella Castle&#39;s paint refresh just hit a new milestone and it looks wild. All the latest Disney and theme park news is coming up right now here on DFB Guide. Hey everybody, it&#39;s AJ for Disney Food Blog. We&#39;ve got important updates from around Disney World that will affect your trip. But first, we&#39;re starting with our favorite kind of news to share, festival men...",
     "transcript": "Flower and garden menus are finally here. We&#39;ve already spotted some returning favorites and a few surprises you&#39;re definitely going to want on your must eat list at the next Epcot Festival. Meanwhile, the internet is buzzing about rumors that Villain&#39;s Land might be getting scrapped. Don&#39;t panic. We&#39;re breaking down what&#39;s actually being said and what it means. And over in Magic Kingdoms, Cinderella Castle&#39;s paint refresh just hit a new milestone and it looks wild. All the latest Disney and theme park news is coming up right now here on DFB Guide. Hey everybody, it&#39;s AJ for Disney Food Blog. We&#39;ve got important updates from around Disney World that will affect your trip. But first, we&#39;re starting with our favorite kind of news to share, festival menus. Let&#39;s dive in. This is not a drill. We officially have menus for the Epcot International Flower and Garden Festival. Thank goodness because it starts like in a week and a half. Anyway, the 2026 Epcot Flower and Garden Festival runs from March 4th to June 1st. The festival&#39;s full of gorgeous flowers and topiaries, special entertainment, and lots of delicious food and drinks. We&#39;ve been eagerly awaiting the full menus for this year&#39;s festival, and the time has officially arrived. Some fan favorites are returning like the trio of dips and chips, lemonchello sparkling cocktail with basil this time, avocado toast, ceviche, hibiscus lemonade cocktail, and chicken and waffles. But there are over 70 new items coming to the festival this year, including a brand new booth called Nectar. Here&#39;s a sneak peek at their dessert. The coconut panacotta is made with cherry gel and matcha crumb topped with a citrus cookie, plant-based mering, and flour confetti. Other new items or newish twists on old items include a black and fish slider, strawberry basil lemonade, cola miso ribs, and coconut chocolate fla. Cannot wait for opening day to try all the amazing food. Be sure you&#39;re following us on social media to see all of our opening day coverage. You know, we go to every single booth, we eat everything, and we get you the best of the fest immediately. We&#39;ve got a progress update on Cinderella Castle herself. You can now see the new grave from the front of the castle. It&#39;s not super obvious just yet from the front, but if you&#39;re really looking for it, you will find it from the side. You can clearly see the split between the two colors. Depending on what&#39;s next in the repainting process, the castle might be entering its awkward phase from the front, but it&#39;s all part of the process. You ready for the nostalgic gray to be back, or are you already missing that pink? A new snack spot just opened in the Norway Pavilion in Epcot. It&#39;s located right at the front of the pavilion with a mossy green roof. Can&#39;t miss it. They&#39;re serving up the iconic school bread, which you can also grab at Cringa Bakery. It tasted absolutely delicio",
     "videoId": "O_dGqY7PULo",
-    "status": "new",
-    "notes": ""
+    "status": "dismissed",
+    "notes": "Flower & Garden (Mar-Jun 2026) outside our dates, Villains Land no confirmed timeline, castle repaint already tracked, Norway snack spot too uncertain for Jan 2027."
   },
   {
     "id": "touringplans-blog-a-disney-world-vacation-plan-for-a-family-of-four-for-4024",
