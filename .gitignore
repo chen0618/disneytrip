@@ -1,3 +1,4 @@
 .playwright-mcp/
 *.png
 docs/plans/
+.worktrees/
