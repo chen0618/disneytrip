@@ -5,6 +5,7 @@
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { XMLParser } from 'fast-xml-parser';
+import { fetchTranscript } from 'youtube-transcript-plus';
 
 const FEEDS = [
   { url: 'https://www.disneyfoodblog.com/feed/', source: 'DFB' },
@@ -12,6 +13,7 @@ const FEEDS = [
   { url: 'https://blogmickey.com/feed/', source: 'BlogMickey' },
   { url: 'https://www.disneytouristblog.com/feed/', source: 'DTB' },
   { url: 'https://touringplans.com/blog/feed/', source: 'TouringPlans' },
+  { url: 'https://www.youtube.com/feeds/videos.xml?channel_id=UCnpWedLQdHpZqhgTLdB9Yyg', source: 'DFB Video', type: 'youtube' },
 ];
 
 // --- WDW Relevance Filter ---
@@ -121,6 +123,65 @@ function extractCategories(item) {
   return cats.map(c => (typeof c === 'string' ? c : c['#text'] || String(c)));
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function parseYouTubeItems(xml, source) {
+  const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_' });
+  const parsed = parser.parse(xml);
+  const entries = parsed?.feed?.entry || [];
+  return (Array.isArray(entries) ? entries : [entries])
+    .filter(entry => {
+      const link = entry.link?.['@_href'] || '';
+      return !link.includes('/shorts/');
+    })
+    .map(entry => {
+      const videoId = entry['yt:videoId'] || '';
+      const link = `https://www.youtube.com/watch?v=${videoId}`;
+      const mediaGroup = entry['media:group'] || {};
+      const description = stripHtml(String(mediaGroup['media:description'] || ''));
+      const thumbnail = mediaGroup['media:thumbnail']?.['@_url'] || null;
+      const title = stripHtml(
+        typeof entry.title === 'string' ? entry.title : entry.title?.['#text'] || ''
+      );
+      return {
+        id: makeId(source, link),
+        title, link, source,
+        pubDate: entry.published ? new Date(entry.published).toISOString() : new Date().toISOString(),
+        description: description.slice(0, 300),
+        categories: ['YouTube', 'Video'],
+        imageUrl: thumbnail,
+        contentSnippet: '',
+        transcript: '',
+        videoId,
+        status: 'new',
+        notes: '',
+      };
+    });
+}
+
+async function fetchTranscriptForItem(item) {
+  if (!item.videoId) return item;
+  try {
+    const segments = await fetchTranscript(item.videoId, { lang: 'en' });
+    const fullText = segments.map(s => s.text).join(' ')
+      .replace(/\[Music\]/gi, '')
+      .replace(/\[Applause\]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    item.transcript = fullText.slice(0, 3000);
+    item.contentSnippet = fullText.slice(0, 800) + (fullText.length > 800 ? '...' : '');
+  } catch (err) {
+    console.warn(`    Transcript unavailable for ${item.videoId}: ${err.message}`);
+    item.contentSnippet = item.description;
+    item.transcript = '';
+  }
+  return item;
+}
+
+function normalizeTitle(title) {
+  return title.replace(/^DFB Video:\s*/i, '').replace(/[^a-z0-9]/gi, '').toLowerCase();
+}
+
 async function fetchFeed(url) {
   const res = await fetch(url, {
     headers: { 'User-Agent': 'Mozilla/5.0 (Disney Trip Planner RSS Reader)' },
@@ -157,30 +218,49 @@ function parseItems(xml, source) {
 }
 
 async function main() {
-  // Load existing articles
   let existing = [];
   try {
     existing = JSON.parse(readFileSync(DATA_PATH, 'utf-8'));
   } catch { /* empty or missing file */ }
 
   const existingUrls = new Set(existing.map(a => a.link));
+  const existingTitles = new Set(existing.map(a => normalizeTitle(a.title)));
   let newCount = 0;
 
   for (const feed of FEEDS) {
     try {
       console.log(`Fetching ${feed.source}...`);
       const xml = await fetchFeed(feed.url);
-      const items = parseItems(xml, feed.source);
+      const items = feed.type === 'youtube'
+        ? parseYouTubeItems(xml, feed.source)
+        : parseItems(xml, feed.source);
+
       let accepted = 0;
       let filtered = 0;
+
       for (const item of items) {
         if (existingUrls.has(item.link)) continue;
+
+        // Cross-source title dedup for YouTube
+        if (feed.type === 'youtube' && existingTitles.has(normalizeTitle(item.title))) {
+          continue;
+        }
+
         if (!isWdwRelevant(item)) {
           filtered++;
           continue;
         }
+
+        // Fetch transcript for YouTube videos
+        if (feed.type === 'youtube') {
+          console.log(`  Fetching transcript: ${item.title.slice(0, 60)}...`);
+          await fetchTranscriptForItem(item);
+          await sleep(2000);
+        }
+
         existing.push(item);
         existingUrls.add(item.link);
+        existingTitles.add(normalizeTitle(item.title));
         accepted++;
         newCount++;
       }
@@ -190,9 +270,7 @@ async function main() {
     }
   }
 
-  // Sort by date descending
   existing.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-
   writeFileSync(DATA_PATH, JSON.stringify(existing, null, 2) + '\n');
   console.log(`\nDone. ${newCount} new articles added. Total: ${existing.length}`);
 }
