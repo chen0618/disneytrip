@@ -63,7 +63,7 @@ async function fetchWeather() {
   const daysUntilTrip = Math.ceil((TRIP_DATE - new Date()) / (1000 * 60 * 60 * 24));
   const useForecast = daysUntilTrip <= 14 && daysUntilTrip > 0;
 
-  let url = `https://api.open-meteo.com/v1/forecast?latitude=${ORLANDO.lat}&longitude=${ORLANDO.lng}&temperature_unit=fahrenheit`;
+  let url = `https://api.open-meteo.com/v1/forecast?latitude=${ORLANDO.lat}&longitude=${ORLANDO.lng}&temperature_unit=fahrenheit&timezone=America/New_York`;
 
   if (useForecast) {
     url += '&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=14';
@@ -104,7 +104,7 @@ async function fetchWeather() {
 }
 
 function getCountdownText() {
-  const tripDate = new Date('2027-01-16T00:00:00');
+  const tripDate = TRIP_DATE;
   const now = new Date();
   const diffMs = tripDate - now;
   if (diffMs <= 0) return 'Trip complete!';
@@ -136,17 +136,18 @@ export default function Hero() {
         <p className={styles.date}>January 16–23, 2027</p>
         <p className={styles.countdown}>{getCountdownText()}</p>
         <div className={styles.weather}>
-          {weather ? (
-            weather.mode === 'current' ? (
+          {weather ? (() => {
+            const [emoji, label] = getWeatherEmoji(weather.code);
+            return weather.mode === 'current' ? (
               <span>
-                {getWeatherEmoji(weather.code)[0]} Orlando right now: {weather.temp}°F &mdash; {getWeatherEmoji(weather.code)[1]}
+                {emoji} Orlando right now: {weather.temp}°F &mdash; {label}
               </span>
             ) : (
               <span>
-                {getWeatherEmoji(weather.code)[0]} Trip week forecast: {weather.low}–{weather.high}°F
+                {emoji} Trip week forecast: {weather.low}–{weather.high}°F
               </span>
-            )
-          ) : null}
+            );
+          })() : null}
           <span className={styles.weatherAvg}>
             Jan avg: High {JAN_AVG.high}° Low {JAN_AVG.low}°
           </span>
