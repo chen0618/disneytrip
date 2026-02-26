@@ -118,6 +118,12 @@ export const headsUpAlerts = [
     severity: 'info',
   },
   {
+    emoji: '😈',
+    title: 'Villains Land — Under Construction',
+    description: "Disney is building a Villains-themed land in Magic Kingdom with rumored Emperor's New Groove coaster, Maleficent dark ride, and Hades dinner show. Plans were recently expanded to be \"bigger and bolder.\" Won't be open for our trip, but expect construction walls in the park.",
+    severity: 'info',
+  },
+  {
     emoji: '🎠',
     title: 'Carousel of Progress — Maybe Closed',
     description: 'Disney hasn\'t confirmed dates, but Carousel of Progress may close for a reimagining in late 2026 or early 2027. It\'s getting a new Walt Disney audio-animatronic intro scene. Check before we go!',
