@@ -67,7 +67,7 @@ disney-site/
 │   │   ├── HollywoodStudiosPage.jsx # HS park guide (/park/hollywood-studios) — lazy loaded
 │   │   └── EpcotPage.jsx         # EPCOT park guide (/park/epcot) — lazy loaded
 │   ├── sections/                 # One folder per section
-│   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + live Orlando weather (Open-Meteo API, sessionStorage cached) + park guide + news link buttons
+│   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + park guide + news link buttons
 │   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 8 families), park guide links
 │   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips (rendered on /guide)
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
