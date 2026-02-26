@@ -212,11 +212,13 @@ disney-site/
 - **Edit tool + emoji flags**: Flag emojis render as `\u{1F1EB}` escapes in Read output — use a unique non-emoji substring when editing epcotData.js country entries
 
 ## News Pipeline
-- **Scraper**: `node scripts/scrape-news.js` — fetches 5 RSS feeds (DFB, AllEars, BlogMickey, DTB, TouringPlans), filters non-WDW articles, appends to `newsArticles.json`
+- **Scraper**: `node scripts/scrape-news.js` — fetches 5 RSS feeds + DFB YouTube channel (transcripts via `youtube-transcript-plus`), filters non-WDW articles, appends to `newsArticles.json`
+- **Sources**: DFB, DFB Video (YouTube), AllEars, BlogMickey, DTB, TouringPlans
+- **YouTube pipeline**: Atom RSS → filter Shorts → fetch transcript (2s throttle) → cross-source title dedup with DFB blog
 - **Slash commands**: `/pullnews` (scrape + build + deploy), `/processnews` (triage articles, update site data, mark statuses)
 - **Article statuses**: `new` → `incorporated` (with data file updates) or `dismissed` (with reason in `notes`)
 - **Blog scraping gotcha**: Disney blog sites are JS-rendered — WebFetch and curl return ad scripts, not article content. Use Playwright browser to read full articles.
-- **RSS dependency**: `fast-xml-parser` for XML parsing
+- **RSS dependency**: `fast-xml-parser` for XML parsing, `youtube-transcript-plus` for YouTube transcripts
 
 ## Map Coordinates
 - All marker coordinates verified via OpenStreetMap Overpass API — see `src/data/COORDINATE_STATUS.md`
