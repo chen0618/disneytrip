@@ -3,7 +3,7 @@
 ## Architecture
 - **Vite + React** app in `disney-site/` directory — JSX components, CSS Modules, JS data files
 - Google Fonts: Nunito (headings), Inter (body) — loaded in `index.html`
-- Images from Wikimedia Commons + official Disney CDN (cdn1.parksmedia.wdprapps.disney.com) — no local image files
+- Images: local files in `public/images/`, Wikimedia Commons, and official Disney CDN (cdn1.parksmedia.wdprapps.disney.com)
 - react-leaflet + leaflet.markercluster for interactive map (rides, food, shows, transport, boundaries)
 - react-router-dom for client-side routing (/ main site, /map interactive map, /park/* park guides, /guide planning guide, /news staging page)
 - Dark mode via `html[data-theme="dark"]` attribute + `useDarkMode` hook (localStorage-persisted)
@@ -88,7 +88,6 @@ disney-site/
 │       ├── hotelHighlights.js
 │       ├── transportInfo.js
 │       ├── skylinerPhotos.js
-│       ├── attractions.js        # {magicKingdom, hollywoodStudios, epcot}
 │       ├── mapRides.js           # 44 rides with coordinates, height data, images
 │       ├── parkDaySchedules.js
 │       ├── ropeDropSteps.js
@@ -128,11 +127,17 @@ disney-site/
 ## Official Disney Data Layer
 - `src/data/officialDisneyData.js` — supplementary lookup keyed by marker ID or restaurant name
 - `src/utils/enrichItem.js` — merges official data into map items at render time: `enrichItem(item)` → adds `officialUrl`, `officialImage`
-- DetailPanel image priority: `officialImage || image || cardImage`
+- DetailPanel image priority: `officialImage || image || cardImage`; emoji hero fallback for types: show, fireworks, parade, shop
 - DetailPanel shows "View on DisneyWorld.com" link when `officialUrl` is non-null
+- **Closed rides**: `closed: true` in mapRides.js → greyed/desaturated map marker with red X badge, "Temporarily Closed" badge in DetailPanel, LL badge hidden
 - Disney website blocks Playwright/WebFetch — use `curl -sL -H "User-Agent: Mozilla/5.0..."` to scrape
 - Disney URL slugs are inconsistent (e.g., `rock-and-roller-coaster` not `rock-n-roller-coaster`, `luminous-the-symphony-us` not `luminous-the-symphony-of-us`) — always verify with `curl` or `site:disneyworld.disney.go.com` Google search
 - Disney CDN image pattern: `cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/{width}/{height}/75/{path}`
+
+## Dark Mode CSS Pattern
+- Progressive enhancement: `var(--dark-var, light-fallback)` — variable undefined in light mode uses fallback, defined in `html[data-theme="dark"]` block overrides
+- Dark mode badge variables in global.css: `--badge-bg`, `--badge-tip-bg`, `--badge-ll-bg`/`--badge-ll-color`, `--show-badge-bg`/`--show-badge-color`, `--epcot-accent`/`--epcot-accent-bg`
+- When adding colored badges/accents: add dark mode variable to global.css, use `var(--new-var, #light-fallback)` in component CSS
 
 ## Image Sourcing
 - Use Wikimedia Commons API: `curl -s "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=TERM&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=960&format=json"`
@@ -188,6 +193,7 @@ disney-site/
 - Must-try callout title: "Must-Try at [Park Name]"
 - Strategy subtitle: includes specific park day dates (e.g., "January 18 & 22")
 - Rides subtitle: "Every ride at [Park]..." pattern
+- Shows section heading: "Shows & Entertainment" (not "Shows & Fireworks")
 - Fireworks/nighttime badge label: "Nighttime Spectacular" (not "Fireworks")
 - Map subtitle: "rides and attractions" (not "rides and dining")
 
