@@ -47,30 +47,49 @@ export const kidGuide = [
   { name: 'World Discovery Playground', emoji: '\u{1F6DD}', description: 'Renovated outdoor playground near Creations Shop with separate toddler and older-kid zones, shaded parent seating, and stroller parking. Great midday break spot!', ageGroup: 'Toddlers-10' },
 ];
 
-export const epcotStrategy = {
-  morning: [
-    { time: '7:30 AM', step: 'Head to bus stop — arrive early for EPCOT Early Entry' },
-    { time: '8:00 AM', step: 'Arrive at EPCOT gates, bag check & tapstiles' },
-    { time: '8:30 AM', step: 'Early Entry: Head to Frozen Ever After (short lines!)' },
-    { time: '8:50 AM', step: 'After Frozen: Remy\'s Ratatouille Adventure' },
-    { time: '9:00 AM', step: 'Official opening \u2014 ride Guardians of the Galaxy (standby) or Soarin\'' },
-    { time: '10:00 AM', step: 'Test Track, then The Seas with Nemo & Friends' },
-  ],
-  afternoon: [
-    { time: '11:00 AM', step: 'World Showcase opens — begin the Food Tour! Start at Mexico, go clockwise' },
-    { time: '12:00 PM', step: 'Continue World Showcase — food booths and country exploration' },
-    { time: '1:00 PM', step: 'Festival of the Arts food booths and activities' },
-    { time: '2:00 PM', step: 'Kidcot Fun Stops \u2014 collect stamps at each country' },
-    { time: '3:00 PM', step: 'Break for Spaceship Earth (air conditioned, walk-on)' },
-  ],
-  evening: [
-    { time: '5:00 PM', step: 'Table service dinner (Le Cellier, Teppan Edo, or Space 220 if booked)' },
-    { time: '6:30 PM', step: 'Continue World Showcase \u2014 catch character meets' },
-    { time: '7:30 PM', step: 'Disney on Broadway concert at America Gardens Theatre (Festival of the Arts)' },
-    { time: '8:30 PM', step: 'Find fireworks spot \u2014 bridge between Mexico and Canada is best' },
-    { time: '9:00 PM', step: 'Luminous: The Symphony of Us fireworks spectacular' },
-  ],
-};
+export const epcotTips = [
+  {
+    emoji: '\u{1F305}',
+    timeLabel: 'Before Park Open',
+    title: 'Early Entry at EPCOT',
+    details: [
+      'Park opens at 9 AM, but Early Entry for resort guests starts at 8:30 AM.',
+      'EPCOT has two entrances \u2014 the main entrance (front) and International Gateway (back, near France). Skyliner drops you at International Gateway.',
+      'World Showcase is now open from park open \u2014 but mornings are best spent on the big rides in World Discovery and World Nature.',
+    ],
+  },
+  {
+    emoji: '\u{1F3A2}',
+    timeLabel: 'First Hour',
+    title: 'Knock Out the Big Rides',
+    details: [
+      'Frozen Ever After and Remy\u2019s Ratatouille Adventure in World Showcase are great Early Entry targets \u2014 both build long lines by mid-morning.',
+      'Guardians of the Galaxy: Cosmic Rewind now has a standby queue \u2014 go at rope drop for shortest waits, or buy Lightning Lane Single Pass.',
+      'Soarin\u2019 and Test Track are solid second-hour picks. The Seas with Nemo & Friends is a walk-on most of the day.',
+    ],
+  },
+  {
+    emoji: '\u2600\uFE0F',
+    timeLabel: 'Midday',
+    title: 'World Showcase Food Tour',
+    details: [
+      'Festival of the Arts food booths open at 11 AM along the World Showcase promenade. Share plates to try more!',
+      'Kidcot Fun Stops \u2014 collect stamps and activity cards at each country pavilion. Great for keeping kids engaged.',
+      'Spaceship Earth is air-conditioned and usually a walk-on \u2014 perfect midday cooldown.',
+    ],
+  },
+  {
+    emoji: '\u{1F386}',
+    timeLabel: 'Evening',
+    title: 'Luminous & World Showcase at Night',
+    details: [
+      'Disney on Broadway concerts at America Gardens Theatre are a Festival of the Arts highlight \u2014 check the schedule for showtimes.',
+      'Best fireworks spot: the bridge between Mexico and Canada gives a wide-open lagoon view.',
+      'Luminous: The Symphony of Us is EPCOT\u2019s nighttime spectacular \u2014 projections on water screens around the lagoon.',
+      'World Showcase countries are beautifully lit at night \u2014 worth a slow lap after the show.',
+    ],
+  },
+];
 
 export const epcotNavSections = [
   { id: 'epcot-hero', label: 'EPCOT' },
@@ -79,8 +98,8 @@ export const epcotNavSections = [
   { id: 'epcot-festival', label: 'Festival Guide' },
   { id: 'epcot-countries', label: 'Country Guide' },
   { id: 'epcot-kids', label: 'Best for Kids' },
-  { id: 'epcot-dining', label: 'Dining Guide' },
   { id: 'epcot-strategy', label: 'Our EPCOT Strategy' },
-  { id: 'epcot-shopping', label: 'Shopping' },
   { id: 'epcot-map', label: 'Park Map' },
+  { id: 'epcot-dining', label: 'Dining Guide' },
+  { id: 'epcot-shopping', label: 'Shopping' },
 ];

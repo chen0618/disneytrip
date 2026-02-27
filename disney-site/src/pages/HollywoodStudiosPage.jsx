@@ -63,15 +63,9 @@ function HSContent() {
       <HSShows onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <HSDining onSelectItem={handleSelectItem} />
+      <HSStrategy />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
-      <HSStrategy />
-      {/* bg-alt -> bg */}
-      <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <HSShopping onSelectItem={handleSelectItem} />
-      {/* bg -> bg-alt */}
-      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
       <section id="hs-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
         <div className="section-inner">
           <div className="section-header reveal">
@@ -88,6 +82,12 @@ function HSContent() {
           />
         </div>
       </section>
+      {/* bg-alt -> bg */}
+      <WaveDivider position="top" fill="var(--bg)" variant={1} />
+      <HSDining onSelectItem={handleSelectItem} />
+      {/* bg -> bg-alt */}
+      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
+      <HSShopping onSelectItem={handleSelectItem} />
       <Footer variant="park" currentPark="/park/hollywood-studios" />
       <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
       <BackToTop />

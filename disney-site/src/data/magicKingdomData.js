@@ -18,30 +18,50 @@ export const easterEggs = [
   { title: 'Real Skulls on Pirates', emoji: '💀', description: "When the original Pirates of the Caribbean opened at Disneyland in 1967, the Imagineers used real human skulls from UCLA because the props looked too fake. Most have since been replaced, though rumor says a few still remain at Disneyland. The WDW version (opened 1973) used improved props from the start." },
 ];
 
-export const mkStrategy = {
-  morning: [
-    { time: '6:30 AM', step: 'Wake up, get dressed, grab breakfast to-go' },
-    { time: '7:00 AM', step: 'Head to bus stop (or Minnie Van for guaranteed early arrival)' },
-    { time: '7:30 AM', step: 'Arrive at MK gates, go through bag check & tapstiles' },
-    { time: '8:30 AM', step: 'Early Entry begins — head straight to Seven Dwarfs Mine Train' },
-    { time: '8:50 AM', step: "After Mine Train: Peter Pan's Flight, then Haunted Mansion" },
-    { time: '9:00 AM', step: "Official park opening. Hit Big Thunder Mountain or Tiana's Bayou" },
-  ],
-  afternoon: [
-    { time: '11:30 AM', step: 'Mobile order lunch at Cosmic Ray\'s or Pecos Bill' },
-    { time: '12:00 PM', step: 'Use Lightning Lane for TRON Lightcycle / Run' },
-    { time: '1:00 PM', step: 'Cool off at indoor rides: PhilharMagic, Laugh Floor, Carousel of Progress' },
-    { time: '2:00 PM', step: 'Catch the Festival of Fantasy parade from Frontierland (~2:00-3:00 PM)' },
-    { time: '3:00 PM', step: 'Pool break back at Pop Century (optional!)' },
-  ],
-  evening: [
-    { time: '5:00 PM', step: 'Return to MK for dinner & evening fun' },
-    { time: '6:00 PM', step: 'Ride favorites with shorter lines: Pirates, Jungle Cruise' },
-    { time: '8:15 PM', step: 'Stake out a fireworks spot on Main Street (bridge near Tomorrowland is great too)' },
-    { time: '9:00 PM', step: 'Happily Ever After fireworks spectacular' },
-    { time: '9:30 PM', step: 'Post-fireworks: ride everything with minimal waits!' },
-  ],
-};
+export const mkTips = [
+  {
+    emoji: '\u{1F305}',
+    timeLabel: 'Before Park Open',
+    title: 'How Early Entry Actually Works',
+    details: [
+      'Park opens at 9 AM, but Early Entry for resort guests starts at 8:30 AM.',
+      'Disney lets guests onto Main Street as early as 7:45 AM \u2014 browse shops and grab coffee while you wait.',
+      'At the hub past the Walt & Mickey statue, Cast Members check that you\'re staying on Disney property before letting you continue into the lands.',
+      'Rides typically start loading around 8:30, so arriving by 7:45 gives you ~45 minutes of line position before the first ride cycle.',
+      'First resort buses start running around 7:30 AM. Minnie Vans are another option for a direct, private ride to the park.',
+    ],
+  },
+  {
+    emoji: '\u{1F3A2}',
+    timeLabel: 'First Hour',
+    title: 'Make Your First Ride Count',
+    details: [
+      'Seven Dwarfs Mine Train and Peter Pan\'s Flight have the longest waits all day \u2014 one of these should be your Early Entry target.',
+      'After your first ride, you can often chain 2\u20133 more in Fantasyland before standby lines build up.',
+      'TRON Lightcycle / Run is a Lightning Lane Single Pass ride \u2014 book it for later and skip the morning rush.',
+    ],
+  },
+  {
+    emoji: '\u2600\uFE0F',
+    timeLabel: 'Midday',
+    title: 'Beat the Heat & Crowds',
+    details: [
+      'Lines peak between 11 AM \u2013 3 PM. Great window for indoor rides: PhilharMagic, Laugh Floor, Carousel of Progress, Haunted Mansion.',
+      'Mobile order lunch 30 minutes ahead \u2014 Cosmic Ray\'s and Pecos Bill\'s have the most options.',
+      'A pool break at Pop Century is a 15-minute bus ride away. Recharge and come back for the evening.',
+    ],
+  },
+  {
+    emoji: '\u{1F386}',
+    timeLabel: 'Evening',
+    title: 'The Park Gets Better at Night',
+    details: [
+      'After fireworks, wait times drop dramatically \u2014 ride Pirates, Jungle Cruise, Space Mountain, and Big Thunder with minimal waits.',
+      'Festival of Fantasy parade runs in the afternoon \u2014 Frontierland has the best viewing with the least congestion.',
+      'Main Street shops stay open 30 minutes after park close. No rush to leave.',
+    ],
+  },
+];
 
 export const fireworksGuide = {
   name: 'Happily Ever After',
@@ -60,9 +80,9 @@ export const mkNavSections = [
   { id: 'mk-lands', label: 'Explore the Lands' },
   { id: 'mk-rides', label: 'Rides & Attractions' },
   { id: 'mk-shows', label: 'Shows & Entertainment' },
-  { id: 'mk-dining', label: 'Dining Guide' },
   { id: 'mk-hidden', label: 'Hidden Magic' },
   { id: 'mk-strategy', label: 'Our MK Strategy' },
   { id: 'mk-map', label: 'Park Map' },
+  { id: 'mk-dining', label: 'Dining Guide' },
   { id: 'mk-shopping', label: 'Shopping' },
 ];

@@ -19,9 +19,9 @@ function AppContent() {
       <FloatingNav />
       <Hero />
       <Timeline />
-      <WhatsNew />
       <Hotel />
       <Transportation />
+      <WhatsNew />
       <Footer />
       <BackToTop />
     </>

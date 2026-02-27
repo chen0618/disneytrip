@@ -12,53 +12,52 @@
   transform: translateX(4px);
 }
 
-.columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* Tip Cards */
+.tips {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
   margin-bottom: 3rem;
 }
-.column {
+.tipCard {
   background: var(--white);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  border-left: 4px solid var(--coral);
+  padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow-sm);
 }
-.columnHeader {
-  padding: 1rem 1.25rem;
-  color: var(--white);
+.tipHeader {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0.35rem;
 }
-.periodEmoji {
-  font-size: 1.5rem;
+.tipEmoji {
+  font-size: 1.3rem;
 }
-.periodLabel {
-  font-size: 1.2rem;
-  color: var(--white);
-}
-.steps {
-  padding: 1rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.step {
-  position: relative;
-  padding-left: 0;
-}
-.time {
-  display: block;
+.tipTime {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--coral);
-  margin-bottom: 0.15rem;
 }
-.stepText {
+.tipTitle {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  color: var(--text);
+}
+.tipDetails {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.tipDetails li {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text);
 }
 
@@ -102,10 +101,8 @@
   line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-  .columns { grid-template-columns: 1fr; }
-}
 @media (max-width: 480px) {
+  .tipCard { padding: 1rem 1.25rem; }
   .spotsRow { grid-template-columns: 1fr; }
   .callout { padding: 1.5rem; }
 }

@@ -53,7 +53,7 @@ export default function WhatsNew() {
           </div>
         </div>
       </div>
-      <WaveDivider fill="var(--bg)" variant={4} />
+      <WaveDivider fill="var(--footer-bg, var(--text))" variant={5} />
     </section>
   );
 }

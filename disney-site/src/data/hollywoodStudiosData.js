@@ -21,30 +21,49 @@ export const thrillGuide = [
   { id: 'rider-swap-strategy', name: 'Rider Swap Strategy', emoji: '🔄', description: "For rides the kids can't do, use Disney's Rider Swap. Parent A rides while Parent B waits with kids. Then Parent B gets to ride with up to 2 others without waiting again! Works great for Tower of Terror and the Muppets coaster.", tip: 'Ask a Cast Member at the ride entrance to set up Rider Swap before joining the line.' },
 ];
 
-export const hsStrategy = {
-  morning: [
-    { time: '6:30 AM', step: 'Wake up and head to bus/Minnie Van' },
-    { time: '8:00 AM', step: 'Arrive at HS, through bag check' },
-    { time: '8:30 AM', step: "Early Entry: Head straight to Rise of the Resistance" },
-    { time: '9:00 AM', step: "Official opening — Slinky Dog Dash or Tower of Terror" },
-    { time: '9:30 AM', step: "Head to Galaxy's Edge for Smuggler's Run" },
-    { time: '9:30 AM', step: "Explore Galaxy's Edge — Droid Depot, Oga's Cantina (if reserved)" },
-  ],
-  afternoon: [
-    { time: '11:00 AM', step: "Lunch at Docking Bay 7 or Woody's Lunch Box (mobile order!)" },
-    { time: '12:00 PM', step: 'Toy Story Land: Alien Saucers, Toy Story Mania' },
-    { time: '1:30 PM', step: "Lightning Lane for Mickey & Minnie's Runaway Railway" },
-    { time: '2:00 PM', step: 'Frozen Sing-Along (air conditioned break!)' },
-    { time: '3:00 PM', step: 'Indiana Jones Stunt Spectacular if timing works' },
-  ],
-  evening: [
-    { time: '5:00 PM', step: '50\'s Prime Time Café or Sci-Fi Dine-In' },
-    { time: '6:30 PM', step: 'Re-ride favorites or catch anything missed' },
-    { time: '8:00 PM', step: 'Grab spot for Fantasmic! — aim for mid-level center seats (avoid front rows: splash zone + visible effects mechanics). Consider the Fantasmic Dining Package for reserved seating.' },
-    { time: '8:30 PM', step: 'Fantasmic! water, fire, and projection spectacular (check schedule — varies by season, ~30 min)' },
-    { time: '9:30 PM', step: 'Post-show: low-wait rides or head back to resort' },
-  ],
-};
+export const hsTips = [
+  {
+    emoji: '\u{1F305}',
+    timeLabel: 'Before Park Open',
+    title: 'Getting In Early',
+    details: [
+      'Park opens at 9 AM, but Early Entry for resort guests starts at 8:30 AM.',
+      'Disney lets guests through the tapstiles and onto Hollywood Boulevard well before 8:30 \u2014 use that buffer to get positioned.',
+      'First resort buses start around 7:30 AM. The Skyliner from Pop Century is another option and drops you right at the International Gateway (EPCOT) or HS entrance.',
+    ],
+  },
+  {
+    emoji: '\u{1F3A2}',
+    timeLabel: 'First Hour',
+    title: 'Rise of the Resistance Is THE Priority',
+    details: [
+      'Rise of the Resistance has the longest waits all day \u2014 head straight there during Early Entry.',
+      'After Rise, Slinky Dog Dash or Tower of Terror are great second picks before standby lines build.',
+      'Mickey & Minnie\u2019s Runaway Railway is a Lightning Lane Multi Pass ride \u2014 save it for later.',
+    ],
+  },
+  {
+    emoji: '\u2600\uFE0F',
+    timeLabel: 'Midday',
+    title: 'Shows, Shade & Snacks',
+    details: [
+      'HS is the least shaded park \u2014 midday is a great time for indoor attractions: Frozen Sing-Along, Indiana Jones Stunt Spectacular, Mickey & Minnie\u2019s Runaway Railway.',
+      'Mobile order lunch before 10:30 AM to get a good pickup window \u2014 Docking Bay 7 and Woody\u2019s Lunch Box fill up fast.',
+      'Toy Story Land rides (Alien Saucers, Toy Story Mania) have shorter waits in the early afternoon.',
+    ],
+  },
+  {
+    emoji: '\u{1F320}',
+    timeLabel: 'Evening',
+    title: 'Fantasmic! & After Dark',
+    details: [
+      'Fantasmic! is a must-see \u2014 arrive 45\u201360 minutes early for good seats, or book a dining package for reserved seating.',
+      'Aim for mid-level center seats. Avoid front rows: splash zone + visible effects mechanics.',
+      'After Fantasmic!, ride lines drop dramatically \u2014 great time to re-ride favorites or catch anything you missed.',
+      'Galaxy\u2019s Edge at night has an incredible atmosphere \u2014 the Millennium Falcon glows and Batuu comes alive.',
+    ],
+  },
+];
 
 export const hsNavSections = [
   { id: 'hs-hero', label: 'Hollywood Studios' },
@@ -53,8 +72,8 @@ export const hsNavSections = [
   { id: 'hs-rides', label: 'Rides & Attractions' },
   { id: 'hs-thrills', label: 'Thrill Guide' },
   { id: 'hs-shows', label: 'Shows & Entertainment' },
-  { id: 'hs-dining', label: 'Dining Guide' },
   { id: 'hs-strategy', label: 'Our HS Strategy' },
-  { id: 'hs-shopping', label: 'Shopping' },
   { id: 'hs-map', label: 'Park Map' },
+  { id: 'hs-dining', label: 'Dining Guide' },
+  { id: 'hs-shopping', label: 'Shopping' },
 ];

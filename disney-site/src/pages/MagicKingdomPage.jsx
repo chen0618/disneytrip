@@ -56,16 +56,13 @@ function MKContent() {
       <MKShows onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <MKDining onSelectItem={handleSelectItem} />
+      <HiddenMagic />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
-      <HiddenMagic />
+      <MKStrategy />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <MKStrategy />
-      {/* bg -> bg-alt */}
-      <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
-      <section id="mk-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
+      <section id="mk-map" style={{ background: 'var(--bg)', padding: '5rem 2rem' }}>
         <div className="section-inner">
           <div className="section-header reveal">
             <h2>Park Map</h2>
@@ -81,6 +78,9 @@ function MKContent() {
           />
         </div>
       </section>
+      {/* bg -> bg-alt */}
+      <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
+      <MKDining onSelectItem={handleSelectItem} />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={1} />
       <MKShopping onSelectItem={handleSelectItem} />

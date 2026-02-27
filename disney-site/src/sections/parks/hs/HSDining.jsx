@@ -17,69 +17,80 @@ const MUST_TRY = [
 
 export default function HSDining({ onSelectItem }) {
   const [filter, setFilter] = useState('all');
+  const [isOpen, setIsOpen] = useState(false);
 
+  const allHsDining = useMemo(() => snacks.filter((s) => s.location?.includes('Hollywood Studios')), []);
   const hsDining = useMemo(() => {
-    let items = snacks.filter((s) => s.location?.includes('Hollywood Studios'));
-    if (filter !== 'all') items = items.filter((s) => s.serviceType === filter);
-    return items;
-  }, [filter]);
+    if (filter === 'all') return allHsDining;
+    return allHsDining.filter((s) => s.serviceType === filter);
+  }, [filter, allHsDining]);
 
   return (
-    <section id="hs-dining" style={{ background: 'var(--bg)' }}>
+    <section id="hs-dining" className={!isOpen ? styles.sectionCollapsed : ''} style={{ background: 'var(--bg)' }}>
       <div className="section-inner">
-        <div className="section-header reveal">
-          <h2>Dining Guide</h2>
-          <p className="subtitle">From galactic cantinas to toy-sized lunch boxes</p>
-        </div>
+        <button className={`${styles.toggle} reveal`} onClick={() => setIsOpen((o) => !o)} aria-expanded={isOpen}>
+          <div>
+            <h2 className={styles.toggleTitle}>Dining Guide</h2>
+            <p className={styles.toggleSub}>From galactic cantinas to toy-sized lunch boxes</p>
+          </div>
+          <div className={styles.toggleRight}>
+            <span className={styles.count}>{allHsDining.length} places</span>
+            <span className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}>&#9662;</span>
+          </div>
+        </button>
 
-        {/* Must-Try Callout */}
-        <div className={`${styles.mustTry} reveal`}>
-          <h3 className={styles.mustTryTitle}>Must-Try at Hollywood Studios</h3>
-          <div className={styles.mustTryGrid}>
-            {MUST_TRY.map((item) => (
-              <div key={item.name} className={styles.mustTryItem}>
-                <span className={styles.mustTryEmoji}>{item.emoji}</span>
-                <div>
-                  <strong>{item.name}</strong>
-                  <p>{item.note}</p>
-                </div>
+        <div className={`${styles.collapse} ${isOpen ? styles.collapseOpen : ''}`}>
+          <div className={styles.collapseInner}>
+            {/* Must-Try Callout */}
+            <div className={`${styles.mustTry} reveal`}>
+              <h3 className={styles.mustTryTitle}>Must-Try at Hollywood Studios</h3>
+              <div className={styles.mustTryGrid}>
+                {MUST_TRY.map((item) => (
+                  <div key={item.name} className={styles.mustTryItem}>
+                    <span className={styles.mustTryEmoji}>{item.emoji}</span>
+                    <div>
+                      <strong>{item.name}</strong>
+                      <p>{item.note}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className={styles.filters}>
+              {FILTERS.map((f) => (
+                <button
+                  key={f.key}
+                  className={`${styles.filterBtn} ${filter === f.key ? styles.active : ''}`}
+                  onClick={() => setFilter(f.key)}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+
+            <div className={styles.diningGrid}>
+              {hsDining.map((item, i) => (
+                <div key={item.name + i} className={styles.diningCard} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })}>
+                  <div className={styles.cardHeader}>
+                    <span className={styles.cardEmoji}>{item.emoji}</span>
+                    <div>
+                      <h4 className={styles.cardName}>{item.name}</h4>
+                      <span className={styles.priceBadge}>{item.price}</span>
+                    </div>
+                  </div>
+                  <p className={styles.cardDesc}>{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            {hsDining.length === 0 && (
+              <p style={{ textAlign: 'center', color: 'var(--text-light)', marginTop: '2rem' }}>
+                No dining options match this filter.
+              </p>
+            )}
           </div>
         </div>
-
-        <div className={styles.filters}>
-          {FILTERS.map((f) => (
-            <button
-              key={f.key}
-              className={`${styles.filterBtn} ${filter === f.key ? styles.active : ''}`}
-              onClick={() => setFilter(f.key)}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-
-        <div className={styles.diningGrid}>
-          {hsDining.map((item, i) => (
-            <div key={item.name + i} className={styles.diningCard} role="button" tabIndex={0} onClick={() => onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.({ ...item, type: 'food', park: 'Hollywood Studios' })}>
-              <div className={styles.cardHeader}>
-                <span className={styles.cardEmoji}>{item.emoji}</span>
-                <div>
-                  <h4 className={styles.cardName}>{item.name}</h4>
-                  <span className={styles.priceBadge}>{item.price}</span>
-                </div>
-              </div>
-              <p className={styles.cardDesc}>{item.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {hsDining.length === 0 && (
-          <p style={{ textAlign: 'center', color: 'var(--text-light)', marginTop: '2rem' }}>
-            No dining options match this filter.
-          </p>
-        )}
       </div>
     </section>
   );

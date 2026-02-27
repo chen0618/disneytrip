@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 1.25rem;
-  margin-bottom: 2.5rem;
 }
 .card {
   background: var(--white);
@@ -46,44 +45,6 @@
   border-left: 3px solid var(--purple);
 }
 
-/* Batuu Callout */
-.callout {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  color: var(--white);
-  text-align: center;
-}
-.calloutTitle {
-  font-size: 1.4rem;
-  color: var(--yellow);
-  margin-bottom: 1.25rem;
-}
-.calloutGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem;
-}
-.calloutItem {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(8px);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  text-align: left;
-}
-.calloutItem strong {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--yellow);
-}
-.calloutItem p {
-  font-size: 0.85rem;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
 @media (max-width: 480px) {
   .grid { grid-template-columns: 1fr; }
-  .calloutGrid { grid-template-columns: 1fr; }
-  .callout { padding: 1.5rem; }
 }

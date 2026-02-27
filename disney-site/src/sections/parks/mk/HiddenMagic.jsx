@@ -3,7 +3,7 @@ import styles from './HiddenMagic.module.css';
 
 export default function HiddenMagic() {
   return (
-    <section id="mk-hidden" style={{ background: 'var(--bg-alt)' }}>
+    <section id="mk-hidden" style={{ background: 'var(--bg)' }}>
       <div className="section-inner">
         <div className="section-header reveal">
           <h2>Hidden Magic</h2>

@@ -63,15 +63,9 @@ function EpcotContent() {
       <BestForKids />
       {/* bg-alt -> bg */}
       <WaveDivider position="top" fill="var(--bg)" variant={3} />
-      <EpcotDining onSelectItem={handleSelectItem} />
+      <EpcotStrategy />
       {/* bg -> bg-alt */}
       <WaveDivider position="top" fill="var(--bg-alt)" variant={4} />
-      <EpcotStrategy />
-      {/* bg-alt -> bg */}
-      <WaveDivider position="top" fill="var(--bg)" variant={1} />
-      <EpcotShopping onSelectItem={handleSelectItem} />
-      {/* bg -> bg-alt */}
-      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
       <section id="epcot-map" style={{ background: 'var(--bg-alt)', padding: '5rem 2rem' }}>
         <div className="section-inner">
           <div className="section-header reveal">
@@ -88,6 +82,12 @@ function EpcotContent() {
           />
         </div>
       </section>
+      {/* bg-alt -> bg */}
+      <WaveDivider position="top" fill="var(--bg)" variant={1} />
+      <EpcotDining onSelectItem={handleSelectItem} />
+      {/* bg -> bg-alt */}
+      <WaveDivider position="top" fill="var(--bg-alt)" variant={2} />
+      <EpcotShopping onSelectItem={handleSelectItem} />
       <Footer variant="park" currentPark="/park/epcot" />
       <DetailPanel item={selectedItem} onClose={() => setSelectedItem(null)} />
       <BackToTop />

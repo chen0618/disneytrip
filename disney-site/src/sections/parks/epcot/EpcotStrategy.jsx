@@ -1,58 +1,32 @@
 import { Link } from 'react-router-dom';
-import { epcotStrategy } from '../../../data/epcotData';
+import { epcotTips } from '../../../data/epcotData';
 import styles from './EpcotStrategy.module.css';
-
-const PERIODS = [
-  { key: 'morning', label: 'Morning', emoji: '🌅', color: '#b8960a' },
-  { key: 'afternoon', label: 'Afternoon', emoji: '\u2600\uFE0F', color: '#d4a50a' },
-  { key: 'evening', label: 'Evening', emoji: '🌙', color: '#8b7209' },
-];
 
 export default function EpcotStrategy() {
   return (
-    <section id="epcot-strategy" style={{ background: 'var(--bg-alt)' }}>
+    <section id="epcot-strategy" style={{ background: 'var(--bg)' }}>
       <div className="section-inner">
         <div className="section-header reveal">
           <h2>Our EPCOT Strategy</h2>
-          <p className="subtitle">The game plan for conquering EPCOT on January 21</p>
+          <p className="subtitle">Tips & tricks for making the most of EPCOT</p>
           <Link to="/#timeline" className={styles.timelineLink}>See this day on the Trip Timeline &rarr;</Link>
         </div>
 
-        <div className={styles.columns}>
-          {PERIODS.map(({ key, label, emoji, color }) => (
-            <div key={key} className={`${styles.column} reveal`}>
-              <div className={styles.columnHeader} style={{ background: color }}>
-                <span className={styles.periodEmoji}>{emoji}</span>
-                <h3 className={styles.periodLabel}>{label}</h3>
+        <div className={styles.tips}>
+          {epcotTips.map((tip) => (
+            <div key={tip.timeLabel} className={`${styles.tipCard} reveal`}>
+              <div className={styles.tipHeader}>
+                <span className={styles.tipEmoji}>{tip.emoji}</span>
+                <span className={styles.tipTime}>{tip.timeLabel}</span>
               </div>
-              <div className={styles.steps}>
-                {epcotStrategy[key].map((item, i) => (
-                  <div key={i} className={styles.step}>
-                    <span className={styles.time}>{item.time}</span>
-                    <p className={styles.stepText}>{item.step}</p>
-                  </div>
+              <h3 className={styles.tipTitle}>{tip.title}</h3>
+              <ul className={styles.tipDetails}>
+                {tip.details.map((detail, i) => (
+                  <li key={i}>{detail}</li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
-        </div>
-
-        <div className={`${styles.callout} reveal`}>
-          <h3 className={styles.calloutTitle}>Key Reminders</h3>
-          <div className={styles.reminders}>
-            <div className={styles.reminder}>
-              <strong>Guardians of the Galaxy</strong>
-              <p>Now has a standby queue — no more virtual queue! Go at rope drop for shortest waits, or buy Lightning Lane Single Pass.</p>
-            </div>
-            <div className={styles.reminder}>
-              <strong>World Showcase Strategy</strong>
-              <p>World Showcase now opens at park open! But mornings are best for the bigger rides in World Discovery/Nature. Save the food touring for afternoon.</p>
-            </div>
-            <div className={styles.reminder}>
-              <strong>Festival of the Arts</strong>
-              <p>Food booths open at 11 AM along the World Showcase promenade. Pace yourselves — share plates to try more!</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
