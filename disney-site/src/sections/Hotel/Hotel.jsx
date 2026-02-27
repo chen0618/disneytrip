@@ -6,12 +6,12 @@ import styles from './Hotel.module.css';
 
 const photos = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Disney%27s-Pop-Century-Resort-Entrance.jpg/960px-Disney%27s-Pop-Century-Resort-Entrance.jpg",
-    alt: 'Pop Century Resort entrance with giant icons',
+    src: "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/900/450/75/dam/wdpro-assets/places-to-stay/pop-century/pop-century-resort-00.jpg",
+    alt: 'Pop Century Resort entrance sign at night',
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Orlando_-_Disney_World_-_Disney%27s_Pop_Century_Resort_-_Art_of_Animation_Resort_Across_Hourglass_Lake_%2817031500338%29.jpg/960px-Orlando_-_Disney_World_-_Disney%27s_Pop_Century_Resort_-_Art_of_Animation_Resort_Across_Hourglass_Lake_%2817031500338%29.jpg",
-    alt: 'Pop Century across Hourglass Lake',
+    src: "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/900/450/75/dam/wdpro-assets/places-to-stay/pop-century/pop-century-resort-01.jpg",
+    alt: 'Hippy Dippy Pool with giant Lady and the Tramp statue',
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Hotel() {
           Historically, we've managed to buy gift cards at <strong>5–15% off</strong>, which on a big family trip adds up to hundreds in savings!
         </Callout>
       </div>
-      <WaveDivider fill="var(--bg-alt)" variant={4} />
+      <WaveDivider fill="var(--bg)" variant={4} />
     </section>
   );
 }
