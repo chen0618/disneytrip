@@ -23,6 +23,16 @@ const disneyBounds = L.latLngBounds(
   parkBoundaries.filter(b => !UNIVERSAL_IDS.includes(b.id)).flatMap(b => b.coords)
 );
 
+// Pre-compute transport bounds from route coordinates
+const busBounds = L.latLngBounds(busRoutes.flatMap(r => r.coords));
+const skylinerBounds = L.latLngBounds(skylinerRoutes.flatMap(r => r.coords));
+const boatBounds = L.latLngBounds(boatCoords);
+const allTransportBounds = L.latLngBounds([
+  ...busRoutes.flatMap(r => r.coords),
+  ...skylinerRoutes.flatMap(r => r.coords),
+  ...boatCoords,
+]);
+
 const parkColors = {
   'Magic Kingdom': '#FF6B6B',
   'Hollywood Studios': '#A29BFE',
@@ -321,6 +331,33 @@ function SetInitialBounds() {
   return null;
 }
 
+// Fly to transport bounds when layer/mode changes
+function FlyToTransportBounds({ active, mode }) {
+  const map = useMap();
+  const prevRef = useRef({ active: false, mode: 'all' });
+
+  useEffect(() => {
+    const prev = prevRef.current;
+    prevRef.current = { active, mode };
+
+    if (!active) return;
+    // Only fly when transport layer is freshly activated or mode changes
+    if (!prev.active || prev.mode !== mode) {
+      const bounds = mode === 'bus' ? busBounds
+        : mode === 'skyliner' ? skylinerBounds
+        : mode === 'boat' ? boatBounds
+        : allTransportBounds;
+      // paddingTopLeft/paddingBottomRight account for overlay controls at top (~90px)
+      const fitOpts = mode === 'bus'
+        ? { paddingTopLeft: [5, 90], paddingBottomRight: [5, 10], maxZoom: 16, duration: 0.8 }
+        : { padding: [60, 60], maxZoom: 16, duration: 0.8 };
+      map.flyToBounds(bounds, fitOpts);
+    }
+  }, [active, mode, map]);
+
+  return null;
+}
+
 // Lazy map resize when it comes into view
 function MapResizer() {
   const map = useMap();
@@ -525,6 +562,7 @@ export default function InteractiveMap({ onSelectItem }) {
         zoom={13}
         minZoom={12}
         maxZoom={23}
+        zoomSnap={0.25}
         scrollWheelZoom={true}
         style={{ width: '100%', height: '100%', zIndex: 1 }}
       >
@@ -537,6 +575,7 @@ export default function InteractiveMap({ onSelectItem }) {
         <MapResizer />
         <SetInitialBounds />
         <FlyToBoundary target={flyTarget} onDone={clearFlyTarget.current} />
+        <FlyToTransportBounds active={showTransport} mode={transportMode} />
 
         {/* Park markers (always visible) */}
         {mapParks.map(p => (
