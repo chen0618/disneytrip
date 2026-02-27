@@ -76,6 +76,12 @@ export const newExperiences = [
         description: "A limited-time film debuting Memorial Day 2026, celebrating America's 250th birthday — fly over stunning landscapes and iconic cityscapes from 13+ American locations. Replaces Soarin' Around the World (which may return).",
       },
       {
+        name: 'Frozen Ever After — New Animatronics',
+        emoji: '❄️',
+        badge: 'Upgraded',
+        description: 'Reopened February 2026 after a month-long closure with brand-new animatronics of Anna, Elsa, and Kristoff replacing the original projection-mapped figures. The upgraded characters match the quality of newer versions at Hong Kong Disneyland.',
+      },
+      {
         name: 'GEO-82 Lounge',
         emoji: '🍸',
         badge: 'New',
