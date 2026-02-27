@@ -41,6 +41,15 @@ export default function NewsPage() {
           <p>{articles.length} articles from {SOURCE_FILTERS.length - 1} sources</p>
         </div>
 
+        <div className={styles.pipelineNote}>
+          <span className={styles.pipelineIcon}>🤖</span>
+          <p>
+            Articles are <strong>automatically gathered</strong> daily from Disney blogs and YouTube channels.
+            AI reviews each article and updates the main trip site when relevant changes are found —
+            like new rides, closures, or dining updates for our January 2027 trip.
+          </p>
+        </div>
+
         <div className={styles.filters}>
           {STATUS_FILTERS.map(s => (
             <button
