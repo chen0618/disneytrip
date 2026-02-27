@@ -63,6 +63,20 @@ export default function FloatingNav({ sections, extraLinks }) {
     setTouchedId(null);
   }, [navigate, toggleDark]);
 
+  // Desktop mouse-scrub: same highlight behavior as touch-scrub
+  const onMouseMove = useCallback((e) => {
+    const id = getClosestItem(e.clientY);
+    if (id && id !== touchedIdRef.current) {
+      touchedIdRef.current = id;
+      setTouchedId(id);
+    }
+  }, [getClosestItem]);
+
+  const onMouseLeave = useCallback(() => {
+    touchedIdRef.current = null;
+    setTouchedId(null);
+  }, []);
+
   function handleClick(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -77,6 +91,8 @@ export default function FloatingNav({ sections, extraLinks }) {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
     >
       {sectionList.map(({ id, label }) => (
         <button
