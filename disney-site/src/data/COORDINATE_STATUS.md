@@ -283,7 +283,7 @@ Status: **All OSM verified**
    - 2026-02-22: Initial rough coordinates for all ride, food, and show markers
    - 2026-02-23: Full OSM Overpass API verification pass for all mapRides.js, snacks.js, and mapShows.js entries
    - 2026-02-23: mapShops.js created with OSM coordinates from the start
-   - 2026-02-25: Full audit — updated ride counts (40→44), show counts (27→39), fixed Soarin' ID, added missing entries to tracking tables
+   - 2026-02-25: Full audit — updated ride counts (40→44), show counts (27→37), fixed Soarin' ID, added missing entries to tracking tables
    - 2026-02-23: springsVenues.js created with OSM coordinates from the start
    - 2026-02-24: Added ~41 new dining locations (10 MK, 9 HS, 15 EPCOT, 6 Disney Springs) — most OSM-verified, ~6 estimated from adjacent landmarks
    - 2026-02-24: Added 7 new rides (6 MK, 1 EPCOT) and 16 new shows/fireworks/parades — all OSM-verified except Muppet*Vision 3D (estimate)

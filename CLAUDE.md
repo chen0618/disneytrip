@@ -108,7 +108,7 @@ disney-site/
 │       ├── COORDINATE_STATUS.md  # Living doc tracking OSM-verified coordinates
 │       ├── parkBoundaries.js     # Polygon coords for park boundary overlays
 │       ├── newsArticles.json    # RSS-scraped Disney news articles (status: new/incorporated/dismissed)
-│       ├── busRoutes.js
+│       ├── busRoutes.js          # 4 bus + 3 Skyliner routes, OSRM-verified road coordinates
 │       └── officialDisneyData.js # Official Disney URLs + CDN images, keyed by marker ID/name
 ```
 
@@ -225,6 +225,7 @@ disney-site/
 - To verify a coordinate: `curl -s "https://overpass-api.de/api/interpreter" --data-urlencode "data=[out:json];(node[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4);way[\"name\"=\"VENUE NAME\"](28.3,-81.7,28.5,-81.4););out center;"`
 - NEVER use rough/estimated coordinates — always look up via OSM Overpass API
 - When adding new map locations, update COORDINATE_STATUS.md with the verification date
+- Bus route verification: `curl -s "https://router.project-osrm.org/route/v1/driving/{lon1},{lat1};{lon2},{lat2}?overview=full&geometries=geojson"` — downsample OSRM output to ~25 waypoints per route
 - Map TileLayer: maxNativeZoom=19, maxZoom=23 (OSM tiles max at 19, overzooms beyond)
 
 ## Adding a New Section (checklist)
