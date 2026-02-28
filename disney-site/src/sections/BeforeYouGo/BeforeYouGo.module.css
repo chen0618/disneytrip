@@ -57,6 +57,117 @@
 }
 
 
+/* Key Deadlines card */
+.deadlineCard {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+.deadlineCard h3 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.deadlineList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.deadlineRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+.deadlineRowPast {
+  opacity: 0.55;
+}
+.deadlineAnchor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+.deadlineAnchor:hover {
+  background: var(--bg);
+}
+.deadlineIcon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.deadlineInfo {
+  flex: 1;
+  min-width: 0;
+}
+.deadlineLabel {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.deadlineSublabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+.deadlineRight {
+  text-align: right;
+  flex-shrink: 0;
+}
+.deadlineDate {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.deadlineBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.badge_future {
+  background: rgba(30, 144, 255, 0.13);
+  color: var(--blue);
+}
+.badge_soon {
+  background: rgba(255, 215, 0, 0.18);
+  color: #b8960a;
+}
+.badge_urgent {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--coral);
+}
+.badge_past {
+  background: rgba(78, 205, 196, 0.15);
+  color: var(--mint);
+}
+
+@media (max-width: 480px) {
+  .deadlineRow,
+  .deadlineAnchor {
+    flex-wrap: wrap;
+  }
+  .deadlineRight {
+    width: 100%;
+    text-align: left;
+    padding-left: 2.05rem;
+    margin-top: 0.2rem;
+  }
+}
+
 .tipGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

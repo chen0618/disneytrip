@@ -1,3 +1,37 @@
+export const keyDeadlines = [
+  {
+    icon: '🍽️',
+    label: 'Dining Reservations (ADR)',
+    sublabel: '180 days before check-in',
+    date: '2026-07-20',
+    dateDisplay: 'Jul 20, 2026',
+    link: 'https://disneyworld.disney.go.com/dining/',
+  },
+  {
+    icon: '🚐',
+    label: 'Airport Transport',
+    sublabel: 'A Way We Go — book early for 20-person group',
+    date: '2026-09-01',
+    dateDisplay: 'Sep 1, 2026',
+    link: 'https://awaywego.co/',
+  },
+  {
+    icon: '🏨',
+    label: 'Hotel Final Payment',
+    sublabel: '30 days before check-in',
+    date: '2026-12-17',
+    dateDisplay: 'Dec 17, 2026',
+  },
+  {
+    icon: '⚡',
+    label: 'Lightning Lane Multi Pass',
+    sublabel: '7 days before arrival (resort guests)',
+    date: '2027-01-09',
+    dateDisplay: 'Jan 9, 2027',
+    link: 'https://disneyworld.disney.go.com/guest-services/lightning-lane/',
+  },
+];
+
 export const checklist = [
   { text: 'Create a My Disney Experience account', icon: '👤' },
   { text: 'Download the My Disney Experience app', icon: '📱' },

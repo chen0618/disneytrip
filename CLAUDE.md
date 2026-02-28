@@ -69,7 +69,7 @@ disney-site/
 │   ├── sections/                 # One folder per section
 │   │   ├── Hero/                 # Cinderella Castle bg + countdown timer + park guide + news link buttons
 │   │   ├── Timeline/             # 8-day itinerary, travel group (20 people, 8 families), park guide links
-│   │   ├── BeforeYouGo/          # Pre-trip checklist + first-timer tips (rendered on /guide)
+│   │   ├── BeforeYouGo/          # Key deadlines + pre-trip checklist + first-timer tips (rendered on /guide)
 │   │   ├── WhatsNew/             # New rides, restaurants, closures for 2026-2027
 │   │   ├── Hotel/
 │   │   ├── Transportation/       # Contains SkylineRouteMap.jsx (SVG animateMotion)
@@ -100,7 +100,7 @@ disney-site/
 │       ├── mapParks.js
 │       ├── mapShows.js           # 37 show/event markers for interactive map
 │       ├── mapShops.js           # 157 shop markers (MK, HS, EPCOT, Disney Springs)
-│       ├── beforeYouGoInfo.js    # Pre-trip checklist + first-timer tips data
+│       ├── beforeYouGoInfo.js    # Key deadlines + pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
 │       ├── magicKingdomData.js  # MK lands, easter eggs, strategy, fireworks, nav sections
 │       ├── hollywoodStudiosData.js # HS Galaxy's Edge, Toy Story Land, thrill guide, strategy
@@ -154,7 +154,7 @@ disney-site/
 5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
 
 ## Planning Guide Page (/guide, 5 sections — including hero)
-1. before-you-go — Pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
+1. before-you-go — Key deadlines (ADR, transport, hotel, LL with countdown badges) + pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
 2. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
 3. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
 4. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial

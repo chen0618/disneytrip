@@ -1,8 +1,20 @@
 import { useState } from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
-import { checklist, firstTimerTips } from '../../data/beforeYouGoInfo';
+import { keyDeadlines, checklist, firstTimerTips } from '../../data/beforeYouGoInfo';
 import styles from './BeforeYouGo.module.css';
+
+function getUrgency(dateStr) {
+  const target = new Date(dateStr + 'T00:00:00');
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const days = Math.ceil((target - now) / 86_400_000);
+  let level = 'future';
+  if (days < 0) level = 'past';
+  else if (days <= 30) level = 'urgent';
+  else if (days <= 90) level = 'soon';
+  return { days, level };
+}
 
 export default function BeforeYouGo() {
   const [checked, setChecked] = useState(() => new Set());
@@ -20,6 +32,43 @@ export default function BeforeYouGo() {
     <section id="before-you-go" className={styles.section}>
       <div className="section-inner">
         <SectionHeader title="Before You Go" subtitle="Get these done before we fly out!" />
+
+        <div className={`${styles.deadlineCard} reveal`}>
+          <h3>Key Deadlines</h3>
+          <ul className={styles.deadlineList}>
+            {keyDeadlines.map(dl => {
+              const { days, level } = getUrgency(dl.date);
+              const badgeText = level === 'past' ? 'Done' : `${days}d`;
+              const rowClass = `${styles.deadlineRow} ${level === 'past' ? styles.deadlineRowPast : ''}`;
+              const inner = (
+                <>
+                  <span className={styles.deadlineIcon}>{dl.icon}</span>
+                  <div className={styles.deadlineInfo}>
+                    <div className={styles.deadlineLabel}>{dl.label}</div>
+                    <div className={styles.deadlineSublabel}>{dl.sublabel}</div>
+                  </div>
+                  <div className={styles.deadlineRight}>
+                    <div className={styles.deadlineDate}>{dl.dateDisplay}</div>
+                    <span className={`${styles.deadlineBadge} ${styles[`badge_${level}`]}`}>
+                      {badgeText}
+                    </span>
+                  </div>
+                </>
+              );
+              return dl.link ? (
+                <li key={dl.label}>
+                  <a href={dl.link} target="_blank" rel="noopener noreferrer" className={styles.deadlineAnchor}>
+                    {inner}
+                  </a>
+                </li>
+              ) : (
+                <li key={dl.label} className={rowClass}>
+                  {inner}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
 
         <div className={`${styles.checklistCard} reveal`}>
           <h3>Pre-Trip Checklist</h3>
