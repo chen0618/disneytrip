@@ -30,7 +30,7 @@ disney-site/
 ├── vite.config.js
 ├── package.json
 ├── scripts/
-│   ├── scrape-news.js           # RSS scraper — 5 feeds with WDW relevance filter
+│   ├── scrape-news.js           # RSS scraper — 6 feeds (5 RSS + DFB YouTube) with WDW relevance filter
 │   └── daily-news-pull.sh       # Cron wrapper — scrapes, builds, deploys (8 AM EST daily)
 ├── src/
 │   ├── main.jsx                  # BrowserRouter + Routes (/ → App, /map → MapPage, /park/* → park pages)
@@ -77,9 +77,9 @@ disney-site/
 │   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap (rendered on /guide)
 │   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup (rendered on /guide)
 │   │   └── parks/                # Park-specific sections (8-10 per park)
-│   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping
-│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy, HSShopping
-│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy, EpcotShopping
+│   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping (8 sections)
+│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy, HSShopping (9 sections)
+│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy, EpcotShopping (9 sections)
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js        # Main page FloatingNav sections (5 entries)
 │       ├── guideNavSections.js   # Guide page FloatingNav sections (4 entries)
@@ -167,7 +167,7 @@ disney-site/
 - **Rides layer**: 44 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
-- **Transport layer**: bus routes, Skyliner, boats with animated markers
+- **Transport layer**: bus routes, Skyliner, boats with animated markers; auto-flies to bounds on layer/mode switch (asymmetric padding for overlay controls)
 - Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
 - Park label markers and transport routes still use Leaflet popups (simple info)
 
@@ -183,7 +183,7 @@ disney-site/
 - **Park-specific data**: magicKingdomData.js, hollywoodStudiosData.js, epcotData.js
 - **ParkMiniMap**: Reusable Leaflet component showing park boundary polygon + emoji ride/food markers
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
-- Each page: 8 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
+- Each page: 8–9 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
 
 ### Data Accuracy Gotchas
 - **Disneyland vs WDW confusion**: Many Disney "facts" apply to Disneyland (CA), not Walt Disney World (FL) — always verify location-specific claims (e.g., Pirates skulls = DL only, Astro Orbiter height req = DL only, Space Mountain rebuild = Tokyo DL)
@@ -242,6 +242,7 @@ disney-site/
 - Labels always visible on desktop (opacity 0.7, 1 on hover/active), dots-only on mobile
 - Includes map link (🗺️) and dark mode toggle (🌙/☀️) at bottom
 - **Touch-scrub**: Slide finger along nav to preview labels; uses proximity-based `getClosestItem()` (not `elementFromPoint`)
+- **Mouse hover-scrub (desktop)**: Hovering over any nav dot scrolls to that section; uses `mouseenter` per item with debounce-like guard
 - `touch-action: none` on nav permanently — must be set before touch starts (CSS evaluates at touch-start, not after JS)
 - All nav items (dots, map, dark mode) share `data-nav-id` attributes for unified touch detection
 - `.itemTouched` class with `.navTouching` parent for high-specificity override of mobile `:hover` stickiness
