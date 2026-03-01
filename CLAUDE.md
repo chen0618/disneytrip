@@ -77,9 +77,15 @@ disney-site/
 │   │   ├── LightningLane/        # LL Multi Pass vs Single Pass, Rider Swap (rendered on /guide)
 │   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup (rendered on /guide)
 │   │   └── parks/                # Park-specific sections (8-10 per park)
-│   │       ├── mk/               # MKHero, LandsExplorer, MKRides, MKShows, MKDining, HiddenMagic, MKStrategy, MKShopping (8 sections)
-│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides, ThrillGuide, HSShows, HSDining, HSStrategy, HSShopping (9 sections)
-│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides, FestivalGuide, CountryGuide, BestForKids, EpcotDining, EpcotStrategy, EpcotShopping (9 sections)
+│   │       ├── shared/            # Shared park section components with CSS custom property theming
+│   │       │   ├── ParkRidesSection.jsx + .module.css    # Rides grid, By Land/Height toggle, callouts slot
+│   │       │   ├── ParkDiningSection.jsx + .module.css   # Dining grid, filters, must-try callout, collapse
+│   │       │   ├── ParkStrategySection.jsx + .module.css # Tip cards, children slot (MK fireworks)
+│   │       │   └── ParkShoppingSection.jsx + .module.css # Shop grid, collapse toggle
+│   │       ├── mk/               # MKHero, LandsExplorer, MKRides*, MKShows, MKDining*, HiddenMagic, MKStrategy*, MKShopping* (8 sections)
+│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides*, ThrillGuide, HSShows, HSDining*, HSStrategy*, HSShopping* (9 sections)
+│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides*, FestivalGuide, CountryGuide, BestForKids, EpcotDining*, EpcotStrategy*, EpcotShopping* (9 sections)
+│   │       # * = thin wrapper around shared/ component (park-specific data + themeVars prop)
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js        # Main page FloatingNav sections (5 entries)
 │       ├── guideNavSections.js   # Guide page FloatingNav sections (4 entries)
@@ -184,11 +190,15 @@ disney-site/
 - **ParkMiniMap**: Reusable Leaflet component showing park boundary polygon + emoji ride/food markers
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8–9 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
+- **Shared section components** (`parks/shared/`): Rides, Dining, Strategy, Shopping are extracted into shared components — park wrappers are thin re-exports (~5-15 lines) that pass park-specific data and `themeVars` (CSS custom properties)
+- **CSS custom property theming**: Shared CSS modules use `var(--park-accent)`, `var(--park-accent-light)`, `var(--park-tip-bg)`, `var(--park-gradient-end)`, `var(--park-filter-color)`, `var(--park-active-color)`, `var(--park-hover-color)` — set via inline style `themeVars` object on section root
+- **EPCOT yellow override**: EPCOT filter buttons need `--park-filter-color` (darker `#b8960a`) and `--park-active-color: var(--text)` because yellow-on-white is unreadable
+- **MK fireworks callout**: Passed as `children` to ParkStrategySection — MKStrategy.jsx imports shared CSS module directly for callout class names
 
 ### Data Accuracy Gotchas
 - **Disneyland vs WDW confusion**: Many Disney "facts" apply to Disneyland (CA), not Walt Disney World (FL) — always verify location-specific claims (e.g., Pirates skulls = DL only, Astro Orbiter height req = DL only, Space Mountain rebuild = Tokyo DL)
 - **Temporal tense**: Site targets January 2027 trip — rides currently closed but reopening before the trip should have `closed: true` with descriptions noting the expected reopening
-- **Callout tips in JSX duplicate shared data**: EpcotRides.jsx, HSStrategy.jsx, EpcotStrategy.jsx contain hardcoded ride tips/facts that can drift from mapRides.js — update BOTH when facts change
+- **Callout tips in JSX duplicate shared data**: EpcotRides.jsx (CALLOUTS array), HSStrategy.jsx, EpcotStrategy.jsx contain hardcoded ride tips/facts that can drift from mapRides.js — update BOTH when facts change
 - **lightningLane boolean limitation**: `lightningLane: true/false` in mapRides.js doesn't distinguish Multi Pass (included) vs Single Pass (paid individually) — tips should clarify when it's Single Pass
 
 ### Data Consistency Gotchas
@@ -197,9 +207,10 @@ disney-site/
 - **Hardcoded stats in Hero sections** (ride counts, land counts) can go stale — verify against shared data when adding/removing items
 
 ### Cross-Page Conventions (must match across all 3 parks)
+- **Enforced by shared components**: Headings, subtitles, and layout for Rides, Dining, Strategy, Shopping are defined once in `parks/shared/` — park wrappers only pass data, not structure
 - Dining section heading: "Dining Guide"
 - Must-try callout title: "Must-Try at [Park Name]"
-- Strategy subtitle: includes specific park day dates (e.g., "January 18 & 22")
+- Strategy subtitle: "Tips & tricks for making the most of [Park Name]"
 - Rides subtitle: "Every ride at [Park]..." pattern
 - Shows section heading: "Shows & Entertainment" (not "Shows & Fireworks")
 - Fireworks/nighttime badge label: "Nighttime Spectacular" (not "Fireworks")
