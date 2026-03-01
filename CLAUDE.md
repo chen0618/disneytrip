@@ -81,7 +81,8 @@ disney-site/
 │   │       │   ├── ParkRidesSection.jsx + .module.css    # Rides grid, By Land/Height toggle, callouts slot
 │   │       │   ├── ParkDiningSection.jsx + .module.css   # Dining grid, filters, must-try callout, collapse
 │   │       │   ├── ParkStrategySection.jsx + .module.css # Tip cards, children slot (MK fireworks)
-│   │       │   └── ParkShoppingSection.jsx + .module.css # Shop grid, collapse toggle
+│   │       │   ├── ParkShoppingSection.jsx + .module.css # Shop grid, collapse toggle
+│   │       │   └── Collapsible.module.css                # Shared collapse/toggle styles (composed by Dining + Shopping)
 │   │       ├── mk/               # MKHero, LandsExplorer, MKRides*, MKShows, MKDining*, HiddenMagic, MKStrategy*, MKShopping* (8 sections)
 │   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides*, ThrillGuide, HSShows, HSDining*, HSStrategy*, HSShopping* (9 sections)
 │   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides*, FestivalGuide, CountryGuide, BestForKids, EpcotDining*, EpcotStrategy*, EpcotShopping* (9 sections)
@@ -191,7 +192,7 @@ disney-site/
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8–9 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
 - **Shared section components** (`parks/shared/`): Rides, Dining, Strategy, Shopping are extracted into shared components — park wrappers are thin re-exports (~5-15 lines) that pass park-specific data and `themeVars` (CSS custom properties)
-- **CSS custom property theming**: Shared CSS modules use `var(--park-accent)`, `var(--park-accent-light)`, `var(--park-tip-bg)`, `var(--park-gradient-end)`, `var(--park-filter-color)`, `var(--park-active-color)`, `var(--park-hover-color)` — set via inline style `themeVars` object on section root
+- **CSS custom property theming**: Shared CSS modules use `var(--park-accent)`, `var(--park-accent-light)`, `var(--park-tip-bg)`, `var(--park-gradient-end)`, `var(--park-filter-color)`, `var(--park-active-color)` — set via inline style `themeVars` object on section root
 - **EPCOT yellow override**: EPCOT filter buttons need `--park-filter-color` (darker `#b8960a`) and `--park-active-color: var(--text)` because yellow-on-white is unreadable
 - **MK fireworks callout**: Passed as `children` to ParkStrategySection — MKStrategy.jsx imports shared CSS module directly for callout class names
 
