@@ -9,8 +9,8 @@ const THEME_VARS = {
 export default function MKStrategy() {
   return (
     <ParkStrategySection
-      parkShortName="MK"
       parkName="Magic Kingdom"
+      heading="Our MK Strategy"
       sectionId="mk-strategy"
       background="var(--bg-alt)"
       themeVars={THEME_VARS}

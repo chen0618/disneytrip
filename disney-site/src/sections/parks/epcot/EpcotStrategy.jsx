@@ -8,7 +8,6 @@ const THEME_VARS = {
 export default function EpcotStrategy() {
   return (
     <ParkStrategySection
-      parkShortName="EPCOT"
       parkName="EPCOT"
       sectionId="epcot-strategy"
       background="var(--bg)"

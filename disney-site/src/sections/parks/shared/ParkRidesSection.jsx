@@ -34,7 +34,7 @@ export default function ParkRidesSection({ parkName, sectionId, background, them
     });
     const sorted = Object.entries(tierMap)
       .sort(([, a], [, b]) => b.inches - a.inches)
-      .map(([label, { rides }]) => [label, rides]);
+      .map(([label, { rides: groupRides }]) => [label, groupRides]);
     if (noReq.length) sorted.push(['No Requirement', noReq]);
     return sorted;
   }, [rides, viewMode]);
@@ -73,11 +73,11 @@ export default function ParkRidesSection({ parkName, sectionId, background, them
           ))}
         </div>
 
-        {grouped.map(([group, rides]) => (
+        {grouped.map(([group, groupRides]) => (
           <div key={group} className={styles.landGroup}>
             <h3 className={styles.landTitle}>{group}</h3>
             <div className={styles.rideGrid}>
-              {rides.map((ride) => (
+              {groupRides.map((ride) => (
                 <div key={ride.id} className={styles.rideCard} role="button" tabIndex={0} onClick={() => onSelectItem?.(ride)} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.(ride)}>
                   <div className={styles.rideHeader}>
                     <span className={styles.rideEmoji}>{ride.emoji}</span>

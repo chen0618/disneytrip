@@ -8,8 +8,8 @@ const THEME_VARS = {
 export default function HSStrategy() {
   return (
     <ParkStrategySection
-      parkShortName="HS"
       parkName="Hollywood Studios"
+      heading="Our HS Strategy"
       sectionId="hs-strategy"
       background="var(--bg)"
       themeVars={THEME_VARS}

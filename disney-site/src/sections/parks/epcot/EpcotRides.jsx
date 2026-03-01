@@ -2,7 +2,7 @@ import ParkRidesSection from '../shared/ParkRidesSection';
 
 const THEME_VARS = {
   '--park-accent': 'var(--yellow)',
-  '--park-accent-light': '#fff3b0',
+  '--park-accent-light': 'var(--epcot-accent-bg, #fff3b0)',
   '--park-tip-bg': '#fffbe6',
   '--park-gradient-end': '#b8960a',
   '--park-filter-color': '#b8960a',

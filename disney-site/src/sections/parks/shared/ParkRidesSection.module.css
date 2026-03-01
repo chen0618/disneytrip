@@ -9,7 +9,7 @@
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
-  background: linear-gradient(135deg, var(--park-gradient-end) 0%, var(--park-accent) 100%);
+  background: linear-gradient(135deg, var(--park-gradient-end, var(--park-accent)) 0%, var(--park-accent) 100%);
   border-radius: var(--radius-md);
   padding: 1.25rem;
   color: var(--white);
@@ -51,7 +51,7 @@
 }
 .filterBtn:hover {
   background: var(--park-accent-light);
-  color: var(--park-hover-color, var(--white));
+  color: var(--park-active-color, var(--white));
 }
 .filterBtn.active {
   background: var(--park-accent);

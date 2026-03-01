@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import styles from './ParkStrategySection.module.css';
 
-export default function ParkStrategySection({ parkShortName, parkName, sectionId, background, themeVars, tips, children }) {
+export default function ParkStrategySection({ parkName, sectionId, background, themeVars, heading, tips, children }) {
   return (
     <section id={sectionId} style={{ background, ...themeVars }}>
       <div className="section-inner">
         <div className="section-header reveal">
-          <h2>Our {parkShortName} Strategy</h2>
+          <h2>{heading || `Our ${parkName} Strategy`}</h2>
           <p className="subtitle">Tips & tricks for making the most of {parkName}</p>
           <Link to="/#timeline" className={styles.timelineLink}>See this day on the Trip Timeline &rarr;</Link>
         </div>
