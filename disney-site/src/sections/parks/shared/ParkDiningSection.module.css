@@ -89,7 +89,7 @@
 
 /* Must-Try Callout */
 .mustTry {
-  background: linear-gradient(135deg, #b8960a 0%, #d4a50a 100%);
+  background: linear-gradient(135deg, var(--park-accent) 0%, var(--park-gradient-end) 100%);
   border-radius: var(--radius-lg);
   padding: 2rem;
   color: var(--white);
@@ -134,10 +134,10 @@
 }
 .filterBtn {
   padding: 0.5rem 1rem;
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--park-accent);
   border-radius: var(--radius-lg);
   background: transparent;
-  color: var(--epcot-accent, #b8960a);
+  color: var(--park-filter-color, var(--park-accent));
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -145,11 +145,12 @@
   transition: all 0.2s ease;
 }
 .filterBtn:hover {
-  background: var(--epcot-accent-bg, #fff3b0);
+  background: var(--park-accent-light);
+  color: var(--park-hover-color, var(--white));
 }
 .filterBtn.active {
-  background: var(--yellow);
-  color: var(--text);
+  background: var(--park-accent);
+  color: var(--park-active-color, var(--white));
 }
 
 /* Dining Grid */

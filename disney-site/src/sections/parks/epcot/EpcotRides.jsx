@@ -1,22 +1,24 @@
-import { useState, useMemo } from 'react';
-import { mapRides } from '../../../data/mapRides';
-import styles from './EpcotRides.module.css';
+import ParkRidesSection from '../shared/ParkRidesSection';
 
-const VIEW_MODES = [
-  { key: 'land', label: 'By Land' },
-  { key: 'height', label: 'By Height' },
-];
+const THEME_VARS = {
+  '--park-accent': 'var(--yellow)',
+  '--park-accent-light': '#fff3b0',
+  '--park-tip-bg': '#fffbe6',
+  '--park-gradient-end': '#b8960a',
+  '--park-filter-color': '#b8960a',
+  '--park-active-color': 'var(--text)',
+};
 
 const CALLOUTS = [
   {
     name: 'Guardians of the Galaxy: Cosmic Rewind',
     emoji: '\uD83C\uDFB6',
-    tip: 'Lightning Lane Single Pass available, or use the standby queue. Go at rope drop for shortest waits \u2014 lines hit 90+ minutes by mid-morning. Rider Swap available for kids under 42".',
+    tip: 'Lightning Lane Single Pass available, or use the standby queue. Go at rope drop for shortest waits \u2014 lines hit 90+ minutes by mid-morning. Rider Swap available for kids under 42\u201D.',
   },
   {
     name: 'Test Track',
     emoji: '\uD83C\uDFC1',
-    tip: 'Reimagined in 2025 with a fresh new look and updated storyline! High-speed outdoor track section is still a blast. 40" height requirement \u2014 Rider Swap available.',
+    tip: 'Reimagined in 2025 with a fresh new look and updated storyline! High-speed outdoor track section is still a blast. 40\u201D height requirement \u2014 Rider Swap available.',
   },
   {
     name: 'Frozen Ever After',
@@ -26,99 +28,5 @@ const CALLOUTS = [
 ];
 
 export default function EpcotRides({ onSelectItem }) {
-  const [viewMode, setViewMode] = useState('land');
-
-  const epcotRides = useMemo(
-    () => mapRides.filter((r) => r.park === 'EPCOT'),
-    [],
-  );
-
-  const grouped = useMemo(() => {
-    if (viewMode === 'land') {
-      const map = {};
-      epcotRides.forEach((r) => {
-        if (!map[r.land]) map[r.land] = [];
-        map[r.land].push(r);
-      });
-      return Object.entries(map);
-    }
-    const withReq = epcotRides.filter((r) => r.heightReqInches > 0);
-    const noReq = epcotRides.filter((r) => r.heightReqInches === 0);
-    const tierMap = {};
-    withReq.forEach((r) => {
-      const label = r.heightReq;
-      if (!tierMap[label]) tierMap[label] = { inches: r.heightReqInches, rides: [] };
-      tierMap[label].rides.push(r);
-    });
-    const sorted = Object.entries(tierMap)
-      .sort(([, a], [, b]) => b.inches - a.inches)
-      .map(([label, { rides }]) => [label, rides]);
-    if (noReq.length) sorted.push(['No Requirement', noReq]);
-    return sorted;
-  }, [epcotRides, viewMode]);
-
-  return (
-    <section id="epcot-rides" style={{ background: 'var(--bg)' }}>
-      <div className="section-inner">
-        <div className="section-header reveal">
-          <h2>Rides & Attractions</h2>
-          <p className="subtitle">Every ride at EPCOT, filtered for our crew</p>
-        </div>
-
-        {/* Feature Callouts */}
-        <div className={styles.callouts}>
-          {CALLOUTS.map((c) => (
-            <div key={c.name} className={`${styles.callout} reveal`}>
-              <span className={styles.calloutEmoji}>{c.emoji}</span>
-              <div>
-                <strong className={styles.calloutName}>{c.name}</strong>
-                <p className={styles.calloutTip}>{c.tip}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.filters}>
-          {VIEW_MODES.map((m) => (
-            <button
-              key={m.key}
-              className={`${styles.filterBtn} ${viewMode === m.key ? styles.active : ''}`}
-              onClick={() => setViewMode(m.key)}
-            >
-              {m.label}
-            </button>
-          ))}
-        </div>
-
-        {grouped.map(([group, rides]) => (
-          <div key={group} className={styles.landGroup}>
-            <h3 className={styles.landTitle}>{group}</h3>
-            <div className={styles.rideGrid}>
-              {rides.map((ride) => (
-                <div key={ride.id} className={styles.rideCard} role="button" tabIndex={0} onClick={() => onSelectItem?.(ride)} onKeyDown={(e) => e.key === 'Enter' && onSelectItem?.(ride)}>
-                  <div className={styles.rideHeader}>
-                    <span className={styles.rideEmoji}>{ride.emoji}</span>
-                    <h4 className={styles.rideName}>{ride.name}</h4>
-                  </div>
-                  <div className={styles.badges}>
-                    <span
-                      className={styles.badge}
-                      style={{ background: 'var(--badge-bg, #e8e8e8)', color: 'var(--text)' }}
-                    >
-                      {ride.heightReq || 'Any Height'}
-                    </span>
-                    {ride.lightningLane && (
-                      <span className={styles.llBadge}>Lightning Lane</span>
-                    )}
-                  </div>
-                  <p className={styles.rideDesc}>{ride.description}</p>
-                  {ride.tip && <p className={styles.rideTip}>{ride.tip}</p>}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return <ParkRidesSection parkName="EPCOT" sectionId="epcot-rides" background="var(--bg)" themeVars={THEME_VARS} callouts={CALLOUTS} onSelectItem={onSelectItem} />;
 }

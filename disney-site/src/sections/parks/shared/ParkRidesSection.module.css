@@ -1,4 +1,4 @@
-/* Feature Callouts */
+/* Feature Callouts (used by EPCOT) */
 .callouts {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -9,7 +9,7 @@
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
-  background: linear-gradient(135deg, #b8960a 0%, #d4a50a 100%);
+  background: linear-gradient(135deg, var(--park-gradient-end) 0%, var(--park-accent) 100%);
   border-radius: var(--radius-md);
   padding: 1.25rem;
   color: var(--white);
@@ -39,10 +39,10 @@
 }
 .filterBtn {
   padding: 0.6rem 1.2rem;
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--park-accent);
   border-radius: var(--radius-lg);
   background: transparent;
-  color: var(--epcot-accent, #b8960a);
+  color: var(--park-filter-color, var(--park-accent));
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
@@ -50,11 +50,12 @@
   transition: all 0.2s ease;
 }
 .filterBtn:hover {
-  background: var(--epcot-accent-bg, #fff3b0);
+  background: var(--park-accent-light);
+  color: var(--park-hover-color, var(--white));
 }
 .filterBtn.active {
-  background: var(--yellow);
-  color: var(--text);
+  background: var(--park-accent);
+  color: var(--park-active-color, var(--white));
 }
 
 /* Land Groups */
@@ -64,7 +65,7 @@
 .landTitle {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #ffe680;
+  border-bottom: 2px solid var(--park-accent-light);
 }
 
 /* Ride Grid */
@@ -128,13 +129,13 @@
 }
 .rideTip {
   font-size: 0.85rem;
-  color: var(--yellow);
+  color: var(--park-accent);
   font-weight: 600;
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background: var(--badge-tip-bg, #fffbe6);
+  background: var(--park-tip-bg, #eef6ff);
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--yellow);
+  border-left: 3px solid var(--park-accent);
 }
 
 @media (max-width: 480px) {
