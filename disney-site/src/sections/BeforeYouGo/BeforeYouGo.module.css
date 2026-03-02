@@ -149,6 +149,11 @@
 .badge_urgent {
   background: rgba(255, 107, 107, 0.15);
   color: var(--coral);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 .badge_past {
   background: rgba(78, 205, 196, 0.15);

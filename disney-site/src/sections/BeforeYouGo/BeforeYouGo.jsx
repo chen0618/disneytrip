@@ -2,19 +2,8 @@ import { useState } from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader';
 import WaveDivider from '../../components/WaveDivider';
 import { keyDeadlines, checklist, firstTimerTips } from '../../data/beforeYouGoInfo';
+import { getUrgency } from '../../utils/getDaysUntil';
 import styles from './BeforeYouGo.module.css';
-
-function getUrgency(dateStr) {
-  const target = new Date(dateStr + 'T00:00:00');
-  const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  const days = Math.ceil((target - now) / 86_400_000);
-  let level = 'future';
-  if (days < 0) level = 'past';
-  else if (days <= 30) level = 'urgent';
-  else if (days <= 90) level = 'soon';
-  return { days, level };
-}
 
 export default function BeforeYouGo() {
   const [checked, setChecked] = useState(() => new Set());
@@ -38,7 +27,11 @@ export default function BeforeYouGo() {
           <ul className={styles.deadlineList}>
             {keyDeadlines.map(dl => {
               const { days, level } = getUrgency(dl.date);
-              const badgeText = level === 'past' ? 'Done' : `${days}d`;
+              const badgeText = level === 'past'
+  ? 'Done ✓'
+  : days === 0 ? 'Today!'
+  : days === 1 ? '1 day'
+  : `${days} days`;
               const rowClass = `${styles.deadlineRow} ${level === 'past' ? styles.deadlineRowPast : ''}`;
               const inner = (
                 <>
