@@ -43,7 +43,8 @@ disney-site/
 │   │   ├── useActiveSection.js   # Tracks which section is in viewport for nav dots
 │   │   └── useDarkMode.js        # localStorage-persisted dark/light theme toggle
 │   ├── utils/
-│   │   └── enrichItem.js         # Merges officialDisneyData into map items at render time
+│   │   ├── enrichItem.js         # Merges officialDisneyData into map items at render time
+│   │   └── getDaysUntil.js       # Shared countdown utility (getDaysUntil, getUrgency) — used by Hero + BeforeYouGo
 │   ├── context/
 │   │   └── ActiveSectionContext.jsx
 │   ├── components/               # Shared/reusable
@@ -96,7 +97,7 @@ disney-site/
 │       ├── hotelHighlights.js
 │       ├── transportInfo.js
 │       ├── skylinerPhotos.js
-│       ├── mapRides.js           # 44 rides with coordinates, height data, images
+│       ├── mapRides.js           # 44 rides with coordinates, height data, images, firstTimerTip, bestTimes
 │       ├── parkDaySchedules.js
 │       ├── ropeDropSteps.js
 │       ├── lightningLaneInfo.js
@@ -107,6 +108,7 @@ disney-site/
 │       ├── mapParks.js
 │       ├── mapShows.js           # 37 show/event markers for interactive map
 │       ├── mapShops.js           # 157 shop markers (MK, HS, EPCOT, Disney Springs)
+│       ├── mapPhotoSpots.js     # 27 photo spots with OSM coordinates (landmark + hidden-gem categories)
 │       ├── beforeYouGoInfo.js    # Key deadlines + pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
 │       ├── magicKingdomData.js  # MK lands, easter eggs, strategy, fireworks, nav sections
@@ -144,7 +146,7 @@ disney-site/
 
 ## Dark Mode CSS Pattern
 - Progressive enhancement: `var(--dark-var, light-fallback)` — variable undefined in light mode uses fallback, defined in `html[data-theme="dark"]` block overrides
-- Dark mode badge variables in global.css: `--badge-bg`, `--badge-tip-bg`, `--badge-ll-bg`/`--badge-ll-color`, `--show-badge-bg`/`--show-badge-color`, `--epcot-accent`/`--epcot-accent-bg`
+- Dark mode badge variables in global.css: `--badge-bg`, `--badge-tip-bg`, `--badge-ll-bg`/`--badge-ll-color`, `--show-badge-bg`/`--show-badge-color`, `--epcot-accent`/`--epcot-accent-bg`, `--time-low-bg`/`--time-low-color`, `--time-med-bg`/`--time-med-color`, `--time-high-bg`/`--time-high-color`
 - When adding colored badges/accents: add dark mode variable to global.css, use `var(--new-var, #light-fallback)` in component CSS
 
 ## Image Sourcing
@@ -154,14 +156,14 @@ disney-site/
 - Wikimedia 429 rate limiting can occur — space requests or reduce batch sizes
 
 ## Main Page Sections (in order, 5 on home page)
-1. hero — Cinderella Castle background, countdown timer, sparkle animations
+1. hero — Cinderella Castle background, countdown timer, milestone chips (upcoming deadlines from beforeYouGoInfo.js), sparkle animations
 2. timeline — 8-day trip cards, travel group (20 people, 8 families), "split off" blurb
 3. whats-new — New/upgraded rides, restaurants, closures & heads-up alerts for 2026-2027
 4. hotel — Pop Century Resort, dual photos + highlight list, gift card budget tip
 5. transportation — Bus + Skyliner + airport transport (A Way We Go), animated SVG route map
 
 ## Planning Guide Page (/guide, 5 sections — including hero)
-1. before-you-go — Key deadlines (ADR, transport, hotel, LL with countdown badges) + pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
+1. before-you-go — Key deadlines (ADR, transport, hotel, LL with live countdown badges + color progression: blue→yellow→red+pulse→grey) + pre-trip checklist (interactive checkboxes) + 4 first-timer tip cards
 2. rope-drop — Morning strategy, coffee split strategy, Minnie Van vs bus comparison
 3. lightning-lane — Multi Pass vs Single Pass, rolling window strategy, Rider Swap
 4. photo-pass — Memory Maker, family sharing plan, Disney account setup tutorial
@@ -169,14 +171,16 @@ disney-site/
 ## Interactive Map (/map page)
 - **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
 - **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
-- Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Transportation
+- Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Shops | Transportation | Photos
 - Independent boundary overlay toggle (Zillow-style park polygons)
 - **Rides layer**: 44 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
 - **Transport layer**: bus routes, Skyliner, boats with animated markers; auto-flies to bounds on layer/mode switch (asymmetric padding for overlay controls)
+- **Photo Spots layer**: 27 curated spots from mapPhotoSpots.js, teal markers (landmarks) + pink markers (hidden gems), park sub-filter
 - Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
 - Park label markers and transport routes still use Leaflet popups (simple info)
+- **DetailPanel ride extras**: `firstTimerTip` (gold gradient block), `bestTimes` (3-slot color bar: green/yellow/red with recommendation text), photo spots show category badge (Landmark/Hidden Gem)
 
 ## Park Guide Pages (/park/*)
 - 3 dedicated park guide pages: Magic Kingdom, Hollywood Studios, EPCOT
@@ -192,6 +196,7 @@ disney-site/
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8–9 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
 - **Shared section components** (`parks/shared/`): Rides, Dining, Strategy, Shopping are extracted into shared components — park wrappers are thin re-exports (~5-15 lines) that pass park-specific data and `themeVars` (CSS custom properties)
+- **Ride card first-timer tips**: ParkRidesSection renders expandable `<details>/<summary>` badges for rides with `firstTimerTip` — no React state needed
 - **CSS custom property theming**: Shared CSS modules use `var(--park-accent)`, `var(--park-accent-light)`, `var(--park-tip-bg)`, `var(--park-gradient-end)`, `var(--park-filter-color)`, `var(--park-active-color)` — set via inline style `themeVars` object on section root
 - **EPCOT yellow override**: EPCOT filter buttons need `--park-filter-color` (darker `#b8960a`) and `--park-active-color: var(--text)` because yellow-on-white is unreadable
 - **MK fireworks callout**: Passed as `children` to ParkStrategySection — MKStrategy.jsx imports shared CSS module directly for callout class names
