@@ -63,6 +63,12 @@ html[data-theme="dark"] {
   --card-hover-bg: #2e2838;
   --epcot-accent: #ffd97a;
   --epcot-accent-bg: #3d3520;
+  --time-low-bg: rgba(78, 205, 196, 0.25);
+  --time-low-color: #5eddd3;
+  --time-med-bg: rgba(255, 215, 0, 0.22);
+  --time-med-color: #f0d040;
+  --time-high-bg: rgba(255, 107, 107, 0.22);
+  --time-high-color: #ff8a8a;
 }
 
 /* ========== TYPOGRAPHY ========== */

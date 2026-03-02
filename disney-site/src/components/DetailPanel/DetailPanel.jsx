@@ -20,6 +20,14 @@ function parkLabel(park) {
   return park;
 }
 
+const TIME_SLOTS = [
+  { key: 'morning', label: '🌅 Morning', sub: '9am–12pm' },
+  { key: 'midday', label: '☀️ Midday', sub: '12–5pm' },
+  { key: 'evening', label: '🌙 Evening', sub: '5pm–close' },
+];
+
+const LEVEL_LABELS = { low: 'Low', medium: 'Moderate', high: 'Busy' };
+
 export default function DetailPanel({ item, onClose }) {
   const isOpen = item != null;
   const type = item?.type;
@@ -141,6 +149,27 @@ export default function DetailPanel({ item, onClose }) {
               {/* First Timer Tip */}
               {item.firstTimerTip && (
                 <div className={styles.firstTimerTip}>🌟 First Timer: {item.firstTimerTip}</div>
+              )}
+
+              {/* Best Times */}
+              {item.bestTimes && (
+                <div className={styles.bestTimes}>
+                  <div className={styles.bestTimesHeader}>⏱️ Best Times to Ride</div>
+                  <div className={styles.bestTimesBar}>
+                    {TIME_SLOTS.map(slot => {
+                      const level = item.bestTimes[slot.key];
+                      return (
+                        <div key={slot.key} className={`${styles.timeSlot} ${styles[`time_${level}`]}`}>
+                          <span className={styles.timeLabel}>{slot.label}</span>
+                          <span className={styles.timeLevel}>{LEVEL_LABELS[level]}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {item.bestTimes.rec && (
+                    <p className={styles.bestTimesRec}>{item.bestTimes.rec}</p>
+                  )}
+                </div>
               )}
 
               {/* Action links */}

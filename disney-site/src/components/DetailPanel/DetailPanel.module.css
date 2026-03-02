@@ -211,6 +211,61 @@
   line-height: 1.5;
 }
 
+/* ========== BEST TIMES ========== */
+.bestTimes {
+  margin-top: 0.75rem;
+}
+.bestTimesHeader {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.bestTimesBar {
+  display: flex;
+  gap: 0.35rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.timeSlot {
+  flex: 1;
+  text-align: center;
+  padding: 0.4rem 0.25rem;
+  border-radius: var(--radius-sm);
+}
+.timeLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.timeLevel {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.time_low {
+  background: var(--time-low-bg, rgba(78, 205, 196, 0.18));
+  color: var(--time-low-color, #2d9e94);
+}
+.time_medium {
+  background: var(--time-med-bg, rgba(255, 215, 0, 0.18));
+  color: var(--time-med-color, #b8960a);
+}
+.time_high {
+  background: var(--time-high-bg, rgba(255, 107, 107, 0.15));
+  color: var(--time-high-color, #d94848);
+}
+.bestTimesRec {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
 /* ========== ACTION LINKS ========== */
 .actions {
   margin-top: 1rem;
