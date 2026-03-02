@@ -266,6 +266,47 @@ Status: **All OSM verified**
 
 ---
 
+## mapPhotoSpots.js (27 photo spots)
+
+### Magic Kingdom (9 spots)
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | castle-hub | Cinderella Castle Hub | OSM | 2026-03-02 |
+| 2 | main-street-station | Main Street Train Station | OSM | 2026-03-02 |
+| 3 | tomorrowland-entrance | Tomorrowland Entrance | OSM | 2026-03-02 |
+| 4 | haunted-mansion-exterior | Haunted Mansion Exterior | mapRides | 2026-03-02 |
+| 5 | fantasyland-castle-back | Fantasyland Castle Backside | mapRides (carrousel) | 2026-03-02 |
+| 6 | tangled-tower | Tangled Tower & Lanterns | mapRides (7DMT) | 2026-03-02 |
+| 7 | purple-wall | Purple Wall | mapRides (speedway) | 2026-03-02 |
+| 8 | confectionery-windows | Main Street Confectionery | OSM | 2026-03-02 |
+| 9 | mk-hub-garden | Hub Garden Photo Pass Spot | OSM (castle stage) | 2026-03-02 |
+
+### Hollywood Studios (7 spots)
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | tower-of-terror-exterior | Tower of Terror | mapRides | 2026-03-02 |
+| 2 | hollywood-arch | HS Entrance Arch | OSM | 2026-03-02 |
+| 3 | millennium-falcon-exterior | Millennium Falcon | mapRides | 2026-03-02 |
+| 4 | toy-story-land-sign | Toy Story Land Entrance | OSM | 2026-03-02 |
+| 5 | batuu-marketplace | Galaxy's Edge Marketplace | mapRides (RotR) | 2026-03-02 |
+| 6 | sunset-blvd-palms | Sunset Boulevard Palm Trees | OSM | 2026-03-02 |
+| 7 | hs-chinese-theatre | Chinese Theatre | mapRides (MMRR) | 2026-03-02 |
+
+### EPCOT (11 spots)
+| # | ID | Name | Status | Date |
+|---|---|---|---|---|
+| 1 | spaceship-earth-photo | Spaceship Earth | mapRides | 2026-03-02 |
+| 2 | japan-torii-gate | Japan Pavilion Torii Gate | OSM | 2026-03-02 |
+| 3 | france-eiffel-tower | France Pavilion Eiffel Tower | OSM | 2026-03-02 |
+| 4 | guardians-building | Guardians Building | mapRides | 2026-03-02 |
+| 5 | world-showcase-lagoon | World Showcase Lagoon View | OSM (UK Pavilion) | 2026-03-02 |
+| 6 | japan-garden | Japan Pavilion Garden | OSM (Japanese Garden) | 2026-03-02 |
+| 7 | morocco-courtyard | Morocco Pavilion Courtyard | OSM | 2026-03-02 |
+| 8 | uk-garden | UK Pavilion Garden | OSM | 2026-03-02 |
+| 9 | epcot-imagination-fountain | Imagination Fountains | mapRides (Figment) | 2026-03-02 |
+
+---
+
 ## Notes for Future Sessions
 
 1. **How to verify a coordinate**: Use OpenStreetMap Overpass API:
