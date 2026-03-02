@@ -502,12 +502,12 @@ export default function InteractiveMap({ onSelectItem }) {
         <div className="map-ctrl-row map-ctrl-primary">
           <Link to="/" className="map-back-link">← Back</Link>
           <div className="map-layer-tabs">
-            <button className={`map-tab ${layer === 'rides' ? 'active' : ''}`} onClick={() => setLayer('rides')}>🎢 Rides</button>
-            <button className={`map-tab ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}>🍽️ Food</button>
-            <button className={`map-tab ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows</button>
-            <button className={`map-tab ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}>🛍️ Shops</button>
-            <button className={`map-tab ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transport</button>
-            <button className={`map-tab ${layer === 'photos' ? 'active' : ''}`} onClick={() => setLayer('photos')}>📸 Photos</button>
+            <button className={`map-tab ${layer === 'rides' ? 'active' : ''}`} onClick={() => setLayer('rides')}><span className="tab-emoji">🎢 </span>Rides</button>
+            <button className={`map-tab ${layer === 'food' ? 'active' : ''}`} onClick={() => setLayer('food')}><span className="tab-emoji">🍽️ </span>Food</button>
+            <button className={`map-tab ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}><span className="tab-emoji">🎭 </span>Shows</button>
+            <button className={`map-tab ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}><span className="tab-emoji">🛍️ </span>Shops</button>
+            <button className={`map-tab ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}><span className="tab-emoji">🚌 </span>Transport</button>
+            <button className={`map-tab ${layer === 'photos' ? 'active' : ''}`} onClick={() => setLayer('photos')}><span className="tab-emoji">📸 </span>Photos</button>
           </div>
         </div>
 

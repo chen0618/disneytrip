@@ -69,6 +69,12 @@
   gap: 2px;
   flex: 1;
   justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;          /* Firefox */
+}
+.map-layer-tabs::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
 }
 .map-tab {
   font-family: 'Nunito', sans-serif;
@@ -240,8 +246,10 @@
 /* ═══ Mobile ═══ */
 @media (max-width: 600px) {
   .map-ctrl-primary { padding: 0.25rem 0.4rem; }
-  .map-tab { font-size: 0.7rem; padding: 0.3rem 0.55rem; }
-  .map-back-link { font-size: 0.72rem; padding: 0.25rem 0.4rem; }
+  .map-layer-tabs { justify-content: flex-start; }
+  .map-tab { font-size: 0.7rem; padding: 0.3rem 0.5rem; }
+  .map-back-link { font-size: 0.72rem; padding: 0.25rem 0.35rem; }
+  .tab-emoji { display: none; }
   .map-chip { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
 
   .emoji-marker { width: 34px; height: 34px; font-size: 18px; }
