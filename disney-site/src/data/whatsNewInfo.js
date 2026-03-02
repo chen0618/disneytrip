@@ -48,7 +48,7 @@ export const newExperiences = [
         name: "Rock 'n' Roller Coaster Starring The Muppets",
         emoji: '🐸',
         badge: 'Reimagined',
-        description: "The Aerosmith version closed March 2026. It's now themed to The Electric Mayhem — Animal on drums, Dr. Teeth on keys — racing through Hollywood to make their biggest concert. Features a new Scooter audio-animatronic!",
+        description: "The Aerosmith version permanently closed March 1, 2026. Reopening Summer 2026 as a Muppets retheme — The Electric Mayhem racing through Hollywood to make their biggest concert. Features a new Scooter audio-animatronic! Should be open for our trip.",
       },
       {
         name: 'Smugglers Run: Mando & Grogu Mission',
@@ -125,8 +125,8 @@ export const headsUpAlerts = [
   },
   {
     emoji: '😈',
-    title: 'Villains Land — Under Construction',
-    description: "Disney is building a Villains-themed land in Magic Kingdom with rumored Emperor's New Groove coaster, Maleficent dark ride, and Hades dinner show. Plans were recently expanded to be \"bigger and bolder.\" Won't be open for our trip, but expect construction walls in the park.",
+    title: 'Villains Land & Piston Peak — Under Construction',
+    description: "Disney is building two new lands in Magic Kingdom: a Villains-themed land (rumored Emperor's New Groove coaster, Maleficent dark ride, Hades dinner show) and Piston Peak National Park (Cars-themed). Infrastructure work runs March 2026–Dec 2027. Won't be open for our trip, but expect construction walls near Frontierland.",
     severity: 'info',
   },
   {
