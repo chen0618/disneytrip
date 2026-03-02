@@ -460,32 +460,26 @@ export default function InteractiveMap({ onSelectItem }) {
   const PARK_BOUNDARY_MAP = { MK: 'mk', HS: 'hs', EPCOT: 'epcot', 'Magic Kingdom': 'mk', 'Hollywood Studios': 'hs', 'Disney Springs': 'ds' };
 
   function selectRidePark(val) {
-    if (val === rideParkFilter) return;
     setRideParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
   function selectFoodPark(val) {
-    if (val === foodParkFilter) return;
     setFoodParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
   function selectShopPark(val) {
-    if (val === shopParkFilter) return;
     setShopParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
   function selectPhotoPark(val) {
-    if (val === photoParkFilter) return;
     setPhotoParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
   function selectShowPark(val) {
-    if (val === showParkFilter) return;
     setShowParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
   function selectTransportPark(val) {
-    if (val === transportParkNav) return;
     setTransportParkNav(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
