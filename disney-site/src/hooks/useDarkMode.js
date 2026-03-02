@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect, useCallback } from 'react';
 
 export default function useDarkMode() {
   const [dark, setDark] = useState(() => {
@@ -18,5 +18,6 @@ export default function useDarkMode() {
     }
   }, [dark]);
 
-  return [dark, () => setDark((d) => !d)];
+  const toggle = useCallback(() => setDark((d) => !d), []);
+  return [dark, toggle];
 }

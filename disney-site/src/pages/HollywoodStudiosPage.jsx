@@ -73,7 +73,6 @@ function HSContent() {
             <p className="subtitle">Explore Hollywood Studios rides and attractions</p>
           </div>
           <ParkMiniMap
-            parkId="hs"
             markers={hsMarkers}
             boundary={hsBoundary?.coords}
             center={[28.3572, -81.5590]}

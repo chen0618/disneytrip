@@ -73,7 +73,6 @@ function EpcotContent() {
             <p className="subtitle">Explore EPCOT rides and attractions</p>
           </div>
           <ParkMiniMap
-            parkId="epcot"
             markers={epcotMarkers}
             boundary={epcotBoundary?.coords}
             center={[28.3735, -81.5494]}

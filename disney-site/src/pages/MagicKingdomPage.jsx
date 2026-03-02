@@ -69,7 +69,6 @@ function MKContent() {
             <p className="subtitle">Explore Magic Kingdom rides and attractions</p>
           </div>
           <ParkMiniMap
-            parkId="mk"
             markers={mkMarkers}
             boundary={mkBoundary?.coords}
             center={[28.4195, -81.5812]}

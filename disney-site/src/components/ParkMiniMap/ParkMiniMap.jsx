@@ -1,20 +1,10 @@
 import { MapContainer, TileLayer, Marker, Polygon, Popup } from 'react-leaflet';
-import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../../styles/leaflet-overrides.css';
+import emojiIcon from '../../utils/emojiIcon';
 import styles from './ParkMiniMap.module.css';
 
-function emojiIcon(emoji, cls = '') {
-  return L.divIcon({
-    className: '',
-    html: `<div class="emoji-marker ${cls}">${emoji}</div>`,
-    iconSize: [40, 40],
-    iconAnchor: [20, 20],
-    popupAnchor: [0, -22],
-  });
-}
-
-export default function ParkMiniMap({ parkId, markers = [], boundary = [], center, zoom = 15, color = '#FF6B6B', onMarkerClick }) {
+export default function ParkMiniMap({ markers = [], boundary = [], center, zoom = 15, color = '#FF6B6B', onMarkerClick }) {
   return (
     <div className={styles.mapWrapper}>
       <MapContainer
