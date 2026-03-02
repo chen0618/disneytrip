@@ -89,15 +89,20 @@ function venueIcon(emoji) {
   });
 }
 
-function photoIcon(emoji, category) {
-  const color = category === 'hidden-gem' ? '#E84393' : '#00CEC9';
-  return L.divIcon({
-    className: '',
-    html: `<div class="emoji-marker photo-marker" style="border-color:${color};box-shadow:0 2px 8px ${color}80;">${emoji}</div>`,
-    iconSize: [40, 40],
-    iconAnchor: [20, 20],
-  });
-}
+const PHOTO_COLORS = { landmark: '#00CEC9', 'hidden-gem': '#E84393' };
+
+const photoIconLandmark = L.divIcon({
+  className: '',
+  html: `<div class="emoji-marker photo-marker" style="border-color:${PHOTO_COLORS.landmark};box-shadow:0 2px 8px ${PHOTO_COLORS.landmark}80;">📸</div>`,
+  iconSize: [40, 40],
+  iconAnchor: [20, 20],
+});
+const photoIconHiddenGem = L.divIcon({
+  className: '',
+  html: `<div class="emoji-marker photo-marker" style="border-color:${PHOTO_COLORS['hidden-gem']};box-shadow:0 2px 8px ${PHOTO_COLORS['hidden-gem']}80;">✨</div>`,
+  iconSize: [40, 40],
+  iconAnchor: [20, 20],
+});
 
 // Determine park from snack location string
 function snackPark(location) {
@@ -720,7 +725,7 @@ export default function InteractiveMap({ onSelectItem }) {
             <Marker
               key={s.id}
               position={[s.lat, s.lng]}
-              icon={photoIcon(s.category === 'hidden-gem' ? '✨' : '📸', s.category)}
+              icon={s.category === 'hidden-gem' ? photoIconHiddenGem : photoIconLandmark}
               zIndexOffset={1500}
               eventHandlers={{ click: () => onSelectItem(enrichItem(s)) }}
             />

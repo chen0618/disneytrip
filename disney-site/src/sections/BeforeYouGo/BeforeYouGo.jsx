@@ -27,11 +27,11 @@ export default function BeforeYouGo() {
           <ul className={styles.deadlineList}>
             {keyDeadlines.map(dl => {
               const { days, level } = getUrgency(dl.date);
-              const badgeText = level === 'past'
-  ? 'Done ✓'
-  : days === 0 ? 'Today!'
-  : days === 1 ? '1 day'
-  : `${days} days`;
+              const badgeText =
+                level === 'past' ? 'Done ✓'
+                : days === 0 ? 'Today!'
+                : days === 1 ? '1 day'
+                : `${days} days`;
               const rowClass = `${styles.deadlineRow} ${level === 'past' ? styles.deadlineRowPast : ''}`;
               const inner = (
                 <>

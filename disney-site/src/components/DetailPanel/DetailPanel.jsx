@@ -28,6 +28,8 @@ const TIME_SLOTS = [
 
 const LEVEL_LABELS = { low: 'Low', medium: 'Moderate', high: 'Busy' };
 
+const PHOTO_COLORS = { landmark: '#00CEC9', 'hidden-gem': '#E84393' };
+
 export default function DetailPanel({ item, onClose }) {
   const isOpen = item != null;
   const type = item?.type;
@@ -100,7 +102,7 @@ export default function DetailPanel({ item, onClose }) {
               {type === 'photo' && item.category && (
                 <div className={styles.badges}>
                   <span className={styles.categoryBadge} style={{
-                    background: item.category === 'hidden-gem' ? '#E84393' : '#00CEC9',
+                    background: PHOTO_COLORS[item.category],
                     color: '#fff',
                   }}>
                     {item.category === 'hidden-gem' ? '✨ Hidden Gem' : '🏰 Landmark'}
