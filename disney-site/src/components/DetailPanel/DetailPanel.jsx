@@ -138,6 +138,11 @@ export default function DetailPanel({ item, onClose }) {
                 <div className={styles.tip}>💡 {item.tip}</div>
               )}
 
+              {/* First Timer Tip */}
+              {item.firstTimerTip && (
+                <div className={styles.firstTimerTip}>🌟 First Timer: {item.firstTimerTip}</div>
+              )}
+
               {/* Action links */}
               {item.officialUrl && (
                 <div className={styles.actions}>

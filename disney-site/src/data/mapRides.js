@@ -54,6 +54,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    firstTimerTip: 'There\'s a small drop in the dark at the start — it\'s gentle! Then it\'s a peaceful boat ride through pirate scenes. Kids love it.',
   },
   {
     id: 'swiss-family-treehouse',
@@ -86,6 +87,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    firstTimerTip: 'A slow boat ride with a live skipper telling jokes — some are groan-worthy on purpose! Sit on the right side for better views.',
   },
 
   // Frontierland
@@ -105,6 +107,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
+    firstTimerTip: 'A fun, bumpy mine train — not too intense. The best views are from the left side. Great first "big kid" coaster.',
   },
   {
     id: 'tianas-bayou-adventure',
@@ -121,6 +124,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
+    firstTimerTip: 'The big drop looks scarier than it is — you\'ll get a splash but it\'s over in seconds. Front seats get wettest.',
   },
 
   // Liberty Square
@@ -139,6 +143,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    firstTimerTip: 'The "stretch room" is actually an elevator going down — don\'t panic! Pick a side near the door for faster loading into your Doom Buggy.',
   },
 
   // Fantasyland
@@ -189,6 +194,7 @@ export const mapRides = [
     heightReqInches: 38,
     lightningLane: true,
     tip: 'The most popular ride at MK. Use Lightning Lane or rope drop strategy.',
+    firstTimerTip: 'A gentle family coaster that swings side to side. The cars tilt on curves — sit in the back for more swing! Under 3 minutes.',
   },
   {
     id: 'dumbo-the-flying-elephant',
@@ -336,6 +342,7 @@ export const mapRides = [
     heightReqInches: 44,
     lightningLane: true,
     tip: 'A fan favorite with long lines. Use Lightning Lane or ride at park close for shorter waits.',
+    firstTimerTip: 'It\'s a roller coaster in complete darkness — not very fast, but the surprise factor makes it thrilling. Stay relaxed and enjoy the stars!',
   },
   {
     id: 'buzz-lightyears-space-ranger-spin',
@@ -369,6 +376,7 @@ export const mapRides = [
     heightReqInches: 48,
     lightningLane: true,
     tip: 'Adults only — use Rider Swap for both kids. Use Lightning Lane Single Pass or go at rope drop.',
+    firstTimerTip: 'You lean forward on a motorcycle-style seat. Stow everything in a locker (free). The launch is fast but smooth — just hold on and enjoy the lights!',
   },
   {
     id: 'tomorrowland-speedway',
@@ -405,6 +413,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Rope drop priority #1 at Hollywood Studios. Lightning Lane Single Pass option.',
+    firstTimerTip: 'This is a full experience, not just a ride — you\'ll be "captured" by the First Order. Lasts about 18 minutes total. No big drops, but there are dark moments and loud sounds.',
   },
   {
     id: 'millennium-falcon-smugglers-run',
@@ -439,6 +448,7 @@ export const mapRides = [
     heightReqInches: 38,
     lightningLane: true,
     tip: 'Rider Swap available for kids under 38".',
+    firstTimerTip: 'A family-friendly coaster that\'s smooth and fun, not scary. Two small launches, gentle drops. Great for first-time coaster riders.',
   },
   {
     id: 'toy-story-mania',
@@ -455,6 +465,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    firstTimerTip: 'It\'s a 3D shooting game on a moving ride — pull the string to shoot! Aim for high-value targets. Competitive and great for all ages.',
   },
   {
     id: 'alien-swirling-saucers',
@@ -489,6 +500,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
+    firstTimerTip: 'The drop sequence is randomized — sometimes 2 drops, sometimes 4+. The moment of weightlessness is brief. Front row has the best view when doors open at the top.',
   },
   {
     id: 'rock-n-roller-coaster',
@@ -499,12 +511,14 @@ export const mapRides = [
     land: 'Sunset Boulevard',
     lat: 28.35964,
     lng: -81.56152,
-    description: 'High-speed indoor launch coaster with inversions, now starring The Muppets and the Electric Mayhem band! Same thrilling ride, brand new rockin\' story.',
+    description: 'High-speed indoor launch coaster with inversions, being rethemed to The Muppets and the Electric Mayhem band. Same thrilling ride, brand new rockin\' story. Expected to reopen Summer 2026.',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Rock_%27n%27_Roller_Coaster_starring_Aerosmith_1.jpg/960px-Rock_%27n%27_Roller_Coaster_starring_Aerosmith_1.jpg',
     heightReq: '48"',
     heightReqInches: 48,
     lightningLane: true,
+    closed: true,
     tip: 'Adults only — use Rider Swap for both kids.',
+    firstTimerTip: 'The launch is 0–57 mph in 2.8 seconds — intense! There are 3 inversions in the dark. If you\'re nervous, close your eyes during the launch and open them after.',
   },
 
   // Echo Lake / Grand Avenue
@@ -577,6 +591,7 @@ export const mapRides = [
     heightReqInches: 42,
     lightningLane: true,
     tip: 'Lightning Lane Single Pass or standby queue. Rider Swap available for kids under 42". Go at rope drop for shorter standby waits.',
+    firstTimerTip: 'An indoor roller coaster that spins your car to face the action — unique and disorienting in the best way. Stow loose items. The music is amazing!',
   },
   {
     id: 'test-track',
@@ -593,6 +608,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
+    firstTimerTip: 'You design a car then ride it through speed/handling tests. The final outdoor stretch hits 65 mph — the fastest ride at WDW! Hold on to loose items.',
   },
   {
     id: 'mission-space',
@@ -609,6 +625,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Green mission is much gentler. Orange mission has intense spinning — can cause motion sickness.',
+    firstTimerTip: 'Choose Green (mild, no spinning) or Orange (intense, simulated G-forces). Green is great for most people. Orange can cause motion sickness — skip if you\'re sensitive.',
   },
 
   // World Nature
@@ -627,6 +644,7 @@ export const mapRides = [
     heightReqInches: 40,
     lightningLane: true,
     tip: 'Request row 1 (top row) for the best, unobstructed view.',
+    firstTimerTip: 'A hang-gliding simulator — your feet dangle as you fly over world landmarks. Front row center has the best view with no feet in your sightline.',
   },
   {
     id: 'living-with-the-land',
@@ -677,6 +695,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: 'Very popular — use Lightning Lane or go early.',
+    firstTimerTip: 'A gentle boat ride through Arendelle with a small backwards section and a short drop. Kids who love Frozen will be enchanted.',
   },
   {
     id: 'remys-ratatouille-adventure',
