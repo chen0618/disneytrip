@@ -94,6 +94,12 @@ export default function ParkRidesSection({ parkName, sectionId, background, them
                       <span className={styles.llBadge}>Lightning Lane</span>
                     )}
                   </div>
+                  {ride.firstTimerTip && (
+                    <details className={styles.firstTimer}>
+                      <summary className={styles.firstTimerLabel}>🌟 First Timer Tip</summary>
+                      <p className={styles.firstTimerText}>{ride.firstTimerTip}</p>
+                    </details>
+                  )}
                   <p className={styles.rideDesc}>{ride.description}</p>
                   {ride.tip && <p className={styles.rideTip}>{ride.tip}</p>}
                 </div>

@@ -138,6 +138,31 @@
   border-left: 3px solid var(--park-accent);
 }
 
+/* First Timer expandable tip */
+.firstTimer {
+  margin: 0.5rem 0;
+}
+.firstTimerLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--park-accent, var(--yellow));
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.firstTimerLabel::marker { display: none; }
+.firstTimerLabel::-webkit-details-marker { display: none; }
+.firstTimerText {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-top: 0.35rem;
+  padding-left: 1.4rem;
+}
+
 @media (max-width: 480px) {
   .rideGrid { grid-template-columns: 1fr; }
   .callouts { grid-template-columns: 1fr; }
