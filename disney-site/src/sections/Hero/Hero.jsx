@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import WaveDivider from '../../components/WaveDivider';
+import { getDaysUntil } from '../../utils/getDaysUntil';
+import { keyDeadlines } from '../../data/beforeYouGoInfo';
 import styles from './Hero.module.css';
 
 const sparkles = [
@@ -45,6 +47,23 @@ export default function Hero() {
         <h1 className={styles.title}>Our Disney Adventure</h1>
         <p className={styles.date}>January 16–23, 2027</p>
         <p className={styles.countdown}>{getCountdownText()}</p>
+        {(() => {
+          const upcoming = keyDeadlines
+            .map(dl => ({ ...dl, days: getDaysUntil(dl.date) }))
+            .filter(dl => dl.days > 0)
+            .sort((a, b) => a.days - b.days)
+            .slice(0, 3);
+          if (!upcoming.length) return null;
+          return (
+            <div className={styles.milestones}>
+              {upcoming.map(dl => (
+                <span key={dl.label} className={styles.milestone}>
+                  {dl.icon} {dl.label.split('(')[0].trim()} in <strong>{dl.days}d</strong>
+                </span>
+              ))}
+            </div>
+          );
+        })()}
         <p className={styles.tagline}>
           Everything you need to know about our week at Walt Disney World &mdash; parks, hotels, transportation, and more!
         </p>
