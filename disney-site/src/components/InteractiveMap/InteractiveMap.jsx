@@ -8,6 +8,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import '../../styles/leaflet-overrides.css';
 import { enrichItem } from '../../utils/enrichItem';
+import emojiIcon from '../../utils/emojiIcon';
 import snacks from '../../data/snacks';
 import { mapRides } from '../../data/mapRides';
 import springsVenues from '../../data/springsVenues';
@@ -16,6 +17,7 @@ import { boatCoords, busRoutes, skylinerRoutes } from '../../data/busRoutes';
 import { parkBoundaries } from '../../data/parkBoundaries';
 import { mapShows } from '../../data/mapShows';
 import { mapShops } from '../../data/mapShops';
+import { mapPhotoSpots } from '../../data/mapPhotoSpots';
 
 const DISNEY_CENTER = [28.385, -81.564];
 const UNIVERSAL_IDS = ['usf', 'ioa', 'epic'];
@@ -38,16 +40,6 @@ const parkColors = {
   'Hollywood Studios': '#A29BFE',
   'EPCOT': '#FFD700',
 };
-
-function emojiIcon(emoji, cls = '') {
-  return L.divIcon({
-    className: '',
-    html: `<div class="emoji-marker ${cls}">${emoji}</div>`,
-    iconSize: [40, 40],
-    iconAnchor: [20, 20],
-    popupAnchor: [0, -22],
-  });
-}
 
 function parkIcon(label, cls) {
   return L.divIcon({
@@ -92,6 +84,16 @@ function venueIcon(emoji) {
   return L.divIcon({
     className: '',
     html: `<div class="emoji-marker" style="border-color:#1E90FF;box-shadow:0 2px 8px rgba(30,144,255,0.5);">${emoji}</div>`,
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+  });
+}
+
+function photoIcon(emoji, category) {
+  const color = category === 'hidden-gem' ? '#E84393' : '#00CEC9';
+  return L.divIcon({
+    className: '',
+    html: `<div class="emoji-marker photo-marker" style="border-color:${color};box-shadow:0 2px 8px ${color}80;">${emoji}</div>`,
     iconSize: [40, 40],
     iconAnchor: [20, 20],
   });
@@ -409,6 +411,7 @@ export default function InteractiveMap({ onSelectItem }) {
   const [foodServiceFilter, setFoodServiceFilter] = useState('all');
   const [shopParkFilter, setShopParkFilter] = useState('all');
   const [showParkFilter, setShowParkFilter] = useState('all');
+  const [photoParkFilter, setPhotoParkFilter] = useState('all');
   const [transportParkNav, setTransportParkNav] = useState('all');
   const [flyTarget, setFlyTarget] = useState(null);
 
@@ -417,6 +420,7 @@ export default function InteractiveMap({ onSelectItem }) {
   const showShows = layer === 'shows';
   const showRides = layer === 'rides';
   const showShopping = layer === 'shopping';
+  const showPhotos = layer === 'photos';
 
   const showBus = showTransport && (transportMode === 'bus' || transportMode === 'all');
   const showSkyliner = showTransport && (transportMode === 'skyliner' || transportMode === 'all');
@@ -465,6 +469,11 @@ export default function InteractiveMap({ onSelectItem }) {
     setShopParkFilter(val);
     if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
   }
+  function selectPhotoPark(val) {
+    if (val === photoParkFilter) return;
+    setPhotoParkFilter(val);
+    if (val === 'all') flyToOverview(); else flyToBoundary(PARK_BOUNDARY_MAP[val]);
+  }
   function selectShowPark(val) {
     if (val === showParkFilter) return;
     setShowParkFilter(val);
@@ -498,6 +507,7 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-tab ${layer === 'shows' ? 'active' : ''}`} onClick={() => setLayer('shows')}>🎭 Shows</button>
             <button className={`map-tab ${layer === 'shopping' ? 'active' : ''}`} onClick={() => setLayer('shopping')}>🛍️ Shops</button>
             <button className={`map-tab ${layer === 'transport' ? 'active' : ''}`} onClick={() => setLayer('transport')}>🚌 Transport</button>
+            <button className={`map-tab ${layer === 'photos' ? 'active' : ''}`} onClick={() => setLayer('photos')}>📸 Photos</button>
           </div>
         </div>
 
@@ -551,6 +561,12 @@ export default function InteractiveMap({ onSelectItem }) {
             <button className={`map-chip show-chip ${showMode === 'show' ? 'active' : ''}`} onClick={() => setShowMode('show')}>🎵 Stage</button>
             <button className={`map-chip show-chip ${showMode === 'fireworks' ? 'active' : ''}`} onClick={() => setShowMode('fireworks')}>🎆 Fireworks</button>
             <button className={`map-chip show-chip ${showMode === 'parade' ? 'active' : ''}`} onClick={() => setShowMode('parade')}>🎪 Parades</button>
+          </>)}
+          {layer === 'photos' && (<>
+            <button className={`map-chip photo-chip ${photoParkFilter === 'all' ? 'active' : ''}`} onClick={() => selectPhotoPark('all')}>All</button>
+            <button className={`map-chip photo-chip ${photoParkFilter === 'Magic Kingdom' ? 'active' : ''}`} onClick={() => selectPhotoPark('Magic Kingdom')}>MK</button>
+            <button className={`map-chip photo-chip ${photoParkFilter === 'Hollywood Studios' ? 'active' : ''}`} onClick={() => selectPhotoPark('Hollywood Studios')}>HS</button>
+            <button className={`map-chip photo-chip ${photoParkFilter === 'EPCOT' ? 'active' : ''}`} onClick={() => selectPhotoPark('EPCOT')}>EPCOT</button>
           </>)}
           <span className="chip-sep">|</span>
           <button className="map-chip map-home-btn" onClick={() => flyToBoundary('pc')}>🏠 Hotel</button>
@@ -692,6 +708,19 @@ export default function InteractiveMap({ onSelectItem }) {
               key={s.id}
               position={[s.lat, s.lng]}
               icon={showIcon(s.emoji, s.type)}
+              zIndexOffset={1500}
+              eventHandlers={{ click: () => onSelectItem(enrichItem(s)) }}
+            />
+          ))
+        }
+        {/* Photo Spot markers */}
+        {showPhotos && mapPhotoSpots
+          .filter(s => photoParkFilter === 'all' || s.park === photoParkFilter)
+          .map(s => (
+            <Marker
+              key={s.id}
+              position={[s.lat, s.lng]}
+              icon={photoIcon(s.category === 'hidden-gem' ? '✨' : '📸', s.category)}
               zIndexOffset={1500}
               eventHandlers={{ click: () => onSelectItem(enrichItem(s)) }}
             />

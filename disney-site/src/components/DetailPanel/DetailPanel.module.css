@@ -186,6 +186,9 @@
   background: var(--purple);
   color: #fff;
 }
+.categoryBadge {
+  composes: badge;
+}
 
 /* ========== TIP ========== */
 .tip {

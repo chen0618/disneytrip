@@ -33,7 +33,7 @@ export default function DetailPanel({ item, onClose }) {
   const type = item?.type;
 
   // Types that use emoji hero when no image is available
-  const emojiHeroTypes = ['show', 'fireworks', 'parade', 'shop'];
+  const emojiHeroTypes = ['show', 'fireworks', 'parade', 'shop', 'photo'];
   const isShowType = ['show', 'fireworks', 'parade'].includes(type);
 
   // Official image takes priority, then existing image/cardImage
@@ -95,6 +95,18 @@ export default function DetailPanel({ item, onClose }) {
                   <span className={styles.landTag}>{item.location}</span>
                 )}
               </div>
+
+              {/* Photo category badge */}
+              {type === 'photo' && item.category && (
+                <div className={styles.badges}>
+                  <span className={styles.categoryBadge} style={{
+                    background: item.category === 'hidden-gem' ? '#E84393' : '#00CEC9',
+                    color: '#fff',
+                  }}>
+                    {item.category === 'hidden-gem' ? '✨ Hidden Gem' : '🏰 Landmark'}
+                  </span>
+                </div>
+              )}
 
               {/* Description */}
               {item.description && (
