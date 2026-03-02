@@ -55,6 +55,7 @@ export const mapRides = [
     lightningLane: true,
     tip: null,
     firstTimerTip: 'There\'s a small drop in the dark at the start — it\'s gentle! Then it\'s a peaceful boat ride through pirate scenes. Kids love it.',
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'low', rec: 'Consistently short waits — ride anytime' },
   },
   {
     id: 'swiss-family-treehouse',
@@ -88,6 +89,7 @@ export const mapRides = [
     lightningLane: true,
     tip: null,
     firstTimerTip: 'A slow boat ride with a live skipper telling jokes — some are groan-worthy on purpose! Sit on the right side for better views.',
+    bestTimes: { morning: 'low', midday: 'high', evening: 'medium', rec: 'After dark is a different experience — worth the wait!' },
   },
 
   // Frontierland
@@ -108,6 +110,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
     firstTimerTip: 'A fun, bumpy mine train — not too intense. The best views are from the left side. Great first "big kid" coaster.',
+    bestTimes: { morning: 'low', midday: 'high', evening: 'medium', rec: 'Great at rope drop or last hour of the night' },
   },
   {
     id: 'tianas-bayou-adventure',
@@ -125,6 +128,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
     firstTimerTip: 'The big drop looks scarier than it is — you\'ll get a splash but it\'s over in seconds. Front seats get wettest.',
+    bestTimes: { morning: 'low', midday: 'high', evening: 'medium', rec: 'Morning waits are short — ride before noon' },
   },
 
   // Liberty Square
@@ -144,6 +148,7 @@ export const mapRides = [
     lightningLane: true,
     tip: null,
     firstTimerTip: 'The "stretch room" is actually an elevator going down — don\'t panic! Pick a side near the door for faster loading into your Doom Buggy.',
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'medium', rec: 'Rarely a long wait — flexible timing works' },
   },
 
   // Fantasyland
@@ -178,6 +183,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: 'One of the longest lines in the park. Use Lightning Lane or go at rope drop.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'high', rec: 'Consistently the longest wait in MK — go at rope drop or use LL' },
   },
   {
     id: 'seven-dwarfs-mine-train',
@@ -195,6 +201,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'The most popular ride at MK. Use Lightning Lane or rope drop strategy.',
     firstTimerTip: 'A gentle family coaster that swings side to side. The cars tilt on curves — sit in the back for more swing! Under 3 minutes.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'high', rec: 'Rope drop priority #1 — waits build fast after 10am' },
   },
   {
     id: 'dumbo-the-flying-elephant',
@@ -343,6 +350,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'A fan favorite with long lines. Use Lightning Lane or ride at park close for shorter waits.',
     firstTimerTip: 'It\'s a roller coaster in complete darkness — not very fast, but the surprise factor makes it thrilling. Stay relaxed and enjoy the stars!',
+    bestTimes: { morning: 'low', midday: 'high', evening: 'medium', rec: 'Best before 11am or during fireworks' },
   },
   {
     id: 'buzz-lightyears-space-ranger-spin',
@@ -360,6 +368,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'low', rec: 'Skip at rope drop — hit headliners first, then circle back' },
   },
   {
     id: 'tron-lightcycle-run',
@@ -377,6 +386,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Adults only — use Rider Swap for both kids. Use Lightning Lane Single Pass or go at rope drop.',
     firstTimerTip: 'You lean forward on a motorcycle-style seat. Stow everything in a locker (free). The launch is fast but smooth — just hold on and enjoy the lights!',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'medium', rec: 'Virtual queue or Lightning Lane recommended. Waits drop after dark.' },
   },
   {
     id: 'tomorrowland-speedway',
@@ -414,6 +424,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rope drop priority #1 at Hollywood Studios. Lightning Lane Single Pass option.',
     firstTimerTip: 'This is a full experience, not just a ride — you\'ll be "captured" by the First Order. Lasts about 18 minutes total. No big drops, but there are dark moments and loud sounds.',
+    bestTimes: { morning: 'high', midday: 'high', evening: 'medium', rec: 'LL Single Pass strongly recommended — waits rarely drop below 60 min' },
   },
   {
     id: 'millennium-falcon-smugglers-run',
@@ -430,6 +441,7 @@ export const mapRides = [
     heightReqInches: 38,
     lightningLane: true,
     tip: 'Request to be a pilot for the most interactive experience!',
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'low', rec: 'Often under 30 min — flexible timing works, ask for pilot seat' },
   },
 
   // Toy Story Land
@@ -449,6 +461,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rider Swap available for kids under 38".',
     firstTimerTip: 'A family-friendly coaster that\'s smooth and fun, not scary. Two small launches, gentle drops. Great for first-time coaster riders.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'medium', rec: 'Rope drop #1 for HS — head straight here at park open' },
   },
   {
     id: 'toy-story-mania',
@@ -466,6 +479,7 @@ export const mapRides = [
     lightningLane: true,
     tip: null,
     firstTimerTip: 'It\'s a 3D shooting game on a moving ride — pull the string to shoot! Aim for high-value targets. Competitive and great for all ages.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'medium', rec: 'Gets busy fast — ride before 11am or use Lightning Lane' },
   },
   {
     id: 'alien-swirling-saucers',
@@ -501,6 +515,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
     firstTimerTip: 'The drop sequence is randomized — sometimes 2 drops, sometimes 4+. The moment of weightlessness is brief. Front row has the best view when doors open at the top.',
+    bestTimes: { morning: 'low', midday: 'high', evening: 'medium', rec: 'Morning or during Fantasmic are the shortest waits' },
   },
   {
     id: 'rock-n-roller-coaster',
@@ -519,6 +534,7 @@ export const mapRides = [
     closed: true,
     tip: 'Adults only — use Rider Swap for both kids.',
     firstTimerTip: 'The launch is 0–57 mph in 2.8 seconds — intense! There are 3 inversions in the dark. If you\'re nervous, close your eyes during the launch and open them after.',
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'medium', rec: 'Morning waits are manageable — pair with Tower of Terror at rope drop' },
   },
 
   // Echo Lake / Grand Avenue
@@ -592,6 +608,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Lightning Lane Single Pass or standby queue. Rider Swap available for kids under 42". Go at rope drop for shorter standby waits.',
     firstTimerTip: 'An indoor roller coaster that spins your car to face the action — unique and disorienting in the best way. Stow loose items. The music is amazing!',
+    bestTimes: { morning: 'high', midday: 'high', evening: 'medium', rec: 'Virtual queue required early in the day. Evening standby drops significantly.' },
   },
   {
     id: 'test-track',
@@ -609,6 +626,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Rider Swap available for kids under 40".',
     firstTimerTip: 'You design a car then ride it through speed/handling tests. The final outdoor stretch hits 65 mph — the fastest ride at WDW! Hold on to loose items.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'medium', rec: 'Rope drop or evening — waits peak 12pm–3pm' },
   },
   {
     id: 'mission-space',
@@ -645,6 +663,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Request row 1 (top row) for the best, unobstructed view.',
     firstTimerTip: 'A hang-gliding simulator — your feet dangle as you fly over world landmarks. Front row center has the best view with no feet in your sightline.',
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'low', rec: 'Request front row center for the best view — worth a short extra wait' },
   },
   {
     id: 'living-with-the-land',
@@ -696,6 +715,7 @@ export const mapRides = [
     lightningLane: true,
     tip: 'Very popular — use Lightning Lane or go early.',
     firstTimerTip: 'A gentle boat ride through Arendelle with a small backwards section and a short drop. Kids who love Frozen will be enchanted.',
+    bestTimes: { morning: 'medium', midday: 'high', evening: 'medium', rec: 'Hit early or during fireworks. LL is worth it here.' },
   },
   {
     id: 'remys-ratatouille-adventure',
@@ -712,6 +732,7 @@ export const mapRides = [
     heightReqInches: 0,
     lightningLane: true,
     tip: null,
+    bestTimes: { morning: 'low', midday: 'medium', evening: 'medium', rec: 'Morning is best — waits build as World Showcase opens at 11am' },
   },
   {
     id: 'journey-into-imagination',
