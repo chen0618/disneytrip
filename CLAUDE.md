@@ -43,6 +43,7 @@ disney-site/
 │   │   ├── useActiveSection.js   # Tracks which section is in viewport for nav dots
 │   │   └── useDarkMode.js        # localStorage-persisted dark/light theme toggle
 │   ├── utils/
+│   │   ├── emojiIcon.js          # Shared Leaflet divIcon factory — used by InteractiveMap + ParkMiniMap
 │   │   ├── enrichItem.js         # Merges officialDisneyData into map items at render time
 │   │   └── getDaysUntil.js       # Shared countdown utility (getDaysUntil, getUrgency) — used by Hero + BeforeYouGo
 │   ├── context/
@@ -108,7 +109,7 @@ disney-site/
 │       ├── mapParks.js
 │       ├── mapShows.js           # 37 show/event markers for interactive map
 │       ├── mapShops.js           # 157 shop markers (MK, HS, EPCOT, Disney Springs)
-│       ├── mapPhotoSpots.js     # 27 photo spots with OSM coordinates (landmark + hidden-gem categories)
+│       ├── mapPhotoSpots.js     # 25 photo spots with OSM coordinates (landmark + hidden-gem categories)
 │       ├── beforeYouGoInfo.js    # Key deadlines + pre-trip checklist + first-timer tips data
 │       ├── whatsNewInfo.js      # New experiences + heads-up alerts for 2026-2027
 │       ├── magicKingdomData.js  # MK lands, easter eggs, strategy, fireworks, nav sections
@@ -177,7 +178,7 @@ disney-site/
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
 - **Transport layer**: bus routes, Skyliner, boats with animated markers; auto-flies to bounds on layer/mode switch (asymmetric padding for overlay controls)
-- **Photo Spots layer**: 27 curated spots from mapPhotoSpots.js, teal markers (landmarks) + pink markers (hidden gems), park sub-filter
+- **Photo Spots layer**: 25 curated spots from mapPhotoSpots.js, teal markers (landmarks) + pink markers (hidden gems), park sub-filter
 - Clicking any marker opens DetailPanel via `onSelectItem` callback (no Leaflet popups for content markers)
 - Park label markers and transport routes still use Leaflet popups (simple info)
 - **DetailPanel ride extras**: `firstTimerTip` (gold gradient block), `bestTimes` (3-slot color bar: green/yellow/red with recommendation text), photo spots show category badge (Landmark/Hidden Gem)
