@@ -266,7 +266,7 @@ Status: **All OSM verified**
 
 ---
 
-## mapPhotoSpots.js (27 photo spots)
+## mapPhotoSpots.js (25 photo spots)
 
 ### Magic Kingdom (9 spots)
 | # | ID | Name | Status | Date |
@@ -292,7 +292,7 @@ Status: **All OSM verified**
 | 6 | sunset-blvd-palms | Sunset Boulevard Palm Trees | OSM | 2026-03-02 |
 | 7 | hs-chinese-theatre | Chinese Theatre | mapRides (MMRR) | 2026-03-02 |
 
-### EPCOT (11 spots)
+### EPCOT (9 spots)
 | # | ID | Name | Status | Date |
 |---|---|---|---|---|
 | 1 | spaceship-earth-photo | Spaceship Earth | mapRides | 2026-03-02 |

@@ -1,4 +1,4 @@
-import { useContext, useState, useCallback, useRef } from 'react';
+import { useContext, useState, useCallback, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ActiveSectionContext } from '../../context/ActiveSectionContext';
 import useDarkMode from '../../hooks/useDarkMode';
@@ -63,8 +63,17 @@ export default function FloatingNav({ sections, extraLinks }) {
     setTouchedId(null);
   }, [navigate, toggleDark]);
 
-  // Desktop mouse-scrub: same highlight behavior as touch-scrub
+  // Desktop mouse-scrub: only on devices with a real hover pointer (not narrow mobile viewports)
+  const canHover = useRef(window.matchMedia('(hover: hover) and (min-width: 769px)').matches);
+  useEffect(() => {
+    const mql = window.matchMedia('(hover: hover) and (min-width: 769px)');
+    const handler = (e) => { canHover.current = e.matches; };
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
+
   const onMouseMove = useCallback((e) => {
+    if (!canHover.current) return;
     const id = getClosestItem(e.clientY);
     if (id && id !== touchedIdRef.current) {
       touchedIdRef.current = id;
@@ -73,6 +82,7 @@ export default function FloatingNav({ sections, extraLinks }) {
   }, [getClosestItem]);
 
   const onMouseLeave = useCallback(() => {
+    if (!canHover.current) return;
     touchedIdRef.current = null;
     setTouchedId(null);
   }, []);

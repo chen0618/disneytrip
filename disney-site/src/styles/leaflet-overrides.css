@@ -1,3 +1,22 @@
+/* ═══ Dark-mode map tiles ═══ */
+html[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg);
+}
+html[data-theme="dark"] .map-ctrl-primary {
+  background: rgba(26, 21, 32, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .map-ctrl-sub {
+  background: rgba(26, 21, 32, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+html[data-theme="dark"] .map-tab:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+html[data-theme="dark"] .emoji-marker {
+  background: var(--white);
+}
+
 /* ═══ Full-page map mode ═══ */
 .snack-map-fullpage {
   position: relative;

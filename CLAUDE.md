@@ -149,6 +149,8 @@ disney-site/
 - Progressive enhancement: `var(--dark-var, light-fallback)` — variable undefined in light mode uses fallback, defined in `html[data-theme="dark"]` block overrides
 - Dark mode badge variables in global.css: `--badge-bg`, `--badge-tip-bg`, `--badge-ll-bg`/`--badge-ll-color`, `--show-badge-bg`/`--show-badge-color`, `--epcot-accent`/`--epcot-accent-bg`, `--time-low-bg`/`--time-low-color`, `--time-med-bg`/`--time-med-color`, `--time-high-bg`/`--time-high-color`
 - When adding colored badges/accents: add dark mode variable to global.css, use `var(--new-var, #light-fallback)` in component CSS
+- **Map tiles dark mode**: `filter: invert(1) hue-rotate(180deg)` on `.leaflet-tile-pane` in leaflet-overrides.css — inverts OSM tiles to dark theme
+- Map overlay controls (`.map-ctrl-primary`, `.map-ctrl-sub`) have `html[data-theme="dark"]` overrides in leaflet-overrides.css for dark backgrounds
 
 ## Image Sourcing
 - Use Wikimedia Commons API: `curl -s "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=TERM&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=960&format=json"`
@@ -173,7 +175,7 @@ disney-site/
 - **InteractiveMap** component in `components/InteractiveMap/InteractiveMap.jsx`
 - **DetailPanel** component — slide-in panel (desktop: 380px right side, mobile: 60vh bottom sheet)
 - Mutually exclusive layer toggles: Rides | Food & Dining | Shows & Events | Shops | Transportation | Photos
-- Independent boundary overlay toggle (Zillow-style park polygons)
+- Park boundary polygons always visible (Zillow-style outlines)
 - **Rides layer**: 44 rides from mapRides.js, park sub-filter (All/MK/HS/EPCOT)
 - **Food layer**: snacks (clustered) + Disney Springs venues, park sub-filter
 - **Shows layer**: stage shows (pink), fireworks (gold), parades (purple) with sub-toggles
@@ -258,10 +260,11 @@ disney-site/
 
 ## Floating Nav
 - FloatingNav component reads ActiveSectionContext
-- Labels always visible on desktop (opacity 0.7, 1 on hover/active), dots-only on mobile
+- Labels visible on desktop ≥769px (opacity 0.7, 1 on hover/active), dots-only on mobile/narrow viewports
+- Both CSS hover labels and JS mouse-scrub gated by `@media (hover: hover) and (min-width: 769px)` / `window.matchMedia` respectively
 - Includes map link (🗺️) and dark mode toggle (🌙/☀️) at bottom
 - **Touch-scrub**: Slide finger along nav to preview labels; uses proximity-based `getClosestItem()` (not `elementFromPoint`)
-- **Mouse hover-scrub (desktop)**: Hovering over any nav dot scrolls to that section; uses `mouseenter` per item with debounce-like guard
+- **Mouse hover-scrub (desktop ≥769px)**: `onMouseMove` on nav uses `getClosestItem()` to highlight closest dot; gated by `matchMedia` to prevent label overlap on narrow windows
 - `touch-action: none` on nav permanently — must be set before touch starts (CSS evaluates at touch-start, not after JS)
 - All nav items (dots, map, dark mode) share `data-nav-id` attributes for unified touch detection
 - `.itemTouched` class with `.navTouching` parent for high-specificity override of mobile `:hover` stickiness
