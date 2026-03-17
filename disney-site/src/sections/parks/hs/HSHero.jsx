@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
-import WaveDivider from '../../../components/WaveDivider';
-import styles from './HSHero.module.css';
+import ParkHeroSection from '../shared/ParkHeroSection';
+
+const themeVars = {
+  '--hero-gradient': 'linear-gradient(135deg, rgba(120, 100, 220, 0.85) 0%, rgba(162, 155, 254, 0.75) 40%, rgba(180, 170, 255, 0.7) 100%)',
+  '--hero-bg-image': "url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Hollywood_Tower_Hotel.jpg/960px-Hollywood_Tower_Hotel.jpg')",
+};
 
 const sparkles = [
   { left: '8%', top: '25%', dur: '3.2s', delay: '0s' },
@@ -15,46 +18,22 @@ const sparkles = [
   { left: '78%', top: '42%', dur: '3.3s', delay: '1.1s' },
 ];
 
+const stats = [
+  { value: '9', label: 'Rides' },
+  { value: '5', label: 'Themed Lands' },
+  { value: '1', label: 'Park Day' },
+];
+
 export default function HSHero() {
   return (
-    <section id="hs-hero" className={styles.hero}>
-      <Link to="/" className={styles.homeLink}>Home</Link>
-      <div className={styles.sparkles}>
-        {sparkles.map((s, i) => (
-          <span
-            key={i}
-            className={styles.sparkle}
-            style={{ left: s.left, top: s.top, '--dur': s.dur, '--delay': s.delay }}
-          />
-        ))}
-      </div>
-      <div className={styles.content}>
-        <p className={styles.pre}>Walt Disney World</p>
-        <h1 className={styles.title}>Hollywood Studios</h1>
-        <p className={styles.tagline}>
-          Where movies come to life — immersive worlds, epic thrills, and showstopping entertainment.
-        </p>
-        <div className={styles.stats}>
-          <div className={styles.stat}>
-            <span className={styles.statValue}>9</span>
-            <span className={styles.statLabel}>Rides</span>
-          </div>
-          <div className={styles.stat}>
-            <span className={styles.statValue}>5</span>
-            <span className={styles.statLabel}>Themed Lands</span>
-          </div>
-          <div className={styles.stat}>
-            <span className={styles.statValue}>1</span>
-            <span className={styles.statLabel}>Park Day</span>
-          </div>
-        </div>
-      </div>
-      <a href="#hs-galaxys-edge" className={styles.scrollIndicator} aria-label="Scroll to next section">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </a>
-      <WaveDivider fill="var(--bg-alt)" variant={1} />
-    </section>
+    <ParkHeroSection
+      id="hs-hero"
+      title="Hollywood Studios"
+      tagline="Where movies come to life — immersive worlds, epic thrills, and showstopping entertainment."
+      stats={stats}
+      scrollTo="hs-galaxys-edge"
+      themeVars={themeVars}
+      sparkles={sparkles}
+    />
   );
 }

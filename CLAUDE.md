@@ -80,14 +80,15 @@ disney-site/
 │   │   ├── PhotoPass/            # Memory Maker, family sharing, account setup (rendered on /guide)
 │   │   └── parks/                # Park-specific sections (8-10 per park)
 │   │       ├── shared/            # Shared park section components with CSS custom property theming
+│   │       │   ├── ParkHeroSection.jsx + .module.css     # Hero banner with gradient bg, sparkles, stats, scroll indicator
 │   │       │   ├── ParkRidesSection.jsx + .module.css    # Rides grid, By Land/Height toggle, callouts slot
 │   │       │   ├── ParkDiningSection.jsx + .module.css   # Dining grid, filters, must-try callout, collapse
 │   │       │   ├── ParkStrategySection.jsx + .module.css # Tip cards, children slot (MK fireworks)
 │   │       │   ├── ParkShoppingSection.jsx + .module.css # Shop grid, collapse toggle
 │   │       │   └── Collapsible.module.css                # Shared collapse/toggle styles (composed by Dining + Shopping)
-│   │       ├── mk/               # MKHero, LandsExplorer, MKRides*, MKShows, MKDining*, HiddenMagic, MKStrategy*, MKShopping* (8 sections)
-│   │       ├── hs/               # HSHero, GalaxysEdge, ToyStoryLand, HSRides*, ThrillGuide, HSShows, HSDining*, HSStrategy*, HSShopping* (9 sections)
-│   │       └── epcot/            # EpcotHero, WorldShowcase, EpcotRides*, FestivalGuide, CountryGuide, BestForKids, EpcotDining*, EpcotStrategy*, EpcotShopping* (9 sections)
+│   │       ├── mk/               # MKHero*, LandsExplorer, MKRides*, MKShows, MKDining*, HiddenMagic, MKStrategy*, MKShopping* (8 sections)
+│   │       ├── hs/               # HSHero*, GalaxysEdge, ToyStoryLand, HSRides*, ThrillGuide, HSShows, HSDining*, HSStrategy*, HSShopping* (9 sections)
+│   │       └── epcot/            # EpcotHero*, WorldShowcase, EpcotRides*, FestivalGuide, CountryGuide, BestForKids, EpcotDining*, EpcotStrategy*, EpcotShopping* (9 sections)
 │   │       # * = thin wrapper around shared/ component (park-specific data + themeVars prop)
 │   └── data/                     # All content extracted from HTML
 │       ├── navSections.js        # Main page FloatingNav sections (5 entries)
@@ -198,9 +199,10 @@ disney-site/
 - **ParkMiniMap**: Reusable Leaflet component showing park boundary polygon + emoji ride/food markers
 - **Entry points**: Hero section park buttons + Timeline day card "View Park Guide" links
 - Each page: 8–9 content sections + embedded ParkMiniMap, alternating --bg/--bg-alt backgrounds with WaveDividers
-- **Shared section components** (`parks/shared/`): Rides, Dining, Strategy, Shopping are extracted into shared components — park wrappers are thin re-exports (~5-15 lines) that pass park-specific data and `themeVars` (CSS custom properties)
+- **Shared section components** (`parks/shared/`): Hero, Rides, Dining, Strategy, Shopping are extracted into shared components — park wrappers are thin re-exports (~5-25 lines) that pass park-specific data and `themeVars` (CSS custom properties)
 - **Ride card first-timer tips**: ParkRidesSection renders expandable `<details>/<summary>` badges for rides with `firstTimerTip` — no React state needed
 - **CSS custom property theming**: Shared CSS modules use `var(--park-accent)`, `var(--park-accent-light)`, `var(--park-tip-bg)`, `var(--park-gradient-end)`, `var(--park-filter-color)`, `var(--park-active-color)` — set via inline style `themeVars` object on section root
+- **ParkHeroSection theming**: Uses `--hero-gradient`, `--hero-bg-image`, `--hero-accent` (defaults to `var(--yellow)`), `--hero-text-shadow`, `--hero-tagline-opacity`, `--hero-tagline-max-width` — EPCOT overrides accent to white since yellow-on-gold is unreadable
 - **EPCOT yellow override**: EPCOT filter buttons need `--park-filter-color` (darker `#b8960a`) and `--park-active-color: var(--text)` because yellow-on-white is unreadable
 - **MK fireworks callout**: Passed as `children` to ParkStrategySection — MKStrategy.jsx imports shared CSS module directly for callout class names
 
