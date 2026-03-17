@@ -106,6 +106,18 @@ export default function NewsPage() {
                   {!isExpanded && <p className={styles.cardDesc}>{article.description}</p>}
                   {isExpanded && (
                     <div className={styles.expandedContent}>
+                      {article.notes && article.status === 'incorporated' && (
+                        <div className={styles.incorporatedNote}>
+                          <span className={styles.incorporatedLabel}>Site updated</span>
+                          <p>{article.notes}</p>
+                        </div>
+                      )}
+                      {article.notes && article.status === 'dismissed' && (
+                        <div className={styles.dismissedNote}>
+                          <span className={styles.dismissedLabel}>Dismissed</span>
+                          <p>{article.notes}</p>
+                        </div>
+                      )}
                       <p className={styles.snippet}>
                         {article.contentSnippet || article.description}
                       </p>

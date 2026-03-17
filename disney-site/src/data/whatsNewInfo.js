@@ -11,13 +11,13 @@ export const newExperiences = [
         name: 'Big Thunder Mountain Railroad',
         emoji: '⛰️',
         badge: 'Upgraded',
-        description: 'Reopened spring 2026 with a brand-new underground Rainbow Caverns scene featuring glowing pools and shimmering rockwork, plus a completely rebuilt track.',
+        description: 'Reopening early May 2026 with all-new trains, refreshed audio-animatronics throughout, and a brand-new Rainbow Caverns underground scene featuring glowing pools, shimmering stalagmites, and dramatic lightning effects. Plus a completely rebuilt track.',
       },
       {
         name: "Buzz Lightyear's Space Ranger Spin",
         emoji: '🔫',
         badge: 'Upgraded',
-        description: 'Reopened spring 2026 with handheld blasters you can actually aim (no more fixed guns!), redesigned ride vehicles, a new show scene, and overhauled gameplay.',
+        description: 'Reopened April 8, 2026 with handheld blasters you can actually aim (with always-on laser sights!), redesigned ride vehicles with scoring monitors, reactive light-up targets, and a new opening scene starring "Buddy" the support-bot.',
       },
       {
         name: 'The Beak and Barrel',
@@ -73,7 +73,7 @@ export const newExperiences = [
         name: "Soarin' Across America",
         emoji: '🦅',
         badge: 'New Film',
-        description: "A limited-time film debuting Memorial Day 2026, celebrating America's 250th birthday — fly over stunning landscapes and iconic cityscapes from 13+ American locations. Replaces Soarin' Around the World (which may return).",
+        description: "A limited-time film opening May 26, 2026, celebrating America's 250th birthday — fly over stunning landscapes and iconic cityscapes from 13+ American locations including the Grand Canyon. Soarin' Around the World closed May 13 for this overlay. Expected to run at least through early 2027.",
       },
       {
         name: 'Frozen Ever After — New Animatronics',
@@ -113,8 +113,8 @@ export const newExperiences = [
 export const headsUpAlerts = [
   {
     emoji: '🚡',
-    title: 'Skyliner Annual Maintenance (late January)',
-    description: 'Annual maintenance typically late January (Jan 25-31 in 2026). We leave Jan 23 — we\'re safe! Watch for 2027 dates closer to the trip.',
+    title: 'Skyliner Maintenance Starts Day After We Leave!',
+    description: 'Disney confirmed the 2027 Skyliner closure: January 24–30, 2027. We check out January 23 — we\'re safe by exactly one day! Skyliner runs normally for our entire trip.',
     severity: 'info', // 'info' or 'warning'
   },
   {

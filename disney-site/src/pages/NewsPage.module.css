@@ -197,6 +197,39 @@
   padding-top: 0.75rem;
   border-top: 1px solid var(--bg-alt);
 }
+
+/* Incorporated/dismissed note blocks */
+.incorporatedNote,
+.dismissedNote {
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.incorporatedNote {
+  background: color-mix(in srgb, var(--mint) 12%, transparent);
+  border-left: 3px solid var(--mint);
+}
+.dismissedNote {
+  background: var(--bg-alt);
+  border-left: 3px solid var(--text-muted);
+}
+.incorporatedNote p,
+.dismissedNote p {
+  margin: 0.2rem 0 0;
+  color: var(--text);
+}
+.incorporatedLabel,
+.dismissedLabel {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.incorporatedLabel { color: var(--mint); }
+.dismissedLabel { color: var(--text-muted); }
 .snippet {
   font-size: 0.9rem;
   color: var(--text);
